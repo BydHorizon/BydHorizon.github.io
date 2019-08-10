@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-09T10:28:07.792Z</updated>
+  <updated>2019-08-10T01:45:07.061Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,20 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>“test post</title>
+    <title>Algorithms, Part I | Coursera by Princeton University</title>
     <link href="http://yoursite.com/2019/08/09/%E2%80%9Ctest-post/"/>
     <id>http://yoursite.com/2019/08/09/“test-post/</id>
     <published>2019-08-09T10:28:07.000Z</published>
-    <updated>2019-08-09T10:28:07.792Z</updated>
+    <updated>2019-08-10T01:45:07.061Z</updated>
+    
+    <content type="html"><![CDATA[<p>ALGORITHMS, PARTS I AND II 概述<br>Algorithm: method for solving a problem<br>Data structure: method to store information<br>       topic              data structure<br>  data types     stack,queue ,bag,union-find,priority queue<br>storting    quicksort,mergesort,heapsort<br>mergesort<br>BST,red-black BST,hash table<br>graphs    BFS,DFS,Prim,Kruskal,dijkstra<br>strings    radix sorts,tries,KMP,regexps,data compression<br>advanced    B-tree,suffix array,maxflow</p><p>why we study algorithms?<br>Their impacts is board and far-reaching.<br>Old roots,new opportunities.<br>To solve problems that could not otherwise be addressed.<br>For intellectual stimulation.<br>To become a proficient programmer.<br>They may unlock the secrets of life and of the universe.<br>For fun and profit.</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;ALGORITHMS, PARTS I AND II 概述&lt;br&gt;Algorithm: method for solving a problem&lt;br&gt;Data structure: method to store information&lt;br&gt;       topic  
+      
     
     </summary>
     

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-10T01:45:07.061Z</updated>
+  <updated>2019-08-11T03:44:45.371Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>union-find</title>
+    <link href="http://yoursite.com/2019/08/11/union-find/"/>
+    <id>http://yoursite.com/2019/08/11/union-find/</id>
+    <published>2019-08-11T03:25:00.000Z</published>
+    <updated>2019-08-11T03:44:45.371Z</updated>
+    
+    <content type="html"><![CDATA[<p>发展一个可用的算法的步骤：<br>把问题模型化<br>找到一个算法去解决它<br>足够快？适合内存？<br>如果不是，想想为什么<br>寻找一个方法去解决这个问题<br>重复直到一切都满意<br>动态连接（Dynamic connectivity）<br>我们假设“被连接”是一个相等的关系：<br>自反：p被p连接<br>对称：如果p被q连接，那么q也被p连接<br>传递：如果p被q连接，q被r连接，那么p被r连接<br>连接集合（Connected components）：每个对象被连接的所以元素</p><p>发现问题：检查两个对象是否都在同一个集合里面<br>连接命令：用连接替换两个对象集合</p><p>联合查找数据类型（Union-find data type）API<br>目标 设计有效的数据结构为联合查找<br>定义一个 UF类<br>对数据初始化<br>给数据添加连接<br>判断数据是否在同一集合内<br>找到p所在的集合<br>确定集合的数量</p><p>动态连接客户端（Dynamic-connectivity client）<br>从标准输入中读取n个对象<br>重复：</p><ul><li>从标准输入中读取整数对</li><li>如果他们未被连接请将他们连接<br>代码<pre><code>public static void main（string[] args）{ int N = StdIn.readInt(); UF uf = new UF(N); while （！stdIn.isEmpty（）） {   int p = stdIn.readInt();   int q = stdIn.readInt();   if (!uf.connected（p，q））   {     uf.union(p,q);     stdOut.prtinln(p+&quot; &quot;+q);   }  }}</code></pre></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;发展一个可用的算法的步骤：&lt;br&gt;把问题模型化&lt;br&gt;找到一个算法去解决它&lt;br&gt;足够快？适合内存？&lt;br&gt;如果不是，想想为什么&lt;br&gt;寻找一个方法去解决这个问题&lt;br&gt;重复直到一切都满意&lt;br&gt;动态连接（Dynamic connectivity）&lt;br&gt;我们假设“被连接”
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Algorithms, Part I | Coursera by Princeton University</title>

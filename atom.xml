@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-01T08:58:15.970Z</updated>
+  <updated>2020-03-08T16:22:47.244Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,81 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaSE基础（三）</title>
+    <link href="http://yoursite.com/2020/03/08/JavaSE%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/"/>
+    <id>http://yoursite.com/2020/03/08/JavaSE基础（三）/</id>
+    <published>2020-03-08T15:54:16.000Z</published>
+    <updated>2020-03-08T16:22:47.244Z</updated>
+    
+    <content type="html"><![CDATA[<p>常量</p><pre><code>常量是代表在程序运行过程中，不能再改变的值。</code></pre><p>常量的作用     </p><pre><code>1.固定的值  代表在计算过程中经常用到的值便于程序计算。    如：  圆周率  3.14159262.表示一个含义    如：  up==&gt;1 down==&gt;2</code></pre><p>什么样的值算是常量</p><pre><code>1. 可以认为所有基本类型的值固定不变是常量    如：    3.14   &apos;a&apos;  true2.特殊的常量     如：   “a b c”-----&gt;string        string是一个引用数据类型，它的值很特殊，可以简单视为常量3.自己创建的空间存储一个值让他固定不变    如：   final int up = 1；</code></pre><p>变量</p><pre><code>变量是指程序执行过程中可以改变的量；变量是内存空间（小容器）；变量空间在创建（声明）的时候必须指定数据类型变量空间的名字；变量空间里面只能存储一个内容（值 引用）变量空间的内容可以改变；</code></pre><p>变量如何创建/声明</p><pre><code>数据类型   类型名字；int a；string b；</code></pre><p>创建变量需要注意命名的问题</p><pre><code>命名规则： 字母、数字（不允许作为开头）、符号（英文符号_和$）还有中文（不推荐）命名的规约：              类名字：  首字母大写 如果两个以上单词  所有首字母都大写                     如：SuperPerson            变量名：  首字母小写 如果两个以上单词之后首字母大写                     如： superPerson                     遵循驼峰式命名规约            所有名字需要见名知意，为了增强程序可读性！注意：变量是空间可以只创建东西不存放内容      变量空间创建后是无内容的、空的      空的变量空间是不能拿来使用的</code></pre><p>注释</p><pre><code>1.单行注释     //2.多行注释     /*         */3.文档注释     //*        */</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;常量&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;常量是代表在程序运行过程中，不能再改变的值。&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;常量的作用     &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.固定的值  代表在计算过程中经常用到的值便于程序计算。
+    如：  圆周率  3.1415926
+2.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaSE基础（二）</title>
+    <link href="http://yoursite.com/2020/03/08/JavaSE%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>http://yoursite.com/2020/03/08/JavaSE基础（二）/</id>
+    <published>2020-03-08T15:32:23.000Z</published>
+    <updated>2020-03-08T15:53:46.263Z</updated>
+    
+    <content type="html"><![CDATA[<p>数据类型</p><p> 基本数据类型 （8个）</p><pre><code>整型 byte short int long浮点型 float double字符型 char布尔型 blooean</code></pre><p> 引用数据类型</p><pre><code>数组  []array类    class（抽象类 abstract class）接口  interface  枚举  enum注解  @interface</code></pre><p>   byte 字节型                                                            </p><pre><code>1 byte = 8 bit   00000000   256种组合用第一个bit的位置记录符号 0表示正数 1表示负数数值的范围2的-7次方到二的7次方减1-128~127</code></pre><p>   以上其他整数类型依次乘2</p><pre><code>short  2字节  16bitint    4字节  32bitlong   8字节  64bit</code></pre><p>  浮点型</p><pre><code>float  4字节  32bitdouble 8字节  64bit</code></pre><p>  字符型</p><pre><code>&apos;a&apos; &apos;+&apos; &apos;我&apos; ‘5’英文符号和数字是1字节   采用ASCII  美国信息交换标准代码 由字母 数字 符号组成中文是2字节    unicode编码</code></pre><p>   布尔型</p><pre><code>boolean  1bittrue  false</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;数据类型&lt;/p&gt;
+&lt;p&gt; 基本数据类型 （8个）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;整型 byte short int long
+浮点型 float double
+字符型 char
+布尔型 blooean&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 引用数据类型&lt;/p&gt;
+&lt;pre&gt;&lt;cod
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaSE 基础     (一)</title>
+    <link href="http://yoursite.com/2020/03/08/JavaSE-%E5%9F%BA%E7%A1%80-%E4%B8%80/"/>
+    <id>http://yoursite.com/2020/03/08/JavaSE-基础-一/</id>
+    <published>2020-03-08T14:59:17.000Z</published>
+    <updated>2020-03-08T16:23:54.491Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>JavaSE基础</code></pre><p> 1996年  正式发布了可以下载的JDK工具包 jdk1.0</p><p> 1999年  发布了第二代平台 简称 java2 细化三个不同的版本；</p><pre><code>标准版  Standard Edition      J2SE企业版  Enterprise Edition    J2EE微型版  Mirco Edition         J2ME</code></pre><p> 2005年  Oracle 公司74亿收购了SUN</p><p>java语言的特点</p><pre><code>跨平台性  平台（操作系统）面向对象简单性  多继承  健壮性（鲁棒性）  垃圾回收  异常机制多线程大数据相关开发</code></pre><p>JVM                               </p><pre><code>Java virtual machine  虚拟机     源文件.java 编译字节码文件.class</code></pre><p>jRE             </p><pre><code>Java Run Environment 运行环境运行别人写的java程序</code></pre><p>JDK</p><pre><code>Java Development kit 开发工具包javac.exe 编译工具   java.exe  执行工具bin文件夹   全都是工具inlcude文件夹  包含了其他语言的程序jre文件夹    包含了运行环境lib文件夹    包含了人家写好的java类src.zip压缩文件夹  源代码</code></pre><p>常用命令</p><pre><code>win(窗口键)+R  输入cmd命令  打开一个dos命令行窗口使用cd 文件夹名 进入 cd ..退出一层文件夹javac test.java  编译一个test文件java test  运行一个test文件其他 win+R 输出  mspaint 打开画图</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;pre&gt;&lt;code&gt;JavaSE基础&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 1996年  正式发布了可以下载的JDK工具包 jdk1.0&lt;/p&gt;
+&lt;p&gt; 1999年  发布了第二代平台 简称 java2 细化三个不同的版本；&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;标准版  Standard 
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>PTA基础题算法&amp;&amp;心得（7-1---7-12）</title>

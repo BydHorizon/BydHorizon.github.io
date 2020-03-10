@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-10T11:04:44.665Z</updated>
+  <updated>2020-03-10T11:48:12.764Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GIT (一)</title>
+    <link href="http://yoursite.com/2020/03/10/GIT%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>http://yoursite.com/2020/03/10/GIT（一）/</id>
+    <published>2020-03-10T11:12:00.000Z</published>
+    <updated>2020-03-10T11:48:12.764Z</updated>
+    
+    <content type="html"><![CDATA[<p>GIt Bash 常用命令</p><p>#change director</p><pre><code>cd</code></pre><p>#make director</p><pre><code>mkdir</code></pre><p>#print working directory </p><pre><code>pwd</code></pre><p>#move </p><pre><code>mv</code></pre><p>#copy                     </p><pre><code>cp</code></pre><p>#remove</p><pre><code>rm</code></pre><p>其他  </p><pre><code>echo 打印echo &apos;hello&apos; 在命令行中打印一个 helloecho &apos;hello&apos; &gt; a.txt 创建一个纯文本文件a把hello打印进去cat a.txt 查看a中的内容cp a.txt b.txt 复制a 到bls 目录ls ..上一级目录mv b.txt ../b.txt 把b移动到上一级文件夹mv a.txt c.txt 重命名rm c.txt  删除c</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;GIt Bash 常用命令&lt;/p&gt;
+&lt;p&gt;#change director&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;#make director&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mkdir&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;#print working 
+      
+    
+    </summary>
+    
+      <category term="GIT" scheme="http://yoursite.com/categories/GIT/"/>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaSE基础（四）</title>

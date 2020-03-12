@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-11T15:54:22.219Z</updated>
+  <updated>2020-03-12T15:32:11.515Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaSE基础 （六）</title>
+    <link href="http://yoursite.com/2020/03/12/JavaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E5%85%AD%EF%BC%89/"/>
+    <id>http://yoursite.com/2020/03/12/JavaSE基础-（六）/</id>
+    <published>2020-03-12T14:13:09.000Z</published>
+    <updated>2020-03-12T15:32:11.515Z</updated>
+    
+    <content type="html"><![CDATA[<p>数组（容器）</p><pre><code>数组是一组数据类型相同的数据的组合，将这些数据统一管理起来数组本身是一个引用数据类型，但数组内可以存储基本数据类型，也可以存储引用数据类型</code></pre><p>1.数组的定义（声明）  </p><pre><code>数据类型[] 数组名字;    int[] a;    char[] b;    boolean[] c;    string[] m;</code></pre><p>2.数组的（赋值）初始化 </p><pre><code>静态初始化    有长度 有元素    int[] arry = {10,20,30,40,50,60};    int[] arry = new int[] {10,20,30,40,50,60};动态初始化    有长度   没有元素（默认值0）    int[] arry = new int[5] ;    整数默认值-----0    浮点数默认值---0.0    字符型默认值----0--char  97-a 65-A 48-&apos;0&apos;    布尔型默认值----false    引用数据类型默认值----null</code></pre><p>3.数组元素的访问 </p><pre><code>通过元素在数组中的位置来访问存值/取值位置-------&gt;index索引索引是有取值范围    [从0开始------到数组长度减1]如果数组的索引超过了上诉范围会出现了一个运行时的异常ArrayIndexOutOfBoundsException</code></pre><p>4 数组元素的遍历<br>                  通过循环的方式访问数组每一个元素<br>                  for（;;）{</p><pre><code>}JDK1.5版本之后 增加新特性 增强for循环 加强for forEachfor（自定义的变量（接收数组内每一个元素）：遍历的数组arry）{}1.正常的for循环 有三个必要的条件 找到一个元素的位置可以通过index直接访问数组的某一个位置 存值 取值都可以不好在于写法相对比较麻烦2.增强for 有两个条件 用来取值的变量 用来遍历的数组 没有index索引 写法相对容易只能取值 不能存值没有index索引  找不到元素是哪一个</code></pre><p>5.基本数据类型和引用数据类型在内存结构上的区别<br>              所有的变量空间都存储在栈内存<br>              变量空间可以存储基本数据类型  也可以引用数据类型<br>              如果变量空间存储的是一个基本数据类型  存储的是值 一个变量改变 另一个不会改变<br>              如果变量空间存储的是引用数据类型 存储的是引用（地址）一个变量地址改变 另一个跟着改变</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;数组（容器）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;数组是一组数据类型相同的数据的组合，将这些数据统一管理起来
+数组本身是一个引用数据类型，但数组内可以存储基本数据类型，也可以存储引用数据类型&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;1.数组的定义（声明）  &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>JavaSE基础 （五）</title>

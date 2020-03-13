@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="发展一个可用的算法的步骤：把问题模型化找到一个算法去解决它足够快？适合内存？如果不是，想想为什么寻找一个方法去解决这个问题重复直到一切都满意动态连接（Dynamic connectivity）我们假设“被连接”是一个相等的关系：自反：p被p连接对称：如果p被q连接，那么q也被p连接传递：如果p被q连接，q被r连接，那么p被r连接连接集合（Connected components）：每个对象被连接的">
+<meta name="description" content="多维数组 0.数组的特点 数组本身是一个引用类型 声明时必须指定长度  长度一旦确定就不能再次发生改变 1.定义/声明 里面存储的类型[] 数组名字; int[][]  arry; 2.初始化 静态---有长度 有元素   int[][] arry = {{1,2},{1}.{1.2.3}}; 动态---只有长度 没有元素（默认值）   int[][] arry = new int[3][2];">
 <meta property="og:type" content="article">
-<meta property="og:title" content="union-find">
-<meta property="og:url" content="http://yoursite.com/2019/08/11/union-find/index.html">
+<meta property="og:title" content="JavaSE基础  （七）">
+<meta property="og:url" content="http://yoursite.com/2020/03/13/avaSE基础-（七）/index.html">
 <meta property="og:site_name" content="一轮明月照九洲">
-<meta property="og:description" content="发展一个可用的算法的步骤：把问题模型化找到一个算法去解决它足够快？适合内存？如果不是，想想为什么寻找一个方法去解决这个问题重复直到一切都满意动态连接（Dynamic connectivity）我们假设“被连接”是一个相等的关系：自反：p被p连接对称：如果p被q连接，那么q也被p连接传递：如果p被q连接，q被r连接，那么p被r连接连接集合（Connected components）：每个对象被连接的">
+<meta property="og:description" content="多维数组 0.数组的特点 数组本身是一个引用类型 声明时必须指定长度  长度一旦确定就不能再次发生改变 1.定义/声明 里面存储的类型[] 数组名字; int[][]  arry; 2.初始化 静态---有长度 有元素   int[][] arry = {{1,2},{1}.{1.2.3}}; 动态---只有长度 没有元素（默认值）   int[][] arry = new int[3][2];">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-11T03:44:45.371Z">
+<meta property="og:updated_time" content="2020-03-13T14:36:43.119Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="union-find">
-<meta name="twitter:description" content="发展一个可用的算法的步骤：把问题模型化找到一个算法去解决它足够快？适合内存？如果不是，想想为什么寻找一个方法去解决这个问题重复直到一切都满意动态连接（Dynamic connectivity）我们假设“被连接”是一个相等的关系：自反：p被p连接对称：如果p被q连接，那么q也被p连接传递：如果p被q连接，q被r连接，那么p被r连接连接集合（Connected components）：每个对象被连接的">
+<meta name="twitter:title" content="JavaSE基础  （七）">
+<meta name="twitter:description" content="多维数组 0.数组的特点 数组本身是一个引用类型 声明时必须指定长度  长度一旦确定就不能再次发生改变 1.定义/声明 里面存储的类型[] 数组名字; int[][]  arry; 2.初始化 静态---有长度 有元素   int[][] arry = {{1,2},{1}.{1.2.3}}; 动态---只有长度 没有元素（默认值）   int[][] arry = new int[3][2];">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/11/union-find/">
+  <link rel="canonical" href="http://yoursite.com/2020/03/13/avaSE基础-（七）/">
 
 
 
 
 
-  <title>union-find | 一轮明月照九洲</title>
+  <title>JavaSE基础  （七） | 一轮明月照九洲</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/11/union-find/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/13/avaSE基础-（七）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="我与我周旋">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">union-find</h1>
+          <h1 class="post-title" itemprop="name headline">JavaSE基础  （七）</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-11T11:25:00+08:00">
-                2019-08-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-13T22:12:24+08:00">
+                2020-03-13
               </time>
             
 
@@ -294,6 +294,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -322,29 +344,38 @@
       
 
       
-        <p>发展一个可用的算法的步骤：<br>把问题模型化<br>找到一个算法去解决它<br>足够快？适合内存？<br>如果不是，想想为什么<br>寻找一个方法去解决这个问题<br>重复直到一切都满意<br>动态连接（Dynamic connectivity）<br>我们假设“被连接”是一个相等的关系：<br>自反：p被p连接<br>对称：如果p被q连接，那么q也被p连接<br>传递：如果p被q连接，q被r连接，那么p被r连接<br>连接集合（Connected components）：每个对象被连接的所以元素</p>
-<p>发现问题：检查两个对象是否都在同一个集合里面<br>连接命令：用连接替换两个对象集合</p>
-<p>联合查找数据类型（Union-find data type）API<br>目标 设计有效的数据结构为联合查找<br>定义一个 UF类<br>对数据初始化<br>给数据添加连接<br>判断数据是否在同一集合内<br>找到p所在的集合<br>确定集合的数量</p>
-<p>动态连接客户端（Dynamic-connectivity client）<br>从标准输入中读取n个对象<br>重复：</p>
-<ul>
-<li>从标准输入中读取整数对</li>
-<li>如果他们未被连接请将他们连接<br>代码<pre><code>public static void main（string[] args）
-{
- int N = StdIn.readInt();
- UF uf = new UF(N);
- while （！stdIn.isEmpty（））
- {
-   int p = stdIn.readInt();
-   int q = stdIn.readInt();
-   if (!uf.connected（p，q））
-   {
-     uf.union(p,q);
-     stdOut.prtinln(p+&quot; &quot;+q);
-   }
-  }
-}</code></pre></li>
-</ul>
-
+        <p>多维数组</p>
+<p>0.数组的特点</p>
+<pre><code>数组本身是一个引用类型
+声明时必须指定长度  长度一旦确定就不能再次发生改变</code></pre><p> 1.定义/声明</p>
+<pre><code>里面存储的类型[] 数组名字;
+int[][]  arry;</code></pre><p> 2.初始化</p>
+<pre><code>静态---有长度 有元素
+  int[][] arry = {{1,2},{1}.{1.2.3}};
+动态---只有长度 没有元素（默认值）
+  int[][] arry = new int[3][2];
+  arry -----&gt;{{x,x},{x,x},{x,x}}  x默认值是0</code></pre><p> 3.元素访问          </p>
+<pre><code>通过元素在数组中的位置----index
+array[i][j]
+i控制大数组中 小数组的位置
+j控制小数组中 元素的位置</code></pre><p> 4.遍历轮循          </p>
+<pre><code>正常for 增强for  嵌套完成</code></pre><p> 5.引用类型在内存中的结构</p>
+<pre><code>二维数组在内存中的存储，逻辑结构不是矩阵而是树
+int[][] arry = new int[3][2];
+//3表示有3个小数组int[]
+//2表示每一个小数组有两个元素
+//NullPointerException    空指针异常</code></pre><p>6.常见的运行时异常</p>
+<pre><code>1.InputMisMatchException   输入类型不匹配 
+     input.nextInt();      如：输入一个a
+2.ArrayIndexOutOfBoundsException  数组索引越界
+  静态初始化 int array[]={10,20};
+             array[2]  //索引超过边界
+3.NegativeArraySizeException  数组长度不合法（长度出现负数）
+  动态初始化 int[] array = new int [-2]
+4.NullPointerException    空指针异常 
+   引用为null 还拿来使用就不行啦
+   int[] arry = null;
+   arry[0] = 10 ;//空元素再来用</code></pre>
       
     </div>
     
@@ -368,8 +399,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/09/“test-post/" rel="next" title="Algorithms, Part I | Coursera by Princeton University">
-                <i class="fa fa-chevron-left"></i> Algorithms, Part I | Coursera by Princeton University
+              <a href="/2020/03/12/JavaSE基础-（六）/" rel="next" title="JavaSE基础 （六）">
+                <i class="fa fa-chevron-left"></i> JavaSE基础 （六）
               </a>
             
           </div>
@@ -377,10 +408,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/02/01/PTA基础题算法-心得/" rel="prev" title="PTA基础题算法&&心得（7-1---7-12）">
-                PTA基础题算法&&心得（7-1---7-12） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

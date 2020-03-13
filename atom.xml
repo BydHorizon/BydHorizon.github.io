@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-12T15:39:07.081Z</updated>
+  <updated>2020-03-13T14:36:43.119Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaSE基础  （七）</title>
+    <link href="http://yoursite.com/2020/03/13/avaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E4%B8%83%EF%BC%89/"/>
+    <id>http://yoursite.com/2020/03/13/avaSE基础-（七）/</id>
+    <published>2020-03-13T14:12:24.000Z</published>
+    <updated>2020-03-13T14:36:43.119Z</updated>
+    
+    <content type="html"><![CDATA[<p>多维数组</p><p>0.数组的特点</p><pre><code>数组本身是一个引用类型声明时必须指定长度  长度一旦确定就不能再次发生改变</code></pre><p> 1.定义/声明</p><pre><code>里面存储的类型[] 数组名字;int[][]  arry;</code></pre><p> 2.初始化</p><pre><code>静态---有长度 有元素  int[][] arry = {{1,2},{1}.{1.2.3}};动态---只有长度 没有元素（默认值）  int[][] arry = new int[3][2];  arry -----&gt;{{x,x},{x,x},{x,x}}  x默认值是0</code></pre><p> 3.元素访问          </p><pre><code>通过元素在数组中的位置----indexarray[i][j]i控制大数组中 小数组的位置j控制小数组中 元素的位置</code></pre><p> 4.遍历轮循          </p><pre><code>正常for 增强for  嵌套完成</code></pre><p> 5.引用类型在内存中的结构</p><pre><code>二维数组在内存中的存储，逻辑结构不是矩阵而是树int[][] arry = new int[3][2];//3表示有3个小数组int[]//2表示每一个小数组有两个元素//NullPointerException    空指针异常</code></pre><p>6.常见的运行时异常</p><pre><code>1.InputMisMatchException   输入类型不匹配      input.nextInt();      如：输入一个a2.ArrayIndexOutOfBoundsException  数组索引越界  静态初始化 int array[]={10,20};             array[2]  //索引超过边界3.NegativeArraySizeException  数组长度不合法（长度出现负数）  动态初始化 int[] array = new int [-2]4.NullPointerException    空指针异常    引用为null 还拿来使用就不行啦   int[] arry = null;   arry[0] = 10 ;//空元素再来用</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;多维数组&lt;/p&gt;
+&lt;p&gt;0.数组的特点&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;数组本身是一个引用类型
+声明时必须指定长度  长度一旦确定就不能再次发生改变&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 1.定义/声明&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;里面存储的类型[] 数组名字;
+int[][] 
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>JavaSE基础 （六）</title>

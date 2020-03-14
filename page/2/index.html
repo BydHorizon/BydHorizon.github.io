@@ -252,6 +252,147 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/11/union-find/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/11/union-find/" itemprop="url">union-find</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-11T11:25:00+08:00">
+                2019-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>发展一个可用的算法的步骤：<br>把问题模型化<br>找到一个算法去解决它<br>足够快？适合内存？<br>如果不是，想想为什么<br>寻找一个方法去解决这个问题<br>重复直到一切都满意<br>动态连接（Dynamic connectivity）<br>我们假设“被连接”是一个相等的关系：<br>自反：p被p连接<br>对称：如果p被q连接，那么q也被p连接<br>传递：如果p被q连接，q被r连接，那么p被r连接<br>连接集合（Connected components）：每个对象被连接的所以元素</p>
+<p>发现问题：检查两个对象是否都在同一个集合里面<br>连接命令：用连接替换两个对象集合</p>
+<p>联合查找数据类型（Union-find data type）API<br>目标 设计有效的数据结构为联合查找<br>定义一个 UF类<br>对数据初始化<br>给数据添加连接<br>判断数据是否在同一集合内<br>找到p所在的集合<br>确定集合的数量</p>
+<p>动态连接客户端（Dynamic-connectivity client）<br>从标准输入中读取n个对象<br>重复：</p>
+<ul>
+<li>从标准输入中读取整数对</li>
+<li>如果他们未被连接请将他们连接<br>代码<pre><code>public static void main（string[] args）
+{
+ int N = StdIn.readInt();
+ UF uf = new UF(N);
+ while （！stdIn.isEmpty（））
+ {
+   int p = stdIn.readInt();
+   int q = stdIn.readInt();
+   if (!uf.connected（p，q））
+   {
+     uf.union(p,q);
+     stdOut.prtinln(p+&quot; &quot;+q);
+   }
+  }
+}</code></pre></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/09/“test-post/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -544,7 +685,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -662,7 +803,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4k字</span>
+  <span class="post-count">博客全站共4.3k字</span>
 </div>
         
 

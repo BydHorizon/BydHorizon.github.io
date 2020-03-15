@@ -252,6 +252,208 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/15/JavaSE基础-（九）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/15/JavaSE基础-（九）/" itemprop="url">JavaSE基础 （九）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-15T22:04:33+08:00">
+                2020-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="面向对象的编程思想"><a href="#面向对象的编程思想" class="headerlink" title="面向对象的编程思想"></a>面向对象的编程思想</h3><p>类——–抽象的  属性（特征）和方法（行为）</p>
+<p>对象—–具体的</p>
+<p>1.描述一个类</p>
+<pre><code>属性
+权限修饰符  {特征修饰符}  数据类型  属性名字  {=值}
+方法
+权限修饰符  {特征修饰符}  返回值类型 方法名字（参数列表）  {抛出异常} {{方法体}}；</code></pre><p>2.创建一个对象          </p>
+<pre><code>new  
+对象     调用属性   存值/取值
+对象.方法  调用方法   执行一次  （存储 执行）</code></pre><p>3.类的加载</p>
+<pre><code>对象的创建
+属性及方法的存储
+方法的执行
+方法执行的过程中  参数返回值的传递{基本数据类型  引用数据类型的区别}</code></pre><p>4.方法的重载 overloard</p>
+<pre><code>1.概念：一个类中的一个一组方法  相同的方法名字 不同的参数列表  构成了方法的重载
+参数的不同体现在  参数的个数 参数的类型 参数的顺序 三个方面
+2.作用为了便于记忆和调用 使得方法调用的时候更加的灵活
+3.自己也可以设计方法的重载
+  调用的时候 先通过方法的名字来定位
+  名字一致 通过参数列表的数据类型来定位
+  方法返回值  修饰符 ---- 与方法重载无关
+4.JDK1.5之后的  新写法 动态参数列表 ... 
+  参数类型固定  参数的个数可以动态  0-n
+  使用起来类似于数组的使用 length index
+  int...x    int[][] x
+  动态参数列表的方法   对应匹配的数组类型的方法不能构成重载（本质上是一样的）
+  动态参数列表在方法的参数中只能存一份  且放置在参数的末尾 </code></pre><p>5.构造方法 —–做事情</p>
+<pre><code>1.作用：只有一个  构建（构造）当前类的对象
+2.写法：   权限修饰符  与类名一致的方法名 （参数列表）{抛出异常}{方法体}
+3.用法  通过new关键字调用
+4.特点：
+      （1）每个类都有构造方法：若自己的类中没有定义系统会默认提供一个无参的构造方法，若在类中定义了构造方法，则默认无参的狗造方法被覆盖
+      （2）构造方法存值方法重载
+5.每个类都提供一个构造方法  在创建对象的时候想做一些事情可以用构造方法</code></pre><p>6.程序块  （代码块） </p>
+<pre><code>1.作用：跟普通方法一样 做事情的
+2.写法：可以认为程序块是一个 没有修饰符 没有参数 没有返回值 没有名字的特殊方法{
+}
+3.用法：块需要调用才执行 我们自己调用不到（没有名字）
+每次我们调用构造方法之前系统就会调用一次程序块（让他执行一遍）
+4.特点：没有什么重载的概念 但可以在类中定义多个程序块
+5.可以在里面写一些程序 我想要在创建对象之前执行</code></pre><p>7.this关键字的使用</p>
+<pre><code>1.是一个关键字  代替某一个对象 （当前调用属性或方法时的那个对象）
+2.this 既然指代一个对象
+  this 可以调用 属性 方法
+  this 可以调用构造方法  通过this();省略了构造方法的名字（必须与类名一致） 必须放在程序第一行
+  一般方法不能调用构造方法</code></pre><p>8.Scanner类</p>
+<pre><code>              1.导包               java.util
+              2.创建对象         Scanner input = new Scanner(System.in);
+              3.做事情          int value = input.nextInt（）;
+                                String value = input.nextLine();
+            -------------------------------------------------------------------------- 
+            nextInt（nextFloat nextByte）next nextLine
+1.读取方式上  大家都以回车符作为结束符号
+          除了nextLine以外其余方法都不读取回车符
+2.读取的返回结果来讲    nextInt---&gt;int   nextFloat----float  nextLine---String  next--string
+            next 方法看到回车或空格都认为结束 
+              输入  abc def  g
+              输出  abc
+             nextLine 只认回车是结束符
+              输入 abc def g
+              输出 abc def g</code></pre><p>8.利用包装类做string与基本类型的转化问题</p>
+<pre><code>int value = Interger.parseInt(&quot;&quot;);</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/14/JavaSE基础-（八）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1778,163 +1980,6 @@ java test  运行一个test文件
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/01/PTA基础题算法-心得/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/01/PTA基础题算法-心得/" itemprop="url">PTA基础题算法&&心得（7-1---7-12）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-01T16:44:00+08:00">
-                2020-02-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PTA/" itemprop="url" rel="index">
-                    <span itemprop="name">PTA</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>#整型变量存储规则</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int foot=height/30.48;</span><br><span class="line">int inch=(height/30.48-foot)*12;</span><br></pre></td></tr></table></figure>
-
-<p>对于C而言  整数除浮点数结果是浮点数 但存储在整型变量中会自动将浮点型化为整型，<br>          而其本质还是浮点数。</p>
-<p>#求和  1/1+……..1/n  or  1/1-1/2+1/3……+1/n</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">int main()&#123;</span><br><span class="line">int n;</span><br><span class="line">int i;</span><br><span class="line">double sum=0.0;</span><br><span class="line">int sign=1; </span><br><span class="line">scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">for(i=1;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line"> sum+=sign*1.0/i;</span><br><span class="line"> sign=-sign;</span><br><span class="line">&#125; </span><br><span class="line">printf(&quot;f(%d)=%f\n&quot;,n,sum);</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>定义变量sum 不给初值直接使用的话 sum的值是随机的；<br>f（%d）=f（%f），n，sum 解决第n 项求和表示；<br>一正一负的交替相加用sign=-sign，sign的初值为-1，乘以原式,也可将sign 设为double型 初值为1.0可替代循环体，sum+=sign/i；</p>
-<p>#整数分解</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()&#123;</span><br><span class="line"> int x;</span><br><span class="line"> scanf(&quot;%d&quot;,&amp;x);</span><br><span class="line"> int t;</span><br><span class="line"> int mask=1;</span><br><span class="line"> t=x;</span><br><span class="line"> while(t&gt;9)&#123;</span><br><span class="line">      t/=10;</span><br><span class="line">      mask=mask*10;</span><br><span class="line"> &#125;</span><br><span class="line"> printf(&quot;%d\n&quot;,mask);</span><br><span class="line"> do&#123;</span><br><span class="line">  int d=x/mask;</span><br><span class="line">  printf(&quot;%d&quot;,d); </span><br><span class="line">  if(mask&gt;9)&#123;</span><br><span class="line">   printf(&quot; &quot;);</span><br><span class="line">  &#125;</span><br><span class="line">  x%=mask;</span><br><span class="line">  mask/=10;</span><br><span class="line"> &#125;</span><br><span class="line"> while(mask&gt;0);</span><br><span class="line"> printf(&quot;\n&quot;);</span><br><span class="line"> return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>mask的值用x的位数确定，因为不能直接消耗x，用辅助变量t存储x，mask循环要少一次10的n-1次方，用t每除10然后，mask*10，直到t大于9；<br>x整除mask确定第一位，然后x再对mask取余求剩下位数，mask在/10；<br>中间空格用mask判断mask&gt;9,每循环一次输出一个空格；</p>
-<p>#最大公约数 辗转相除法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()&#123;</span><br><span class="line"> int a,b;</span><br><span class="line"> int t;</span><br><span class="line"> scanf(&quot;%d %d&quot;,&amp;a,&amp;b);</span><br><span class="line"> while(b!=0)</span><br><span class="line"> &#123;</span><br><span class="line">  t=a%b;</span><br><span class="line">  a=b;</span><br><span class="line">  b=t;</span><br><span class="line"> &#125;</span><br><span class="line"> printf(&quot;gcd=%d&quot;,a);</span><br><span class="line"> return 0;</span><br><span class="line">&#125; </span><br><span class="line">辗转相除法：如果b=0，a就是最大公约数；</span><br><span class="line">否则，计算a除以b的余数，让b=a，b=a的余数；</span><br><span class="line">回到第一步；</span><br><span class="line">#求符合条件的整数集</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()&#123;</span><br><span class="line">int a;</span><br><span class="line">scanf(&quot;%d&quot;,&amp;a);</span><br><span class="line">int i,j,k;</span><br><span class="line">int ctn=0;</span><br><span class="line">for(i=a;i&lt;=a+3;i++)&#123;</span><br><span class="line">   for(j=a ;j&lt;=a+3;j++)</span><br><span class="line">        &#123;</span><br><span class="line">         for(k=a;k&lt;=a+3;k++)</span><br><span class="line">         if(i!=j &amp;&amp; i!=k &amp;&amp;j!=k)&#123;</span><br><span class="line">          ctn++;</span><br><span class="line">   printf(&quot;%d%d%d&quot;,i,j,k); </span><br><span class="line">   if(ctn==6)&#123;</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">    ctn=0;</span><br><span class="line">   &#125;</span><br><span class="line">   else printf(&quot; &quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;&#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>格式控制：用计数器ctn 记录不重复的数，每6个数换行用if（ctn==6）输出换行然后ctn归零，以此循环，用else 输出中间的空格；</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1987,7 +2032,7 @@ java test  运行一个test文件
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2105,7 +2150,7 @@ java test  运行一个test文件
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.3k字</span>
+  <span class="post-count">博客全站共5.4k字</span>
 </div>
         
 

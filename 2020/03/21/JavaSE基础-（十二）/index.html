@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="桓公少与殷侯齐名，常有竞心。桓问殷：“卿何如我？”殷云：“我与我周旋久，宁作我！”                                                                ——《世说新语·品藻》">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于我">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="权限修饰符 public       公共的        本类      同包    子类  当前类的任何位置只要有对象都可以使用 protected    保护的        本类      同包    子类 （通过子类对象在子类内部访问） 默认不写     默认的        本类     同包 private      私有的  1.能修饰什么  2.范围如何 权限修饰符可以用来修饰">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaSE基础 （十二）">
+<meta property="og:url" content="http://yoursite.com/2020/03/21/JavaSE基础-（十二）/index.html">
 <meta property="og:site_name" content="一轮明月照九洲">
-<meta property="og:description" content="桓公少与殷侯齐名，常有竞心。桓问殷：“卿何如我？”殷云：“我与我周旋久，宁作我！”                                                                ——《世说新语·品藻》">
+<meta property="og:description" content="权限修饰符 public       公共的        本类      同包    子类  当前类的任何位置只要有对象都可以使用 protected    保护的        本类      同包    子类 （通过子类对象在子类内部访问） 默认不写     默认的        本类     同包 private      私有的  1.能修饰什么  2.范围如何 权限修饰符可以用来修饰">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-20T07:02:27.084Z">
+<meta property="og:updated_time" content="2020-03-21T14:42:38.934Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于我">
-<meta name="twitter:description" content="桓公少与殷侯齐名，常有竞心。桓问殷：“卿何如我？”殷云：“我与我周旋久，宁作我！”                                                                ——《世说新语·品藻》">
+<meta name="twitter:title" content="JavaSE基础 （十二）">
+<meta name="twitter:description" content="权限修饰符 public       公共的        本类      同包    子类  当前类的任何位置只要有对象都可以使用 protected    保护的        本类      同包    子类 （通过子类对象在子类内部访问） 默认不写     默认的        本类     同包 private      私有的  1.能修饰什么  2.范围如何 权限修饰符可以用来修饰">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/about/">
+  <link rel="canonical" href="http://yoursite.com/2020/03/21/JavaSE基础-（十二）/">
 
 
 
 
 
-  <title>关于我 | 一轮明月照九洲</title>
+  <title>JavaSE基础 （十二） | 一轮明月照九洲</title>
   
 
 
@@ -243,34 +243,190 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/21/JavaSE基础-（十二）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">关于我</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <pre><code>桓公少与殷侯齐名，常有竞心。桓问殷：“卿何如我？”殷云：“我与我周旋久，宁作我！”
-                                                               ——《世说新语·品藻》</code></pre>
+          <h1 class="post-title" itemprop="name headline">JavaSE基础 （十二）</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-21T22:07:10+08:00">
+                2020-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>权限修饰符</p>
+<pre><code>public       公共的        本类      同包    子类  当前类的任何位置只要有对象都可以使用
+protected    保护的        本类      同包    子类 （通过子类对象在子类内部访问）
+默认不写     默认的        本类     同包
+private      私有的
+
+1.能修饰什么  2.范围如何
+权限修饰符可以用来修饰   类本身   和类中的成员（除程序块）
+权限修饰符用来修饰类的时候只有两个可以用 （public 默认不写）
+权限修饰符可以用来修饰类中的其他成员</code></pre><p>Java类和类直接的关系</p>
+<pre><code>继承  关联 多态（抽象）</code></pre><p>封装：将一些数据或执行过程  进行一个包装<br><br>目的：保护这些数据或执行过程的安全隐藏细节，增加复用性<br><br>对属性本身的封装：<br><br>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     属性私有：（封装在类中）<br><br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 提供操作属性的公有方法<br>  <br><br>特征修饰符<br></p>
+<pre><code>1.可以修饰什么
+2.修饰后什么特点</code></pre><p>  final    </p>
+<pre><code>最终的   不可更改的
+  修饰变量  
+         如果在定义时没有赋初始值
+         给变量一次存值的机会（因为变量在栈内存空间内 没有默认值 如果不给机会 就都没法用了
+         一旦变量存储了一个值若用final修饰后则不让改变----相当于常量
+         注意变量类型是基本类型还是引用类型
+         如果修饰的是基本数据类型 则变量内的值不让更改 常量
+         如果修饰的是引用数据类型 则变量内的地址不让更改对象唯一
+  修饰属性
+         全局变量 存储在堆内存的对象空间有一个空间
+         属性如果没有赋值  有默认值存在
+         属性用final修饰后 必须给属性赋初值 否则编译报错
+         特点与修饰变量一致
+         注意变量类型是基本类型还是引用类型
+         如果修饰的变量是基本数据类型 则变量内的值不让更改 ---常量
+         如果修饰的变量是引用数据类型 则变量内地址引用不让更改---对象唯一
+ 修饰方法
+         方法是最终的方法 不可更改
+         子类继承父类的方法 可将父类的方法重写（覆盖）
+         final修饰的方法 要求不可以被子类重写（覆盖）
+ 修饰类本身
+         类是最终的  不可更改
+         此类不可被其他字类继承
+         通常都是一些定义好的工具类
+         Math Scanner Intneger String</code></pre><p> static静态的</p>
+<pre><code>1.可以修饰：修饰属性 修饰方法 *修饰块 修饰类（内部类）
+2.特点：
+     1.静态元素在类加载时就初始化了，创建的非常早，此时没有创建对象
+     2.静态元素存储在静态元素区中，每一个类都有一个自己的区域，与别的类不冲突
+     3.静态元素只加载一次（只有一份），全部类对象及类本身共享
+     4.由于静态元素区加载时候，可能没有创建对象，可以通过类的名字直接访问
+     5.静态元素区Garbage Collection 无法管理，可以粗暴认为常驻内存
+     6.可以理解静态元素不属于任何一个对象，是属于类的
+     7.非静态成员（堆内存对象里）中可以访问静态成员（静态区）
+     8.静态成员中可以访问静态成员（静态区）
+     9.静态成员不可以访问非静态成员
+     10.静态元素不可以出现this或super（静态元素属于类）</code></pre>
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/20/JavaSE基础-（十一）/" rel="next" title="JavaSE基础 （十一）">
+                <i class="fa fa-chevron-left"></i> JavaSE基础 （十一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/21/JavaSE基础-（十三）/" rel="prev" title="JavaSE基础 （十三）">
+                JavaSE基础 （十三） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 

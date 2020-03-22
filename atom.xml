@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-21T16:01:12.177Z</updated>
+  <updated>2020-03-22T15:58:56.288Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,103 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaSE基础 （十九）</title>
+    <link href="http://yoursite.com/2020/03/22/JavaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E5%8D%81%E4%B9%9D%EF%BC%89/"/>
+    <id>http://yoursite.com/2020/03/22/JavaSE基础-（十九）/</id>
+    <published>2020-03-22T15:29:06.000Z</published>
+    <updated>2020-03-22T15:58:56.288Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h3><pre><code>1.类所在的包2.类的关系 自己默认继承 实现3，类中提供常用方法4.是否可以创建对象 调用 方法本身是静态的包装类（封装类） 1.5版本之后自动拆包byte----Byte   short----Short   int------Integer  long-----Longfloat-----Float  double-----Double char-----Character boolean----Boolean1.八个包装类都在同一个包下  java.lang包  不需要import导包自己使用2.八个包装类有六个都是与数字有关  都默认继承父类Number3.八个包装类都实现了Serializable，Comparable4.八个包装类都带有自己对应类型参数的构造方法 八个包装类中有7个（除了Character）有构造方法重载 带String类型5.创建对象  对象调用方法     有六个与数字相关的类都继承Number   xxValue();将一个包装类类型转化为对应的基本类型（拆包）Interger i1 = new Interger（10）//引用数据类型 包装类 int value = i1.intValue(); int value  = Inter.parseInt(&quot;123&quot;)  Float.parseFloat(&quot;123.45&quot;) int value  = new Integer(&quot;123&quot;);</code></pre><h3 id="经常在笔试中出现的问题"><a href="#经常在笔试中出现的问题" class="headerlink" title="经常在笔试中出现的问题"></a>经常在笔试中出现的问题</h3><pre><code>       integer i1 = 10;       integer i2 = 10;       integer i3 = new Integer(10);       integer i4 = new Integer(10);       System.out.println(i1==i2);//true       System.out.println(i1==i3);//false       System.out,println(i3==i4);//false       System.out.pritnln(i1.equals(i2));//true       System.out.pritnln(i1.equals(i3));//true       System.out.pritnln(i1.equals(i4));//true 1.==与equals()的区别  ==可以比较基本数据类型 也可以比较引用数据类型（变量中存储的内容）  如果比较基本类型比较的是变量中存储的值  如果比较的是引用类型比较的是变量中存储地址的引用  equals()是Object类中继承过来的方法==一致 如果想要改变比较规则 可以重写equals方法  由于integer类就重写了equals()所以Integer比较的是数值2.考察Integer类加载的时候有一个静态空间  空间内立即加载Integer类型的数组 内存储256个Integer对象 -128-127  如果我们用的对象范围在这之内 integer i1 = 10;直接取静态元素区中找对应的对象  如果我们用的对象范围超出了Integer i1 = 1000; 会帮我们创建一个新的Integer对象</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;包装类&quot;&gt;&lt;a href=&quot;#包装类&quot; class=&quot;headerlink&quot; title=&quot;包装类&quot;&gt;&lt;/a&gt;包装类&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;1.类所在的包
+2.类的关系 自己默认继承 实现
+3，类中提供常用方法
+4.是否可以创建对象 调用 方法本身是静态的
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaSE基础 （十八）</title>
+    <link href="http://yoursite.com/2020/03/22/JavaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E5%8D%81%E5%85%AB%EF%BC%89-1/"/>
+    <id>http://yoursite.com/2020/03/22/JavaSE基础-（十八）-1/</id>
+    <published>2020-03-22T15:28:17.000Z</published>
+    <updated>2020-03-22T15:58:30.992Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h3><p>1.成员内部类</p><pre><code>将一个类直接定义在类的里面，作为成员，与属性或方法层次一次成员内部类可以与正常类一样 使用不同的修饰符去修饰好处1.省略了一个.java文件 好处2.成员内部类可以访问外部类的所有成员 包括私有的若想要在内部类中通过对象.调用外部类成员  外部类.this.外部类成员内部类存在后 源代码进行编译 产生一个字节码 Demo$InnerDemo.class</code></pre><p>2.局部内部类</p><pre><code>将一个类定义在方法/块里面,作为成员的内部结构，与临时的局部变量一个层次局部内部类像是一个局部变量一样，不能用public protected privtae及staic只能用abstract或final局部内部类命名规则Demo$InnerTestMethod局部内部类使用的变量只能用final修饰</code></pre><p>3.匿名内部类<br><br>        成员匿名内部类<br><br>        局部匿名内部类</p><pre><code>public interface Test{          public void test();} Test t = new Test{          public void test(){          }} ;通常接口或抽象类的具体子类这样写开发中为了省略一个类文件 上诉写法比较常见匿名内部类很特殊 只有类体 没有类的所有结构（修饰符 名字 继承 实现）      不能用任何修饰符来修饰 匿名内部类也没有任何构造方法</code></pre><p>4.静态内部类</p><pre><code>成员静态内部类不需要外部类对象，通过正常的方式直接创建内部类静态元素不能访问非静态成员（自己类和外部类）</code></pre><h2 id="枚举类enum"><a href="#枚举类enum" class="headerlink" title="枚举类enum"></a>枚举类enum</h2><h4 id="一个类中的对象-认为个数有限且固定的，可以将每一个对象一一列举出来"><a href="#一个类中的对象-认为个数有限且固定的，可以将每一个对象一一列举出来" class="headerlink" title="一个类中的对象 认为个数有限且固定的，可以将每一个对象一一列举出来"></a>一个类中的对象 认为个数有限且固定的，可以将每一个对象一一列举出来</h4><pre><code> 1.试一试若没有枚举类型的时候如何动手设计（静态常量 单例模式）Day（类 当做描述星期七个对象）      private 构造方法      public static final 属性 = new      //构造方法私有        private Day(){}      //所有对象都是属性      public static final Day monday = new Day(); 2.JDK1.5版本后可以直接定义enmu类型      我们自己定义的enmu类型直接默认继承enmu（java.lang包）      我们自己定义的enmu类型不能再写extrends但是可以实现      Enum类型             有两个属性             name-------&gt;枚举对象的名字   name()获取name的属性             ordinal------&gt;枚举对象在罗列中的顺序  类似index 也从0开始 ordinal获取序列号             常用的方法             valueof()  通过给定的name获取对应的枚举对象             values()   获取全部的枚举对象----&gt;返回一个数组 Day[]             compaerTo() 可以比较两个枚举对象 int             toString()  由于这个方法没有final修饰 可以覆盖（重写）3.我们也可以在enum中描述自己的一些属性或方法      必须在enum类中第一行 描述一下枚举的样子 最后需要分号结束;      可以定义自己的属性      类创建过程中 帮我们创建枚举类型的对象      需要给枚举型提供对应样子的构造方法 方法只能private修饰 可以重载</code></pre><h3 id="内存机制问题"><a href="#内存机制问题" class="headerlink" title="内存机制问题"></a>内存机制问题</h3><pre><code>栈内存-----&gt;Person p = new Person();-----&gt;堆内存   方法区----类模板栈内存-----&gt;创建开始  用完立即回收   StackoverflowError方法区-----&gt;类 常量 静态 只有一份回收不了堆内存-----&gt;new创建的对象 Garbage Collection 垃圾回收器Runtime类之中提供了几个管理内存的方法        maxMemory        totalMemory        freeMemory        堆内存溢出错误OutOfMemoryErrorObject类中有一个finalize方法 如果重写也能看见对象回收GC系统提供的一个线程  回收算法</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;内部类&quot;&gt;&lt;a href=&quot;#内部类&quot; class=&quot;headerlink&quot; title=&quot;内部类&quot;&gt;&lt;/a&gt;内部类&lt;/h3&gt;&lt;p&gt;1.成员内部类&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;将一个类直接定义在类的里面，作为成员，与属性或方法层次一次
+成员内部类可以与正常类一样
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaSE基础 （十七）</title>
+    <link href="http://yoursite.com/2020/03/22/JavaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E5%8D%81%E4%B8%83%EF%BC%89/"/>
+    <id>http://yoursite.com/2020/03/22/JavaSE基础-（十七）/</id>
+    <published>2020-03-22T13:57:03.000Z</published>
+    <updated>2020-03-22T15:58:10.644Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h2 id="策略者模式-Strategy-nbsp-———-行为型模式"><a href="#策略者模式-Strategy-nbsp-———-行为型模式" class="headerlink" title="策略者模式 Strategy &nbsp; ——— 行为型模式"></a>策略者模式 Strategy &nbsp; ——— 行为型模式</h2><h4 id="用来解决-执行流程固定-执行结果由于提供不同策略而不同"><a href="#用来解决-执行流程固定-执行结果由于提供不同策略而不同" class="headerlink" title="用来解决  执行流程固定 执行结果由于提供不同策略而不同"></a>用来解决  执行流程固定 执行结果由于提供不同策略而不同</h4><pre><code>              银行类                  profession（人）{  人----抽象类 接口（不能产生对象） 传递一个子类对象                  欢迎用户进来                  叫号                  办理                  离开                  欢迎您下次再来                  }             长者   年轻人  vip            //按普通设计  可能有问题              1.三个不同的人类方法名不一致（可以）              2.银行办理业务的方法写了3个            //解决上诉所述问题可以在三个人之上创建一个父类              1.解决桑个人类中相同代码 比如name属性 比如get方法之类              2.父类定义的三个方法可以是抽象类 解决了子类命名不一致问题 子类执行也不一致              3.父类可以作为参数传入银行  //主函数     public static void main (String[] args){          Bank bank = new bank ();          Person p = new Oldman(长者); //父类作为参数          bank profession（p）;//银行欢迎长者来办理业务 调的是子类对象       }   //银行三个方法写成一个       public class Bank{       //开门  等待用户进来办理业务       public void profession（Person person）{       System.out，println（person.getName()+&quot;客户进入银行啦&quot;）       person.callNumber();       person.transact();       person.leave();       }//抽象类        public abstract class Person{       protected String name;       public String getName(){        return this.name;        }        //1.进银行叫号        public abstract void callNumaber();        //2.去窗口办理        public abstract void transact();        //3.办理完毕离开啦        public abstract void leave();       }</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;设计模式&quot;&gt;&lt;a href=&quot;#设计模式&quot; class=&quot;headerlink&quot; title=&quot;设计模式&quot;&gt;&lt;/a&gt;设计模式&lt;/h1&gt;&lt;h2 id=&quot;策略者模式-Strategy-nbsp-———-行为型模式&quot;&gt;&lt;a href=&quot;#策略者模式-Strategy-n
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaSE基础  （十六）</title>
+    <link href="http://yoursite.com/2020/03/22/JavaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E5%8D%81%E5%85%AD%EF%BC%89/"/>
+    <id>http://yoursite.com/2020/03/22/JavaSE基础-（十六）/</id>
+    <published>2020-03-22T13:14:51.000Z</published>
+    <updated>2020-03-22T15:57:57.808Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式<br></h1><h2 id="适配器模式-Adapter"><a href="#适配器模式-Adapter" class="headerlink" title="适配器模式 Adapter"></a>适配器模式 Adapter</h2><pre><code>定义一个规则-------&gt;和尚 吃斋 念经 打坐 撞钟 习武适配器鲁智深 鲁达 形态丑陋 面貌凶顽 方丈说 此人上应天星 心地刚直 虽时下凶顽 命中驳杂 久后却得清净 证果非凡 汝等不及他public abstract class AbstractBox implements Box{          public booolean add(element);          public void add(int index,int element){//具体化          }          public void addAll(){//具体化          }          public int get（index）;          public int remove（index）;          public int size();          }</code></pre><h2 id="Java面向对象的四大特性"><a href="#Java面向对象的四大特性" class="headerlink" title="Java面向对象的四大特性"></a>Java面向对象的四大特性</h2><pre><code>&lt;br&gt;    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;继承 封装 多态 （抽象）&lt;br&gt;多态&lt;br&gt;同一个对象 体现出来的多种不同形态（身份）将一种行为表现出不同效果要想实现多态的效果 需要先有继承关系&lt;BR&gt;</code></pre><h3 id="体现"><a href="#体现" class="headerlink" title="体现"></a>体现<br></h3><pre><code>              1.父类类型的引用  指向  子类的对象                   Person p = new Teachher();              2.该引用只能调用父类定义的属性和方法              3.如果子类中将父类的方法重写,那么调取方法后执行的结果是子类重写之后的那个结果              如果父类与子类有同名的属性           执行父类的属性              如果父类与子类有同名的方法（重载）      执行子类重写之后的方法              4.若想要调用子类中独有的成员              （强制类型转换）造型 铸型 （向上/向下转型）//把父类引用向下转型              5.造型时（强制向下转型时）可能会出现一个运行时异常              ClassCastException   造型 铸型 异常              如果想要避免造型异常可以用instanceof关键字来进行判断// O instanceof Student 对象是否属于后面类型                                      Object                          hashCode equals toString getClass......                          Animal                     name属性 eat sleep               Person                                      Pig           name属性 重eat 重sleep 独talk             name属性  重sleep          Teacher                     Student                  name属性 重eat 独有teach       name属性 重talk 独study            Object o = new Teacher();//向上转型            o.hashCode() o.toString();            Animal a = (Animal)o;//向下转型            a.hashCode() a.toString a.name a.eat() a.sleep()            Person p = (Person)o;            p.hashCode();p.name p.eat p.sleep p.talk</code></pre><h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><pre><code>1.InputMismatchException  输入不匹配2.NumberFormateException  数字格式化异常3.ArrayIndexOutBoundsException  数组索引越界4.NegativeArraySizeException  数组长度负数5.NullPointerException   空指针异常6.AirthmeticException    算数异常7.ClassCastException     造型异常</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;设计模式&quot;&gt;&lt;a href=&quot;#设计模式&quot; class=&quot;headerlink&quot; title=&quot;设计模式&quot;&gt;&lt;/a&gt;设计模式&lt;br&gt;&lt;/h1&gt;&lt;h2 id=&quot;适配器模式-Adapter&quot;&gt;&lt;a href=&quot;#适配器模式-Adapter&quot; class=&quot;header
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>JavaSE基础  （十五）</title>
@@ -447,105 +544,6 @@ int[][]
     </summary>
     
       <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaSE基础（二）</title>
-    <link href="http://yoursite.com/2020/03/08/JavaSE%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
-    <id>http://yoursite.com/2020/03/08/JavaSE基础（二）/</id>
-    <published>2020-03-08T15:32:23.000Z</published>
-    <updated>2020-03-10T11:06:31.608Z</updated>
-    
-    <content type="html"><![CDATA[<p>数据类型</p><p> 基本数据类型 （8个）</p><pre><code>整型 byte short int long浮点型 float double字符型 char布尔型 blooean</code></pre><p> 引用数据类型</p><pre><code>数组  []array类    class（抽象类 abstract class）接口  interface  枚举  enum注解  @interface</code></pre><p>   byte 字节型                                                            </p><pre><code>1 byte = 8 bit   00000000   256种组合用第一个bit的位置记录符号 0表示正数 1表示负数数值的范围2的-7次方到二的7次方减1-128~127</code></pre><p>   以上其他整数类型依次乘2</p><pre><code>short  2字节  16bitint    4字节  32bitlong   8字节  64bit</code></pre><p>  浮点型</p><pre><code>float  4字节  32bitdouble 8字节  64bit</code></pre><p>  字符型</p><pre><code>&apos;a&apos; &apos;+&apos; &apos;我&apos; ‘5’英文符号和数字是1字节   采用ASCII  美国信息交换标准代码 由字母 数字 符号组成中文是2字节    unicode编码</code></pre><p>   布尔型</p><pre><code>boolean  1bittrue  false</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;数据类型&lt;/p&gt;
-&lt;p&gt; 基本数据类型 （8个）&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;整型 byte short int long
-浮点型 float double
-字符型 char
-布尔型 blooean&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 引用数据类型&lt;/p&gt;
-&lt;pre&gt;&lt;cod
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaSE 基础     (一)</title>
-    <link href="http://yoursite.com/2020/03/08/JavaSE-%E5%9F%BA%E7%A1%80-%E4%B8%80/"/>
-    <id>http://yoursite.com/2020/03/08/JavaSE-基础-一/</id>
-    <published>2020-03-08T14:59:17.000Z</published>
-    <updated>2020-03-10T11:06:21.657Z</updated>
-    
-    <content type="html"><![CDATA[<pre><code>JavaSE基础</code></pre><p> 1996年  正式发布了可以下载的JDK工具包 jdk1.0</p><p> 1999年  发布了第二代平台 简称 java2 细化三个不同的版本；</p><pre><code>标准版  Standard Edition      J2SE企业版  Enterprise Edition    J2EE微型版  Mirco Edition         J2ME</code></pre><p> 2005年  Oracle 公司74亿收购了SUN</p><p>java语言的特点</p><pre><code>跨平台性  平台（操作系统）面向对象简单性  多继承  健壮性（鲁棒性）  垃圾回收  异常机制多线程大数据相关开发</code></pre><p>JVM                               </p><pre><code>Java virtual machine  虚拟机     源文件.java 编译字节码文件.class</code></pre><p>jRE             </p><pre><code>Java Run Environment 运行环境运行别人写的java程序</code></pre><p>JDK</p><pre><code>Java Development kit 开发工具包javac.exe 编译工具   java.exe  执行工具bin文件夹   全都是工具inlcude文件夹  包含了其他语言的程序jre文件夹    包含了运行环境lib文件夹    包含了人家写好的java类src.zip压缩文件夹  源代码</code></pre><p>常用命令</p><pre><code>win(窗口键)+R  输入cmd命令  打开一个dos命令行窗口使用cd 文件夹名 进入 cd ..退出一层文件夹javac test.java  编译一个test文件java test  运行一个test文件其他 win+R 输出  mspaint 打开画图</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;pre&gt;&lt;code&gt;JavaSE基础&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 1996年  正式发布了可以下载的JDK工具包 jdk1.0&lt;/p&gt;
-&lt;p&gt; 1999年  发布了第二代平台 简称 java2 细化三个不同的版本；&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;标准版  Standard 
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>PTA基础题算法&amp;&amp;心得（7-1---7-12）</title>
-    <link href="http://yoursite.com/2020/02/01/PTA%E5%9F%BA%E7%A1%80%E9%A2%98%E7%AE%97%E6%B3%95-%E5%BF%83%E5%BE%97/"/>
-    <id>http://yoursite.com/2020/02/01/PTA基础题算法-心得/</id>
-    <published>2020-02-01T08:44:00.000Z</published>
-    <updated>2020-03-10T11:08:26.766Z</updated>
-    
-    <content type="html"><![CDATA[<p>#整型变量存储规则</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int foot=height/30.48;</span><br><span class="line">int inch=(height/30.48-foot)*12;</span><br></pre></td></tr></table></figure><p>对于C而言  整数除浮点数结果是浮点数 但存储在整型变量中会自动将浮点型化为整型，<br>          而其本质还是浮点数。</p><p>#求和  1/1+……..1/n  or  1/1-1/2+1/3……+1/n</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">int main()&#123;</span><br><span class="line">int n;</span><br><span class="line">int i;</span><br><span class="line">double sum=0.0;</span><br><span class="line">int sign=1; </span><br><span class="line">scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">for(i=1;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line"> sum+=sign*1.0/i;</span><br><span class="line"> sign=-sign;</span><br><span class="line">&#125; </span><br><span class="line">printf(&quot;f(%d)=%f\n&quot;,n,sum);</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>定义变量sum 不给初值直接使用的话 sum的值是随机的；<br>f（%d）=f（%f），n，sum 解决第n 项求和表示；<br>一正一负的交替相加用sign=-sign，sign的初值为-1，乘以原式,也可将sign 设为double型 初值为1.0可替代循环体，sum+=sign/i；</p><p>#整数分解</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()&#123;</span><br><span class="line"> int x;</span><br><span class="line"> scanf(&quot;%d&quot;,&amp;x);</span><br><span class="line"> int t;</span><br><span class="line"> int mask=1;</span><br><span class="line"> t=x;</span><br><span class="line"> while(t&gt;9)&#123;</span><br><span class="line">      t/=10;</span><br><span class="line">      mask=mask*10;</span><br><span class="line"> &#125;</span><br><span class="line"> printf(&quot;%d\n&quot;,mask);</span><br><span class="line"> do&#123;</span><br><span class="line">  int d=x/mask;</span><br><span class="line">  printf(&quot;%d&quot;,d); </span><br><span class="line">  if(mask&gt;9)&#123;</span><br><span class="line">   printf(&quot; &quot;);</span><br><span class="line">  &#125;</span><br><span class="line">  x%=mask;</span><br><span class="line">  mask/=10;</span><br><span class="line"> &#125;</span><br><span class="line"> while(mask&gt;0);</span><br><span class="line"> printf(&quot;\n&quot;);</span><br><span class="line"> return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>mask的值用x的位数确定，因为不能直接消耗x，用辅助变量t存储x，mask循环要少一次10的n-1次方，用t每除10然后，mask*10，直到t大于9；<br>x整除mask确定第一位，然后x再对mask取余求剩下位数，mask在/10；<br>中间空格用mask判断mask&gt;9,每循环一次输出一个空格；</p><p>#最大公约数 辗转相除法</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()&#123;</span><br><span class="line"> int a,b;</span><br><span class="line"> int t;</span><br><span class="line"> scanf(&quot;%d %d&quot;,&amp;a,&amp;b);</span><br><span class="line"> while(b!=0)</span><br><span class="line"> &#123;</span><br><span class="line">  t=a%b;</span><br><span class="line">  a=b;</span><br><span class="line">  b=t;</span><br><span class="line"> &#125;</span><br><span class="line"> printf(&quot;gcd=%d&quot;,a);</span><br><span class="line"> return 0;</span><br><span class="line">&#125; </span><br><span class="line">辗转相除法：如果b=0，a就是最大公约数；</span><br><span class="line">否则，计算a除以b的余数，让b=a，b=a的余数；</span><br><span class="line">回到第一步；</span><br><span class="line">#求符合条件的整数集</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()&#123;</span><br><span class="line">int a;</span><br><span class="line">scanf(&quot;%d&quot;,&amp;a);</span><br><span class="line">int i,j,k;</span><br><span class="line">int ctn=0;</span><br><span class="line">for(i=a;i&lt;=a+3;i++)&#123;</span><br><span class="line">   for(j=a ;j&lt;=a+3;j++)</span><br><span class="line">        &#123;</span><br><span class="line">         for(k=a;k&lt;=a+3;k++)</span><br><span class="line">         if(i!=j &amp;&amp; i!=k &amp;&amp;j!=k)&#123;</span><br><span class="line">          ctn++;</span><br><span class="line">   printf(&quot;%d%d%d&quot;,i,j,k); </span><br><span class="line">   if(ctn==6)&#123;</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">    ctn=0;</span><br><span class="line">   &#125;</span><br><span class="line">   else printf(&quot; &quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;&#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>格式控制：用计数器ctn 记录不重复的数，每6个数换行用if（ctn==6）输出换行然后ctn归零，以此循环，用else 输出中间的空格；</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;#整型变量存储规则&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/spa
-      
-    
-    </summary>
-    
-      <category term="PTA" scheme="http://yoursite.com/categories/PTA/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>union-find</title>
-    <link href="http://yoursite.com/2019/08/11/union-find/"/>
-    <id>http://yoursite.com/2019/08/11/union-find/</id>
-    <published>2019-08-11T03:25:00.000Z</published>
-    <updated>2019-08-11T03:44:45.371Z</updated>
-    
-    <content type="html"><![CDATA[<p>发展一个可用的算法的步骤：<br>把问题模型化<br>找到一个算法去解决它<br>足够快？适合内存？<br>如果不是，想想为什么<br>寻找一个方法去解决这个问题<br>重复直到一切都满意<br>动态连接（Dynamic connectivity）<br>我们假设“被连接”是一个相等的关系：<br>自反：p被p连接<br>对称：如果p被q连接，那么q也被p连接<br>传递：如果p被q连接，q被r连接，那么p被r连接<br>连接集合（Connected components）：每个对象被连接的所以元素</p><p>发现问题：检查两个对象是否都在同一个集合里面<br>连接命令：用连接替换两个对象集合</p><p>联合查找数据类型（Union-find data type）API<br>目标 设计有效的数据结构为联合查找<br>定义一个 UF类<br>对数据初始化<br>给数据添加连接<br>判断数据是否在同一集合内<br>找到p所在的集合<br>确定集合的数量</p><p>动态连接客户端（Dynamic-connectivity client）<br>从标准输入中读取n个对象<br>重复：</p><ul><li>从标准输入中读取整数对</li><li>如果他们未被连接请将他们连接<br>代码<pre><code>public static void main（string[] args）{ int N = StdIn.readInt(); UF uf = new UF(N); while （！stdIn.isEmpty（）） {   int p = stdIn.readInt();   int q = stdIn.readInt();   if (!uf.connected（p，q））   {     uf.union(p,q);     stdOut.prtinln(p+&quot; &quot;+q);   }  }}</code></pre></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;发展一个可用的算法的步骤：&lt;br&gt;把问题模型化&lt;br&gt;找到一个算法去解决它&lt;br&gt;足够快？适合内存？&lt;br&gt;如果不是，想想为什么&lt;br&gt;寻找一个方法去解决这个问题&lt;br&gt;重复直到一切都满意&lt;br&gt;动态连接（Dynamic connectivity）&lt;br&gt;我们假设“被连接”
-      
-    
-    </summary>
     
     
   </entry>

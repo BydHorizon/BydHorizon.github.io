@@ -252,6 +252,517 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/21/JavaSE基础-（十二）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/21/JavaSE基础-（十二）/" itemprop="url">JavaSE基础 （十二）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-21T22:07:10+08:00">
+                2020-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>权限修饰符</p>
+<pre><code>public       公共的        本类      同包    子类  当前类的任何位置只要有对象都可以使用
+protected    保护的        本类      同包    子类 （通过子类对象在子类内部访问）
+默认不写     默认的        本类     同包
+private      私有的
+
+1.能修饰什么  2.范围如何
+权限修饰符可以用来修饰   类本身   和类中的成员（除程序块）
+权限修饰符用来修饰类的时候只有两个可以用 （public 默认不写）
+权限修饰符可以用来修饰类中的其他成员</code></pre><p>Java类和类直接的关系</p>
+<pre><code>继承  关联 多态（抽象）</code></pre><p>封装：将一些数据或执行过程  进行一个包装<br><br>目的：保护这些数据或执行过程的安全隐藏细节，增加复用性<br><br>对属性本身的封装：<br><br>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     属性私有：（封装在类中）<br><br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 提供操作属性的公有方法<br>  <br><br>特征修饰符<br></p>
+<pre><code>1.可以修饰什么
+2.修饰后什么特点</code></pre><p>  final    </p>
+<pre><code>最终的   不可更改的
+  修饰变量  
+         如果在定义时没有赋初始值
+         给变量一次存值的机会（因为变量在栈内存空间内 没有默认值 如果不给机会 就都没法用了
+         一旦变量存储了一个值若用final修饰后则不让改变----相当于常量
+         注意变量类型是基本类型还是引用类型
+         如果修饰的是基本数据类型 则变量内的值不让更改 常量
+         如果修饰的是引用数据类型 则变量内的地址不让更改对象唯一
+  修饰属性
+         全局变量 存储在堆内存的对象空间有一个空间
+         属性如果没有赋值  有默认值存在
+         属性用final修饰后 必须给属性赋初值 否则编译报错
+         特点与修饰变量一致
+         注意变量类型是基本类型还是引用类型
+         如果修饰的变量是基本数据类型 则变量内的值不让更改 ---常量
+         如果修饰的变量是引用数据类型 则变量内地址引用不让更改---对象唯一
+ 修饰方法
+         方法是最终的方法 不可更改
+         子类继承父类的方法 可将父类的方法重写（覆盖）
+         final修饰的方法 要求不可以被子类重写（覆盖）
+ 修饰类本身
+         类是最终的  不可更改
+         此类不可被其他字类继承
+         通常都是一些定义好的工具类
+         Math Scanner Intneger String</code></pre><p> static静态的</p>
+<pre><code>1.可以修饰：修饰属性 修饰方法 *修饰块 修饰类（内部类）
+2.特点：
+     1.静态元素在类加载时就初始化了，创建的非常早，此时没有创建对象
+     2.静态元素存储在静态元素区中，每一个类都有一个自己的区域，与别的类不冲突
+     3.静态元素只加载一次（只有一份），全部类对象及类本身共享
+     4.由于静态元素区加载时候，可能没有创建对象，可以通过类的名字直接访问
+     5.静态元素区Garbage Collection 无法管理，可以粗暴认为常驻内存
+     6.可以理解静态元素不属于任何一个对象，是属于类的
+     7.非静态成员（堆内存对象里）中可以访问静态成员（静态区）
+     8.静态成员中可以访问静态成员（静态区）
+     9.静态成员不可以访问非静态成员
+     10.静态元素不可以出现this或super（静态元素属于类）</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/20/JavaSE基础-（十一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/20/JavaSE基础-（十一）/" itemprop="url">JavaSE基础 （十一）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-20T23:16:57+08:00">
+                2020-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>包packge（可以理解为是一个文件夹）</p>
+<pre><code>在我们类的第一行会出现package关键字
+如果package和import同时出现
+先写package后写import
+package只能有一个import可以有多个</code></pre><p>类的关系<br>    has-a</p>
+<pre><code>包含关系（组合 聚合 关联） 语义
+从亲密程度来讲不太一样
+组合---&gt;人的大脑  人和心脏的关系
+     整体和部分的关系 不可分割 要出现整体出现 要消亡整体消亡
+整合----&gt;汽车和轮子 电脑和主板
+     整体和部分的关系 创建时可能是分开的
+关联----&gt;人有汽车 人有电脑
+     整体和部分的关系 可以分割后来形成一起
+从Java程序来描述这样的关系 通过一个类的对象当做另一个类的属性来存储</code></pre><p>ues a &nbsp;&nbsp;&nbsp;&nbsp;(need a ) 依赖关系</p>
+<pre><code>屠夫 杀 猪
+           可以做一件事情 杀猪
+           需要一头猪
+不是整体和部分的关系 某一件事情产生关系
+临时组合在一起 这件事情一旦做完关系就解散
+通过在方法中引用另一个类的对象实现</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/20/html-css-js-（二）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/20/html-css-js-（二）/" itemprop="url">html-css-js  （二）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-20T22:19:19+08:00">
+                2020-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端基础/" itemprop="url" rel="index">
+                    <span itemprop="name">前端基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>高级标签 </p>
+<pre><code>空格标签     &amp;nbsp;
+左尖括号     &amp;lt;   less than
+右尖括号     &amp;gt;   great than
+换行        &lt;br&gt;
+划线        &lt;hr&gt;</code></pre><p>   有序列表   </p>
+<pre><code>  &lt;ol&gt;  
+     &lt;li&gt;苹果&lt;/li&gt;
+     &lt;li&gt;香蕉&lt;/li&gt;
+     &lt;li&gt;菠萝&lt;/li&gt;
+   &lt;/ol&gt;  
+有序表属性
+  &lt;ol type =&quot;a&quot;(a,A,1,i,I)  reversed = &quot;reversed&quot;  start = &quot;3&quot;&gt;
+  //排序可以按a，A，1,罗马小写i，罗马大写 i reversed属性表示倒序 start表示起始顺序                </code></pre><p>   *无序表 </p>
+<pre><code>&lt;ul&gt;
+   &lt;li&gt;Marvel&lt;/li&gt;
+   &lt;li&gt;返老还童&lt;/li&gt;
+   &lt;li&gt;了不起的盖茨比&lt;/li&gt;
+ &lt;/ul&gt;
+&lt;ul type = &quot;disc&quot; (square circle)&gt;
+//标签是实心圆 实心方块 空心圆</code></pre><p>   超文本链接 </p>
+<pre><code>&lt;a herf &quot; &quot; &gt;www.baidu.com&lt;/a&gt;
+ //hyperText reference 
+  数字 文字 图片均可以跳转 target在当前页面打开 blank打开新页面
+  &lt;打电话&gt;  &lt;a herf=&quot;tel:&quot;&gt;
+  &lt;发邮件&gt;  &lt;a herf=&quot;mailto&quot;&gt;
+  &lt;协议限定符&gt;
+  //&lt;a herf=&quot;javascript=while(1）{alert（&quot;让你手欠&quot;）} 你点我试试呀！come on 来呀！&lt;/a&gt;</code></pre><p> 图片标签   </p>
+<pre><code>    &lt;img src=&quot;url&quot;&gt;
+//可以打开网络url；本地绝对路径；本地相对路径
+ alt属性图片占位符（图片出错时显示信息）     
+title属性图片提示符（光标移动到图片显示） </code></pre><p>锚点                   </p>
+<pre><code>anhor（实现置顶）记录位置 </code></pre><p>表单                     </p>
+<pre><code>&lt;form method=&quot;get/post&quot; action=&quot;&quot;&gt;
+&lt;input type=&quot;text&quot;  name=&quot;username&quot;&gt;
+&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;
+&lt;input type=&quot;submit&quot; value=&quot;login&quot;&gt;
+&lt;/form&gt;
+// 发送数据 需要数据名和数据内容两项
+  提交检验 pro/Desktop/lesson2.html?username=sunny&amp;password=123123.
+  md5协议进行加密         123123
+                     加密后&amp;@#￥&amp;￥
+&lt;input type =&quot;radio&quot;&gt;单选                     </code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/19/JavaSE基础-（十）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1533,497 +2044,6 @@ a = a^b;
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/10/GIT（一）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/10/GIT（一）/" itemprop="url">GIT (一)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-10T19:12:00+08:00">
-                2020-03-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/GIT/" itemprop="url" rel="index">
-                    <span itemprop="name">GIT</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>GIt Bash 常用命令</p>
-<p>#change director</p>
-<pre><code>cd</code></pre><p>#make director</p>
-<pre><code>mkdir</code></pre><p>#print working directory </p>
-<pre><code>pwd</code></pre><p>#move </p>
-<pre><code>mv</code></pre><p>#copy                     </p>
-<pre><code>cp</code></pre><p>#remove</p>
-<pre><code>rm</code></pre><p>其他  </p>
-<pre><code>echo 打印
-echo &apos;hello&apos; 在命令行中打印一个 hello
-echo &apos;hello&apos; &gt; a.txt 创建一个纯文本文件a把hello打印进去
-cat a.txt 查看a中的内容
-cp a.txt b.txt 复制a 到b
-ls 目录
-ls ..上一级目录
-mv b.txt ../b.txt 把b移动到上一级文件夹
-
-mv a.txt c.txt 重命名
-rm c.txt  删除c</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/09/JavaSE基础（四）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/09/JavaSE基础（四）/" itemprop="url">JavaSE基础（四）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-09T23:33:00+08:00">
-                2020-03-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>内存结构与执行过程</p>
-<p>1.在硬盘上创建一个文件                            Test.java</p>
-<p>2.文件的内容是我们编写的源代码（跟计算机发送的指令）</p>
-<pre><code>public  class Test{
-         static void main( String[] args ){
-              byte x;
-              x=1;
-        }
-  }</code></pre><p>3.将Test.java源文件——&gt;编译——&gt;Test.classc</p>
-<p>4.执行——–&gt;内存中执行</p>
-<p><img src="/2020/03/09/JavaSE基础（四）/pasted-0.png" alt="upload successful"><br>常量值</p>
-<pre><code>常量值是在常量缓存区中的
-常量区只存一份   常量存储的形式不是十进制而是二进制
-在常量池中整数默认是按照 int型存储
-如果使用长整型时需要末尾加L告知
-long d = 2147483648L;
-浮点型默认为64位double.</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/08/JavaSE基础（三）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/08/JavaSE基础（三）/" itemprop="url">JavaSE基础（三）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-08T23:54:16+08:00">
-                2020-03-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>常量</p>
-<pre><code>常量是代表在程序运行过程中，不能再改变的值。</code></pre><p>常量的作用     </p>
-<pre><code>1.固定的值  代表在计算过程中经常用到的值便于程序计算。
-    如：  圆周率  3.1415926
-2.表示一个含义
-    如：  up==&gt;1 down==&gt;2</code></pre><p>什么样的值算是常量</p>
-<pre><code>1. 可以认为所有基本类型的值固定不变是常量
-    如：    3.14   &apos;a&apos;  true
-2.特殊的常量 
-    如：   “a b c”-----&gt;string
-        string是一个引用数据类型，它的值很特殊，可以简单视为常量
-3.自己创建的空间存储一个值让他固定不变
-    如：   final int up = 1；</code></pre><p>变量</p>
-<pre><code>变量是指程序执行过程中可以改变的量；
-变量是内存空间（小容器）；
-变量空间在创建（声明）的时候必须指定数据类型变量空间的名字；
-变量空间里面只能存储一个内容（值 引用）
-变量空间的内容可以改变；</code></pre><p>变量如何创建/声明</p>
-<pre><code>数据类型   类型名字；
-int a；
-string b；</code></pre><p>创建变量需要注意命名的问题</p>
-<pre><code>命名规则： 字母、数字（不允许作为开头）、符号（英文符号_和$）还有中文（不推荐）
-命名的规约：  
-            类名字：  首字母大写 如果两个以上单词  所有首字母都大写
-                     如：SuperPerson
-            变量名：  首字母小写 如果两个以上单词之后首字母大写
-                     如： superPerson
-                     遵循驼峰式命名规约
-            所有名字需要见名知意，为了增强程序可读性！
-注意：变量是空间可以只创建东西不存放内容
-      变量空间创建后是无内容的、空的
-      空的变量空间是不能拿来使用的</code></pre><p>注释</p>
-<pre><code>1.单行注释     //
-2.多行注释     /*         */
-3.文档注释     //*        */</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2076,7 +2096,7 @@ string b；</code></pre><p>创建变量需要注意命名的问题</p>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2194,7 +2214,7 @@ string b；</code></pre><p>创建变量需要注意命名的问题</p>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共12.5k字</span>
+  <span class="post-count">博客全站共14.6k字</span>
 </div>
         
 

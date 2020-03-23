@@ -252,6 +252,571 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/23/avaSE基础-（二十二）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/23/avaSE基础-（二十二）/" itemprop="url">JavaSE基础 （二十二）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-23T22:40:39+08:00">
+                2020-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="字符串相关"><a href="#字符串相关" class="headerlink" title="字符串相关"></a>字符串相关</h1><h2 id="String类—-gt-引用类型-java-lang包"><a href="#String类—-gt-引用类型-java-lang包" class="headerlink" title="String类—-&gt;引用类型 java.lang包"></a>String类—-&gt;引用类型 java.lang包</h2><h3 id="0-常见的String笔试题"><a href="#0-常见的String笔试题" class="headerlink" title="0.常见的String笔试题"></a>0.常见的String笔试题</h3><pre><code>==  equals方法和区别
+             ==可以比较基本类型 也可以比较引用类型
+             比较基本类型只比较值 比较引用类型比较地址
+             equals只能比较引用类型（方法）
+             默认比较地址this == obj
+             如果想要修改比较规则可以重写equals方法
+             通常重写equals方法会伴随重写hashcode方法
+String的不可变特性
+             长度及内容
+String与StringBuffer区别
+StringBuffer与StringBuilder区别
+String对象的存储
+             &quot;abc&quot;-----&gt;字符串常量池
+             new String（&quot;abc&quot;）---&gt;堆内存
+
+*string中的常用方法</code></pre><h3 id="1-存在哪-java-lang包"><a href="#1-存在哪-java-lang包" class="headerlink" title="1.存在哪  java.lang包"></a>1.存在哪  java.lang包</h3><pre><code>没有任何继承关系  实现三个接口Serializable,CharSequence,Comparable</code></pre><h3 id="2-如何构建对象"><a href="#2-如何构建对象" class="headerlink" title="2.如何构建对象"></a>2.如何构建对象</h3><pre><code>String str = &quot;abc&quot;; //直接将字符串常量赋值给str （字符串常量池）
+String str = new String();//无参函数构造方法创建空的对象
+String str = new String(&quot;abc&quot;);//带参String构造方法创建对象
+String str = new String(byte[]);//将数组中的每一个元素转化成对应的char 组合成str
+String str = new String(char[]);//将数组中的每一个char元素拼接成最终的String</code></pre><h3 id="3-String的不可变特性"><a href="#3-String的不可变特性" class="headerlink" title="3.String的不可变特性"></a>3.String的不可变特性</h3><pre><code>体现在两个地方 长度及内容
+长度-----&gt;final修饰的数组  数组长度不变 final修饰素组的地址不变
+内容-----&gt;private修饰的属性 不能再类外访问
+在String类中包含一个 数组
+private fianl char[] value;//存储String中的每一个字符
+fianl最终是不可改变的----&gt;地址不让改变 数组的长度本身不可变
+private私有的当前类中----&gt;数组中的内容也不能改变</code></pre><h3 id="4-常用方法"><a href="#4-常用方法" class="headerlink" title="*4.常用方法"></a>*4.常用方法</h3><pre><code>booean = equals(Obj obj);
+     //继承自Object类 重写啦 比较两个字符串的字面值是否相等
+int = hashCode();
+     //继承自object类 重写啦 将当前字符串的每一个char元素拆开 乘以31求和
+int = CompareTo(String str);
+    //实现Comparable接口 实现啦 按照字典（Unicode编码）索引的顺序比较
+String = toString();
+    //继承自Object 重写啦 不在输出@hashCode 字符串中的字面值</code></pre><h3 id="5-char-charAt-int-index"><a href="#5-char-charAt-int-index" class="headerlink" title="5.char = charAt(int index);"></a>5.char = charAt(int index);</h3><pre><code>返回给定index位置对应的字符
+int = codePointAt(int index);
+返回给定index位置对应字符的code码</code></pre><h3 id="6-int-length"><a href="#6-int-length" class="headerlink" title="6.int = length();"></a>6.int = length();</h3><pre><code>返回字符串的长度 （其实就是底层 char[] value属性的长度）
+注意：区别数组length是属性 String的length()方法  集合size()方法</code></pre><h3 id="7-String-concat-String-str"><a href="#7-String-concat-String-str" class="headerlink" title="7.String = concat(String str);"></a>7.String = concat(String str);</h3><pre><code>将给定的str拼接在当前String对象的后面
+注意：方法执行完毕需要接受返回值 String的不可变特性
+      concat方法与 + 拼接性能的问题
+      开发中若遇到频繁拼接字符串-----&gt;通常使用stringBuilder/stringBuffer</code></pre><h3 id="8-boolean-contains（”s”）"><a href="#8-boolean-contains（”s”）" class="headerlink" title="8.boolean = contains（”s”）;"></a>8.boolean = contains（”s”）;</h3><pre><code>判断给定的s在字符串中是否存在</code></pre><h3 id="9-statsWith-String-prefix）-nbsp-nbsp-endWith（String-suffix）"><a href="#9-statsWith-String-prefix）-nbsp-nbsp-endWith（String-suffix）" class="headerlink" title="9.statsWith(String prefix）;  &nbsp;&nbsp; endWith（String suffix）;"></a>9.statsWith(String prefix）; <br> &nbsp;&nbsp; endWith（String suffix）;</h3><pre><code>判断此字符串是否已XX开头/结尾</code></pre><h3 id="10-byte-getBytes-—-gt-getBytes-String-charsetName-char-toCharArray"><a href="#10-byte-getBytes-—-gt-getBytes-String-charsetName-char-toCharArray" class="headerlink" title="10.byte[] = getBytes();—-&gt;getBytes(String charsetName); char[] = toCharArray[];"></a>10.byte[] = getBytes();—-&gt;getBytes(String charsetName); char[] = toCharArray[];</h3><pre><code>将当前字符串转化为数组 “我爱你中国”“我”“爱”“你”“中”“国”</code></pre><h3 id="11-int-index-indexOf-int-String-str-int-fromindex"><a href="#11-int-index-indexOf-int-String-str-int-fromindex" class="headerlink" title="11.int index = indexOf(int/String str,[int fromindex]);"></a>11.int index = indexOf(int/String str,[int fromindex]);</h3><pre><code>四个方法重载，找寻给定元素在字符串第一次出现的索引位置 若不存在返回-1
+lastIndexOf(int/String str,[int fromindex]);
+找寻给定元素在字符串最后一次出现的索引位置 若不存在返回-1</code></pre><h3 id="12-boolean-isEmpty"><a href="#12-boolean-isEmpty" class="headerlink" title="12.boolean = isEmpty();"></a>12.boolean = isEmpty();</h3><pre><code>判断当前字符串是否为空字符串（length是否为0）
+注意与null之间的区别</code></pre><h3 id="13-replace-replaceAll-replaceFirst"><a href="#13-replace-replaceAll-replaceFirst" class="headerlink" title="13.replace(); replaceAll(); replaceFirst();"></a>13.replace(); replaceAll(); replaceFirst();</h3><pre><code>将给定字符串替换成另一个字符串</code></pre><h3 id="14-String-split（String-regex-int-limit限度界限-）"><a href="#14-String-split（String-regex-int-limit限度界限-）" class="headerlink" title="14.String[] = split（String regex, [int limit限度界限]）;"></a>14.String[] = split（String regex, [int limit限度界限]）;</h3><pre><code>按照正则表达式将原来的字符串拆开
+   String str=&quot;a-b-c-d&quot;;
+   String[] value = str.split(&quot;-&quot;,3);
+   for(String v:value){
+     System.out.println(v);
+   }  </code></pre><h3 id="15-String-substring-int-beginIndex-int-endIndex"><a href="#15-String-substring-int-beginIndex-int-endIndex" class="headerlink" title="15.String = substring(int beginIndex),[int endIndex]);"></a>15.String = substring(int beginIndex),[int endIndex]);</h3><pre><code>将当前字符串截取一部分
+从beginIndex开始至endIndex结束[beginIndex，endIndex)
+若endIndex不写 则默认到字符串最后</code></pre><h3 id="16-String-toUpperCase-String-toLowerCase"><a href="#16-String-toUpperCase-String-toLowerCase" class="headerlink" title="16.String = toUpperCase();String = toLowerCase();"></a>16.String = toUpperCase();<br>String = toLowerCase();</h3><pre><code>将全部字母转换成大写/小写</code></pre><h3 id="17-String-trim"><a href="#17-String-trim" class="headerlink" title="17.String = trim();"></a>17.String = trim();</h3><pre><code>去掉字符串前后多余的空格</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/23/JavaSE基础-（二十一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/23/JavaSE基础-（二十一）/" itemprop="url">JavaSE基础 （二十一）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-23T22:02:16+08:00">
+                2020-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="日期相关"><a href="#日期相关" class="headerlink" title="日期相关"></a>日期相关</h1><h2 id="Date类"><a href="#Date类" class="headerlink" title="Date类"></a>Date类</h2><pre><code>1.通常使用的是java.util包
+2.导包 拿来使用 构建对象
+3.通常使用的是无参构造方法 或者带long构造方法
+4.Date类中常用的方法
+     before();after();
+     setTime();getTime();
+     compareTo();
+5.可以处理一个Date日期的格式</code></pre><h2 id="DateFormat类"><a href="#DateFormat类" class="headerlink" title="DateFormat类"></a>DateFormat类</h2><pre><code>1.java.text包 需要导包
+2.此类是一个抽象类 不能创建对象 子类来使用
+3.SimpleDarteFormat类 是DateFormat的子类
+4.调用String参数的构造方法创建format对象
+       SimpleDateFormat sdf =  new Simple DateFormat(&quot;yyyyy--MM--dd HH:mm:ss&quot;) 
+       string v = sdf.format(date.1)//通过sdf将对象格式化成你描述的样子</code></pre><h2 id="Calendar-1-1版本"><a href="#Calendar-1-1版本" class="headerlink" title="Calendar 1.1版本"></a>Calendar 1.1版本</h2><pre><code>1.所属的包 java.util 需要导包
+2.有构造方法 用protected修饰的 通常访问不到 通常还会调用默认的getInstance()
+3.常用方法
+        after() before()
+        setTime() getTime()---&gt;Date
+        getTimeInMills()----time
+        getTimeZone()----TimeZone
+        Calendar calendar = Calendar.getInstance();//系统当前时间的Calendar对象
+        Calendar里面包含一个date属性 可以操作某一个局部信息
+        set get
+        calendar.set（Calendar.YEAR,2015）;
+        int year = calendar.get（Calendar.YEAR）;</code></pre><h2 id="TimeZone"><a href="#TimeZone" class="headerlink" title="TimeZone"></a>TimeZone</h2><pre><code>1.java.util包
+2.可以通过calendar对象.getTimeZone（）获取 或 TimeZone.getDefault();
+3.常用方法 
+       tz.getID();
+       System.out.println(tz.getDisplayName());</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/23/JavaSE基础-（二十）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/23/JavaSE基础-（二十）/" itemprop="url">JavaSE基础 （二十）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-23T20:50:35+08:00">
+                2020-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="java中提供的工具类——-官方API帮助文档"><a href="#java中提供的工具类——-官方API帮助文档" class="headerlink" title="java中提供的工具类——-官方API帮助文档"></a>java中提供的工具类——-官方API帮助文档</h1><pre><code>Application  Programming interface
+应用程序编程接口,一些预先创建好的类及方法，目的是为了让我们更好的进行程序开发</code></pre><h2 id="与数学相关的类—-Math类"><a href="#与数学相关的类—-Math类" class="headerlink" title="与数学相关的类—-Math类"></a>与数学相关的类—-Math类</h2><pre><code>1.所属的包java.lang
+2.Math构造方法是私有的 我们不能直接调用创建对象
+3.由于Math中提供的属性方法都是static 不需要创建对象
+4.常用的方法
+           abs()返回给定数字的绝对值 （参数 int long float double）
+           double = ceil() 向上取整
+           double = floor()向下取整
+           double = rint() 临近的整数 如果两边距离一样则返回偶数
+           int = round 四舍五入的整数
+           max（a，b） min（a，b）参数int long float double 
+           pow（a，b） a的b次方（参数double 返回值double）
+           sqrt（double a） 获取给定参数的平方根
+           double = random(); 随机产生一个  [0.0-1.0]
+
+ 5.Math.randon()计算小数的时候精确度可能会有些损失
+               0-9之间的随机整数
+               int Value = （int）(Math.random()*10);
+               5.0----10.9之间的小数
+               （Math.random()*6)+5
+               0.0----0.99999 * 6
+               (0.0---5.49999)+5</code></pre><h2 id="Random类"><a href="#Random类" class="headerlink" title="Random类"></a>Random类</h2><pre><code>1.在java.util包中的类 需要import导入
+2.没有任何继承关系 默认继承Object类
+3.查找构造方法----》如何创建对象
+        Random r = new Random();
+4.类中常用的方法
+        r.nextInt(); 随机产生int范围内的整数  有正有负
+        r.nextInt(int bound);随机产生一个[0-bound]整数
+                 注意bound必须为正数 否则会出现如下的运行时异常
+                 IllegalArgumentException
+        r.nextFloat() 随机产生一个[0.0--1.0]
+        r.nextBoolean()随机产生一个boolean值 true false
+        //调用的方法都需要用相对应类型的变量接收值</code></pre><h2 id="UUID类"><a href="#UUID类" class="headerlink" title="UUID类"></a>UUID类</h2><pre><code>1.所属的包 java.util  需要import导入
+2.没有任何继承关系 默认继承Object类
+3.构造方法有 没有无参的 我们通常不会创建对象
+          UUID  uuid = UUID.randomUUID();
+          System.out.println(uuid.toString());//数据库表格主键primary key
+          产生一个32位的随机元素 每一个位置都是16进制的数字</code></pre><h2 id="BigInteger"><a href="#BigInteger" class="headerlink" title="BigInteger"></a>BigInteger</h2><pre><code>1.所属的包java.math  需要impor导入
+2.继承自Number
+3.如何创建对象 提供的构造方法都是带参的
+        通常利用String参数的构造方法创建这个类的对象
+        BigInteger bi = new BigInteger{&quot;123&quot;};
+4.类中常用的方法
+        做四则运算
+        add()  substract() multiply() divide()
+5.小例子 设计一个方法 用来设计给定数字的阶乘 
+       //设计一个方法 用来设计数字的阶乘
+       //参数 返回值
+       Public BigInteger factorial(int num){
+            BigInteger result = new BigInteger(&quot;1&quot;);
+            for(int i = 1;i &lt;= num;i++){
+                result=result.multiply(new BigInteger(i+&quot; &quot;))
+        }
+        retrun result;
+      } </code></pre><h2 id="BigDecimal类-超过了double取值范围"><a href="#BigDecimal类-超过了double取值范围" class="headerlink" title="BigDecimal类  超过了double取值范围"></a>BigDecimal类  超过了double取值范围</h2><pre><code>1.所属的包  java.math包
+2.继承Number类
+3.通常可以通过 带String参数构造对象
+4.类中常用的方法
+         做四则运算
+         add()  substract() multiply() divide()
+         两个参数前面保留小数点之后的位数，后面的参数是设置的格式如何保留
+         对象.setScale(2,BigDecimal.ROUND_DOWN);</code></pre><h2 id="DecimalFormat——-格式化"><a href="#DecimalFormat——-格式化" class="headerlink" title="DecimalFormat——-格式化"></a>DecimalFormat——-格式化</h2><pre><code>1.所属的包 java.text
+2.import导入才能使用
+3.通过带String参数的构造方法格式化创建成一个字符串
+            DecimalFormat df = new DecimalFormat（&quot;000.###&quot;）;
+            String value = df.format(12.45);
+            System.out.println(value);
+1.</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/22/JavaSE基础-（十九）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1524,517 +2089,6 @@ public static void main(String[] args){
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/21/JavaSE基础-（十二）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/21/JavaSE基础-（十二）/" itemprop="url">JavaSE基础 （十二）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-21T22:07:10+08:00">
-                2020-03-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>权限修饰符</p>
-<pre><code>public       公共的        本类      同包    子类  当前类的任何位置只要有对象都可以使用
-protected    保护的        本类      同包    子类 （通过子类对象在子类内部访问）
-默认不写     默认的        本类     同包
-private      私有的
-
-1.能修饰什么  2.范围如何
-权限修饰符可以用来修饰   类本身   和类中的成员（除程序块）
-权限修饰符用来修饰类的时候只有两个可以用 （public 默认不写）
-权限修饰符可以用来修饰类中的其他成员</code></pre><p>Java类和类直接的关系</p>
-<pre><code>继承  关联 多态（抽象）</code></pre><p>封装：将一些数据或执行过程  进行一个包装<br><br>目的：保护这些数据或执行过程的安全隐藏细节，增加复用性<br><br>对属性本身的封装：<br><br>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     属性私有：（封装在类中）<br><br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 提供操作属性的公有方法<br>  <br><br>特征修饰符<br></p>
-<pre><code>1.可以修饰什么
-2.修饰后什么特点</code></pre><p>  final    </p>
-<pre><code>最终的   不可更改的
-  修饰变量  
-         如果在定义时没有赋初始值
-         给变量一次存值的机会（因为变量在栈内存空间内 没有默认值 如果不给机会 就都没法用了
-         一旦变量存储了一个值若用final修饰后则不让改变----相当于常量
-         注意变量类型是基本类型还是引用类型
-         如果修饰的是基本数据类型 则变量内的值不让更改 常量
-         如果修饰的是引用数据类型 则变量内的地址不让更改对象唯一
-  修饰属性
-         全局变量 存储在堆内存的对象空间有一个空间
-         属性如果没有赋值  有默认值存在
-         属性用final修饰后 必须给属性赋初值 否则编译报错
-         特点与修饰变量一致
-         注意变量类型是基本类型还是引用类型
-         如果修饰的变量是基本数据类型 则变量内的值不让更改 ---常量
-         如果修饰的变量是引用数据类型 则变量内地址引用不让更改---对象唯一
- 修饰方法
-         方法是最终的方法 不可更改
-         子类继承父类的方法 可将父类的方法重写（覆盖）
-         final修饰的方法 要求不可以被子类重写（覆盖）
- 修饰类本身
-         类是最终的  不可更改
-         此类不可被其他字类继承
-         通常都是一些定义好的工具类
-         Math Scanner Intneger String</code></pre><p> static静态的</p>
-<pre><code>1.可以修饰：修饰属性 修饰方法 *修饰块 修饰类（内部类）
-2.特点：
-     1.静态元素在类加载时就初始化了，创建的非常早，此时没有创建对象
-     2.静态元素存储在静态元素区中，每一个类都有一个自己的区域，与别的类不冲突
-     3.静态元素只加载一次（只有一份），全部类对象及类本身共享
-     4.由于静态元素区加载时候，可能没有创建对象，可以通过类的名字直接访问
-     5.静态元素区Garbage Collection 无法管理，可以粗暴认为常驻内存
-     6.可以理解静态元素不属于任何一个对象，是属于类的
-     7.非静态成员（堆内存对象里）中可以访问静态成员（静态区）
-     8.静态成员中可以访问静态成员（静态区）
-     9.静态成员不可以访问非静态成员
-     10.静态元素不可以出现this或super（静态元素属于类）</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/20/JavaSE基础-（十一）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/20/JavaSE基础-（十一）/" itemprop="url">JavaSE基础 （十一）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-20T23:16:57+08:00">
-                2020-03-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>包packge（可以理解为是一个文件夹）</p>
-<pre><code>在我们类的第一行会出现package关键字
-如果package和import同时出现
-先写package后写import
-package只能有一个import可以有多个</code></pre><p>类的关系<br>    has-a</p>
-<pre><code>包含关系（组合 聚合 关联） 语义
-从亲密程度来讲不太一样
-组合---&gt;人的大脑  人和心脏的关系
-     整体和部分的关系 不可分割 要出现整体出现 要消亡整体消亡
-整合----&gt;汽车和轮子 电脑和主板
-     整体和部分的关系 创建时可能是分开的
-关联----&gt;人有汽车 人有电脑
-     整体和部分的关系 可以分割后来形成一起
-从Java程序来描述这样的关系 通过一个类的对象当做另一个类的属性来存储</code></pre><p>ues a &nbsp;&nbsp;&nbsp;&nbsp;(need a ) 依赖关系</p>
-<pre><code>屠夫 杀 猪
-           可以做一件事情 杀猪
-           需要一头猪
-不是整体和部分的关系 某一件事情产生关系
-临时组合在一起 这件事情一旦做完关系就解散
-通过在方法中引用另一个类的对象实现</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/20/html-css-js-（二）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/20/html-css-js-（二）/" itemprop="url">html-css-js  （二）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-20T22:19:19+08:00">
-                2020-03-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端基础/" itemprop="url" rel="index">
-                    <span itemprop="name">前端基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>高级标签 </p>
-<pre><code>空格标签     &amp;nbsp;
-左尖括号     &amp;lt;   less than
-右尖括号     &amp;gt;   great than
-换行        &lt;br&gt;
-划线        &lt;hr&gt;</code></pre><p>   有序列表   </p>
-<pre><code>  &lt;ol&gt;  
-     &lt;li&gt;苹果&lt;/li&gt;
-     &lt;li&gt;香蕉&lt;/li&gt;
-     &lt;li&gt;菠萝&lt;/li&gt;
-   &lt;/ol&gt;  
-有序表属性
-  &lt;ol type =&quot;a&quot;(a,A,1,i,I)  reversed = &quot;reversed&quot;  start = &quot;3&quot;&gt;
-  //排序可以按a，A，1,罗马小写i，罗马大写 i reversed属性表示倒序 start表示起始顺序                </code></pre><p>   *无序表 </p>
-<pre><code>&lt;ul&gt;
-   &lt;li&gt;Marvel&lt;/li&gt;
-   &lt;li&gt;返老还童&lt;/li&gt;
-   &lt;li&gt;了不起的盖茨比&lt;/li&gt;
- &lt;/ul&gt;
-&lt;ul type = &quot;disc&quot; (square circle)&gt;
-//标签是实心圆 实心方块 空心圆</code></pre><p>   超文本链接 </p>
-<pre><code>&lt;a herf &quot; &quot; &gt;www.baidu.com&lt;/a&gt;
- //hyperText reference 
-  数字 文字 图片均可以跳转 target在当前页面打开 blank打开新页面
-  &lt;打电话&gt;  &lt;a herf=&quot;tel:&quot;&gt;
-  &lt;发邮件&gt;  &lt;a herf=&quot;mailto&quot;&gt;
-  &lt;协议限定符&gt;
-  //&lt;a herf=&quot;javascript=while(1）{alert（&quot;让你手欠&quot;）} 你点我试试呀！come on 来呀！&lt;/a&gt;</code></pre><p> 图片标签   </p>
-<pre><code>    &lt;img src=&quot;url&quot;&gt;
-//可以打开网络url；本地绝对路径；本地相对路径
- alt属性图片占位符（图片出错时显示信息）     
-title属性图片提示符（光标移动到图片显示） </code></pre><p>锚点                   </p>
-<pre><code>anhor（实现置顶）记录位置 </code></pre><p>表单                     </p>
-<pre><code>&lt;form method=&quot;get/post&quot; action=&quot;&quot;&gt;
-&lt;input type=&quot;text&quot;  name=&quot;username&quot;&gt;
-&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;
-&lt;input type=&quot;submit&quot; value=&quot;login&quot;&gt;
-&lt;/form&gt;
-// 发送数据 需要数据名和数据内容两项
-  提交检验 pro/Desktop/lesson2.html?username=sunny&amp;password=123123.
-  md5协议进行加密         123123
-                     加密后&amp;@#￥&amp;￥
-&lt;input type =&quot;radio&quot;&gt;单选                     </code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2087,7 +2141,7 @@ title属性图片提示符（光标移动到图片显示） </code></pre><p>锚�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2205,7 +2259,7 @@ title属性图片提示符（光标移动到图片显示） </code></pre><p>锚�
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共12.5k字</span>
+  <span class="post-count">博客全站共14.6k字</span>
 </div>
         
 

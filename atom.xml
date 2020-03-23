@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-22T15:58:56.288Z</updated>
+  <updated>2020-03-23T15:47:49.263Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,75 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaSE基础 （二十二）</title>
+    <link href="http://yoursite.com/2020/03/23/avaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E4%BA%8C%E5%8D%81%E4%BA%8C%EF%BC%89/"/>
+    <id>http://yoursite.com/2020/03/23/avaSE基础-（二十二）/</id>
+    <published>2020-03-23T14:40:39.000Z</published>
+    <updated>2020-03-23T15:47:49.263Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="字符串相关"><a href="#字符串相关" class="headerlink" title="字符串相关"></a>字符串相关</h1><h2 id="String类—-gt-引用类型-java-lang包"><a href="#String类—-gt-引用类型-java-lang包" class="headerlink" title="String类—-&gt;引用类型 java.lang包"></a>String类—-&gt;引用类型 java.lang包</h2><h3 id="0-常见的String笔试题"><a href="#0-常见的String笔试题" class="headerlink" title="0.常见的String笔试题"></a>0.常见的String笔试题</h3><pre><code>==  equals方法和区别             ==可以比较基本类型 也可以比较引用类型             比较基本类型只比较值 比较引用类型比较地址             equals只能比较引用类型（方法）             默认比较地址this == obj             如果想要修改比较规则可以重写equals方法             通常重写equals方法会伴随重写hashcode方法String的不可变特性             长度及内容String与StringBuffer区别StringBuffer与StringBuilder区别String对象的存储             &quot;abc&quot;-----&gt;字符串常量池             new String（&quot;abc&quot;）---&gt;堆内存*string中的常用方法</code></pre><h3 id="1-存在哪-java-lang包"><a href="#1-存在哪-java-lang包" class="headerlink" title="1.存在哪  java.lang包"></a>1.存在哪  java.lang包</h3><pre><code>没有任何继承关系  实现三个接口Serializable,CharSequence,Comparable</code></pre><h3 id="2-如何构建对象"><a href="#2-如何构建对象" class="headerlink" title="2.如何构建对象"></a>2.如何构建对象</h3><pre><code>String str = &quot;abc&quot;; //直接将字符串常量赋值给str （字符串常量池）String str = new String();//无参函数构造方法创建空的对象String str = new String(&quot;abc&quot;);//带参String构造方法创建对象String str = new String(byte[]);//将数组中的每一个元素转化成对应的char 组合成strString str = new String(char[]);//将数组中的每一个char元素拼接成最终的String</code></pre><h3 id="3-String的不可变特性"><a href="#3-String的不可变特性" class="headerlink" title="3.String的不可变特性"></a>3.String的不可变特性</h3><pre><code>体现在两个地方 长度及内容长度-----&gt;final修饰的数组  数组长度不变 final修饰素组的地址不变内容-----&gt;private修饰的属性 不能再类外访问在String类中包含一个 数组private fianl char[] value;//存储String中的每一个字符fianl最终是不可改变的----&gt;地址不让改变 数组的长度本身不可变private私有的当前类中----&gt;数组中的内容也不能改变</code></pre><h3 id="4-常用方法"><a href="#4-常用方法" class="headerlink" title="*4.常用方法"></a>*4.常用方法</h3><pre><code>booean = equals(Obj obj);     //继承自Object类 重写啦 比较两个字符串的字面值是否相等int = hashCode();     //继承自object类 重写啦 将当前字符串的每一个char元素拆开 乘以31求和int = CompareTo(String str);    //实现Comparable接口 实现啦 按照字典（Unicode编码）索引的顺序比较String = toString();    //继承自Object 重写啦 不在输出@hashCode 字符串中的字面值</code></pre><h3 id="5-char-charAt-int-index"><a href="#5-char-charAt-int-index" class="headerlink" title="5.char = charAt(int index);"></a>5.char = charAt(int index);</h3><pre><code>返回给定index位置对应的字符int = codePointAt(int index);返回给定index位置对应字符的code码</code></pre><h3 id="6-int-length"><a href="#6-int-length" class="headerlink" title="6.int = length();"></a>6.int = length();</h3><pre><code>返回字符串的长度 （其实就是底层 char[] value属性的长度）注意：区别数组length是属性 String的length()方法  集合size()方法</code></pre><h3 id="7-String-concat-String-str"><a href="#7-String-concat-String-str" class="headerlink" title="7.String = concat(String str);"></a>7.String = concat(String str);</h3><pre><code>将给定的str拼接在当前String对象的后面注意：方法执行完毕需要接受返回值 String的不可变特性      concat方法与 + 拼接性能的问题      开发中若遇到频繁拼接字符串-----&gt;通常使用stringBuilder/stringBuffer</code></pre><h3 id="8-boolean-contains（”s”）"><a href="#8-boolean-contains（”s”）" class="headerlink" title="8.boolean = contains（”s”）;"></a>8.boolean = contains（”s”）;</h3><pre><code>判断给定的s在字符串中是否存在</code></pre><h3 id="9-statsWith-String-prefix）-nbsp-nbsp-endWith（String-suffix）"><a href="#9-statsWith-String-prefix）-nbsp-nbsp-endWith（String-suffix）" class="headerlink" title="9.statsWith(String prefix）;  &nbsp;&nbsp; endWith（String suffix）;"></a>9.statsWith(String prefix）; <br> &nbsp;&nbsp; endWith（String suffix）;</h3><pre><code>判断此字符串是否已XX开头/结尾</code></pre><h3 id="10-byte-getBytes-—-gt-getBytes-String-charsetName-char-toCharArray"><a href="#10-byte-getBytes-—-gt-getBytes-String-charsetName-char-toCharArray" class="headerlink" title="10.byte[] = getBytes();—-&gt;getBytes(String charsetName); char[] = toCharArray[];"></a>10.byte[] = getBytes();—-&gt;getBytes(String charsetName); char[] = toCharArray[];</h3><pre><code>将当前字符串转化为数组 “我爱你中国”“我”“爱”“你”“中”“国”</code></pre><h3 id="11-int-index-indexOf-int-String-str-int-fromindex"><a href="#11-int-index-indexOf-int-String-str-int-fromindex" class="headerlink" title="11.int index = indexOf(int/String str,[int fromindex]);"></a>11.int index = indexOf(int/String str,[int fromindex]);</h3><pre><code>四个方法重载，找寻给定元素在字符串第一次出现的索引位置 若不存在返回-1lastIndexOf(int/String str,[int fromindex]);找寻给定元素在字符串最后一次出现的索引位置 若不存在返回-1</code></pre><h3 id="12-boolean-isEmpty"><a href="#12-boolean-isEmpty" class="headerlink" title="12.boolean = isEmpty();"></a>12.boolean = isEmpty();</h3><pre><code>判断当前字符串是否为空字符串（length是否为0）注意与null之间的区别</code></pre><h3 id="13-replace-replaceAll-replaceFirst"><a href="#13-replace-replaceAll-replaceFirst" class="headerlink" title="13.replace(); replaceAll(); replaceFirst();"></a>13.replace(); replaceAll(); replaceFirst();</h3><pre><code>将给定字符串替换成另一个字符串</code></pre><h3 id="14-String-split（String-regex-int-limit限度界限-）"><a href="#14-String-split（String-regex-int-limit限度界限-）" class="headerlink" title="14.String[] = split（String regex, [int limit限度界限]）;"></a>14.String[] = split（String regex, [int limit限度界限]）;</h3><pre><code>按照正则表达式将原来的字符串拆开   String str=&quot;a-b-c-d&quot;;   String[] value = str.split(&quot;-&quot;,3);   for(String v:value){     System.out.println(v);   }  </code></pre><h3 id="15-String-substring-int-beginIndex-int-endIndex"><a href="#15-String-substring-int-beginIndex-int-endIndex" class="headerlink" title="15.String = substring(int beginIndex),[int endIndex]);"></a>15.String = substring(int beginIndex),[int endIndex]);</h3><pre><code>将当前字符串截取一部分从beginIndex开始至endIndex结束[beginIndex，endIndex)若endIndex不写 则默认到字符串最后</code></pre><h3 id="16-String-toUpperCase-String-toLowerCase"><a href="#16-String-toUpperCase-String-toLowerCase" class="headerlink" title="16.String = toUpperCase();String = toLowerCase();"></a>16.String = toUpperCase();<br>String = toLowerCase();</h3><pre><code>将全部字母转换成大写/小写</code></pre><h3 id="17-String-trim"><a href="#17-String-trim" class="headerlink" title="17.String = trim();"></a>17.String = trim();</h3><pre><code>去掉字符串前后多余的空格</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;字符串相关&quot;&gt;&lt;a href=&quot;#字符串相关&quot; class=&quot;headerlink&quot; title=&quot;字符串相关&quot;&gt;&lt;/a&gt;字符串相关&lt;/h1&gt;&lt;h2 id=&quot;String类—-gt-引用类型-java-lang包&quot;&gt;&lt;a href=&quot;#String类—-gt-引用
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaSE基础 （二十一）</title>
+    <link href="http://yoursite.com/2020/03/23/JavaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E4%BA%8C%E5%8D%81%E4%B8%80%EF%BC%89/"/>
+    <id>http://yoursite.com/2020/03/23/JavaSE基础-（二十一）/</id>
+    <published>2020-03-23T14:02:16.000Z</published>
+    <updated>2020-03-23T15:47:41.957Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="日期相关"><a href="#日期相关" class="headerlink" title="日期相关"></a>日期相关</h1><h2 id="Date类"><a href="#Date类" class="headerlink" title="Date类"></a>Date类</h2><pre><code>1.通常使用的是java.util包2.导包 拿来使用 构建对象3.通常使用的是无参构造方法 或者带long构造方法4.Date类中常用的方法     before();after();     setTime();getTime();     compareTo();5.可以处理一个Date日期的格式</code></pre><h2 id="DateFormat类"><a href="#DateFormat类" class="headerlink" title="DateFormat类"></a>DateFormat类</h2><pre><code>1.java.text包 需要导包2.此类是一个抽象类 不能创建对象 子类来使用3.SimpleDarteFormat类 是DateFormat的子类4.调用String参数的构造方法创建format对象       SimpleDateFormat sdf =  new Simple DateFormat(&quot;yyyyy--MM--dd HH:mm:ss&quot;)        string v = sdf.format(date.1)//通过sdf将对象格式化成你描述的样子</code></pre><h2 id="Calendar-1-1版本"><a href="#Calendar-1-1版本" class="headerlink" title="Calendar 1.1版本"></a>Calendar 1.1版本</h2><pre><code>1.所属的包 java.util 需要导包2.有构造方法 用protected修饰的 通常访问不到 通常还会调用默认的getInstance()3.常用方法        after() before()        setTime() getTime()---&gt;Date        getTimeInMills()----time        getTimeZone()----TimeZone        Calendar calendar = Calendar.getInstance();//系统当前时间的Calendar对象        Calendar里面包含一个date属性 可以操作某一个局部信息        set get        calendar.set（Calendar.YEAR,2015）;        int year = calendar.get（Calendar.YEAR）;</code></pre><h2 id="TimeZone"><a href="#TimeZone" class="headerlink" title="TimeZone"></a>TimeZone</h2><pre><code>1.java.util包2.可以通过calendar对象.getTimeZone（）获取 或 TimeZone.getDefault();3.常用方法        tz.getID();       System.out.println(tz.getDisplayName());</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;日期相关&quot;&gt;&lt;a href=&quot;#日期相关&quot; class=&quot;headerlink&quot; title=&quot;日期相关&quot;&gt;&lt;/a&gt;日期相关&lt;/h1&gt;&lt;h2 id=&quot;Date类&quot;&gt;&lt;a href=&quot;#Date类&quot; class=&quot;headerlink&quot; title=&quot;Date类&quot;&gt;
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaSE基础 （二十）</title>
+    <link href="http://yoursite.com/2020/03/23/JavaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E4%BA%8C%E5%8D%81%EF%BC%89/"/>
+    <id>http://yoursite.com/2020/03/23/JavaSE基础-（二十）/</id>
+    <published>2020-03-23T12:50:35.000Z</published>
+    <updated>2020-03-23T15:47:35.153Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="java中提供的工具类——-官方API帮助文档"><a href="#java中提供的工具类——-官方API帮助文档" class="headerlink" title="java中提供的工具类——-官方API帮助文档"></a>java中提供的工具类——-官方API帮助文档</h1><pre><code>Application  Programming interface应用程序编程接口,一些预先创建好的类及方法，目的是为了让我们更好的进行程序开发</code></pre><h2 id="与数学相关的类—-Math类"><a href="#与数学相关的类—-Math类" class="headerlink" title="与数学相关的类—-Math类"></a>与数学相关的类—-Math类</h2><pre><code>1.所属的包java.lang2.Math构造方法是私有的 我们不能直接调用创建对象3.由于Math中提供的属性方法都是static 不需要创建对象4.常用的方法           abs()返回给定数字的绝对值 （参数 int long float double）           double = ceil() 向上取整           double = floor()向下取整           double = rint() 临近的整数 如果两边距离一样则返回偶数           int = round 四舍五入的整数           max（a，b） min（a，b）参数int long float double            pow（a，b） a的b次方（参数double 返回值double）           sqrt（double a） 获取给定参数的平方根           double = random(); 随机产生一个  [0.0-1.0] 5.Math.randon()计算小数的时候精确度可能会有些损失               0-9之间的随机整数               int Value = （int）(Math.random()*10);               5.0----10.9之间的小数               （Math.random()*6)+5               0.0----0.99999 * 6               (0.0---5.49999)+5</code></pre><h2 id="Random类"><a href="#Random类" class="headerlink" title="Random类"></a>Random类</h2><pre><code>1.在java.util包中的类 需要import导入2.没有任何继承关系 默认继承Object类3.查找构造方法----》如何创建对象        Random r = new Random();4.类中常用的方法        r.nextInt(); 随机产生int范围内的整数  有正有负        r.nextInt(int bound);随机产生一个[0-bound]整数                 注意bound必须为正数 否则会出现如下的运行时异常                 IllegalArgumentException        r.nextFloat() 随机产生一个[0.0--1.0]        r.nextBoolean()随机产生一个boolean值 true false        //调用的方法都需要用相对应类型的变量接收值</code></pre><h2 id="UUID类"><a href="#UUID类" class="headerlink" title="UUID类"></a>UUID类</h2><pre><code>1.所属的包 java.util  需要import导入2.没有任何继承关系 默认继承Object类3.构造方法有 没有无参的 我们通常不会创建对象          UUID  uuid = UUID.randomUUID();          System.out.println(uuid.toString());//数据库表格主键primary key          产生一个32位的随机元素 每一个位置都是16进制的数字</code></pre><h2 id="BigInteger"><a href="#BigInteger" class="headerlink" title="BigInteger"></a>BigInteger</h2><pre><code>1.所属的包java.math  需要impor导入2.继承自Number3.如何创建对象 提供的构造方法都是带参的        通常利用String参数的构造方法创建这个类的对象        BigInteger bi = new BigInteger{&quot;123&quot;};4.类中常用的方法        做四则运算        add()  substract() multiply() divide()5.小例子 设计一个方法 用来设计给定数字的阶乘        //设计一个方法 用来设计数字的阶乘       //参数 返回值       Public BigInteger factorial(int num){            BigInteger result = new BigInteger(&quot;1&quot;);            for(int i = 1;i &lt;= num;i++){                result=result.multiply(new BigInteger(i+&quot; &quot;))        }        retrun result;      } </code></pre><h2 id="BigDecimal类-超过了double取值范围"><a href="#BigDecimal类-超过了double取值范围" class="headerlink" title="BigDecimal类  超过了double取值范围"></a>BigDecimal类  超过了double取值范围</h2><pre><code>1.所属的包  java.math包2.继承Number类3.通常可以通过 带String参数构造对象4.类中常用的方法         做四则运算         add()  substract() multiply() divide()         两个参数前面保留小数点之后的位数，后面的参数是设置的格式如何保留         对象.setScale(2,BigDecimal.ROUND_DOWN);</code></pre><h2 id="DecimalFormat——-格式化"><a href="#DecimalFormat——-格式化" class="headerlink" title="DecimalFormat——-格式化"></a>DecimalFormat——-格式化</h2><pre><code>1.所属的包 java.text2.import导入才能使用3.通过带String参数的构造方法格式化创建成一个字符串            DecimalFormat df = new DecimalFormat（&quot;000.###&quot;）;            String value = df.format(12.45);            System.out.println(value);1.</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;java中提供的工具类——-官方API帮助文档&quot;&gt;&lt;a href=&quot;#java中提供的工具类——-官方API帮助文档&quot; class=&quot;headerlink&quot; title=&quot;java中提供的工具类——-官方API帮助文档&quot;&gt;&lt;/a&gt;java中提供的工具类——-官方A
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>JavaSE基础 （十九）</title>
@@ -95,7 +164,7 @@
     <link href="http://yoursite.com/2020/03/22/JavaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E5%8D%81%E5%85%AD%EF%BC%89/"/>
     <id>http://yoursite.com/2020/03/22/JavaSE基础-（十六）/</id>
     <published>2020-03-22T13:14:51.000Z</published>
-    <updated>2020-03-22T16:05:28.151Z</updated>
+    <updated>2020-03-22T16:07:05.330Z</updated>
     
     <content type="html"><![CDATA[<h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式<br></h1><h2 id="适配器模式-Adapter"><a href="#适配器模式-Adapter" class="headerlink" title="适配器模式 Adapter"></a>适配器模式 Adapter</h2><pre><code>定义一个规则-------&gt;和尚 吃斋 念经 打坐 撞钟 习武适配器鲁智深 鲁达 形态丑陋 面貌凶顽 方丈说 此人上应天星 心地刚直 虽时下凶顽 命中驳杂 久后却得清净 证果非凡 汝等不及他public abstract class AbstractBox implements Box{          public booolean add(element);          public void add(int index,int element){//具体化          }          public void addAll(){//具体化          }          public int get（index）;          public int remove（index）;          public int size();          }</code></pre><h2 id="Java面向对象的四大特性"><a href="#Java面向对象的四大特性" class="headerlink" title="Java面向对象的四大特性"></a>Java面向对象的四大特性</h2><pre><code>继承 封装 多态 （抽象）</code></pre><h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><pre><code>同一个对象 体现出来的多种不同形态（身份）将一种行为表现出不同效果要想实现多态的效果 需要先有继承关系</code></pre><h3 id="体现"><a href="#体现" class="headerlink" title="体现"></a>体现<br></h3><pre><code>              1.父类类型的引用  指向  子类的对象                   Person p = new Teachher();              2.该引用只能调用父类定义的属性和方法              3.如果子类中将父类的方法重写,那么调取方法后执行的结果是子类重写之后的那个结果              如果父类与子类有同名的属性           执行父类的属性              如果父类与子类有同名的方法（重载）      执行子类重写之后的方法              4.若想要调用子类中独有的成员              （强制类型转换）造型 铸型 （向上/向下转型）//把父类引用向下转型              5.造型时（强制向下转型时）可能会出现一个运行时异常              ClassCastException   造型 铸型 异常              如果想要避免造型异常可以用instanceof关键字来进行判断// O instanceof Student 对象是否属于后面类型                                      Object                          hashCode equals toString getClass......                          Animal                     name属性 eat sleep               Person                                      Pig           name属性 重eat 重sleep 独talk             name属性  重sleep          Teacher                     Student                  name属性 重eat 独有teach       name属性 重talk 独study            Object o = new Teacher();//向上转型            o.hashCode() o.toString();            Animal a = (Animal)o;//向下转型            a.hashCode() a.toString a.name a.eat() a.sleep()            Person p = (Person)o;            p.hashCode();p.name p.eat p.sleep p.talk</code></pre><h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><pre><code>1.InputMismatchException  输入不匹配2.NumberFormateException  数字格式化异常3.ArrayIndexOutBoundsException  数组索引越界4.NegativeArraySizeException  数组长度负数5.NullPointerException   空指针异常6.AirthmeticException    算数异常7.ClassCastException     造型异常</code></pre>]]></content>
     
@@ -457,88 +526,6 @@ int[][]
 &lt;pre&gt;&lt;code&gt;单目运算符    a++
 双目运算符    a+b
 三目运算符    (a&amp;gt;b)? x : y&lt;/code&gt;&lt;/pre&gt;&lt;p
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>GIT (一)</title>
-    <link href="http://yoursite.com/2020/03/10/GIT%EF%BC%88%E4%B8%80%EF%BC%89/"/>
-    <id>http://yoursite.com/2020/03/10/GIT（一）/</id>
-    <published>2020-03-10T11:12:00.000Z</published>
-    <updated>2020-03-10T11:48:12.764Z</updated>
-    
-    <content type="html"><![CDATA[<p>GIt Bash 常用命令</p><p>#change director</p><pre><code>cd</code></pre><p>#make director</p><pre><code>mkdir</code></pre><p>#print working directory </p><pre><code>pwd</code></pre><p>#move </p><pre><code>mv</code></pre><p>#copy                     </p><pre><code>cp</code></pre><p>#remove</p><pre><code>rm</code></pre><p>其他  </p><pre><code>echo 打印echo &apos;hello&apos; 在命令行中打印一个 helloecho &apos;hello&apos; &gt; a.txt 创建一个纯文本文件a把hello打印进去cat a.txt 查看a中的内容cp a.txt b.txt 复制a 到bls 目录ls ..上一级目录mv b.txt ../b.txt 把b移动到上一级文件夹mv a.txt c.txt 重命名rm c.txt  删除c</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;GIt Bash 常用命令&lt;/p&gt;
-&lt;p&gt;#change director&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cd&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;#make director&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;mkdir&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;#print working 
-      
-    
-    </summary>
-    
-      <category term="GIT" scheme="http://yoursite.com/categories/GIT/"/>
-    
-    
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaSE基础（四）</title>
-    <link href="http://yoursite.com/2020/03/09/JavaSE%E5%9F%BA%E7%A1%80%EF%BC%88%E5%9B%9B%EF%BC%89/"/>
-    <id>http://yoursite.com/2020/03/09/JavaSE基础（四）/</id>
-    <published>2020-03-09T15:33:00.000Z</published>
-    <updated>2020-03-10T11:04:44.665Z</updated>
-    
-    <content type="html"><![CDATA[<p>内存结构与执行过程</p><p>1.在硬盘上创建一个文件                            Test.java</p><p>2.文件的内容是我们编写的源代码（跟计算机发送的指令）</p><pre><code>public  class Test{         static void main( String[] args ){              byte x;              x=1;        }  }</code></pre><p>3.将Test.java源文件——&gt;编译——&gt;Test.classc</p><p>4.执行——–&gt;内存中执行</p><p><img src="/2020/03/09/JavaSE基础（四）/pasted-0.png" alt="upload successful"><br>常量值</p><pre><code>常量值是在常量缓存区中的常量区只存一份   常量存储的形式不是十进制而是二进制在常量池中整数默认是按照 int型存储如果使用长整型时需要末尾加L告知long d = 2147483648L;浮点型默认为64位double.</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;内存结构与执行过程&lt;/p&gt;
-&lt;p&gt;1.在硬盘上创建一个文件                            Test.java&lt;/p&gt;
-&lt;p&gt;2.文件的内容是我们编写的源代码（跟计算机发送的指令）&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;public  class Test{
-
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaSE基础（三）</title>
-    <link href="http://yoursite.com/2020/03/08/JavaSE%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/"/>
-    <id>http://yoursite.com/2020/03/08/JavaSE基础（三）/</id>
-    <published>2020-03-08T15:54:16.000Z</published>
-    <updated>2020-03-10T11:06:40.491Z</updated>
-    
-    <content type="html"><![CDATA[<p>常量</p><pre><code>常量是代表在程序运行过程中，不能再改变的值。</code></pre><p>常量的作用     </p><pre><code>1.固定的值  代表在计算过程中经常用到的值便于程序计算。    如：  圆周率  3.14159262.表示一个含义    如：  up==&gt;1 down==&gt;2</code></pre><p>什么样的值算是常量</p><pre><code>1. 可以认为所有基本类型的值固定不变是常量    如：    3.14   &apos;a&apos;  true2.特殊的常量     如：   “a b c”-----&gt;string        string是一个引用数据类型，它的值很特殊，可以简单视为常量3.自己创建的空间存储一个值让他固定不变    如：   final int up = 1；</code></pre><p>变量</p><pre><code>变量是指程序执行过程中可以改变的量；变量是内存空间（小容器）；变量空间在创建（声明）的时候必须指定数据类型变量空间的名字；变量空间里面只能存储一个内容（值 引用）变量空间的内容可以改变；</code></pre><p>变量如何创建/声明</p><pre><code>数据类型   类型名字；int a；string b；</code></pre><p>创建变量需要注意命名的问题</p><pre><code>命名规则： 字母、数字（不允许作为开头）、符号（英文符号_和$）还有中文（不推荐）命名的规约：              类名字：  首字母大写 如果两个以上单词  所有首字母都大写                     如：SuperPerson            变量名：  首字母小写 如果两个以上单词之后首字母大写                     如： superPerson                     遵循驼峰式命名规约            所有名字需要见名知意，为了增强程序可读性！注意：变量是空间可以只创建东西不存放内容      变量空间创建后是无内容的、空的      空的变量空间是不能拿来使用的</code></pre><p>注释</p><pre><code>1.单行注释     //2.多行注释     /*         */3.文档注释     //*        */</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;常量&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;常量是代表在程序运行过程中，不能再改变的值。&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;常量的作用     &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;1.固定的值  代表在计算过程中经常用到的值便于程序计算。
-    如：  圆周率  3.1415926
-2.
       
     
     </summary>

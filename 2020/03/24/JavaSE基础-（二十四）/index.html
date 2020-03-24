@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="设计模式  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  1.设计模式不是知识点  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  2.设计模式是一种设计经验的总结  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nb">
+<meta name="description" content="正则表达式 regexRegualar有规律的   Expression表达式 匹配字符串格式的正则表达式通常的作用如下字符串格式的校验String类中提供的方法 boolean = str.match(&amp;quot;regex&amp;quot;);字符串的拆分及替换String类中提供的方法 replace split字符串的查找pattern模式 Matcher匹配器 [abc]       abc中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaSE基础 （十三）">
-<meta property="og:url" content="http://yoursite.com/2020/03/21/JavaSE基础-（十三）/index.html">
+<meta property="og:title" content="JavaSE基础 （二十四）">
+<meta property="og:url" content="http://yoursite.com/2020/03/24/JavaSE基础-（二十四）/index.html">
 <meta property="og:site_name" content="一轮明月照九洲">
-<meta property="og:description" content="设计模式  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  1.设计模式不是知识点  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  2.设计模式是一种设计经验的总结  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nb">
+<meta property="og:description" content="正则表达式 regexRegualar有规律的   Expression表达式 匹配字符串格式的正则表达式通常的作用如下字符串格式的校验String类中提供的方法 boolean = str.match(&amp;quot;regex&amp;quot;);字符串的拆分及替换String类中提供的方法 replace split字符串的查找pattern模式 Matcher匹配器 [abc]       abc中">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-21T16:01:25.886Z">
+<meta property="og:updated_time" content="2020-03-24T15:58:51.413Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaSE基础 （十三）">
-<meta name="twitter:description" content="设计模式  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  1.设计模式不是知识点  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  2.设计模式是一种设计经验的总结  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nb">
+<meta name="twitter:title" content="JavaSE基础 （二十四）">
+<meta name="twitter:description" content="正则表达式 regexRegualar有规律的   Expression表达式 匹配字符串格式的正则表达式通常的作用如下字符串格式的校验String类中提供的方法 boolean = str.match(&amp;quot;regex&amp;quot;);字符串的拆分及替换String类中提供的方法 replace split字符串的查找pattern模式 Matcher匹配器 [abc]       abc中">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/03/21/JavaSE基础-（十三）/">
+  <link rel="canonical" href="http://yoursite.com/2020/03/24/JavaSE基础-（二十四）/">
 
 
 
 
 
-  <title>JavaSE基础 （十三） | 一轮明月照九洲</title>
+  <title>JavaSE基础 （二十四） | 一轮明月照九洲</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/21/JavaSE基础-（十三）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/24/JavaSE基础-（二十四）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="我与我周旋">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaSE基础 （十三）</h1>
+          <h1 class="post-title" itemprop="name headline">JavaSE基础 （二十四）</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-21T22:43:20+08:00">
-                2020-03-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-24T21:51:09+08:00">
+                2020-03-24
               </time>
             
 
@@ -344,47 +344,31 @@
       
 
       
-        <p>设计模式<br><br>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  1.设计模式不是知识点<br><br>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  2.设计模式是一种设计经验的总结<br><br>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<br>  3.设计模式用来解决某些场景下的某一类问题的—-&gt;通用的解决方案<br><br>   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 4.有了设计模式之后  可以让代码更容易被理解 确保了复用性 可靠性 可扩展性<br>  <br><br> 设计模式分为三类</p>
-<pre><code>1.创新型模式（5种）--------&gt;用于解决创建对象的过程
- 单例模式  工厂方法模式  抽象模式 工作模式 建造者模式 原型模式
-2.结构型模式（7种）--------&gt;把类或对象通过某种形式结合在一起 构成某种复杂或合理的结构
- 适配器模式 装饰者模式 代理模式 外观模式 桥接模式 组合模式 享元模式
-3.行为行模式（11种）------&gt;用来解决类或对象之间的交互 更合理的优化类或对象之间的关系
- 观察者模式 策略模式 模板模式 责任链模式 解析器模式 迭代器模式 命令模式 状态模式 备忘录模式 访问者模式 中介者模式</code></pre><p> 单例模式</p>
-<pre><code>设计------&gt;一个类只能创建一个对象 有效减小内存占用空间
-设计一个系统-----&gt;百度  搜索引擎
- public class Baidu{
-           public void 搜索（String keyword）{
-           }
- }
-创建一个baidu对象 new
-调用搜索的方法 做事情 方法只执行一遍
-同一时间有很多很多很多的人在使用这个系统
-对象------&gt;只能创建一个 堆内存就开辟了一个空间
-调用一次方法-----&gt;临时执行一次 方法执行空间就回收了</code></pre><p>单例模式的实现</p>
-<pre><code> 1.私有的构造方法
- 2.私有的静态的当前类作为属性
- 3.公有的静态的方法当返回值
+        <h1 id="正则表达式-regex"><a href="#正则表达式-regex" class="headerlink" title="正则表达式 regex"></a>正则表达式 regex</h1><pre><code>Regualar有规律的   Expression表达式
+匹配字符串格式的</code></pre><h2 id="正则表达式通常的作用如下"><a href="#正则表达式通常的作用如下" class="headerlink" title="正则表达式通常的作用如下"></a>正则表达式通常的作用如下</h2><h3 id="字符串格式的校验"><a href="#字符串格式的校验" class="headerlink" title="字符串格式的校验"></a>字符串格式的校验</h3><pre><code>String类中提供的方法 boolean = str.match(&quot;regex&quot;);</code></pre><h3 id="字符串的拆分及替换"><a href="#字符串的拆分及替换" class="headerlink" title="字符串的拆分及替换"></a>字符串的拆分及替换</h3><pre><code>String类中提供的方法 replace split</code></pre><h3 id="字符串的查找"><a href="#字符串的查找" class="headerlink" title="字符串的查找"></a>字符串的查找</h3><pre><code>pattern模式 Matcher匹配器
+[abc]       abc中的一个
+[^abc]      不能是abc中的一个 其他都可以
+[a-zA-Z]     表示必须是这两个范围内的
+[a-z&amp;&amp;[^bc]]  表示a-z其中的一个但不能是b和c
+.代表任意一个字符
+\d digit [0-9]
+\D 非数字[^0-9]
+\S 非留白
+\w word单词 [0-9A-Za-z]数字或字母都可以</code></pre><h3 id="所有字符串中寻找如下规则的信息-邮政编码"><a href="#所有字符串中寻找如下规则的信息-邮政编码" class="headerlink" title="所有字符串中寻找如下规则的信息 邮政编码"></a>所有字符串中寻找如下规则的信息 邮政编码</h3><pre><code>String str = &quot;123456abc123456abc123456abc&quot;
 
- 饿汉式（立即加载） 对象启动时就加载啦
-           不会产生对象就没有拿来使用的问题 空指针异常
-           启动项目时的对象加载过多 有些还没有使用 产生服务器承载压力问题
- 懒汉式（延迟加载）对象什么时候用到了 才会加载
-           可能会由于没有操作好 导致异常（很严谨）
-           启动项目时候只有需要的加载 不需要的时候还没有创建 不会浪费空间
-*生命周期托管（单例对象别人帮我们处理）对象加载过程交给别人 
-
-   private static SingleTon;               //直接=new SingleTon()饿汉式
-   public static SingleTon getSingleTon(){
-     if(single=null){
-     Single = new SingleTon();            //延迟加载方式  懒汉式
-     }
-     return single;
-  }
-public static void main(String[] args){
-    SingleTon s1 = Singleton.getSingleTon();
-    }
-}  </code></pre>
+//1.利用pattern模式创建一个模式 理解为一个正则表达式对象
+Pattern pattern = Pattern.compile（&quot;\\d{6}&quot;）;//邮编
+//2.需要提供一个字符串
+//3.利用pattern模式对象创建一个匹配器
+Matcher matcher = pattern.matcher(str);
+//4.找寻字符串中出现满足上述格式的字串
+   while(matcher.find()){
+    System.out.println(matcher.group());//找到满足字符串格式的那一串文字</code></pre><h3 id="如下所有都用来描述字符出现的次数"><a href="#如下所有都用来描述字符出现的次数" class="headerlink" title="如下所有都用来描述字符出现的次数"></a>如下所有都用来描述字符出现的次数</h3><pre><code>？ 0-1次 [0-9]?
+*  0-n次 
++  1-n次
+{n} 固定n次
+{n,}至少出现n次
+{m,n}m-n次</code></pre>
       
     </div>
     
@@ -408,8 +392,8 @@ public static void main(String[] args){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/21/JavaSE基础-（十二）/" rel="next" title="JavaSE基础 （十二）">
-                <i class="fa fa-chevron-left"></i> JavaSE基础 （十二）
+              <a href="/2020/03/24/JavaSE基础-（二十三）/" rel="next" title="JavaSE基础 （二十三）">
+                <i class="fa fa-chevron-left"></i> JavaSE基础 （二十三）
               </a>
             
           </div>
@@ -418,8 +402,8 @@ public static void main(String[] args){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/03/21/JavaSE基础-（十四）/" rel="prev" title="JavaSE基础 （十四）">
-                JavaSE基础 （十四） <i class="fa fa-chevron-right"></i>
+              <a href="/2020/03/24/JavaSE基础-（二十五）/" rel="prev" title="JavaSE基础 （二十五）">
+                JavaSE基础 （二十五） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -472,8 +456,17 @@ public static void main(String[] args){
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -558,6 +551,22 @@ public static void main(String[] args){
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#正则表达式-regex"><span class="nav-number">1.</span> <span class="nav-text">正则表达式 regex</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式通常的作用如下"><span class="nav-number">1.1.</span> <span class="nav-text">正则表达式通常的作用如下</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串格式的校验"><span class="nav-number">1.1.1.</span> <span class="nav-text">字符串格式的校验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串的拆分及替换"><span class="nav-number">1.1.2.</span> <span class="nav-text">字符串的拆分及替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串的查找"><span class="nav-number">1.1.3.</span> <span class="nav-text">字符串的查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#所有字符串中寻找如下规则的信息-邮政编码"><span class="nav-number">1.1.4.</span> <span class="nav-text">所有字符串中寻找如下规则的信息 邮政编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如下所有都用来描述字符出现的次数"><span class="nav-number">1.1.5.</span> <span class="nav-text">如下所有都用来描述字符出现的次数</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

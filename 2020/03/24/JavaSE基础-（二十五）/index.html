@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="设计模式  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  1.设计模式不是知识点  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  2.设计模式是一种设计经验的总结  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nb">
+<meta name="description" content="集合相关变量–容器存取一个元素数组–容器一组具有某种特性的数据存放在一起        存储一组元素（数据类型一致）  长度固定集合–容器与数组类似 集合的长度存储之后还能改变 集合用来存储一组元素Collection存的都是valueList有序可重复Set无序无重复Map存储的是以key-value形式存在 key无序无重复  value无序可重复序：顺序添加进去的元素 取得元素的顺序一致 注">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaSE基础 （十三）">
-<meta property="og:url" content="http://yoursite.com/2020/03/21/JavaSE基础-（十三）/index.html">
+<meta property="og:title" content="JavaSE基础 （二十五）">
+<meta property="og:url" content="http://yoursite.com/2020/03/24/JavaSE基础-（二十五）/index.html">
 <meta property="og:site_name" content="一轮明月照九洲">
-<meta property="og:description" content="设计模式  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  1.设计模式不是知识点  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  2.设计模式是一种设计经验的总结  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nb">
+<meta property="og:description" content="集合相关变量–容器存取一个元素数组–容器一组具有某种特性的数据存放在一起        存储一组元素（数据类型一致）  长度固定集合–容器与数组类似 集合的长度存储之后还能改变 集合用来存储一组元素Collection存的都是valueList有序可重复Set无序无重复Map存储的是以key-value形式存在 key无序无重复  value无序可重复序：顺序添加进去的元素 取得元素的顺序一致 注">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-21T16:01:25.886Z">
+<meta property="og:updated_time" content="2020-03-24T15:58:44.354Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaSE基础 （十三）">
-<meta name="twitter:description" content="设计模式  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  1.设计模式不是知识点  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  2.设计模式是一种设计经验的总结  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nb">
+<meta name="twitter:title" content="JavaSE基础 （二十五）">
+<meta name="twitter:description" content="集合相关变量–容器存取一个元素数组–容器一组具有某种特性的数据存放在一起        存储一组元素（数据类型一致）  长度固定集合–容器与数组类似 集合的长度存储之后还能改变 集合用来存储一组元素Collection存的都是valueList有序可重复Set无序无重复Map存储的是以key-value形式存在 key无序无重复  value无序可重复序：顺序添加进去的元素 取得元素的顺序一致 注">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/03/21/JavaSE基础-（十三）/">
+  <link rel="canonical" href="http://yoursite.com/2020/03/24/JavaSE基础-（二十五）/">
 
 
 
 
 
-  <title>JavaSE基础 （十三） | 一轮明月照九洲</title>
+  <title>JavaSE基础 （二十五） | 一轮明月照九洲</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/21/JavaSE基础-（十三）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/24/JavaSE基础-（二十五）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="我与我周旋">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaSE基础 （十三）</h1>
+          <h1 class="post-title" itemprop="name headline">JavaSE基础 （二十五）</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-21T22:43:20+08:00">
-                2020-03-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-24T22:23:31+08:00">
+                2020-03-24
               </time>
             
 
@@ -344,47 +344,40 @@
       
 
       
-        <p>设计模式<br><br>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  1.设计模式不是知识点<br><br>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  2.设计模式是一种设计经验的总结<br><br>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<br>  3.设计模式用来解决某些场景下的某一类问题的—-&gt;通用的解决方案<br><br>   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 4.有了设计模式之后  可以让代码更容易被理解 确保了复用性 可靠性 可扩展性<br>  <br><br> 设计模式分为三类</p>
-<pre><code>1.创新型模式（5种）--------&gt;用于解决创建对象的过程
- 单例模式  工厂方法模式  抽象模式 工作模式 建造者模式 原型模式
-2.结构型模式（7种）--------&gt;把类或对象通过某种形式结合在一起 构成某种复杂或合理的结构
- 适配器模式 装饰者模式 代理模式 外观模式 桥接模式 组合模式 享元模式
-3.行为行模式（11种）------&gt;用来解决类或对象之间的交互 更合理的优化类或对象之间的关系
- 观察者模式 策略模式 模板模式 责任链模式 解析器模式 迭代器模式 命令模式 状态模式 备忘录模式 访问者模式 中介者模式</code></pre><p> 单例模式</p>
-<pre><code>设计------&gt;一个类只能创建一个对象 有效减小内存占用空间
-设计一个系统-----&gt;百度  搜索引擎
- public class Baidu{
-           public void 搜索（String keyword）{
-           }
- }
-创建一个baidu对象 new
-调用搜索的方法 做事情 方法只执行一遍
-同一时间有很多很多很多的人在使用这个系统
-对象------&gt;只能创建一个 堆内存就开辟了一个空间
-调用一次方法-----&gt;临时执行一次 方法执行空间就回收了</code></pre><p>单例模式的实现</p>
-<pre><code> 1.私有的构造方法
- 2.私有的静态的当前类作为属性
- 3.公有的静态的方法当返回值
+        <h1 id="集合相关"><a href="#集合相关" class="headerlink" title="集合相关"></a>集合相关</h1><h2 id="变量–容器"><a href="#变量–容器" class="headerlink" title="变量–容器"></a>变量–容器</h2><pre><code>存取一个元素</code></pre><h2 id="数组–容器"><a href="#数组–容器" class="headerlink" title="数组–容器"></a>数组–容器</h2><pre><code>一组具有某种特性的数据存放在一起
+       存储一组元素（数据类型一致）  长度固定</code></pre><h2 id="集合–容器"><a href="#集合–容器" class="headerlink" title="集合–容器"></a>集合–容器</h2><pre><code>与数组类似 集合的长度存储之后还能改变
+集合用来存储一组元素</code></pre><h3 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h3><pre><code>存的都是value</code></pre><h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><pre><code>有序可重复</code></pre><h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h4><pre><code>无序无重复</code></pre><h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><pre><code>存储的是以key-value形式存在
+key无序无重复  value无序可重复</code></pre><h3 id="序：顺序"><a href="#序：顺序" class="headerlink" title="序：顺序"></a>序：顺序</h3><pre><code>添加进去的元素 取得元素的顺序一致 注意指的不是集合自己的顺序</code></pre><h3 id="重复：两个对象一致"><a href="#重复：两个对象一致" class="headerlink" title="重复：两个对象一致"></a>重复：两个对象一致</h3><h2 id="List集合"><a href="#List集合" class="headerlink" title="List集合"></a>List集合</h2><p>   1.ArrayList 2.LinkList 3.Vector</p>
+<h3 id="ArrayList——-底层就是一个数组"><a href="#ArrayList——-底层就是一个数组" class="headerlink" title="ArrayList——-底层就是一个数组"></a>ArrayList——-底层就是一个数组</h3><h3 id="所属的包-java-util"><a href="#所属的包-java-util" class="headerlink" title="所属的包 java.util"></a>所属的包 java.util</h3><h3 id="如何创建对象"><a href="#如何创建对象" class="headerlink" title="如何创建对象"></a>如何创建对象</h3><pre><code>无参数构造方法 带默认参数的都构造方法 带collection参数的构造方法</code></pre><h3 id="常用的方法-—小容器"><a href="#常用的方法-—小容器" class="headerlink" title="常用的方法 —小容器"></a>常用的方法 —小容器</h3><pre><code>   存 add
+   取 get
+   删 remove
+   改
+   个数 size
 
- 饿汉式（立即加载） 对象启动时就加载啦
-           不会产生对象就没有拿来使用的问题 空指针异常
-           启动项目时的对象加载过多 有些还没有使用 产生服务器承载压力问题
- 懒汉式（延迟加载）对象什么时候用到了 才会加载
-           可能会由于没有操作好 导致异常（很严谨）
-           启动项目时候只有需要的加载 不需要的时候还没有创建 不会浪费空间
-*生命周期托管（单例对象别人帮我们处理）对象加载过程交给别人 
-
-   private static SingleTon;               //直接=new SingleTon()饿汉式
-   public static SingleTon getSingleTon(){
-     if(single=null){
-     Single = new SingleTon();            //延迟加载方式  懒汉式
-     }
-     return single;
-  }
-public static void main(String[] args){
-    SingleTon s1 = Singleton.getSingleTon();
-    }
-}  </code></pre>
+add(E e) add(int index,E e)
+addAll(Collection c); add(int index,Collection c)
+clear();将集合内的元素全部清除
+boolean = contains(Object);找寻一个给定元素集合中是否拥有
+ensureCapacity(int minCapacity);
+E = get(int index);
+int = indexOf(Object obj); lastindexOf();
+isEmpty();
+iterator;//迭代器 1.5之后增强for
+removeAll 差集 retainAll()交集
+addAll()并集
+E = set(int index,E value)
+int size();
+List = subList(int index,E value)
+toArray();集合变成数组
+toArray(T[]);
+trimToSize();//变成有效元素个数那么长</code></pre><h3 id="arryList底层是一个Object"><a href="#arryList底层是一个Object" class="headerlink" title="arryList底层是一个Object[]"></a>arryList底层是一个Object[]</h3><pre><code>什么类型都可以存进去
+取出来的时候多态效果 需要自己造型 显得用起来非常麻烦</code></pre><h3 id="JDK1-5之后—-gt-泛型"><a href="#JDK1-5之后—-gt-泛型" class="headerlink" title="JDK1.5之后—-&gt;泛型"></a>JDK1.5之后—-&gt;泛型</h3><pre><code>用来规定数据类型的,定义的时候用一个符号代替某种类型
+在使用的时候具体的数据类型 将定义的那个符号替换掉
+ArrayBox&lt;T&gt;</code></pre><h3 id="泛型可以用在哪里？"><a href="#泛型可以用在哪里？" class="headerlink" title="泛型可以用在哪里？"></a>泛型可以用在哪里？</h3><h4 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h4><pre><code>类定义的时候描述某种数据类型 集合就是这样使用</code></pre><h4 id="泛型接口"><a href="#泛型接口" class="headerlink" title="泛型接口"></a>泛型接口</h4><pre><code>与泛型类的使用基本一致 子类实现接口时必须添加泛型
+public interface Text&lt;X&gt;{
+     public X value;
+}
+public class Son&lt;X&gt;implements Test&lt;X&gt;</code></pre><h4 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h4><pre><code>方法调用时传参数 方法的泛型与类无关 带有泛型的方法可以不放在带有泛型的类中</code></pre>
       
     </div>
     
@@ -408,8 +401,8 @@ public static void main(String[] args){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/21/JavaSE基础-（十二）/" rel="next" title="JavaSE基础 （十二）">
-                <i class="fa fa-chevron-left"></i> JavaSE基础 （十二）
+              <a href="/2020/03/24/JavaSE基础-（二十四）/" rel="next" title="JavaSE基础 （二十四）">
+                <i class="fa fa-chevron-left"></i> JavaSE基础 （二十四）
               </a>
             
           </div>
@@ -417,10 +410,6 @@ public static void main(String[] args){
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/21/JavaSE基础-（十四）/" rel="prev" title="JavaSE基础 （十四）">
-                JavaSE基础 （十四） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -472,8 +461,17 @@ public static void main(String[] args){
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -558,6 +556,22 @@ public static void main(String[] args){
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#集合相关"><span class="nav-number">1.</span> <span class="nav-text">集合相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量–容器"><span class="nav-number">1.1.</span> <span class="nav-text">变量–容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组–容器"><span class="nav-number">1.2.</span> <span class="nav-text">数组–容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合–容器"><span class="nav-number">1.3.</span> <span class="nav-text">集合–容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Collection"><span class="nav-number">1.3.1.</span> <span class="nav-text">Collection</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#List"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">List</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">Set</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Map"><span class="nav-number">1.3.2.</span> <span class="nav-text">Map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#序：顺序"><span class="nav-number">1.3.3.</span> <span class="nav-text">序：顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重复：两个对象一致"><span class="nav-number">1.3.4.</span> <span class="nav-text">重复：两个对象一致</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#List集合"><span class="nav-number">1.4.</span> <span class="nav-text">List集合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList——-底层就是一个数组"><span class="nav-number">1.4.1.</span> <span class="nav-text">ArrayList——-底层就是一个数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#所属的包-java-util"><span class="nav-number">1.4.2.</span> <span class="nav-text">所属的包 java.util</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何创建对象"><span class="nav-number">1.4.3.</span> <span class="nav-text">如何创建对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的方法-—小容器"><span class="nav-number">1.4.4.</span> <span class="nav-text">常用的方法 —小容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arryList底层是一个Object"><span class="nav-number">1.4.5.</span> <span class="nav-text">arryList底层是一个Object[]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDK1-5之后—-gt-泛型"><span class="nav-number">1.4.6.</span> <span class="nav-text">JDK1.5之后—-&gt;泛型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型可以用在哪里？"><span class="nav-number">1.4.7.</span> <span class="nav-text">泛型可以用在哪里？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#泛型类"><span class="nav-number">1.4.7.1.</span> <span class="nav-text">泛型类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#泛型接口"><span class="nav-number">1.4.7.2.</span> <span class="nav-text">泛型接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#泛型方法"><span class="nav-number">1.4.7.3.</span> <span class="nav-text">泛型方法</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

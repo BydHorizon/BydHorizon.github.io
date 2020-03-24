@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="设计模式  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  1.设计模式不是知识点  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  2.设计模式是一种设计经验的总结  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nb">
+<meta name="description" content="StringBuffer/StringBuilder所属的包java.lang包StringSerializable,CharSequence,Comparable 非常特殊的类 可以像常量一样创建对象 String str = &amp;quot;abc&amp;quot;; 内存存储 &amp;quot;abc&amp;quot;对象 char[] value String的不可变特性   private fianl cha">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaSE基础 （十三）">
-<meta property="og:url" content="http://yoursite.com/2020/03/21/JavaSE基础-（十三）/index.html">
+<meta property="og:title" content="JavaSE基础 （二十三）">
+<meta property="og:url" content="http://yoursite.com/2020/03/24/JavaSE基础-（二十三）/index.html">
 <meta property="og:site_name" content="一轮明月照九洲">
-<meta property="og:description" content="设计模式  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  1.设计模式不是知识点  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  2.设计模式是一种设计经验的总结  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nb">
+<meta property="og:description" content="StringBuffer/StringBuilder所属的包java.lang包StringSerializable,CharSequence,Comparable 非常特殊的类 可以像常量一样创建对象 String str = &amp;quot;abc&amp;quot;; 内存存储 &amp;quot;abc&amp;quot;对象 char[] value String的不可变特性   private fianl cha">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-21T16:01:25.886Z">
+<meta property="og:updated_time" content="2020-03-24T15:58:57.633Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaSE基础 （十三）">
-<meta name="twitter:description" content="设计模式  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  1.设计模式不是知识点  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  2.设计模式是一种设计经验的总结  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nb">
+<meta name="twitter:title" content="JavaSE基础 （二十三）">
+<meta name="twitter:description" content="StringBuffer/StringBuilder所属的包java.lang包StringSerializable,CharSequence,Comparable 非常特殊的类 可以像常量一样创建对象 String str = &amp;quot;abc&amp;quot;; 内存存储 &amp;quot;abc&amp;quot;对象 char[] value String的不可变特性   private fianl cha">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/03/21/JavaSE基础-（十三）/">
+  <link rel="canonical" href="http://yoursite.com/2020/03/24/JavaSE基础-（二十三）/">
 
 
 
 
 
-  <title>JavaSE基础 （十三） | 一轮明月照九洲</title>
+  <title>JavaSE基础 （二十三） | 一轮明月照九洲</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/21/JavaSE基础-（十三）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/24/JavaSE基础-（二十三）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="我与我周旋">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaSE基础 （十三）</h1>
+          <h1 class="post-title" itemprop="name headline">JavaSE基础 （二十三）</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-21T22:43:20+08:00">
-                2020-03-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-24T20:54:08+08:00">
+                2020-03-24
               </time>
             
 
@@ -344,47 +344,66 @@
       
 
       
-        <p>设计模式<br><br>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  1.设计模式不是知识点<br><br>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  2.设计模式是一种设计经验的总结<br><br>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<br>  3.设计模式用来解决某些场景下的某一类问题的—-&gt;通用的解决方案<br><br>   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 4.有了设计模式之后  可以让代码更容易被理解 确保了复用性 可靠性 可扩展性<br>  <br><br> 设计模式分为三类</p>
-<pre><code>1.创新型模式（5种）--------&gt;用于解决创建对象的过程
- 单例模式  工厂方法模式  抽象模式 工作模式 建造者模式 原型模式
-2.结构型模式（7种）--------&gt;把类或对象通过某种形式结合在一起 构成某种复杂或合理的结构
- 适配器模式 装饰者模式 代理模式 外观模式 桥接模式 组合模式 享元模式
-3.行为行模式（11种）------&gt;用来解决类或对象之间的交互 更合理的优化类或对象之间的关系
- 观察者模式 策略模式 模板模式 责任链模式 解析器模式 迭代器模式 命令模式 状态模式 备忘录模式 访问者模式 中介者模式</code></pre><p> 单例模式</p>
-<pre><code>设计------&gt;一个类只能创建一个对象 有效减小内存占用空间
-设计一个系统-----&gt;百度  搜索引擎
- public class Baidu{
-           public void 搜索（String keyword）{
-           }
- }
-创建一个baidu对象 new
-调用搜索的方法 做事情 方法只执行一遍
-同一时间有很多很多很多的人在使用这个系统
-对象------&gt;只能创建一个 堆内存就开辟了一个空间
-调用一次方法-----&gt;临时执行一次 方法执行空间就回收了</code></pre><p>单例模式的实现</p>
-<pre><code> 1.私有的构造方法
- 2.私有的静态的当前类作为属性
- 3.公有的静态的方法当返回值
-
- 饿汉式（立即加载） 对象启动时就加载啦
-           不会产生对象就没有拿来使用的问题 空指针异常
-           启动项目时的对象加载过多 有些还没有使用 产生服务器承载压力问题
- 懒汉式（延迟加载）对象什么时候用到了 才会加载
-           可能会由于没有操作好 导致异常（很严谨）
-           启动项目时候只有需要的加载 不需要的时候还没有创建 不会浪费空间
-*生命周期托管（单例对象别人帮我们处理）对象加载过程交给别人 
-
-   private static SingleTon;               //直接=new SingleTon()饿汉式
-   public static SingleTon getSingleTon(){
-     if(single=null){
-     Single = new SingleTon();            //延迟加载方式  懒汉式
-     }
-     return single;
-  }
-public static void main(String[] args){
-    SingleTon s1 = Singleton.getSingleTon();
-    }
-}  </code></pre>
+        <h1 id="StringBuffer-StringBuilder"><a href="#StringBuffer-StringBuilder" class="headerlink" title="StringBuffer/StringBuilder"></a>StringBuffer/StringBuilder</h1><h2 id="所属的包"><a href="#所属的包" class="headerlink" title="所属的包"></a>所属的包</h2><pre><code>java.lang包</code></pre><h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><pre><code>Serializable,CharSequence,Comparable
+非常特殊的类 可以像常量一样创建对象
+String str = &quot;abc&quot;;
+内存存储 &quot;abc&quot;对象 char[] value
+String的不可变特性   private fianl char[] value
+频繁的修改内容的时候 性能不是很好</code></pre><h2 id="默认继承"><a href="#默认继承" class="headerlink" title="默认继承"></a>默认继承</h2><pre><code>obJect 实现接口Serialzable,CharSequence,Appendable
+StringBuffer/StringBuilder 没有compare To方法
+StringBuffer/StringBuilder 含有一个String没有的方法 append();拼接</code></pre><h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><pre><code>可变字符串 char[] value;动态扩容</code></pre><h2 id="对象的构建"><a href="#对象的构建" class="headerlink" title="对象的构建"></a>对象的构建</h2><pre><code>无参数构造方法
+有参数构造方法
+//无参数构造方法 构建一个默认长度16个对象空间 char[]
+ StringBuilder builder = new StringBuilder();
+//利用给定的参数 构建有一个自定义长度空间的对象 char[]
+ StringBuilder builder = new StringBuilder(20);
+//利用带String参数的构造方法,默认数组字符长度字符串+16个长度
+ StringBuilder builder = new StringBuilder(&quot;abc&quot;);</code></pre><h2 id="StringBuilder中的常用方法"><a href="#StringBuilder中的常用方法" class="headerlink" title="StringBuilder中的常用方法"></a>StringBuilder中的常用方法</h2><pre><code>最主要的方法 append() 频繁的拼接字符串时候使用此方法 提高性能
+capcacity();字符串底层char[]的容量
+length();字符串有效元素个数（长度）
+char = charAt(int index);
+int = codePointAt(int index);
+String = substring(int start,[int end]);
+        注意需要接收返回值 看见取出来的字符串效果
+delete(int start,[int end]);
+        String Builder类中独有的方法String类没有
+        将Start到end之间的字符串删掉 不用接收返回值就看到效果啦
+int = indexOf(String str,[int fromindex]);
+int = lastindexof（String str,[int fromIndex]）
+        找寻给定的str字符串中第一次出现的索引位置 带重载 则从某一个位置开始找
+StringBuilder = deleteCharAt(int Index)
+        String类中没有的方法
+        将给定inde位置的某一字符串删除
+insert(int index,value);
+        将给定的value插入在index上
+replace(int start，int end，string str);
+        将start和end之间的部分替换成str
+        builder.replace(2.5,&quot;zzt&quot;)
+setCharAt(int index,char value);
+        将index位置的字符改成给定字符的value
+toString()
+        将StringBuilder对象 构建成一个string对象 返回
+trimToSize()
+        将数组无用的容量去掉 变成length长度的数组</code></pre><h2 id="知识总结"><a href="#知识总结" class="headerlink" title="知识总结"></a>知识总结</h2><h3 id="StringBuilder类不一定需要"><a href="#StringBuilder类不一定需要" class="headerlink" title="StringBuilder类不一定需要"></a>StringBuilder类不一定需要</h3><pre><code>是为了避免String频繁拼接修改字符串信息时才使用的 底层是数组是可变的 提高了性能</code></pre><h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><pre><code>与String类不同独有的方法
+append() lnsert() delete() deleteCharAt() reverse()
+与String类相同的方法
+charAt() codePointAt() indexOf() lastindexOf() replace() 名字相同 用法不一致
+不是很常用的方法
+ensureCapacity() capacity() SetLength() trimToSize() setCharAt();</code></pre><h3 id="String家族笔试中经常考察的知识点"><a href="#String家族笔试中经常考察的知识点" class="headerlink" title="String家族笔试中经常考察的知识点"></a>String家族笔试中经常考察的知识点</h3><h4 id="String所属的包-继承关系-实现接口"><a href="#String所属的包-继承关系-实现接口" class="headerlink" title="String所属的包 继承关系 实现接口"></a>String所属的包 继承关系 实现接口</h4><pre><code>java.lang包 继承Object 实现接口Serializable,CharSequence,Comparable</code></pre><h4 id="String构建方式"><a href="#String构建方式" class="headerlink" title="String构建方式"></a>String构建方式</h4><pre><code>常量 构造方法</code></pre><h4 id="String对象内存结构"><a href="#String对象内存结构" class="headerlink" title="String对象内存结构"></a>String对象内存结构</h4><pre><code>字符串常量区 new堆内存对象
+= = equals()区别
+&quot;a&quot; +&quot;b&quot;+&quot;c&quot;</code></pre><h4 id="String不可不变特性"><a href="#String不可不变特性" class="headerlink" title="String不可不变特性"></a>String不可不变特性</h4><pre><code>长度及内容</code></pre><h4 id="String类常用的方法—-与StringBuilder的区别"><a href="#String类常用的方法—-与StringBuilder的区别" class="headerlink" title="String类常用的方法—-与StringBuilder的区别"></a>String类常用的方法—-与StringBuilder的区别</h4><pre><code>concat(); toUpperCase();</code></pre><h4 id="String和StringBuilder区别-String和StringBuffer区别"><a href="#String和StringBuilder区别-String和StringBuffer区别" class="headerlink" title="String和StringBuilder区别|String和StringBuffer区别"></a>String和StringBuilder区别|String和StringBuffer区别</h4><pre><code>String不可变字符串
+        有一个接口Comparable
+        不可变体现在长度及内容
+        有一些方法StringBuilder没有 没有concat compareTo toUpperCase
+StringBuilder可变字符串
+        JDK1.5
+        有一个接口Appendable
+        可变字符串 没有final修饰 底层可以进行数组扩容
+        有一些方法string没有 append() insert() delete() reverse()</code></pre><h4 id="StringBuffer和StringBuild的不同"><a href="#StringBuffer和StringBuild的不同" class="headerlink" title="StringBuffer和StringBuild的不同"></a>StringBuffer和StringBuild的不同</h4><pre><code>stringBuffer早期版本1.0
+StringBuilder后来的版本1.5
+方法使用几乎一致
+早期版本 线程同步  安全性比较高 执行效率相对较低
+后期版本 线程非同步 安全性能比较低 执行效率相对较高</code></pre>
       
     </div>
     
@@ -408,8 +427,8 @@ public static void main(String[] args){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/21/JavaSE基础-（十二）/" rel="next" title="JavaSE基础 （十二）">
-                <i class="fa fa-chevron-left"></i> JavaSE基础 （十二）
+              <a href="/2020/03/23/avaSE基础-（二十二）/" rel="next" title="JavaSE基础 （二十二）">
+                <i class="fa fa-chevron-left"></i> JavaSE基础 （二十二）
               </a>
             
           </div>
@@ -418,8 +437,8 @@ public static void main(String[] args){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/03/21/JavaSE基础-（十四）/" rel="prev" title="JavaSE基础 （十四）">
-                JavaSE基础 （十四） <i class="fa fa-chevron-right"></i>
+              <a href="/2020/03/24/JavaSE基础-（二十四）/" rel="prev" title="JavaSE基础 （二十四）">
+                JavaSE基础 （二十四） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -472,8 +491,17 @@ public static void main(String[] args){
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -558,6 +586,22 @@ public static void main(String[] args){
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#StringBuffer-StringBuilder"><span class="nav-number">1.</span> <span class="nav-text">StringBuffer/StringBuilder</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#所属的包"><span class="nav-number">1.1.</span> <span class="nav-text">所属的包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#String"><span class="nav-number">1.1.1.</span> <span class="nav-text">String</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#默认继承"><span class="nav-number">1.2.</span> <span class="nav-text">默认继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特性"><span class="nav-number">1.3.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的构建"><span class="nav-number">1.4.</span> <span class="nav-text">对象的构建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StringBuilder中的常用方法"><span class="nav-number">1.5.</span> <span class="nav-text">StringBuilder中的常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识总结"><span class="nav-number">1.6.</span> <span class="nav-text">知识总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#StringBuilder类不一定需要"><span class="nav-number">1.6.1.</span> <span class="nav-text">StringBuilder类不一定需要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用方法"><span class="nav-number">1.6.2.</span> <span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String家族笔试中经常考察的知识点"><span class="nav-number">1.6.3.</span> <span class="nav-text">String家族笔试中经常考察的知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#String所属的包-继承关系-实现接口"><span class="nav-number">1.6.3.1.</span> <span class="nav-text">String所属的包 继承关系 实现接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String构建方式"><span class="nav-number">1.6.3.2.</span> <span class="nav-text">String构建方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String对象内存结构"><span class="nav-number">1.6.3.3.</span> <span class="nav-text">String对象内存结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String不可不变特性"><span class="nav-number">1.6.3.4.</span> <span class="nav-text">String不可不变特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String类常用的方法—-与StringBuilder的区别"><span class="nav-number">1.6.3.5.</span> <span class="nav-text">String类常用的方法—-与StringBuilder的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String和StringBuilder区别-String和StringBuffer区别"><span class="nav-number">1.6.3.6.</span> <span class="nav-text">String和StringBuilder区别|String和StringBuffer区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#StringBuffer和StringBuild的不同"><span class="nav-number">1.6.3.7.</span> <span class="nav-text">StringBuffer和StringBuild的不同</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

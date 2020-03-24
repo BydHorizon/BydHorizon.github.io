@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-23T15:47:49.263Z</updated>
+  <updated>2020-03-24T15:58:44.354Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,75 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaSE基础 （二十五）</title>
+    <link href="http://yoursite.com/2020/03/24/JavaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E4%BA%8C%E5%8D%81%E4%BA%94%EF%BC%89/"/>
+    <id>http://yoursite.com/2020/03/24/JavaSE基础-（二十五）/</id>
+    <published>2020-03-24T14:23:31.000Z</published>
+    <updated>2020-03-24T15:58:44.354Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="集合相关"><a href="#集合相关" class="headerlink" title="集合相关"></a>集合相关</h1><h2 id="变量–容器"><a href="#变量–容器" class="headerlink" title="变量–容器"></a>变量–容器</h2><pre><code>存取一个元素</code></pre><h2 id="数组–容器"><a href="#数组–容器" class="headerlink" title="数组–容器"></a>数组–容器</h2><pre><code>一组具有某种特性的数据存放在一起       存储一组元素（数据类型一致）  长度固定</code></pre><h2 id="集合–容器"><a href="#集合–容器" class="headerlink" title="集合–容器"></a>集合–容器</h2><pre><code>与数组类似 集合的长度存储之后还能改变集合用来存储一组元素</code></pre><h3 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h3><pre><code>存的都是value</code></pre><h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><pre><code>有序可重复</code></pre><h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h4><pre><code>无序无重复</code></pre><h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><pre><code>存储的是以key-value形式存在key无序无重复  value无序可重复</code></pre><h3 id="序：顺序"><a href="#序：顺序" class="headerlink" title="序：顺序"></a>序：顺序</h3><pre><code>添加进去的元素 取得元素的顺序一致 注意指的不是集合自己的顺序</code></pre><h3 id="重复：两个对象一致"><a href="#重复：两个对象一致" class="headerlink" title="重复：两个对象一致"></a>重复：两个对象一致</h3><h2 id="List集合"><a href="#List集合" class="headerlink" title="List集合"></a>List集合</h2><p>   1.ArrayList 2.LinkList 3.Vector</p><h3 id="ArrayList——-底层就是一个数组"><a href="#ArrayList——-底层就是一个数组" class="headerlink" title="ArrayList——-底层就是一个数组"></a>ArrayList——-底层就是一个数组</h3><h3 id="所属的包-java-util"><a href="#所属的包-java-util" class="headerlink" title="所属的包 java.util"></a>所属的包 java.util</h3><h3 id="如何创建对象"><a href="#如何创建对象" class="headerlink" title="如何创建对象"></a>如何创建对象</h3><pre><code>无参数构造方法 带默认参数的都构造方法 带collection参数的构造方法</code></pre><h3 id="常用的方法-—小容器"><a href="#常用的方法-—小容器" class="headerlink" title="常用的方法 —小容器"></a>常用的方法 —小容器</h3><pre><code>   存 add   取 get   删 remove   改   个数 sizeadd(E e) add(int index,E e)addAll(Collection c); add(int index,Collection c)clear();将集合内的元素全部清除boolean = contains(Object);找寻一个给定元素集合中是否拥有ensureCapacity(int minCapacity);E = get(int index);int = indexOf(Object obj); lastindexOf();isEmpty();iterator;//迭代器 1.5之后增强forremoveAll 差集 retainAll()交集addAll()并集E = set(int index,E value)int size();List = subList(int index,E value)toArray();集合变成数组toArray(T[]);trimToSize();//变成有效元素个数那么长</code></pre><h3 id="arryList底层是一个Object"><a href="#arryList底层是一个Object" class="headerlink" title="arryList底层是一个Object[]"></a>arryList底层是一个Object[]</h3><pre><code>什么类型都可以存进去取出来的时候多态效果 需要自己造型 显得用起来非常麻烦</code></pre><h3 id="JDK1-5之后—-gt-泛型"><a href="#JDK1-5之后—-gt-泛型" class="headerlink" title="JDK1.5之后—-&gt;泛型"></a>JDK1.5之后—-&gt;泛型</h3><pre><code>用来规定数据类型的,定义的时候用一个符号代替某种类型在使用的时候具体的数据类型 将定义的那个符号替换掉ArrayBox&lt;T&gt;</code></pre><h3 id="泛型可以用在哪里？"><a href="#泛型可以用在哪里？" class="headerlink" title="泛型可以用在哪里？"></a>泛型可以用在哪里？</h3><h4 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h4><pre><code>类定义的时候描述某种数据类型 集合就是这样使用</code></pre><h4 id="泛型接口"><a href="#泛型接口" class="headerlink" title="泛型接口"></a>泛型接口</h4><pre><code>与泛型类的使用基本一致 子类实现接口时必须添加泛型public interface Text&lt;X&gt;{     public X value;}public class Son&lt;X&gt;implements Test&lt;X&gt;</code></pre><h4 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h4><pre><code>方法调用时传参数 方法的泛型与类无关 带有泛型的方法可以不放在带有泛型的类中</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;集合相关&quot;&gt;&lt;a href=&quot;#集合相关&quot; class=&quot;headerlink&quot; title=&quot;集合相关&quot;&gt;&lt;/a&gt;集合相关&lt;/h1&gt;&lt;h2 id=&quot;变量–容器&quot;&gt;&lt;a href=&quot;#变量–容器&quot; class=&quot;headerlink&quot; title=&quot;变量–容器&quot;&gt;
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaSE基础 （二十四）</title>
+    <link href="http://yoursite.com/2020/03/24/JavaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E4%BA%8C%E5%8D%81%E5%9B%9B%EF%BC%89/"/>
+    <id>http://yoursite.com/2020/03/24/JavaSE基础-（二十四）/</id>
+    <published>2020-03-24T13:51:09.000Z</published>
+    <updated>2020-03-24T15:58:51.413Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="正则表达式-regex"><a href="#正则表达式-regex" class="headerlink" title="正则表达式 regex"></a>正则表达式 regex</h1><pre><code>Regualar有规律的   Expression表达式匹配字符串格式的</code></pre><h2 id="正则表达式通常的作用如下"><a href="#正则表达式通常的作用如下" class="headerlink" title="正则表达式通常的作用如下"></a>正则表达式通常的作用如下</h2><h3 id="字符串格式的校验"><a href="#字符串格式的校验" class="headerlink" title="字符串格式的校验"></a>字符串格式的校验</h3><pre><code>String类中提供的方法 boolean = str.match(&quot;regex&quot;);</code></pre><h3 id="字符串的拆分及替换"><a href="#字符串的拆分及替换" class="headerlink" title="字符串的拆分及替换"></a>字符串的拆分及替换</h3><pre><code>String类中提供的方法 replace split</code></pre><h3 id="字符串的查找"><a href="#字符串的查找" class="headerlink" title="字符串的查找"></a>字符串的查找</h3><pre><code>pattern模式 Matcher匹配器[abc]       abc中的一个[^abc]      不能是abc中的一个 其他都可以[a-zA-Z]     表示必须是这两个范围内的[a-z&amp;&amp;[^bc]]  表示a-z其中的一个但不能是b和c.代表任意一个字符\d digit [0-9]\D 非数字[^0-9]\S 非留白\w word单词 [0-9A-Za-z]数字或字母都可以</code></pre><h3 id="所有字符串中寻找如下规则的信息-邮政编码"><a href="#所有字符串中寻找如下规则的信息-邮政编码" class="headerlink" title="所有字符串中寻找如下规则的信息 邮政编码"></a>所有字符串中寻找如下规则的信息 邮政编码</h3><pre><code>String str = &quot;123456abc123456abc123456abc&quot;//1.利用pattern模式创建一个模式 理解为一个正则表达式对象Pattern pattern = Pattern.compile（&quot;\\d{6}&quot;）;//邮编//2.需要提供一个字符串//3.利用pattern模式对象创建一个匹配器Matcher matcher = pattern.matcher(str);//4.找寻字符串中出现满足上述格式的字串   while(matcher.find()){    System.out.println(matcher.group());//找到满足字符串格式的那一串文字</code></pre><h3 id="如下所有都用来描述字符出现的次数"><a href="#如下所有都用来描述字符出现的次数" class="headerlink" title="如下所有都用来描述字符出现的次数"></a>如下所有都用来描述字符出现的次数</h3><pre><code>？ 0-1次 [0-9]?*  0-n次 +  1-n次{n} 固定n次{n,}至少出现n次{m,n}m-n次</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;正则表达式-regex&quot;&gt;&lt;a href=&quot;#正则表达式-regex&quot; class=&quot;headerlink&quot; title=&quot;正则表达式 regex&quot;&gt;&lt;/a&gt;正则表达式 regex&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;Regualar有规律的   Expression表
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaSE基础 （二十三）</title>
+    <link href="http://yoursite.com/2020/03/24/JavaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E4%BA%8C%E5%8D%81%E4%B8%89%EF%BC%89/"/>
+    <id>http://yoursite.com/2020/03/24/JavaSE基础-（二十三）/</id>
+    <published>2020-03-24T12:54:08.000Z</published>
+    <updated>2020-03-24T15:58:57.633Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="StringBuffer-StringBuilder"><a href="#StringBuffer-StringBuilder" class="headerlink" title="StringBuffer/StringBuilder"></a>StringBuffer/StringBuilder</h1><h2 id="所属的包"><a href="#所属的包" class="headerlink" title="所属的包"></a>所属的包</h2><pre><code>java.lang包</code></pre><h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><pre><code>Serializable,CharSequence,Comparable非常特殊的类 可以像常量一样创建对象String str = &quot;abc&quot;;内存存储 &quot;abc&quot;对象 char[] valueString的不可变特性   private fianl char[] value频繁的修改内容的时候 性能不是很好</code></pre><h2 id="默认继承"><a href="#默认继承" class="headerlink" title="默认继承"></a>默认继承</h2><pre><code>obJect 实现接口Serialzable,CharSequence,AppendableStringBuffer/StringBuilder 没有compare To方法StringBuffer/StringBuilder 含有一个String没有的方法 append();拼接</code></pre><h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><pre><code>可变字符串 char[] value;动态扩容</code></pre><h2 id="对象的构建"><a href="#对象的构建" class="headerlink" title="对象的构建"></a>对象的构建</h2><pre><code>无参数构造方法有参数构造方法//无参数构造方法 构建一个默认长度16个对象空间 char[] StringBuilder builder = new StringBuilder();//利用给定的参数 构建有一个自定义长度空间的对象 char[] StringBuilder builder = new StringBuilder(20);//利用带String参数的构造方法,默认数组字符长度字符串+16个长度 StringBuilder builder = new StringBuilder(&quot;abc&quot;);</code></pre><h2 id="StringBuilder中的常用方法"><a href="#StringBuilder中的常用方法" class="headerlink" title="StringBuilder中的常用方法"></a>StringBuilder中的常用方法</h2><pre><code>最主要的方法 append() 频繁的拼接字符串时候使用此方法 提高性能capcacity();字符串底层char[]的容量length();字符串有效元素个数（长度）char = charAt(int index);int = codePointAt(int index);String = substring(int start,[int end]);        注意需要接收返回值 看见取出来的字符串效果delete(int start,[int end]);        String Builder类中独有的方法String类没有        将Start到end之间的字符串删掉 不用接收返回值就看到效果啦int = indexOf(String str,[int fromindex]);int = lastindexof（String str,[int fromIndex]）        找寻给定的str字符串中第一次出现的索引位置 带重载 则从某一个位置开始找StringBuilder = deleteCharAt(int Index)        String类中没有的方法        将给定inde位置的某一字符串删除insert(int index,value);        将给定的value插入在index上replace(int start，int end，string str);        将start和end之间的部分替换成str        builder.replace(2.5,&quot;zzt&quot;)setCharAt(int index,char value);        将index位置的字符改成给定字符的valuetoString()        将StringBuilder对象 构建成一个string对象 返回trimToSize()        将数组无用的容量去掉 变成length长度的数组</code></pre><h2 id="知识总结"><a href="#知识总结" class="headerlink" title="知识总结"></a>知识总结</h2><h3 id="StringBuilder类不一定需要"><a href="#StringBuilder类不一定需要" class="headerlink" title="StringBuilder类不一定需要"></a>StringBuilder类不一定需要</h3><pre><code>是为了避免String频繁拼接修改字符串信息时才使用的 底层是数组是可变的 提高了性能</code></pre><h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><pre><code>与String类不同独有的方法append() lnsert() delete() deleteCharAt() reverse()与String类相同的方法charAt() codePointAt() indexOf() lastindexOf() replace() 名字相同 用法不一致不是很常用的方法ensureCapacity() capacity() SetLength() trimToSize() setCharAt();</code></pre><h3 id="String家族笔试中经常考察的知识点"><a href="#String家族笔试中经常考察的知识点" class="headerlink" title="String家族笔试中经常考察的知识点"></a>String家族笔试中经常考察的知识点</h3><h4 id="String所属的包-继承关系-实现接口"><a href="#String所属的包-继承关系-实现接口" class="headerlink" title="String所属的包 继承关系 实现接口"></a>String所属的包 继承关系 实现接口</h4><pre><code>java.lang包 继承Object 实现接口Serializable,CharSequence,Comparable</code></pre><h4 id="String构建方式"><a href="#String构建方式" class="headerlink" title="String构建方式"></a>String构建方式</h4><pre><code>常量 构造方法</code></pre><h4 id="String对象内存结构"><a href="#String对象内存结构" class="headerlink" title="String对象内存结构"></a>String对象内存结构</h4><pre><code>字符串常量区 new堆内存对象= = equals()区别&quot;a&quot; +&quot;b&quot;+&quot;c&quot;</code></pre><h4 id="String不可不变特性"><a href="#String不可不变特性" class="headerlink" title="String不可不变特性"></a>String不可不变特性</h4><pre><code>长度及内容</code></pre><h4 id="String类常用的方法—-与StringBuilder的区别"><a href="#String类常用的方法—-与StringBuilder的区别" class="headerlink" title="String类常用的方法—-与StringBuilder的区别"></a>String类常用的方法—-与StringBuilder的区别</h4><pre><code>concat(); toUpperCase();</code></pre><h4 id="String和StringBuilder区别-String和StringBuffer区别"><a href="#String和StringBuilder区别-String和StringBuffer区别" class="headerlink" title="String和StringBuilder区别|String和StringBuffer区别"></a>String和StringBuilder区别|String和StringBuffer区别</h4><pre><code>String不可变字符串        有一个接口Comparable        不可变体现在长度及内容        有一些方法StringBuilder没有 没有concat compareTo toUpperCaseStringBuilder可变字符串        JDK1.5        有一个接口Appendable        可变字符串 没有final修饰 底层可以进行数组扩容        有一些方法string没有 append() insert() delete() reverse()</code></pre><h4 id="StringBuffer和StringBuild的不同"><a href="#StringBuffer和StringBuild的不同" class="headerlink" title="StringBuffer和StringBuild的不同"></a>StringBuffer和StringBuild的不同</h4><pre><code>stringBuffer早期版本1.0StringBuilder后来的版本1.5方法使用几乎一致早期版本 线程同步  安全性比较高 执行效率相对较低后期版本 线程非同步 安全性能比较低 执行效率相对较高</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;StringBuffer-StringBuilder&quot;&gt;&lt;a href=&quot;#StringBuffer-StringBuilder&quot; class=&quot;headerlink&quot; title=&quot;StringBuffer/StringBuilder&quot;&gt;&lt;/a&gt;StringBu
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>JavaSE基础 （二十二）</title>
@@ -444,88 +513,6 @@ package只能有一个import可以有多个&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;类
  转换特殊符号   比如 &amp;quot; &amp;apos; \
  转换几个特殊的字母 比如 \n换行  \r回车 \t制表符&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;main方法&lt;/p&gt;
 &lt;pre&gt;&lt;code
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaSE基础  （七）</title>
-    <link href="http://yoursite.com/2020/03/13/avaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E4%B8%83%EF%BC%89/"/>
-    <id>http://yoursite.com/2020/03/13/avaSE基础-（七）/</id>
-    <published>2020-03-13T14:12:24.000Z</published>
-    <updated>2020-03-13T14:36:43.119Z</updated>
-    
-    <content type="html"><![CDATA[<p>多维数组</p><p>0.数组的特点</p><pre><code>数组本身是一个引用类型声明时必须指定长度  长度一旦确定就不能再次发生改变</code></pre><p> 1.定义/声明</p><pre><code>里面存储的类型[] 数组名字;int[][]  arry;</code></pre><p> 2.初始化</p><pre><code>静态---有长度 有元素  int[][] arry = {{1,2},{1}.{1.2.3}};动态---只有长度 没有元素（默认值）  int[][] arry = new int[3][2];  arry -----&gt;{{x,x},{x,x},{x,x}}  x默认值是0</code></pre><p> 3.元素访问          </p><pre><code>通过元素在数组中的位置----indexarray[i][j]i控制大数组中 小数组的位置j控制小数组中 元素的位置</code></pre><p> 4.遍历轮循          </p><pre><code>正常for 增强for  嵌套完成</code></pre><p> 5.引用类型在内存中的结构</p><pre><code>二维数组在内存中的存储，逻辑结构不是矩阵而是树int[][] arry = new int[3][2];//3表示有3个小数组int[]//2表示每一个小数组有两个元素//NullPointerException    空指针异常</code></pre><p>6.常见的运行时异常</p><pre><code>1.InputMisMatchException   输入类型不匹配      input.nextInt();      如：输入一个a2.ArrayIndexOutOfBoundsException  数组索引越界  静态初始化 int array[]={10,20};             array[2]  //索引超过边界3.NegativeArraySizeException  数组长度不合法（长度出现负数）  动态初始化 int[] array = new int [-2]4.NullPointerException    空指针异常    引用为null 还拿来使用就不行啦   int[] arry = null;   arry[0] = 10 ;//空元素再来用</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;多维数组&lt;/p&gt;
-&lt;p&gt;0.数组的特点&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;数组本身是一个引用类型
-声明时必须指定长度  长度一旦确定就不能再次发生改变&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 1.定义/声明&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;里面存储的类型[] 数组名字;
-int[][] 
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaSE基础 （六）</title>
-    <link href="http://yoursite.com/2020/03/12/JavaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E5%85%AD%EF%BC%89/"/>
-    <id>http://yoursite.com/2020/03/12/JavaSE基础-（六）/</id>
-    <published>2020-03-12T14:13:00.000Z</published>
-    <updated>2020-03-12T15:39:07.081Z</updated>
-    
-    <content type="html"><![CDATA[<p>数组（容器）</p><pre><code>数组是一组数据类型相同的数据的组合，将这些数据统一管理起来数组本身是一个引用数据类型，但数组内可以存储基本数据类型，也可以存储引用数据类型</code></pre><p>1.数组的定义（声明）  </p><pre><code>数据类型[] 数组名字;    int[] a;    char[] b;    boolean[] c;    string[] m;</code></pre><p>2.数组的（赋值）初始化 </p><pre><code>静态初始化    有长度 有元素    int[] arry = {10,20,30,40,50,60};    int[] arry = new int[] {10,20,30,40,50,60};动态初始化    有长度   没有元素（默认值0）    int[] arry = new int[5] ;    整数默认值-----0    浮点数默认值---0.0    字符型默认值----0--char  97-a 65-A 48-&apos;0&apos;    布尔型默认值----false    引用数据类型默认值----null</code></pre><p>3.数组元素的访问 </p><pre><code>通过元素在数组中的位置来访问存值/取值位置-------&gt;index索引索引是有取值范围    [从0开始------到数组长度减1]如果数组的索引超过了上诉范围会出现了一个运行时的异常ArrayIndexOutOfBoundsException</code></pre><p>4 数组元素的遍历<br>                  通过循环的方式访问数组每一个元素<br>                  for（;;）{</p><pre><code>}JDK1.5版本之后 增加新特性 增强for循环 加强for forEachfor（自定义的变量（接收数组内每一个元素）：遍历的数组arry）{}1.正常的for循环 有三个必要的条件 找到一个元素的位置可以通过index直接访问数组的某一个位置 存值 取值都可以不好在于写法相对比较麻烦2.增强for 有两个条件 用来取值的变量 用来遍历的数组 没有index索引 写法相对容易只能取值 不能存值没有index索引  找不到元素是哪一个</code></pre><p>5.基本数据类型和引用数据类型在内存结构上的区别<br>              所有的变量空间都存储在栈内存<br>              变量空间可以存储基本数据类型  也可以引用数据类型<br>              如果变量空间存储的是一个基本数据类型  存储的是值 一个变量改变 另一个不会改变<br>              如果变量空间存储的是引用数据类型 存储的是引用（地址）一个变量地址改变 另一个跟着改变</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;数组（容器）&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;数组是一组数据类型相同的数据的组合，将这些数据统一管理起来
-数组本身是一个引用数据类型，但数组内可以存储基本数据类型，也可以存储引用数据类型&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;1.数组的定义（声明）  &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaSE基础 （五）</title>
-    <link href="http://yoursite.com/2020/03/11/avaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E4%BA%94%EF%BC%89/"/>
-    <id>http://yoursite.com/2020/03/11/avaSE基础-（五）/</id>
-    <published>2020-03-11T14:47:00.000Z</published>
-    <updated>2020-03-12T15:46:00.760Z</updated>
-    
-    <content type="html"><![CDATA[<p>java运算符</p><p>   运算符：用来指明操作数的运算方式</p><p>   按照操作数的数目来分类</p><pre><code>单目运算符    a++双目运算符    a+b三目运算符    (a&gt;b)? x : y</code></pre><p>   按运算符的功能来分类</p><pre><code>算数运算符   + - * / %（取余 求模）++（自增） --（自减）int x=1；int y=x++；//++在后 先赋值 再自增（先进行计算 后赋值）     x++//x=x+1//将x变量空间的内容 先取出 从常量区取出1 进行计算 再次存到x中     想要做值交换的时候 会产生一个临时的副本空间（备份）     ++在变量的前面 先自增后备份 ++在变量的后面 先备份后自增 并将副本空间（备份）内的值赋给别人     x=2 y=1例：int a = 1;   for(int i=0;1&lt;100;i++){        a=a++;   }   a=1   //因为赋值的永远是备份空间的1   --------------------------------------------------------------   int m = 1；//210   int n = 2；//321   int sum = m++ + ++n - n-- - --m + n-- - --m；   m=0 n= 1 sum=2   ----------------------------------------------------------------   赋值运算符   = 赋值符号   将=右边的值()   关系运算符（比较）   &gt; &lt; &gt;= &lt;= != ==   逻辑运算符   &amp; | ^ ！ &amp;&amp;短路与 ||   // ^逻辑异或 只要两个表达式结果不同 最终结果就是true   位（bit）运算   &amp;按位与 |按位或 ^按位异或 ~ 按位取反&lt;&lt;按位左移位 &gt;&gt;按位右移位 &gt;&gt;&gt;按位右移（无符号）</code></pre><p> 笔试题</p><p> 1.&amp;和&amp;&amp;的区别</p><pre><code>&amp;可以视为逻辑运算 也可以视为位运算 &amp;&amp;只能当做逻辑运算来用如果两个都当做逻辑运算符来用 区别如下&amp;前后两个条件都是true 最终结果就是true&amp;&amp; 短路与正常情况下&amp;的执行结果一致   当前面条件为flase的时候发生短路最终结果flase</code></pre><p>2.最有效率的方式计算2*8的结果</p><pre><code>   00000001                  2 &lt;&lt; 3相当于2乘以2的3次幂*  00001000                  00000010-------------                00010000 == 1600000010000==16</code></pre><p>3.两个变量 int a = 1； b = 2如果将两个变量的值互换</p><pre><code> int a = 1; int b = 2; 方式一 采用一个中间变量 int c = a;     a = b;      b =c;好处容易理解 值不会出问题 不好在于会产生一个新的存储空间方式二a = a+b;b = a-b;a = a-b;好处省略了一个存储空间，不好在于+值可能产生越界方法三a = a^b;b = a^b;a = a^b;学的就是高难度~</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;java运算符&lt;/p&gt;
-&lt;p&gt;   运算符：用来指明操作数的运算方式&lt;/p&gt;
-&lt;p&gt;   按照操作数的数目来分类&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;单目运算符    a++
-双目运算符    a+b
-三目运算符    (a&amp;gt;b)? x : y&lt;/code&gt;&lt;/pre&gt;&lt;p
       
     
     </summary>

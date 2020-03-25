@@ -252,6 +252,728 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/25/avaSE基础-（二十九）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/25/avaSE基础-（二十九）/" itemprop="url">JavaSE基础 （二十九）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-25T23:20:45+08:00">
+                2020-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="异常-错误"><a href="#异常-错误" class="headerlink" title="异常/错误"></a>异常/错误</h1><h2 id="程序运行过程中，可能会发生一些不被期望的效果，肯定会阻止我们的程序按指令去执行"><a href="#程序运行过程中，可能会发生一些不被期望的效果，肯定会阻止我们的程序按指令去执行" class="headerlink" title="程序运行过程中，可能会发生一些不被期望的效果，肯定会阻止我们的程序按指令去执行"></a>程序运行过程中，可能会发生一些不被期望的效果，肯定会阻止我们的程序按指令去执行</h2><h2 id="这种不被预期出现的效果，肯定需要抛出来告诉我们"><a href="#这种不被预期出现的效果，肯定需要抛出来告诉我们" class="headerlink" title="这种不被预期出现的效果，肯定需要抛出来告诉我们"></a>这种不被预期出现的效果，肯定需要抛出来告诉我们</h2><h2 id="在JAVA中有一个定义好的Throwable（可以抛出的）"><a href="#在JAVA中有一个定义好的Throwable（可以抛出的）" class="headerlink" title="在JAVA中有一个定义好的Throwable（可以抛出的）"></a>在JAVA中有一个定义好的Throwable（可以抛出的）</h2><h1 id="Error错误"><a href="#Error错误" class="headerlink" title="Error错误"></a>Error错误</h1><h2 id="通常是一些物理性的，JVM虚拟机本身出现的问题，程序指令是处理不了的"><a href="#通常是一些物理性的，JVM虚拟机本身出现的问题，程序指令是处理不了的" class="headerlink" title="通常是一些物理性的，JVM虚拟机本身出现的问题，程序指令是处理不了的"></a>通常是一些物理性的，JVM虚拟机本身出现的问题，程序指令是处理不了的</h2><h1 id="Exception异常"><a href="#Exception异常" class="headerlink" title="Exception异常"></a>Exception异常</h1><h2 id="是一种不正常的现象-通常是给定的指令程序产生了一些不合规范的事情"><a href="#是一种不正常的现象-通常是给定的指令程序产生了一些不合规范的事情" class="headerlink" title="是一种不正常的现象,通常是给定的指令程序产生了一些不合规范的事情"></a>是一种不正常的现象,通常是给定的指令程序产生了一些不合规范的事情</h2><h1 id="Throwable"><a href="#Throwable" class="headerlink" title="Throwable"></a>Throwable</h1><h2 id="Error（错误）"><a href="#Error（错误）" class="headerlink" title="Error（错误）"></a>Error（错误）</h2><h3 id="StackOverflowError"><a href="#StackOverflowError" class="headerlink" title="StackOverflowError"></a>StackOverflowError</h3><h3 id="OutOfMemoryError"><a href="#OutOfMemoryError" class="headerlink" title="OutOfMemoryError"></a>OutOfMemoryError</h3><h2 id="Exception-异常"><a href="#Exception-异常" class="headerlink" title="Exception(异常)"></a>Exception(异常)</h2><h3 id="RuntimeException（运行时）"><a href="#RuntimeException（运行时）" class="headerlink" title="RuntimeException（运行时）"></a>RuntimeException（运行时）</h3><h3 id="IOExceotion"><a href="#IOExceotion" class="headerlink" title="IOExceotion"></a>IOExceotion</h3><h1 id="异常的分支体系"><a href="#异常的分支体系" class="headerlink" title="异常的分支体系"></a>异常的分支体系</h1><h2 id="运行时异常（非检查异常）"><a href="#运行时异常（非检查异常）" class="headerlink" title="运行时异常（非检查异常）"></a>运行时异常（非检查异常）</h2><pre><code>Error和RuntimeException都算作运行时异常
+javac编译的时候，不会提示发现的
+在程序编写的时候不要求必须做处理，如果我们愿意可以添加处理手段（try throws）
+要求大家出现这样的异常的时候，知道怎么产生及如何修改
+1.InputMisMatchExceotin  输入不匹配
+        int value = input.nextInt();// abc
+2.NumberFormatException  数字格式化
+        int value = Integer.parseInt(&quot;123.45&quot;)
+3.NegativeArraySizeException 数组长度负数
+        int Array = new int[-2]
+4.NullPointerException 空指针异常
+        int[][] array = new int[3][];
+        array[0][0] = 10;
+        Person p = null;
+        p.getName();
+5.AirthmeticExceotion 数字异常
+  10/0  整数不允许除0 infinity小数除0会产生无穷
+6.ClassCastException 造型异常
+       Person p = new Teacher();
+       Student s = (Student) p;
+7.ArrayIndexOutOfBoundsException 数组索引越界
+       int[] array ={1,2,3};
+       array[5];
+8.StringIndexOutOfBoundsException 字符串越界
+       String str = &quot;abc&quot;;
+       str.charAt(5);
+9.IndexOutOfBoundsException 集合越界
+       List家族
+       ArrayList list = new ArrayList();
+       list.add();list.add();ist.add();
+       list.get(5);
+10.IllegalArguementException 非法参数异常
+       ArrayList list = new ArrayList(-1);</code></pre><h2 id="编译时异常（检查异常）"><a href="#编译时异常（检查异常）" class="headerlink" title="编译时异常（检查异常）"></a>编译时异常（检查异常）</h2><pre><code>除了Error和RuntimeException以外的其他异常
+javac编译的时候 强制要求我们必须为这样的异常处理（try或throws）
+因为这样的异常在程序运行中可能会产生问题
+异常产生后后续的所有执行就被停止啦
+1.InterruptException
+            try{
+                 Thead.sleep(5000);
+            }catch(Exception e){
+
+            }</code></pre><h2 id="添加处理异常的手段"><a href="#添加处理异常的手段" class="headerlink" title="添加处理异常的手段"></a>添加处理异常的手段</h2><h3 id="处理异常不是异常消失了"><a href="#处理异常不是异常消失了" class="headerlink" title="处理异常不是异常消失了"></a>处理异常不是异常消失了</h3><h3 id="处理异常指的是-处理掉异常之后-后续的代码不会因为此异常停止执行"><a href="#处理异常指的是-处理掉异常之后-后续的代码不会因为此异常停止执行" class="headerlink" title="处理异常指的是 处理掉异常之后 后续的代码不会因为此异常停止执行"></a>处理异常指的是 处理掉异常之后 后续的代码不会因为此异常停止执行</h3><h3 id="两种手段"><a href="#两种手段" class="headerlink" title="两种手段"></a>两种手段</h3><h3 id="try-catch-finally"><a href="#try-catch-finally" class="headerlink" title="try{}catch(){}{finally{}}"></a>try{}catch(){}{finally{}}</h3><h4 id="try不能单独出现"><a href="#try不能单独出现" class="headerlink" title="try不能单独出现"></a>try不能单独出现</h4><h4 id="后面必须添加catch或finally"><a href="#后面必须添加catch或finally" class="headerlink" title="后面必须添加catch或finally"></a>后面必须添加catch或finally</h4><h4 id="catch有一组括号（NullPointerException）目的是为了捕获一组异常"><a href="#catch有一组括号（NullPointerException）目的是为了捕获一组异常" class="headerlink" title="catch有一组括号（NullPointerException）目的是为了捕获一组异常"></a>catch有一组括号（NullPointerException）目的是为了捕获一组异常</h4><h4 id="catch可以有多个存在"><a href="#catch可以有多个存在" class="headerlink" title="catch可以有多个存在"></a>catch可以有多个存在</h4><pre><code>捕获的异常直接没有任何的继承关系
+捕获的异常需要从小到大捕获</code></pre><h4 id="finally-不是必须存在的-若存在则必须执行"><a href="#finally-不是必须存在的-若存在则必须执行" class="headerlink" title="finally 不是必须存在的 若存在则必须执行"></a>finally 不是必须存在的 若存在则必须执行</h4><h2 id="fianl-fianlly-fianlizae-区别"><a href="#fianl-fianlly-fianlizae-区别" class="headerlink" title="fianl fianlly fianlizae 区别"></a>fianl fianlly fianlizae 区别</h2><h3 id="fianl-特征修饰符-修饰变量-属性-方法-类"><a href="#fianl-特征修饰符-修饰变量-属性-方法-类" class="headerlink" title="fianl 特征修饰符 修饰变量 属性 方法 类"></a>fianl 特征修饰符 修饰变量 属性 方法 类</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/25/JavaSE基础-（二十八）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/25/JavaSE基础-（二十八）/" itemprop="url">JavaSE基础 （二十八）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-25T22:41:32+08:00">
+                2020-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Map-映射"><a href="#Map-映射" class="headerlink" title="Map 映射"></a>Map 映射</h1><h2 id="通过某一个key键可以直接定位到一个Value值"><a href="#通过某一个key键可以直接定位到一个Value值" class="headerlink" title="通过某一个key键可以直接定位到一个Value值"></a>通过某一个key键可以直接定位到一个Value值</h2><h2 id="存储方式以-键值对-存储-Key-Value"><a href="#存储方式以-键值对-存储-Key-Value" class="headerlink" title="存储方式以 键值对 存储 Key-Value"></a>存储方式以 键值对 存储 Key-Value</h2><h2 id="key无序还是一样-指的是存入顺序与取得顺序不一致"><a href="#key无序还是一样-指的是存入顺序与取得顺序不一致" class="headerlink" title="key无序还是一样,指的是存入顺序与取得顺序不一致"></a>key无序还是一样,指的是存入顺序与取得顺序不一致</h2><h2 id="key无重复当然指的是-元素不能一致"><a href="#key无重复当然指的是-元素不能一致" class="headerlink" title="key无重复当然指的是 元素不能一致"></a>key无重复当然指的是 元素不能一致</h2><h1 id="Map基本使用"><a href="#Map基本使用" class="headerlink" title="Map基本使用"></a>Map基本使用</h1><h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><h2 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h2><h2 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h2><h1 id="HashMap-1"><a href="#HashMap-1" class="headerlink" title="HashMap"></a>HashMap</h1><h2 id="包-java-util"><a href="#包-java-util" class="headerlink" title="包 java.util"></a>包 java.util</h2><h2 id="如何创建对象"><a href="#如何创建对象" class="headerlink" title="如何创建对象"></a>如何创建对象</h2><h2 id="基本方法"><a href="#基本方法" class="headerlink" title="基本方法"></a>基本方法</h2><pre><code>增删改查
+增put(key,value)   存放一组映射关系 key-value
+          1.key存储的顺序与取得的顺序不同
+          2.不同的key可以存储相同的value
+          3.key若有相同的 则将原有的key覆盖而不是拒绝存入(跟Set刚好相反)
+删 E = remove(key);
+改 put = (key,value1) put（key,value2）
+  replace（key,newValue）
+查 E = get(key)
+遍历Map集合   key不一定什么样
+//获取map集合的全部key
+Set&lt;Integer&gt; it = map.keySet();
+//通过迭代器遍历
+Iterator&lt;Integer&gt; it = keys.iterator();
+while(it.hashNext()){
+   Integer key = it.next;
+   String value = map.get(key);
+   System.out.println(key+&quot;-&quot;value);
+}</code></pre><h2 id="API提供的其他方法"><a href="#API提供的其他方法" class="headerlink" title="API提供的其他方法"></a>API提供的其他方法</h2><pre><code>char containsKey(key) containsValue(value)
+getOrDfault(key.defaultValue)如果key存在就返回对象对应的Value 若没有找到则返回默认返回值
+isEmpty()
+putAll(map)
+putlfAbsent(key.value);//如果key不存在才向集合添加 如果key值不存在就不添加了</code></pre><h2 id="HashMap在什么情形下用"><a href="#HashMap在什么情形下用" class="headerlink" title="HashMap在什么情形下用?"></a>HashMap在什么情形下用?</h2><h3 id="想要存一组元素"><a href="#想要存一组元素" class="headerlink" title="想要存一组元素"></a>想要存一组元素</h3><h4 id="数组-or-集合-如果存储的元素以后长度不变用数组-如果数组长度以后不确定用集合"><a href="#数组-or-集合-如果存储的元素以后长度不变用数组-如果数组长度以后不确定用集合" class="headerlink" title="数组 or 集合 如果存储的元素以后长度不变用数组 如果数组长度以后不确定用集合"></a>数组 or 集合 如果存储的元素以后长度不变用数组 如果数组长度以后不确定用集合</h4><h4 id="如果发现长度以后不确定——————-gt-集合"><a href="#如果发现长度以后不确定——————-gt-集合" class="headerlink" title="如果发现长度以后不确定——————&gt;集合"></a>如果发现长度以后不确定——————&gt;集合</h4><pre><code>List Set Map
+List家族有序的  存储有顺序用这个
+       ArrayList       更适合遍历轮循
+       LinkList        更适合插入删除
+       Stack          LIFO      
+Set家族无重复   存储元素希望自动去掉重复元用这个
+       Hash            性能更高
+       Tree            希望存进去的元素自动去重复 同时还自动排序按(A-Z)字典顺序
+
+Map家族k-v      通过唯一的K快速找寻v用这个
+       Hash            性能更高
+       Tree            希望存进去的元素能自动排序</code></pre><h2 id="Hash底层的数据结构"><a href="#Hash底层的数据结构" class="headerlink" title="Hash底层的数据结构"></a>Hash底层的数据结构</h2><pre><code>散列表形式      数组加链表
+Person对象存入HashMap中  可以
+HashCode方法   —&gt;不同的对象可以产生相同的hashCode码
+不同的hashCode码  不同的对象
+//hashcode码
+static fial int hash(Object obj){
+  int h;
+  return(key == null)?0:(h = key.hashCode())^(h &gt;&gt;&gt;16);
+}
+数组：对象的hashCode码
+    发现hashCode码一致
+    当前数组后面串一个Node
+
+    先扫描数组(位置 )
+    继续扫描链表
+    数组中存储的是hash值
+    （key+value）包装成一个对象Entry
+    Map.entry</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/25/javaSE基础-（二十七）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/25/javaSE基础-（二十七）/" itemprop="url">javaSE基础   （二十七）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-25T21:58:13+08:00">
+                2020-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h1><h2 id="以value形式存在"><a href="#以value形式存在" class="headerlink" title="以value形式存在"></a>以value形式存在</h2><h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><h2 id="无序无重复"><a href="#无序无重复" class="headerlink" title="无序无重复"></a>无序无重复</h2><h2 id="具体实现的类"><a href="#具体实现的类" class="headerlink" title="具体实现的类"></a>具体实现的类</h2><h3 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h3><h3 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h3><h2 id="基本的使用"><a href="#基本的使用" class="headerlink" title="基本的使用"></a>基本的使用</h2><h2 id="无序-无重复"><a href="#无序-无重复" class="headerlink" title="无序 无重复"></a>无序 无重复</h2><h3 id="无序-：-我们使用的集合存放元素的顺序-集合内取出来的顺序不一致-（不是集合本身是否有序-Tree自然有序）"><a href="#无序-：-我们使用的集合存放元素的顺序-集合内取出来的顺序不一致-（不是集合本身是否有序-Tree自然有序）" class="headerlink" title="无序 ： 我们使用的集合存放元素的顺序 集合内取出来的顺序不一致 （不是集合本身是否有序 Tree自然有序）"></a>无序 ： 我们使用的集合存放元素的顺序 集合内取出来的顺序不一致 （不是集合本身是否有序 Tree自然有序）</h3><h3 id="无重复-：添加的元素不能一致（如果出现重复元素-只存第一个-不再存入）"><a href="#无重复-：添加的元素不能一致（如果出现重复元素-只存第一个-不再存入）" class="headerlink" title="无重复 ：添加的元素不能一致（如果出现重复元素 只存第一个 不再存入）"></a>无重复 ：添加的元素不能一致（如果出现重复元素 只存第一个 不再存入）</h3><h3 id="集合本身是有自己的算法排布顺序-hash算法"><a href="#集合本身是有自己的算法排布顺序-hash算法" class="headerlink" title="集合本身是有自己的算法排布顺序 hash算法"></a>集合本身是有自己的算法排布顺序 hash算法</h3><h1 id="HashSet——-gt-（HashMap（数组-链表）散列表-邻接表）"><a href="#HashSet——-gt-（HashMap（数组-链表）散列表-邻接表）" class="headerlink" title="HashSet——-&gt;（HashMap（数组+链表）散列表 邻接表）"></a>HashSet——-&gt;（HashMap（数组+链表）散列表 邻接表）</h1><h2 id="java-util包"><a href="#java-util包" class="headerlink" title="java.util包"></a>java.util包</h2><h2 id="如何创建对象"><a href="#如何创建对象" class="headerlink" title="如何创建对象"></a>如何创建对象</h2><h3 id="无参数"><a href="#无参数" class="headerlink" title="无参数"></a>无参数</h3><h3 id="有参数"><a href="#有参数" class="headerlink" title="有参数"></a>有参数</h3><h2 id="集合容器的基本使用"><a href="#集合容器的基本使用" class="headerlink" title="集合容器的基本使用"></a>集合容器的基本使用</h2><pre><code>增删改差
+boolean = add(value) addAll(collection c) retainAll removeAll
+boolean = remove(Object)
+没有修改方法
+size()</code></pre><h3 id="关于迭代器iterator"><a href="#关于迭代器iterator" class="headerlink" title="关于迭代器iterator"></a>关于迭代器iterator</h3><pre><code>//获取一个迭代器对象 通过set集合获取
+Iterator &lt;String&gt; it = set.iterator();// Iterator 接口 多态效果 父类引用子类对象
+//判断下一个位置是否有元素
+if（it.hashNext）{
+ String value = it.next();
+ System.out.println(Value);
+}</code></pre><h2 id="无重复原则"><a href="#无重复原则" class="headerlink" title="无重复原则"></a>无重复原则</h2><pre><code>首先通过String类和Person类型存储
+大概猜测 无重复原则 利用equals方法进行比较
+如果我们让Person对象的name一致 认为是同一个对象
+我们可以重写equals方法
+重写了equals方法 发现还没有产生无重复的效果
+证明可能原则不止equals方法这么简单
+还有另一个规则同时起着作用 hashcode方法</code></pre><h3 id="为什么要重写equals（）方法？"><a href="#为什么要重写equals（）方法？" class="headerlink" title="为什么要重写equals（）方法？"></a>为什么要重写equals（）方法？</h3><pre><code>  因为默认equals在比较两个对象时，是看他们是否指向同一个地址的。但有时，我们需要两个不同对象只要是某些属性相同就认为它们equals（）的结果为true。比如：
+
+ person p1 = new person(1,&quot;name&quot;);
+ person p2 = new person(1,&quot;name&quot;);
+ 如果不重写equals的话，他们是不相同的，所以我们要重些equals，判断只要他们的id和名字相同equals就为true，在一些集合里有时也这样用，集合里的contain也是用equals来比较
+
+   先来看Object关于equals()的源码：
+
+   public boolean equals(Object obj) {
+   return (this == obj);
+   }
+
+
+ //String 就重写了equals方法
+public boolean equals(Object obj){
+    if(this==obj){
+        return true;
+    }
+    if(obj instanceof Question) {
+        Question anotherQuestion = (Question)obj;
+       //this.title 按照？截取 与anotherQuestion.title截取之前的部分比较
+        if(this.title.equals(anotherQuestion.title)){
+            return true;
+        }
+    }
+    return false;
+}</code></pre><h3 id="当重写equals方法时，同时也要重写hashCode方法。"><a href="#当重写equals方法时，同时也要重写hashCode方法。" class="headerlink" title="当重写equals方法时，同时也要重写hashCode方法。"></a>当重写equals方法时，同时也要重写hashCode方法。</h3><pre><code>//修改equals 方法一定要修改hashcode方法 因为底层用hashCode比较
+public int hash(){
+   return this.title.hashCode();
+}</code></pre><h1 id="TreeSet—–-gt-（TreeMap-二叉树利用Node（Left-item-right））"><a href="#TreeSet—–-gt-（TreeMap-二叉树利用Node（Left-item-right））" class="headerlink" title="TreeSet—–&gt;（TreeMap 二叉树利用Node（Left item right））"></a>TreeSet—–&gt;（TreeMap 二叉树利用Node（Left item right））</h1><h2 id="无序无重复-java-util"><a href="#无序无重复-java-util" class="headerlink" title="无序无重复 java.util"></a>无序无重复 java.util</h2><h2 id="无参构造方法-带Collection构造方法"><a href="#无参构造方法-带Collection构造方法" class="headerlink" title="无参构造方法 带Collection构造方法"></a>无参构造方法 带Collection构造方法</h2><h2 id="基本常用方法"><a href="#基本常用方法" class="headerlink" title="基本常用方法"></a>基本常用方法</h2><pre><code>add(E e)  iterator() remove(E e) 没有修改 size()</code></pre><h2 id="无序无重复规则是如何实现的"><a href="#无序无重复规则是如何实现的" class="headerlink" title="无序无重复规则是如何实现的"></a>无序无重复规则是如何实现的</h2><pre><code>treeSet集合本身是有顺序的  我们指的无序是存入和取出不一致
+CompaerTo------&gt;String类 按照字母的自然顺序排列
+//如果想让Person对象存入TeeSet集合内  必须实现Comapareable接口 重写这个方法
+piublic int compareTo（o.name）{//当前对象name与另一个对象CompareTo结果
+return this.name.compareTo(o.name);//当前对象name和另一对象name的CompareTO结果
+}</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/25/avaSE基础-（二十六）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/25/avaSE基础-（二十六）/" itemprop="url">JavaSE基础      (二十六）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-25T21:30:11+08:00">
+                2020-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="List"><a href="#List" class="headerlink" title="List"></a>List</h1><h1 id="Vector-类"><a href="#Vector-类" class="headerlink" title="Vector 类"></a>Vector 类</h1><h2 id="java-util包"><a href="#java-util包" class="headerlink" title="java.util包"></a>java.util包</h2><h2 id="是ArrayList集合-早期版本"><a href="#是ArrayList集合-早期版本" class="headerlink" title="是ArrayList集合 早期版本"></a>是ArrayList集合 早期版本</h2><pre><code>(StringBuffer类早期 Stringbuilder后来)
+ vector底层也是用动态数组来存储
+ vector是线程同步的 安全性高 效率低</code></pre><h2 id="扩容方式与ArrayList不同"><a href="#扩容方式与ArrayList不同" class="headerlink" title="扩容方式与ArrayList不同"></a>扩容方式与ArrayList不同</h2><pre><code>默认是扩容两倍  可以通过构造方法创建对象时修改这一机制</code></pre><h1 id="Stack类-栈"><a href="#Stack类-栈" class="headerlink" title="Stack类 栈"></a>Stack类 栈</h1><h2 id="java-util包-1"><a href="#java-util包-1" class="headerlink" title="java.util包"></a>java.util包</h2><h2 id="构造方法只有一个无参数"><a href="#构造方法只有一个无参数" class="headerlink" title="构造方法只有一个无参数"></a>构造方法只有一个无参数</h2><h2 id="只有几个特殊的方法"><a href="#只有几个特殊的方法" class="headerlink" title="只有几个特殊的方法"></a>只有几个特殊的方法</h2><pre><code>push(E e)将某个元素压入栈顶（add()）
+E = pop()将某一个元素从栈顶取出并删掉(E = remove())
+E = peek()将某一个元素从栈顶取出并删除掉(E = remove())
+boolean = empty()判断栈顶元素是否为空(isEmpty)
+int = search()查找给定元素在栈中的位置(indexof())</code></pre><h2 id="中国象棋-悔棋"><a href="#中国象棋-悔棋" class="headerlink" title="中国象棋 悔棋"></a>中国象棋 悔棋</h2><pre><code>栈中存储每一次的操作步骤
+撤销功能</code></pre><h1 id="Queue接口"><a href="#Queue接口" class="headerlink" title="Queue接口"></a>Queue接口</h1><h2 id="java-util"><a href="#java-util" class="headerlink" title="java.util"></a>java.util</h2><h3 id="通常子类-Linklist-ArrayQueque"><a href="#通常子类-Linklist-ArrayQueque" class="headerlink" title="通常子类 Linklist ArrayQueque"></a>通常子类 Linklist ArrayQueque</h3><h2 id="通常用无参构造方法实现"><a href="#通常用无参构造方法实现" class="headerlink" title="通常用无参构造方法实现"></a>通常用无参构造方法实现</h2><h2 id="一般方法"><a href="#一般方法" class="headerlink" title="一般方法"></a>一般方法</h2><pre><code>add()
+element()-----&gt;get()
+remove()
+boolean = offer(E e);//相当于add  不会抛出异常
+E = peek();//相当于element方法
+E =poll; 剪短//相当于remove()</code></pre><h2 id="双十一秒杀"><a href="#双十一秒杀" class="headerlink" title="双十一秒杀"></a>双十一秒杀</h2><pre><code>所有进入秒杀系统的人存入队列</code></pre><h1 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h1><h1 id="Linklist类"><a href="#Linklist类" class="headerlink" title="Linklist类"></a>Linklist类</h1><h2 id="java-util包-2"><a href="#java-util包-2" class="headerlink" title="java.util包"></a>java.util包</h2><h3 id="自己封装过LinkBox-内部类Node-LT-T-GT-对象（节点-prev-item-next）"><a href="#自己封装过LinkBox-内部类Node-LT-T-GT-对象（节点-prev-item-next）" class="headerlink" title="自己封装过LinkBox 内部类Node&LT;T&GT;对象（节点 prev item next）"></a>自己封装过LinkBox 内部类Node&LT;T&GT;对象（节点 prev item next）</h3><h2 id="底层就是使用双向链表的数据结构形式来存储"><a href="#底层就是使用双向链表的数据结构形式来存储" class="headerlink" title="底层就是使用双向链表的数据结构形式来存储"></a>底层就是使用双向链表的数据结构形式来存储</h2><h3 id="适合插入或删除不适合遍历轮循"><a href="#适合插入或删除不适合遍历轮循" class="headerlink" title="适合插入或删除不适合遍历轮循"></a>适合插入或删除不适合遍历轮循</h3><h2 id="构建对象"><a href="#构建对象" class="headerlink" title="构建对象"></a>构建对象</h2><pre><code>无参构造方法 带参数的构造方法（collection）</code></pre><h2 id="常用的方法"><a href="#常用的方法" class="headerlink" title="常用的方法"></a>常用的方法</h2><pre><code>增删改查 add() remove() set() get() size()
+手册中提供其他常用方法
+addAll() addFirst() clear() contains()
+element() getFirst() getLast() indexOf() lastindex()
+....</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/24/JavaSE基础-（二十五）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1343,765 +2065,6 @@ lastIndexOf(int/String str,[int fromindex]);
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/22/JavaSE基础-（十九）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/22/JavaSE基础-（十九）/" itemprop="url">JavaSE基础 （十九）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-22T23:29:06+08:00">
-                2020-03-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h3><pre><code>1.类所在的包
-2.类的关系 自己默认继承 实现
-3，类中提供常用方法
-4.是否可以创建对象 调用 方法本身是静态的
-
-包装类（封装类） 1.5版本之后自动拆包
-byte----Byte   short----Short   int------Integer  long-----Long
-float-----Float  double-----Double char-----Character boolean----Boolean
-1.八个包装类都在同一个包下  java.lang包  不需要import导包自己使用
-2.八个包装类有六个都是与数字有关  都默认继承父类Number
-3.八个包装类都实现了Serializable，Comparable
-4.八个包装类都带有自己对应类型参数的构造方法
- 八个包装类中有7个（除了Character）有构造方法重载 带String类型
-5.创建对象  对象调用方法
-     有六个与数字相关的类都继承Number   xxValue();将一个包装类类型转化为对应的基本类型（拆包）
-Interger i1 = new Interger（10）//引用数据类型 包装类
- int value = i1.intValue();
-
- int value  = Inter.parseInt(&quot;123&quot;)  Float.parseFloat(&quot;123.45&quot;)
- int value  = new Integer(&quot;123&quot;);</code></pre><h3 id="经常在笔试中出现的问题"><a href="#经常在笔试中出现的问题" class="headerlink" title="经常在笔试中出现的问题"></a>经常在笔试中出现的问题</h3><pre><code>       integer i1 = 10;
-       integer i2 = 10;
-       integer i3 = new Integer(10);
-       integer i4 = new Integer(10);
-       System.out.println(i1==i2);//true
-       System.out.println(i1==i3);//false
-       System.out,println(i3==i4);//false
-       System.out.pritnln(i1.equals(i2));//true
-       System.out.pritnln(i1.equals(i3));//true
-       System.out.pritnln(i1.equals(i4));//true
-
- 1.==与equals()的区别
-  ==可以比较基本数据类型 也可以比较引用数据类型（变量中存储的内容）
-  如果比较基本类型比较的是变量中存储的值
-  如果比较的是引用类型比较的是变量中存储地址的引用
-  equals()是Object类中继承过来的方法==一致 如果想要改变比较规则 可以重写equals方法
-  由于integer类就重写了equals()所以Integer比较的是数值
-
-2.考察Integer类加载的时候有一个静态空间
-  空间内立即加载Integer类型的数组 内存储256个Integer对象 -128-127
-  如果我们用的对象范围在这之内 integer i1 = 10;直接取静态元素区中找对应的对象
-  如果我们用的对象范围超出了Integer i1 = 1000; 会帮我们创建一个新的Integer对象</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/22/JavaSE基础-（十八）-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/22/JavaSE基础-（十八）-1/" itemprop="url">JavaSE基础 （十八）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-22T23:28:17+08:00">
-                2020-03-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h3><p>1.成员内部类</p>
-<pre><code>将一个类直接定义在类的里面，作为成员，与属性或方法层次一次
-成员内部类可以与正常类一样 使用不同的修饰符去修饰
-好处1.省略了一个.java文件 
-好处2.成员内部类可以访问外部类的所有成员 包括私有的
-若想要在内部类中通过对象.调用外部类成员  外部类.this.外部类成员
-内部类存在后 源代码进行编译 产生一个字节码 Demo$InnerDemo.class</code></pre><p>2.局部内部类</p>
-<pre><code>将一个类定义在方法/块里面,作为成员的内部结构，与临时的局部变量一个层次
-局部内部类像是一个局部变量一样，不能用public protected privtae及staic只能用abstract或final
-局部内部类命名规则Demo$InnerTestMethod
-局部内部类使用的变量只能用final修饰</code></pre><p>3.匿名内部类<br><br>        成员匿名内部类<br><br>        局部匿名内部类</p>
-<pre><code>public interface Test{
-          public void test();
-
-}
- Test t = new Test{
-          public void test(){
-          }
-} ;
-通常接口或抽象类的具体子类这样写
-开发中为了省略一个类文件 上诉写法比较常见
-匿名内部类很特殊 只有类体 没有类的所有结构（修饰符 名字 继承 实现）      
-不能用任何修饰符来修饰 匿名内部类也没有任何构造方法</code></pre><p>4.静态内部类</p>
-<pre><code>成员静态内部类
-不需要外部类对象，通过正常的方式直接创建内部类
-静态元素不能访问非静态成员（自己类和外部类）</code></pre><h2 id="枚举类enum"><a href="#枚举类enum" class="headerlink" title="枚举类enum"></a>枚举类enum</h2><h4 id="一个类中的对象-认为个数有限且固定的，可以将每一个对象一一列举出来"><a href="#一个类中的对象-认为个数有限且固定的，可以将每一个对象一一列举出来" class="headerlink" title="一个类中的对象 认为个数有限且固定的，可以将每一个对象一一列举出来"></a>一个类中的对象 认为个数有限且固定的，可以将每一个对象一一列举出来</h4><pre><code> 1.试一试若没有枚举类型的时候如何动手设计（静态常量 单例模式）Day（类 当做描述星期七个对象）
-      private 构造方法
-      public static final 属性 = new
-      //构造方法私有
-        private Day(){}
-      //所有对象都是属性
-      public static final Day monday = new Day();
- 2.JDK1.5版本后可以直接定义enmu类型
-      我们自己定义的enmu类型直接默认继承enmu（java.lang包）
-      我们自己定义的enmu类型不能再写extrends但是可以实现
-      Enum类型
-             有两个属性
-             name-------&gt;枚举对象的名字   name()获取name的属性
-             ordinal------&gt;枚举对象在罗列中的顺序  类似index 也从0开始 ordinal获取序列号
-             常用的方法
-             valueof()  通过给定的name获取对应的枚举对象
-             values()   获取全部的枚举对象----&gt;返回一个数组 Day[]
-             compaerTo() 可以比较两个枚举对象 int
-             toString()  由于这个方法没有final修饰 可以覆盖（重写）
-3.我们也可以在enum中描述自己的一些属性或方法
-      必须在enum类中第一行 描述一下枚举的样子 最后需要分号结束;
-      可以定义自己的属性
-      类创建过程中 帮我们创建枚举类型的对象
-      需要给枚举型提供对应样子的构造方法 方法只能private修饰 可以重载</code></pre><h3 id="内存机制问题"><a href="#内存机制问题" class="headerlink" title="内存机制问题"></a>内存机制问题</h3><pre><code>栈内存-----&gt;Person p = new Person();-----&gt;堆内存   方法区----类模板
-栈内存-----&gt;创建开始  用完立即回收   StackoverflowError
-方法区-----&gt;类 常量 静态 只有一份回收不了
-堆内存-----&gt;new创建的对象 Garbage Collection 垃圾回收器
-
-Runtime类之中提供了几个管理内存的方法
-        maxMemory
-        totalMemory
-        freeMemory
-        堆内存溢出错误OutOfMemoryError
-Object类中有一个finalize方法 如果重写也能看见对象回收
-GC系统提供的一个线程  回收算法</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/22/JavaSE基础-（十七）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/22/JavaSE基础-（十七）/" itemprop="url">JavaSE基础 （十七）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-22T21:57:03+08:00">
-                2020-03-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h2 id="策略者模式-Strategy-nbsp-———-行为型模式"><a href="#策略者模式-Strategy-nbsp-———-行为型模式" class="headerlink" title="策略者模式 Strategy &nbsp; ——— 行为型模式"></a>策略者模式 Strategy &nbsp; ——— 行为型模式</h2><h4 id="用来解决-执行流程固定-执行结果由于提供不同策略而不同"><a href="#用来解决-执行流程固定-执行结果由于提供不同策略而不同" class="headerlink" title="用来解决  执行流程固定 执行结果由于提供不同策略而不同"></a>用来解决  执行流程固定 执行结果由于提供不同策略而不同</h4><pre><code>              银行类
-                  profession（人）{  人----抽象类 接口（不能产生对象） 传递一个子类对象
-                  欢迎用户进来
-                  叫号
-                  办理
-                  离开
-                  欢迎您下次再来
-                  }
-             长者   年轻人  vip
-            //按普通设计  可能有问题
-              1.三个不同的人类方法名不一致（可以）
-              2.银行办理业务的方法写了3个
-            //解决上诉所述问题可以在三个人之上创建一个父类
-              1.解决桑个人类中相同代码 比如name属性 比如get方法之类
-              2.父类定义的三个方法可以是抽象类 解决了子类命名不一致问题 子类执行也不一致
-              3.父类可以作为参数传入银行
-
-
-  //主函数
-     public static void main (String[] args){
-          Bank bank = new bank ();
-          Person p = new Oldman(长者); //父类作为参数
-          bank profession（p）;//银行欢迎长者来办理业务 调的是子类对象
-       }  
-
-
-
- //银行三个方法写成一个
-       public class Bank{
-       //开门  等待用户进来办理业务
-       public void profession（Person person）{
-       System.out，println（person.getName()+&quot;客户进入银行啦&quot;）
-       person.callNumber();
-       person.transact();
-       person.leave();
-       }
-
-//抽象类 
-       public abstract class Person{
-       protected String name;
-       public String getName(){
-        return this.name;
-        }
-        //1.进银行叫号
-        public abstract void callNumaber();
-        //2.去窗口办理
-        public abstract void transact();
-        //3.办理完毕离开啦
-        public abstract void leave();
-       }</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/22/JavaSE基础-（十六）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/22/JavaSE基础-（十六）/" itemprop="url">JavaSE基础  （十六）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-22T21:14:51+08:00">
-                2020-03-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式<br></h1><h2 id="适配器模式-Adapter"><a href="#适配器模式-Adapter" class="headerlink" title="适配器模式 Adapter"></a>适配器模式 Adapter</h2><pre><code>定义一个规则-------&gt;和尚 吃斋 念经 打坐 撞钟 习武
-适配器
-鲁智深 鲁达 形态丑陋 面貌凶顽 
-方丈说 此人上应天星 心地刚直 虽时下凶顽 命中驳杂 久后却得清净 证果非凡 汝等不及他
-public abstract class AbstractBox implements Box{
-          public booolean add(element);
-          public void add(int index,int element){//具体化
-          }
-          public void addAll(){//具体化
-          }
-          public int get（index）;
-          public int remove（index）;
-          public int size();
-          }</code></pre><h2 id="Java面向对象的四大特性"><a href="#Java面向对象的四大特性" class="headerlink" title="Java面向对象的四大特性"></a>Java面向对象的四大特性</h2><pre><code>继承 封装 多态 （抽象）</code></pre><h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><pre><code>同一个对象 体现出来的多种不同形态（身份）将一种行为表现出不同效果要想实现多态的效果 需要先有继承关系</code></pre><h3 id="体现"><a href="#体现" class="headerlink" title="体现"></a>体现<br></h3><pre><code>              1.父类类型的引用  指向  子类的对象
-                   Person p = new Teachher();
-              2.该引用只能调用父类定义的属性和方法
-              3.如果子类中将父类的方法重写,那么调取方法后执行的结果是子类重写之后的那个结果
-              如果父类与子类有同名的属性           执行父类的属性
-              如果父类与子类有同名的方法（重载）      执行子类重写之后的方法
-              4.若想要调用子类中独有的成员
-              （强制类型转换）造型 铸型 （向上/向下转型）//把父类引用向下转型
-              5.造型时（强制向下转型时）可能会出现一个运行时异常
-              ClassCastException   造型 铸型 异常
-              如果想要避免造型异常可以用instanceof关键字来进行判断// O instanceof Student 对象是否属于后面类型
-
-
-                                      Object
-                          hashCode equals toString getClass......
-                          Animal
-                     name属性 eat sleep
-               Person                                      Pig
-           name属性 重eat 重sleep 独talk             name属性  重sleep
-          Teacher                     Student                  
-name属性 重eat 独有teach       name属性 重talk 独study
-
-
-            Object o = new Teacher();//向上转型
-            o.hashCode() o.toString();
-            Animal a = (Animal)o;//向下转型
-            a.hashCode() a.toString a.name a.eat() a.sleep()
-            Person p = (Person)o;
-            p.hashCode();p.name p.eat p.sleep p.talk</code></pre><h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><pre><code>1.InputMismatchException  输入不匹配
-2.NumberFormateException  数字格式化异常
-3.ArrayIndexOutBoundsException  数组索引越界
-4.NegativeArraySizeException  数组长度负数
-5.NullPointerException   空指针异常
-6.AirthmeticException    算数异常
-7.ClassCastException     造型异常</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2154,7 +2117,7 @@ name属性 重eat 独有teach       name属性 重talk 独study
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2272,7 +2235,7 @@ name属性 重eat 独有teach       name属性 重talk 独study
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共16.4k字</span>
+  <span class="post-count">博客全站共18.9k字</span>
 </div>
         
 

@@ -81,19 +81,17 @@
 
 
 
-<meta name="description" content="内存结构与执行过程 1.在硬盘上创建一个文件                            Test.java 2.文件的内容是我们编写的源代码（跟计算机发送的指令） public  class Test{          static void main( String[] args ){               byte x;               x=1;">
+<meta name="description" content="学习文件流文件流按照读取或写入的单位（字节数）大小来区分字节型文件流（1字节）FileInputStream/FileOutputStream字符型文件流（2-字节–1字符）FileReader/FileWriter">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaSE基础（四）">
-<meta property="og:url" content="http://yoursite.com/2020/03/09/JavaSE基础（四）/index.html">
+<meta property="og:title" content="JavaSE基础  （三十一）">
+<meta property="og:url" content="http://yoursite.com/2020/03/26/JavaSE基础-（三十一）/index.html">
 <meta property="og:site_name" content="一轮明月照九洲">
-<meta property="og:description" content="内存结构与执行过程 1.在硬盘上创建一个文件                            Test.java 2.文件的内容是我们编写的源代码（跟计算机发送的指令） public  class Test{          static void main( String[] args ){               byte x;               x=1;">
+<meta property="og:description" content="学习文件流文件流按照读取或写入的单位（字节数）大小来区分字节型文件流（1字节）FileInputStream/FileOutputStream字符型文件流（2-字节–1字符）FileReader/FileWriter">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2020/03/09/JavaSE基础（四）/pasted-0.png">
-<meta property="og:updated_time" content="2020-03-10T11:04:44.665Z">
+<meta property="og:updated_time" content="2020-03-26T15:59:19.469Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaSE基础（四）">
-<meta name="twitter:description" content="内存结构与执行过程 1.在硬盘上创建一个文件                            Test.java 2.文件的内容是我们编写的源代码（跟计算机发送的指令） public  class Test{          static void main( String[] args ){               byte x;               x=1;">
-<meta name="twitter:image" content="http://yoursite.com/2020/03/09/JavaSE基础（四）/pasted-0.png">
+<meta name="twitter:title" content="JavaSE基础  （三十一）">
+<meta name="twitter:description" content="学习文件流文件流按照读取或写入的单位（字节数）大小来区分字节型文件流（1字节）FileInputStream/FileOutputStream字符型文件流（2-字节–1字符）FileReader/FileWriter">
 
 
 
@@ -123,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/03/09/JavaSE基础（四）/">
+  <link rel="canonical" href="http://yoursite.com/2020/03/26/JavaSE基础-（三十一）/">
 
 
 
 
 
-  <title>JavaSE基础（四） | 一轮明月照九洲</title>
+  <title>JavaSE基础  （三十一） | 一轮明月照九洲</title>
   
 
 
@@ -257,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/09/JavaSE基础（四）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/26/JavaSE基础-（三十一）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="我与我周旋">
@@ -274,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaSE基础（四）</h1>
+          <h1 class="post-title" itemprop="name headline">JavaSE基础  （三十一）</h1>
         
 
         <div class="post-meta">
@@ -286,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-09T23:33:00+08:00">
-                2020-03-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-26T23:25:56+08:00">
+                2020-03-26
               </time>
             
 
@@ -346,23 +344,7 @@
       
 
       
-        <p>内存结构与执行过程</p>
-<p>1.在硬盘上创建一个文件                            Test.java</p>
-<p>2.文件的内容是我们编写的源代码（跟计算机发送的指令）</p>
-<pre><code>public  class Test{
-         static void main( String[] args ){
-              byte x;
-              x=1;
-        }
-  }</code></pre><p>3.将Test.java源文件——&gt;编译——&gt;Test.classc</p>
-<p>4.执行——–&gt;内存中执行</p>
-<p><img src="/2020/03/09/JavaSE基础（四）/pasted-0.png" alt="upload successful"><br>常量值</p>
-<pre><code>常量值是在常量缓存区中的
-常量区只存一份   常量存储的形式不是十进制而是二进制
-在常量池中整数默认是按照 int型存储
-如果使用长整型时需要末尾加L告知
-long d = 2147483648L;
-浮点型默认为64位double.</code></pre>
+        <h1 id="学习文件流"><a href="#学习文件流" class="headerlink" title="学习文件流"></a>学习文件流</h1><h2 id="文件流按照读取或写入的单位（字节数）大小来区分"><a href="#文件流按照读取或写入的单位（字节数）大小来区分" class="headerlink" title="文件流按照读取或写入的单位（字节数）大小来区分"></a>文件流按照读取或写入的单位（字节数）大小来区分</h2><h2 id="字节型文件流（1字节）"><a href="#字节型文件流（1字节）" class="headerlink" title="字节型文件流（1字节）"></a>字节型文件流（1字节）</h2><h3 id="FileInputStream-FileOutputStream"><a href="#FileInputStream-FileOutputStream" class="headerlink" title="FileInputStream/FileOutputStream"></a>FileInputStream/FileOutputStream</h3><h2 id="字符型文件流（2-字节–1字符）"><a href="#字符型文件流（2-字节–1字符）" class="headerlink" title="字符型文件流（2-字节–1字符）"></a>字符型文件流（2-字节–1字符）</h2><h3 id="FileReader-FileWriter"><a href="#FileReader-FileWriter" class="headerlink" title="FileReader/FileWriter"></a>FileReader/FileWriter</h3>
       
     </div>
     
@@ -386,8 +368,8 @@ long d = 2147483648L;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/08/JavaSE基础（三）/" rel="next" title="JavaSE基础（三）">
-                <i class="fa fa-chevron-left"></i> JavaSE基础（三）
+              <a href="/2020/03/26/JavaSE基础-（三十）/" rel="next" title="JavaSE基础  （三十）">
+                <i class="fa fa-chevron-left"></i> JavaSE基础  （三十）
               </a>
             
           </div>
@@ -395,10 +377,6 @@ long d = 2147483648L;
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/10/GIT（一）/" rel="prev" title="GIT (一)">
-                GIT (一) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -450,8 +428,17 @@ long d = 2147483648L;
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -536,6 +523,22 @@ long d = 2147483648L;
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#学习文件流"><span class="nav-number">1.</span> <span class="nav-text">学习文件流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件流按照读取或写入的单位（字节数）大小来区分"><span class="nav-number">1.1.</span> <span class="nav-text">文件流按照读取或写入的单位（字节数）大小来区分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字节型文件流（1字节）"><span class="nav-number">1.2.</span> <span class="nav-text">字节型文件流（1字节）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FileInputStream-FileOutputStream"><span class="nav-number">1.2.1.</span> <span class="nav-text">FileInputStream/FileOutputStream</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符型文件流（2-字节–1字符）"><span class="nav-number">1.3.</span> <span class="nav-text">字符型文件流（2-字节–1字符）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FileReader-FileWriter"><span class="nav-number">1.3.1.</span> <span class="nav-text">FileReader/FileWriter</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

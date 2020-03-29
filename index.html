@@ -252,6 +252,162 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/29/JavaSE基础-（三十二）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/29/JavaSE基础-（三十二）/" itemprop="url">JavaSE基础 （三十二）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-29T21:33:41+08:00">
+                2020-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="主线程-系统线程"><a href="#主线程-系统线程" class="headerlink" title="主线程  系统线程"></a>主线程  系统线程</h1><h1 id="用户线程-main"><a href="#用户线程-main" class="headerlink" title="用户线程 main"></a>用户线程 main</h1><h1 id="守护线程-GC"><a href="#守护线程-GC" class="headerlink" title="守护线程 GC"></a>守护线程 GC</h1><h1 id="线程——操作系统级别-CPU"><a href="#线程——操作系统级别-CPU" class="headerlink" title="线程——操作系统级别 CPU"></a>线程——操作系统级别 CPU</h1><h1 id="如何在Java中创建线程-让线程执行-多线程"><a href="#如何在Java中创建线程-让线程执行-多线程" class="headerlink" title="如何在Java中创建线程 让线程执行 多线程"></a>如何在Java中创建线程 让线程执行 多线程</h1><h1 id="掌握线程的几种不同状态以及如何切换"><a href="#掌握线程的几种不同状态以及如何切换" class="headerlink" title="掌握线程的几种不同状态以及如何切换"></a>掌握线程的几种不同状态以及如何切换</h1><pre><code>new      start()     cpu分配run()      wait()       exception over 
+创建线程----就绪状态---执行状态------等待/挂起----------异常/消亡
+               |                          |
+               |__________________________|
+                      notify/notifyAll唤醒</code></pre><h1 id="实现线程的过程"><a href="#实现线程的过程" class="headerlink" title="实现线程的过程"></a>实现线程的过程</h1><h2 id="自己描述一个类"><a href="#自己描述一个类" class="headerlink" title="自己描述一个类"></a>自己描述一个类</h2><h2 id="基础父类Thead"><a href="#基础父类Thead" class="headerlink" title="基础父类Thead"></a>基础父类Thead</h2><h2 id="重写run方法"><a href="#重写run方法" class="headerlink" title="重写run方法"></a>重写run方法</h2><h2 id="new一个线程对象-调用start方法让线程进入就绪状态"><a href="#new一个线程对象-调用start方法让线程进入就绪状态" class="headerlink" title="new一个线程对象 调用start方法让线程进入就绪状态"></a>new一个线程对象 调用start方法让线程进入就绪状态</h2><h1 id="实现线程的过程-1"><a href="#实现线程的过程-1" class="headerlink" title="实现线程的过程"></a>实现线程的过程</h1><h2 id="自己描述一个类-1"><a href="#自己描述一个类-1" class="headerlink" title="自己描述一个类"></a>自己描述一个类</h2><h2 id="实现一个父类接口Runnerable"><a href="#实现一个父类接口Runnerable" class="headerlink" title="实现一个父类接口Runnerable"></a>实现一个父类接口Runnerable</h2><h2 id="重写run方法-1"><a href="#重写run方法-1" class="headerlink" title="重写run方法"></a>重写run方法</h2><h2 id="new一个线程对象-需要创建Thead将自己包起来-然后调用Start"><a href="#new一个线程对象-需要创建Thead将自己包起来-然后调用Start" class="headerlink" title="new一个线程对象 需要创建Thead将自己包起来 然后调用Start()"></a>new一个线程对象 需要创建Thead将自己包起来 然后调用Start()</h2><h1 id="生产者和消费者模型"><a href="#生产者和消费者模型" class="headerlink" title="生产者和消费者模型"></a>生产者和消费者模型</h1><h2 id="通过这个模型-成功演示出-线程的安全问题"><a href="#通过这个模型-成功演示出-线程的安全问题" class="headerlink" title="通过这个模型 成功演示出 线程的安全问题"></a>通过这个模型 成功演示出 线程的安全问题</h2><pre><code>两个消费者 同时访问一个仓库对象 仓库内只有一个元素的时候
+两个消费者 并发访问 会有可能产生抢夺资源的问题</code></pre><h2 id="自己解决一下线程安全的问题"><a href="#自己解决一下线程安全的问题" class="headerlink" title="自己解决一下线程安全的问题"></a>自己解决一下线程安全的问题</h2><pre><code>让仓库对象被线程访问的时候 仓库对象被锁定
+仓库对象只能被一个线程所访问 其他对象处于等待状态
+特征修饰符
+synchronized 同步 一个时间段只有一个线程能访问</code></pre><h2 id="线程安全锁两种写法"><a href="#线程安全锁两种写法" class="headerlink" title="线程安全锁两种写法"></a>线程安全锁两种写法</h2><h3 id="将synchronized关键字-放在方法结构上"><a href="#将synchronized关键字-放在方法结构上" class="headerlink" title="将synchronized关键字 放在方法结构上"></a>将synchronized关键字 放在方法结构上</h3><pre><code>public synchronized void get(){}
+锁定的是调用方法时的那个对象</code></pre><h3 id="将synchronized关键字-方法在（构造方法内部）的内部"><a href="#将synchronized关键字-方法在（构造方法内部）的内部" class="headerlink" title="将synchronized关键字 方法在（构造方法内部）的内部"></a>将synchronized关键字 方法在（构造方法内部）的内部</h3><pre><code>public void get(){
+     好多代码
+     synchronzied（对象）{
+     好多代码
+     }
+     好多代码
+}</code></pre><h2 id="我们觉得return-不是很好"><a href="#我们觉得return-不是很好" class="headerlink" title="我们觉得return 不是很好"></a>我们觉得return 不是很好</h2><pre><code>应该让线程的不同状态来回切换
+执行 等待 执行 等待
+wait() Object类中的方法
+对象.wait();
+对象.wait();不是当前对象wait 
+             访问当前这个对象的线程wait
+ notify
+ notifyAll
+ p.setPriority(10);   p.getPriorty();
+ 产生一个类似假死的状态
+ 所有的线程进入等待状态 没有线程做事</code></pre><h1 id="笔试题"><a href="#笔试题" class="headerlink" title="笔试题"></a>笔试题</h1><h2 id="程序-进程-线程-概念的区别"><a href="#程序-进程-线程-概念的区别" class="headerlink" title="程序 进程 线程 概念的区别"></a>程序 进程 线程 概念的区别</h2><h2 id="线程的创建方式"><a href="#线程的创建方式" class="headerlink" title="线程的创建方式"></a>线程的创建方式</h2><h2 id="线程的几种状态-如何切换"><a href="#线程的几种状态-如何切换" class="headerlink" title="线程的几种状态 如何切换"></a>线程的几种状态 如何切换</h2><h2 id="sleep方法-和-wait方法区别"><a href="#sleep方法-和-wait方法区别" class="headerlink" title="sleep方法 和  wait方法区别"></a>sleep方法 和  wait方法区别</h2><pre><code>1.类    Thead类                       Object类
+2.调用  静态 类名                       对象
+3，理解  那个位置调用                    对象调用的方法
+      那个线程等待                    访问对象的其他线程等待
+4.唤醒   不需要别人                     需要其他对象调用notiy唤醒
+5.锁    不会释放锁                      等会会释放锁</code></pre><h1 id="比较重要的方法-join"><a href="#比较重要的方法-join" class="headerlink" title="比较重要的方法 join"></a>比较重要的方法 join</h1><pre><code>设计一个模型
+1.有两个线程 One   Two  Two加入到One里面
+2.设计模型的时候  two线程在one的run里面创建 保证两个先后顺序
+3.Two.join();  无参数==0; 有参数==2000
+         two.join(0){
+         while(two.isAlive()){
+                    Two.wait（0）；//访问Two的线程进入等待状态
+         }</code></pre><h1 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h1><h2 id="一旦对象锁定-不释放的情况下其他对象都需要等待-有可能会产生死锁的效果"><a href="#一旦对象锁定-不释放的情况下其他对象都需要等待-有可能会产生死锁的效果" class="headerlink" title="一旦对象锁定 不释放的情况下其他对象都需要等待 有可能会产生死锁的效果"></a>一旦对象锁定 不释放的情况下其他对象都需要等待 有可能会产生死锁的效果</h2><h2 id="哲学家就餐问题"><a href="#哲学家就餐问题" class="headerlink" title="哲学家就餐问题"></a>哲学家就餐问题</h2><h2 id="解决死锁的问题"><a href="#解决死锁的问题" class="headerlink" title="解决死锁的问题"></a>解决死锁的问题</h2><h3 id="礼让—–-gt-产生时间差"><a href="#礼让—–-gt-产生时间差" class="headerlink" title="礼让—–&gt;产生时间差"></a>礼让—–&gt;产生时间差</h3><h3 id="不要产生公用对象问题"><a href="#不要产生公用对象问题" class="headerlink" title="不要产生公用对象问题"></a>不要产生公用对象问题</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/26/JavaSE基础-（三十一）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -345,7 +501,28 @@
       
         
           
-            <h1 id="学习文件流"><a href="#学习文件流" class="headerlink" title="学习文件流"></a>学习文件流</h1><h2 id="文件流按照读取或写入的单位（字节数）大小来区分"><a href="#文件流按照读取或写入的单位（字节数）大小来区分" class="headerlink" title="文件流按照读取或写入的单位（字节数）大小来区分"></a>文件流按照读取或写入的单位（字节数）大小来区分</h2><h2 id="字节型文件流（1字节）"><a href="#字节型文件流（1字节）" class="headerlink" title="字节型文件流（1字节）"></a>字节型文件流（1字节）</h2><h3 id="FileInputStream-FileOutputStream"><a href="#FileInputStream-FileOutputStream" class="headerlink" title="FileInputStream/FileOutputStream"></a>FileInputStream/FileOutputStream</h3><h2 id="字符型文件流（2-字节–1字符）"><a href="#字符型文件流（2-字节–1字符）" class="headerlink" title="字符型文件流（2-字节–1字符）"></a>字符型文件流（2-字节–1字符）</h2><h3 id="FileReader-FileWriter"><a href="#FileReader-FileWriter" class="headerlink" title="FileReader/FileWriter"></a>FileReader/FileWriter</h3>
+            <h1 id="学习文件流"><a href="#学习文件流" class="headerlink" title="学习文件流"></a>学习文件流</h1><h2 id="文件流按照读取或写入的单位（字节数）大小来区分"><a href="#文件流按照读取或写入的单位（字节数）大小来区分" class="headerlink" title="文件流按照读取或写入的单位（字节数）大小来区分"></a>文件流按照读取或写入的单位（字节数）大小来区分</h2><h2 id="字节型文件流（1字节）"><a href="#字节型文件流（1字节）" class="headerlink" title="字节型文件流（1字节）"></a>字节型文件流（1字节）</h2><h3 id="FileInputStream-FileOutputStream"><a href="#FileInputStream-FileOutputStream" class="headerlink" title="FileInputStream/FileOutputStream"></a>FileInputStream/FileOutputStream</h3><h2 id="字符型文件流（2-字节–1字符）"><a href="#字符型文件流（2-字节–1字符）" class="headerlink" title="字符型文件流（2-字节–1字符）"></a>字符型文件流（2-字节–1字符）</h2><h3 id="FileReader-FileWriter"><a href="#FileReader-FileWriter" class="headerlink" title="FileReader/FileWriter"></a>FileReader/FileWriter</h3><h1 id="字节型文件输入流"><a href="#字节型文件输入流" class="headerlink" title="字节型文件输入流"></a>字节型文件输入流</h1><h2 id="了解一下继承关系-inputStream类-字节型输入流的父类"><a href="#了解一下继承关系-inputStream类-字节型输入流的父类" class="headerlink" title="了解一下继承关系 inputStream类 字节型输入流的父类"></a>了解一下继承关系 inputStream类 字节型输入流的父类</h2><h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><h3 id="调用一个带File类型的构造方法"><a href="#调用一个带File类型的构造方法" class="headerlink" title="调用一个带File类型的构造方法"></a>调用一个带File类型的构造方法</h3><h3 id="调用一个带String类型的构造方法"><a href="#调用一个带String类型的构造方法" class="headerlink" title="调用一个带String类型的构造方法"></a>调用一个带String类型的构造方法</h3><h2 id="常用的方法"><a href="#常用的方法" class="headerlink" title="常用的方法"></a>常用的方法</h2><pre><code>int code = read(); 每次从流管道中读取一个字节 返回字节码的code码
+int count = read(byte[] )每次从流管道中读取若干字节 存入数组内 返回有效元素
+skip（long n）跳过几个字节 读取
+多线程————————&gt;利用几个线程同时读取文件
+*close()   将流管道关闭---必须要做 最好放在fianlly里 注意代码的健壮性 严谨性</code></pre><h1 id="字节型文件输出流"><a href="#字节型文件输出流" class="headerlink" title="字节型文件输出流"></a>字节型文件输出流</h1><h2 id="FileOutput-将数据写入文件中"><a href="#FileOutput-将数据写入文件中" class="headerlink" title="FileOutput 将数据写入文件中"></a>FileOutput 将数据写入文件中</h2><h2 id="java-io"><a href="#java-io" class="headerlink" title="java.io"></a>java.io</h2><h2 id="继承OutputStream-所有字节输出型的父类"><a href="#继承OutputStream-所有字节输出型的父类" class="headerlink" title="继承OutputStream 所有字节输出型的父类"></a>继承OutputStream 所有字节输出型的父类</h2><h2 id="创建对象-1"><a href="#创建对象-1" class="headerlink" title="创建对象"></a>创建对象</h2><h3 id="调用一个带file参数-还有file-Boolean重载"><a href="#调用一个带file参数-还有file-Boolean重载" class="headerlink" title="调用一个带file参数 还有file Boolean重载"></a>调用一个带file参数 还有file Boolean重载</h3><h3 id="调用一个带String参数-还有String-boolean-重载"><a href="#调用一个带String参数-还有String-boolean-重载" class="headerlink" title="调用一个带String参数 还有String boolean 重载"></a>调用一个带String参数 还有String boolean 重载</h3><h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><pre><code>writr(int code);将给定的code对应的字符写入文件“=”
+write(byte[]) 将数组中的全部字节写入文集 getByte()
+flush() 将管道内的字节推入(刷新)文件
+close() 注意在finaly类中关闭</code></pre><h1 id="字符型文件流"><a href="#字符型文件流" class="headerlink" title="字符型文件流"></a>字符型文件流</h1><h2 id="FileReader-FileWriter-1"><a href="#FileReader-FileWriter-1" class="headerlink" title="FileReader   FileWriter"></a>FileReader   FileWriter</h2><h2 id="只能操作存文本文件（右键打开方式-记事本打开-能看懂）-txt"><a href="#只能操作存文本文件（右键打开方式-记事本打开-能看懂）-txt" class="headerlink" title="只能操作存文本文件（右键打开方式 记事本打开 能看懂）.txt"></a>只能操作存文本文件（右键打开方式 记事本打开 能看懂）.txt</h2><h1 id="FileReader"><a href="#FileReader" class="headerlink" title="FileReader"></a>FileReader</h1><h2 id="java-io包"><a href="#java-io包" class="headerlink" title="java.io包"></a>java.io包</h2><h2 id="继承-InputStreamReader-Reader"><a href="#继承-InputStreamReader-Reader" class="headerlink" title="继承 InputStreamReader Reader"></a>继承 InputStreamReader Reader</h2><h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><h2 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h2><h3 id="read"><a href="#read" class="headerlink" title="read()"></a>read()</h3><h3 id="read-char"><a href="#read-char" class="headerlink" title="read(char[])"></a>read(char[])</h3><h1 id="FileWriter"><a href="#FileWriter" class="headerlink" title="FileWriter"></a>FileWriter</h1><h2 id="java-io包-1"><a href="#java-io包-1" class="headerlink" title="java.io包"></a>java.io包</h2><h2 id="继承OutputStreamWriter-Writer"><a href="#继承OutputStreamWriter-Writer" class="headerlink" title="继承OutputStreamWriter Writer"></a>继承OutputStreamWriter Writer</h2><h2 id="构造方法-带file参数-带file-boolean参数"><a href="#构造方法-带file参数-带file-boolean参数" class="headerlink" title="构造方法 带file参数 带file,boolean参数"></a>构造方法 带file参数 带file,boolean参数</h2><h2 id="nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-带String参数-带String，boolean参数"><a href="#nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-带String参数-带String，boolean参数" class="headerlink" title="&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;带String参数 带String，boolean参数"></a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;带String参数 带String，boolean参数</h2><h2 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h2><pre><code>writer（int）
+writer（char[]）
+writer（String）
+int count = read(char[]);
+close() flush()</code></pre><h1 id="缓冲流"><a href="#缓冲流" class="headerlink" title="缓冲流"></a>缓冲流</h1><h2 id="在管道中内增加缓存的数据"><a href="#在管道中内增加缓存的数据" class="headerlink" title="在管道中内增加缓存的数据"></a>在管道中内增加缓存的数据</h2><h2 id="让我们使用流读取的文字更加流畅"><a href="#让我们使用流读取的文字更加流畅" class="headerlink" title="让我们使用流读取的文字更加流畅"></a>让我们使用流读取的文字更加流畅</h2><h2 id="高级流—–》创建通过低级流"><a href="#高级流—–》创建通过低级流" class="headerlink" title="高级流—–》创建通过低级流"></a>高级流—–》创建通过低级流</h2><pre><code>BufferedInputStream/BufferedOutputStream
+BufferedReader/BufferedWriter
+BUfferedInPutStream
+构建方式 使用低级流构建
+基本上使用与低级流完全一致
+read()skip()available()close() 
+BufferedOutStream
+构建方式 使用低级流构建 注意缓冲流构建的时候没有boolean类型的参数
+基本使用与低级流的方法完全一致
+read()skip()available()close()
+BufferedOutputStream</code></pre><h1 id="对象流"><a href="#对象流" class="headerlink" title="对象流"></a>对象流</h1><h2 id="对象的序列化-反序列化"><a href="#对象的序列化-反序列化" class="headerlink" title="对象的序列化/反序列化"></a>对象的序列化/反序列化</h2><h2 id="为什么要有文件"><a href="#为什么要有文件" class="headerlink" title="为什么要有文件"></a>为什么要有文件</h2><pre><code>文件永久保存信息    很多数据存入文件-----数据持久化</code></pre><h2 id="如果按照以行为单位写信息"><a href="#如果按照以行为单位写信息" class="headerlink" title="如果按照以行为单位写信息"></a>如果按照以行为单位写信息</h2><h3 id="好处在于每一行记录的信息都是相关的"><a href="#好处在于每一行记录的信息都是相关的" class="headerlink" title="好处在于每一行记录的信息都是相关的"></a>好处在于每一行记录的信息都是相关的</h3><h3 id="信息我们可以读出来-直接看懂文件"><a href="#信息我们可以读出来-直接看懂文件" class="headerlink" title="信息我们可以读出来 直接看懂文件"></a>信息我们可以读出来 直接看懂文件</h3><h3 id="不好在于第一不一定安全-直接看懂"><a href="#不好在于第一不一定安全-直接看懂" class="headerlink" title="不好在于第一不一定安全 直接看懂"></a>不好在于第一不一定安全 直接看懂</h3><h3 id="不好在于只能记录String信息-不一定能记录一些动作（方法）"><a href="#不好在于只能记录String信息-不一定能记录一些动作（方法）" class="headerlink" title="不好在于只能记录String信息 不一定能记录一些动作（方法）"></a>不好在于只能记录String信息 不一定能记录一些动作（方法）</h3><h3 id="读取出来的信息-String——-gt-Person"><a href="#读取出来的信息-String——-gt-Person" class="headerlink" title="读取出来的信息 String——&gt;Person"></a>读取出来的信息 String——&gt;Person</h3><h3 id="如果能将对象拆分成字节码直接写入文件"><a href="#如果能将对象拆分成字节码直接写入文件" class="headerlink" title="如果能将对象拆分成字节码直接写入文件"></a>如果能将对象拆分成字节码直接写入文件</h3><h2 id="将对象直接存入文件中—–对象流"><a href="#将对象直接存入文件中—–对象流" class="headerlink" title="将对象直接存入文件中—–对象流"></a>将对象直接存入文件中—–对象流</h2><h1 id="为什么要重写toString方法"><a href="#为什么要重写toString方法" class="headerlink" title="为什么要重写toString方法"></a>为什么要重写toString方法</h1><h2 id="toString-方法默认是打印对象和hashcode码"><a href="#toString-方法默认是打印对象和hashcode码" class="headerlink" title="toString 方法默认是打印对象和hashcode码"></a>toString 方法默认是打印对象和hashcode码</h2><h2 id="当输出为一个对象名的时候"><a href="#当输出为一个对象名的时候" class="headerlink" title="当输出为一个对象名的时候"></a>当输出为一个对象名的时候</h2><h2 id="重写toString方法可以打印对象的值"><a href="#重写toString方法可以打印对象的值" class="headerlink" title="重写toString方法可以打印对象的值"></a>重写toString方法可以打印对象的值</h2><h1 id="对象序列化与反序列化"><a href="#对象序列化与反序列化" class="headerlink" title="对象序列化与反序列化"></a>对象序列化与反序列化</h1><h2 id="对象的序列化指的是"><a href="#对象的序列化指的是" class="headerlink" title="对象的序列化指的是"></a>对象的序列化指的是</h2><h3 id="将一个完整的对象-拆分成字节碎片-记录在文件中"><a href="#将一个完整的对象-拆分成字节碎片-记录在文件中" class="headerlink" title="将一个完整的对象 拆分成字节碎片 记录在文件中"></a>将一个完整的对象 拆分成字节碎片 记录在文件中</h3><h2 id="对象的反序列化指的是"><a href="#对象的反序列化指的是" class="headerlink" title="对象的反序列化指的是"></a>对象的反序列化指的是</h2><h3 id="将文件中记录的对象随便-反过来组合一个完整的对象"><a href="#将文件中记录的对象随便-反过来组合一个完整的对象" class="headerlink" title="将文件中记录的对象随便 反过来组合一个完整的对象"></a>将文件中记录的对象随便 反过来组合一个完整的对象</h3><h2 id="如果想要将对象序列化到文件中"><a href="#如果想要将对象序列化到文件中" class="headerlink" title="如果想要将对象序列化到文件中"></a>如果想要将对象序列化到文件中</h2><h3 id="需要对象实现Serializable接口"><a href="#需要对象实现Serializable接口" class="headerlink" title="需要对象实现Serializable接口"></a>需要对象实现Serializable接口</h3><h3 id="是一个示意性的接口"><a href="#是一个示意性的接口" class="headerlink" title="是一个示意性的接口"></a>是一个示意性的接口</h3><h2 id="如果要实现反序列化"><a href="#如果要实现反序列化" class="headerlink" title="如果要实现反序列化"></a>如果要实现反序列化</h2><h3 id="需要给对象提供一个序列化的版本号-1-7版本—-gt-String-1-8—-gt-String"><a href="#需要给对象提供一个序列化的版本号-1-7版本—-gt-String-1-8—-gt-String" class="headerlink" title="需要给对象提供一个序列化的版本号 1.7版本—&gt;String 1.8—&gt;String"></a>需要给对象提供一个序列化的版本号 1.7版本—&gt;String 1.8—&gt;String</h3>
           
         
       
@@ -1804,174 +1981,6 @@ lastIndexOf(int/String str,[int fromindex]);
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/23/JavaSE基础-（二十一）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/23/JavaSE基础-（二十一）/" itemprop="url">JavaSE基础 （二十一）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-23T22:02:16+08:00">
-                2020-03-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="日期相关"><a href="#日期相关" class="headerlink" title="日期相关"></a>日期相关</h1><h2 id="Date类"><a href="#Date类" class="headerlink" title="Date类"></a>Date类</h2><pre><code>1.通常使用的是java.util包
-2.导包 拿来使用 构建对象
-3.通常使用的是无参构造方法 或者带long构造方法
-4.Date类中常用的方法
-     before();after();
-     setTime();getTime();
-     compareTo();
-5.可以处理一个Date日期的格式</code></pre><h2 id="DateFormat类"><a href="#DateFormat类" class="headerlink" title="DateFormat类"></a>DateFormat类</h2><pre><code>1.java.text包 需要导包
-2.此类是一个抽象类 不能创建对象 子类来使用
-3.SimpleDarteFormat类 是DateFormat的子类
-4.调用String参数的构造方法创建format对象
-       SimpleDateFormat sdf =  new Simple DateFormat(&quot;yyyyy--MM--dd HH:mm:ss&quot;) 
-       string v = sdf.format(date.1)//通过sdf将对象格式化成你描述的样子</code></pre><h2 id="Calendar-1-1版本"><a href="#Calendar-1-1版本" class="headerlink" title="Calendar 1.1版本"></a>Calendar 1.1版本</h2><pre><code>1.所属的包 java.util 需要导包
-2.有构造方法 用protected修饰的 通常访问不到 通常还会调用默认的getInstance()
-3.常用方法
-        after() before()
-        setTime() getTime()---&gt;Date
-        getTimeInMills()----time
-        getTimeZone()----TimeZone
-        Calendar calendar = Calendar.getInstance();//系统当前时间的Calendar对象
-        Calendar里面包含一个date属性 可以操作某一个局部信息
-        set get
-        calendar.set（Calendar.YEAR,2015）;
-        int year = calendar.get（Calendar.YEAR）;</code></pre><h2 id="TimeZone"><a href="#TimeZone" class="headerlink" title="TimeZone"></a>TimeZone</h2><pre><code>1.java.util包
-2.可以通过calendar对象.getTimeZone（）获取 或 TimeZone.getDefault();
-3.常用方法 
-       tz.getID();
-       System.out.println(tz.getDisplayName());</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2024,7 +2033,7 @@ lastIndexOf(int/String str,[int fromindex]);
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2142,7 +2151,7 @@ lastIndexOf(int/String str,[int fromindex]);
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共18.7k字</span>
+  <span class="post-count">博客全站共20.3k字</span>
 </div>
         
 

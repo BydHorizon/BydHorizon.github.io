@@ -252,6 +252,174 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/23/JavaSE基础-（二十一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/23/JavaSE基础-（二十一）/" itemprop="url">JavaSE基础 （二十一）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-23T22:02:16+08:00">
+                2020-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="日期相关"><a href="#日期相关" class="headerlink" title="日期相关"></a>日期相关</h1><h2 id="Date类"><a href="#Date类" class="headerlink" title="Date类"></a>Date类</h2><pre><code>1.通常使用的是java.util包
+2.导包 拿来使用 构建对象
+3.通常使用的是无参构造方法 或者带long构造方法
+4.Date类中常用的方法
+     before();after();
+     setTime();getTime();
+     compareTo();
+5.可以处理一个Date日期的格式</code></pre><h2 id="DateFormat类"><a href="#DateFormat类" class="headerlink" title="DateFormat类"></a>DateFormat类</h2><pre><code>1.java.text包 需要导包
+2.此类是一个抽象类 不能创建对象 子类来使用
+3.SimpleDarteFormat类 是DateFormat的子类
+4.调用String参数的构造方法创建format对象
+       SimpleDateFormat sdf =  new Simple DateFormat(&quot;yyyyy--MM--dd HH:mm:ss&quot;) 
+       string v = sdf.format(date.1)//通过sdf将对象格式化成你描述的样子</code></pre><h2 id="Calendar-1-1版本"><a href="#Calendar-1-1版本" class="headerlink" title="Calendar 1.1版本"></a>Calendar 1.1版本</h2><pre><code>1.所属的包 java.util 需要导包
+2.有构造方法 用protected修饰的 通常访问不到 通常还会调用默认的getInstance()
+3.常用方法
+        after() before()
+        setTime() getTime()---&gt;Date
+        getTimeInMills()----time
+        getTimeZone()----TimeZone
+        Calendar calendar = Calendar.getInstance();//系统当前时间的Calendar对象
+        Calendar里面包含一个date属性 可以操作某一个局部信息
+        set get
+        calendar.set（Calendar.YEAR,2015）;
+        int year = calendar.get（Calendar.YEAR）;</code></pre><h2 id="TimeZone"><a href="#TimeZone" class="headerlink" title="TimeZone"></a>TimeZone</h2><pre><code>1.java.util包
+2.可以通过calendar对象.getTimeZone（）获取 或 TimeZone.getDefault();
+3.常用方法 
+       tz.getID();
+       System.out.println(tz.getDisplayName());</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/23/JavaSE基础-（二十）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1900,166 +2068,6 @@ private      私有的
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/20/JavaSE基础-（十一）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/20/JavaSE基础-（十一）/" itemprop="url">JavaSE基础 （十一）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-20T23:16:57+08:00">
-                2020-03-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>包packge（可以理解为是一个文件夹）</p>
-<pre><code>在我们类的第一行会出现package关键字
-如果package和import同时出现
-先写package后写import
-package只能有一个import可以有多个</code></pre><p>类的关系<br>    has-a</p>
-<pre><code>包含关系（组合 聚合 关联） 语义
-从亲密程度来讲不太一样
-组合---&gt;人的大脑  人和心脏的关系
-     整体和部分的关系 不可分割 要出现整体出现 要消亡整体消亡
-整合----&gt;汽车和轮子 电脑和主板
-     整体和部分的关系 创建时可能是分开的
-关联----&gt;人有汽车 人有电脑
-     整体和部分的关系 可以分割后来形成一起
-从Java程序来描述这样的关系 通过一个类的对象当做另一个类的属性来存储</code></pre><p>ues a &nbsp;&nbsp;&nbsp;&nbsp;(need a ) 依赖关系</p>
-<pre><code>屠夫 杀 猪
-           可以做一件事情 杀猪
-           需要一头猪
-不是整体和部分的关系 某一件事情产生关系
-临时组合在一起 这件事情一旦做完关系就解散
-通过在方法中引用另一个类的对象实现</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2112,7 +2120,7 @@ package只能有一个import可以有多个</code></pre><p>类的关系<br>    h
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2230,7 +2238,7 @@ package只能有一个import可以有多个</code></pre><p>类的关系<br>    h
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共18.7k字</span>
+  <span class="post-count">博客全站共20.3k字</span>
 </div>
         
 

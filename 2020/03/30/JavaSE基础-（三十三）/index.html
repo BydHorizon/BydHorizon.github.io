@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="多维数组 0.数组的特点 数组本身是一个引用类型 声明时必须指定长度  长度一旦确定就不能再次发生改变 1.定义/声明 里面存储的类型[] 数组名字; int[][]  arry; 2.初始化 静态---有长度 有元素   int[][] arry = {{1,2},{1}.{1.2.3}}; 动态---只有长度 没有元素（默认值）   int[][] arry = new int[3][2];">
+<meta name="description" content="反射 reflect类是用来描述一组类反射机制认为是描述一组类Class           用来描述类本身 Package         用来描述所属类的包 Field           用来描述类中的属性 Method          用来描述类的方法 Constructor     用来描述类中的构造方法 Annotation      用来描述类中的注解如何获取Class如何下三种方">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaSE基础  （七）">
-<meta property="og:url" content="http://yoursite.com/2020/03/13/avaSE基础-（七）/index.html">
+<meta property="og:title" content="JavaSE基础 （三十三）">
+<meta property="og:url" content="http://yoursite.com/2020/03/30/JavaSE基础-（三十三）/index.html">
 <meta property="og:site_name" content="一轮明月照九洲">
-<meta property="og:description" content="多维数组 0.数组的特点 数组本身是一个引用类型 声明时必须指定长度  长度一旦确定就不能再次发生改变 1.定义/声明 里面存储的类型[] 数组名字; int[][]  arry; 2.初始化 静态---有长度 有元素   int[][] arry = {{1,2},{1}.{1.2.3}}; 动态---只有长度 没有元素（默认值）   int[][] arry = new int[3][2];">
+<meta property="og:description" content="反射 reflect类是用来描述一组类反射机制认为是描述一组类Class           用来描述类本身 Package         用来描述所属类的包 Field           用来描述类中的属性 Method          用来描述类的方法 Constructor     用来描述类中的构造方法 Annotation      用来描述类中的注解如何获取Class如何下三种方">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-13T14:36:43.119Z">
+<meta property="og:updated_time" content="2020-03-30T12:03:32.020Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaSE基础  （七）">
-<meta name="twitter:description" content="多维数组 0.数组的特点 数组本身是一个引用类型 声明时必须指定长度  长度一旦确定就不能再次发生改变 1.定义/声明 里面存储的类型[] 数组名字; int[][]  arry; 2.初始化 静态---有长度 有元素   int[][] arry = {{1,2},{1}.{1.2.3}}; 动态---只有长度 没有元素（默认值）   int[][] arry = new int[3][2];">
+<meta name="twitter:title" content="JavaSE基础 （三十三）">
+<meta name="twitter:description" content="反射 reflect类是用来描述一组类反射机制认为是描述一组类Class           用来描述类本身 Package         用来描述所属类的包 Field           用来描述类中的属性 Method          用来描述类的方法 Constructor     用来描述类中的构造方法 Annotation      用来描述类中的注解如何获取Class如何下三种方">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/03/13/avaSE基础-（七）/">
+  <link rel="canonical" href="http://yoursite.com/2020/03/30/JavaSE基础-（三十三）/">
 
 
 
 
 
-  <title>JavaSE基础  （七） | 一轮明月照九洲</title>
+  <title>JavaSE基础 （三十三） | 一轮明月照九洲</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/13/avaSE基础-（七）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/30/JavaSE基础-（三十三）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="我与我周旋">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaSE基础  （七）</h1>
+          <h1 class="post-title" itemprop="name headline">JavaSE基础 （三十三）</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-13T22:12:24+08:00">
-                2020-03-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-30T08:05:21+08:00">
+                2020-03-30
               </time>
             
 
@@ -344,38 +344,62 @@
       
 
       
-        <p>多维数组</p>
-<p>0.数组的特点</p>
-<pre><code>数组本身是一个引用类型
-声明时必须指定长度  长度一旦确定就不能再次发生改变</code></pre><p> 1.定义/声明</p>
-<pre><code>里面存储的类型[] 数组名字;
-int[][]  arry;</code></pre><p> 2.初始化</p>
-<pre><code>静态---有长度 有元素
-  int[][] arry = {{1,2},{1}.{1.2.3}};
-动态---只有长度 没有元素（默认值）
-  int[][] arry = new int[3][2];
-  arry -----&gt;{{x,x},{x,x},{x,x}}  x默认值是0</code></pre><p> 3.元素访问          </p>
-<pre><code>通过元素在数组中的位置----index
-array[i][j]
-i控制大数组中 小数组的位置
-j控制小数组中 元素的位置</code></pre><p> 4.遍历轮循          </p>
-<pre><code>正常for 增强for  嵌套完成</code></pre><p> 5.引用类型在内存中的结构</p>
-<pre><code>二维数组在内存中的存储，逻辑结构不是矩阵而是树
-int[][] arry = new int[3][2];
-//3表示有3个小数组int[]
-//2表示每一个小数组有两个元素
-//NullPointerException    空指针异常</code></pre><p>6.常见的运行时异常</p>
-<pre><code>1.InputMisMatchException   输入类型不匹配 
-     input.nextInt();      如：输入一个a
-2.ArrayIndexOutOfBoundsException  数组索引越界
-  静态初始化 int array[]={10,20};
-             array[2]  //索引超过边界
-3.NegativeArraySizeException  数组长度不合法（长度出现负数）
-  动态初始化 int[] array = new int [-2]
-4.NullPointerException    空指针异常 
-   引用为null 还拿来使用就不行啦
-   int[] arry = null;
-   arry[0] = 10 ;//空元素再来用</code></pre>
+        <h1 id="反射-reflect"><a href="#反射-reflect" class="headerlink" title="反射 reflect"></a>反射 reflect</h1><h2 id="类是用来描述一组类"><a href="#类是用来描述一组类" class="headerlink" title="类是用来描述一组类"></a>类是用来描述一组类</h2><h2 id="反射机制认为是描述一组类"><a href="#反射机制认为是描述一组类" class="headerlink" title="反射机制认为是描述一组类"></a>反射机制认为是描述一组类</h2><pre><code>Class           用来描述类本身
+Package         用来描述所属类的包
+Field           用来描述类中的属性
+Method          用来描述类的方法
+Constructor     用来描述类中的构造方法
+Annotation      用来描述类中的注解</code></pre><h1 id="如何获取Class"><a href="#如何获取Class" class="headerlink" title="如何获取Class"></a>如何获取Class</h1><pre><code>如何下三种方式
+Class    clazz = Class.for.Name(&quot;包名.类名&quot;)
+Class    clazz = 类名.class;
+Class    clazz = 对象.getClass();//Object类中的方法</code></pre><h1 id="Class中的常用方法"><a href="#Class中的常用方法" class="headerlink" title="Class中的常用方法"></a>Class中的常用方法</h1><pre><code>int result = getModifiers();   获取类的修饰符（权限 特征）
+每一个修饰符 用一个整数来进行表示
+0开始----0-1-2-4-8-16-32--64-128-256-512-1024
+0---默认不写  1---public         2---private    4---protected 8---static
+16---final    32----sychronized  64---voliate   128---trasnsient
+256---native  512---interface    1024---abstract
+String name = getName(); 获取名字
+String simpleName = getSimpleName();简单名
+Package p = getPackage();
+p.getName();
+Class sclazz = getSuperClass();//获取父类
+Class[] classes = getModifiers();
+Object obj = newInstance();//默认调用无参构造方法创建对象
+Filed f = getField(&quot;属性名&quot;);
+Field[] fs = getField();
+如上两个方法只能获取公有属性 但是包含继承过来父类属性
+getDeclaredField(&quot;属性&quot;)
+Field[] fs =getDeclaredFields();
+如上的两个方法能获取公有和私有的属性 但是只能获取本类中的属性</code></pre><h1 id="Filed类中常用方法"><a href="#Filed类中常用方法" class="headerlink" title="Filed类中常用方法"></a>Filed类中常用方法</h1><pre><code>int = getModifers()
+Class = getType()
+String = getName()
+操作属性 向里面存值
+set(对象，值）
+操作属性 从里面取值
+值 = get(对象)
+对象 =new():// 创建对象空间 当前对象空间有自己的一套元素（属性 方法）    
+setAccessable（true）可以修改属性设备操作</code></pre><h1 id="如何操作类中的方法"><a href="#如何操作类中的方法" class="headerlink" title="如何操作类中的方法"></a>如何操作类中的方法</h1><pre><code>Class类中的方法
+Method m = class.getMethod(&quot;方法名&quot;，Class...参数类型);  获取公有方法（自己类+父类）
+Method[] = clazz.getMethod();获取所有的方法（公有 自己+父类）
+Method = getDeclaredMethod（&quot;方法名字&quot;，参数类型class...）获取所有的方法（自己类 公有 私有）
+Method = getDeclaredMethods()   获取全部的方法（自己类 公有加私有）
+获取构造方法
+Construct = clazz.getConstructor（class...参数类型）</code></pre><h1 id="Method类中常用的方法"><a href="#Method类中常用的方法" class="headerlink" title="Method类中常用的方法"></a>Method类中常用的方法</h1><pre><code>int mm = m.getModififers()//获取方法的修饰符（权限+特征）
+Class mrt = m.getReturnType();//获取返回值数据类型
+String mn= m.getName();//获取方法名字
+Class[] mpts = m.getParameterTypes();//获取方法参数列表的类型
+Class[] mets = m.getExceptionTypes();//获取方法抛出异常类型
+如何操作方法
+调用方法 让他执行一次
+Object result = invoke（对象.执行方法需要传递的所有参数）
+若方法是私有方法 不许与操作
+可以设置setAccessable（True）设置方法使用权准入</code></pre><h1 id="Constructor类中的常用方法"><a href="#Constructor类中的常用方法" class="headerlink" title="Constructor类中的常用方法"></a>Constructor类中的常用方法</h1><pre><code>con.getModifiers();
+con.getName();
+con.getParamenterTyper();
+con.getExceptionTypers()
+如何操作构造方法
+执行一次 创建对象
+Object = newInstance（执行构造方法时的所有参数）;</code></pre>
       
     </div>
     
@@ -399,8 +423,8 @@ int[][] arry = new int[3][2];
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/12/JavaSE基础-（六）/" rel="next" title="JavaSE基础 （六）">
-                <i class="fa fa-chevron-left"></i> JavaSE基础 （六）
+              <a href="/2020/03/29/JavaSE基础-（三十二）/" rel="next" title="JavaSE基础 （三十二）">
+                <i class="fa fa-chevron-left"></i> JavaSE基础 （三十二）
               </a>
             
           </div>
@@ -409,8 +433,8 @@ int[][] arry = new int[3][2];
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/03/14/JavaSE基础-（八）/" rel="prev" title="JavaSE基础 （八）">
-                JavaSE基础 （八） <i class="fa fa-chevron-right"></i>
+              <a href="/2020/03/30/JavaSE基础-（三十四）/" rel="prev" title="JavaSE基础 （三十四）">
+                JavaSE基础 （三十四） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -463,8 +487,17 @@ int[][] arry = new int[3][2];
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -549,6 +582,22 @@ int[][] arry = new int[3][2];
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#反射-reflect"><span class="nav-number">1.</span> <span class="nav-text">反射 reflect</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类是用来描述一组类"><span class="nav-number">1.1.</span> <span class="nav-text">类是用来描述一组类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反射机制认为是描述一组类"><span class="nav-number">1.2.</span> <span class="nav-text">反射机制认为是描述一组类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何获取Class"><span class="nav-number">2.</span> <span class="nav-text">如何获取Class</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Class中的常用方法"><span class="nav-number">3.</span> <span class="nav-text">Class中的常用方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Filed类中常用方法"><span class="nav-number">4.</span> <span class="nav-text">Filed类中常用方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何操作类中的方法"><span class="nav-number">5.</span> <span class="nav-text">如何操作类中的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Method类中常用的方法"><span class="nav-number">6.</span> <span class="nav-text">Method类中常用的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Constructor类中的常用方法"><span class="nav-number">7.</span> <span class="nav-text">Constructor类中的常用方法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

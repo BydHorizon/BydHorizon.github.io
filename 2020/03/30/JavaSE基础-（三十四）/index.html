@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="多维数组 0.数组的特点 数组本身是一个引用类型 声明时必须指定长度  长度一旦确定就不能再次发生改变 1.定义/声明 里面存储的类型[] 数组名字; int[][]  arry; 2.初始化 静态---有长度 有元素   int[][] arry = {{1,2},{1}.{1.2.3}}; 动态---只有长度 没有元素（默认值）   int[][] arry = new int[3][2];">
+<meta name="description" content="Annocation（注释 注解）注释单行注释 // 多行注释 /*   */ 文档注释 /**  */注解注解的写法@xxxx[{一些信息}]注解放在哪里类的上面  属性的上面 方法的上面 构造方法的上面 参数的前面注解的作用1.用来充当注释的作用（仅仅是一个文字说明）@deprecated 2.用来做代码的检测（验证）    @Override 3.可以携带一些信息（内容）    文件.pro">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaSE基础  （七）">
-<meta property="og:url" content="http://yoursite.com/2020/03/13/avaSE基础-（七）/index.html">
+<meta property="og:title" content="JavaSE基础 （三十四）">
+<meta property="og:url" content="http://yoursite.com/2020/03/30/JavaSE基础-（三十四）/index.html">
 <meta property="og:site_name" content="一轮明月照九洲">
-<meta property="og:description" content="多维数组 0.数组的特点 数组本身是一个引用类型 声明时必须指定长度  长度一旦确定就不能再次发生改变 1.定义/声明 里面存储的类型[] 数组名字; int[][]  arry; 2.初始化 静态---有长度 有元素   int[][] arry = {{1,2},{1}.{1.2.3}}; 动态---只有长度 没有元素（默认值）   int[][] arry = new int[3][2];">
+<meta property="og:description" content="Annocation（注释 注解）注释单行注释 // 多行注释 /*   */ 文档注释 /**  */注解注解的写法@xxxx[{一些信息}]注解放在哪里类的上面  属性的上面 方法的上面 构造方法的上面 参数的前面注解的作用1.用来充当注释的作用（仅仅是一个文字说明）@deprecated 2.用来做代码的检测（验证）    @Override 3.可以携带一些信息（内容）    文件.pro">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-13T14:36:43.119Z">
+<meta property="og:updated_time" content="2020-03-30T12:03:30.722Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaSE基础  （七）">
-<meta name="twitter:description" content="多维数组 0.数组的特点 数组本身是一个引用类型 声明时必须指定长度  长度一旦确定就不能再次发生改变 1.定义/声明 里面存储的类型[] 数组名字; int[][]  arry; 2.初始化 静态---有长度 有元素   int[][] arry = {{1,2},{1}.{1.2.3}}; 动态---只有长度 没有元素（默认值）   int[][] arry = new int[3][2];">
+<meta name="twitter:title" content="JavaSE基础 （三十四）">
+<meta name="twitter:description" content="Annocation（注释 注解）注释单行注释 // 多行注释 /*   */ 文档注释 /**  */注解注解的写法@xxxx[{一些信息}]注解放在哪里类的上面  属性的上面 方法的上面 构造方法的上面 参数的前面注解的作用1.用来充当注释的作用（仅仅是一个文字说明）@deprecated 2.用来做代码的检测（验证）    @Override 3.可以携带一些信息（内容）    文件.pro">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/03/13/avaSE基础-（七）/">
+  <link rel="canonical" href="http://yoursite.com/2020/03/30/JavaSE基础-（三十四）/">
 
 
 
 
 
-  <title>JavaSE基础  （七） | 一轮明月照九洲</title>
+  <title>JavaSE基础 （三十四） | 一轮明月照九洲</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/13/avaSE基础-（七）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/30/JavaSE基础-（三十四）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="我与我周旋">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaSE基础  （七）</h1>
+          <h1 class="post-title" itemprop="name headline">JavaSE基础 （三十四）</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-13T22:12:24+08:00">
-                2020-03-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-30T19:36:48+08:00">
+                2020-03-30
               </time>
             
 
@@ -344,38 +344,43 @@
       
 
       
-        <p>多维数组</p>
-<p>0.数组的特点</p>
-<pre><code>数组本身是一个引用类型
-声明时必须指定长度  长度一旦确定就不能再次发生改变</code></pre><p> 1.定义/声明</p>
-<pre><code>里面存储的类型[] 数组名字;
-int[][]  arry;</code></pre><p> 2.初始化</p>
-<pre><code>静态---有长度 有元素
-  int[][] arry = {{1,2},{1}.{1.2.3}};
-动态---只有长度 没有元素（默认值）
-  int[][] arry = new int[3][2];
-  arry -----&gt;{{x,x},{x,x},{x,x}}  x默认值是0</code></pre><p> 3.元素访问          </p>
-<pre><code>通过元素在数组中的位置----index
-array[i][j]
-i控制大数组中 小数组的位置
-j控制小数组中 元素的位置</code></pre><p> 4.遍历轮循          </p>
-<pre><code>正常for 增强for  嵌套完成</code></pre><p> 5.引用类型在内存中的结构</p>
-<pre><code>二维数组在内存中的存储，逻辑结构不是矩阵而是树
-int[][] arry = new int[3][2];
-//3表示有3个小数组int[]
-//2表示每一个小数组有两个元素
-//NullPointerException    空指针异常</code></pre><p>6.常见的运行时异常</p>
-<pre><code>1.InputMisMatchException   输入类型不匹配 
-     input.nextInt();      如：输入一个a
-2.ArrayIndexOutOfBoundsException  数组索引越界
-  静态初始化 int array[]={10,20};
-             array[2]  //索引超过边界
-3.NegativeArraySizeException  数组长度不合法（长度出现负数）
-  动态初始化 int[] array = new int [-2]
-4.NullPointerException    空指针异常 
-   引用为null 还拿来使用就不行啦
-   int[] arry = null;
-   arry[0] = 10 ;//空元素再来用</code></pre>
+        <h1 id="Annocation（注释-注解）"><a href="#Annocation（注释-注解）" class="headerlink" title="Annocation（注释 注解）"></a>Annocation（注释 注解）</h1><h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><pre><code>单行注释 //
+多行注释 /*   */
+文档注释 /**  */</code></pre><h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><h2 id="注解的写法"><a href="#注解的写法" class="headerlink" title="注解的写法"></a>注解的写法</h2><pre><code>@xxxx[{一些信息}]</code></pre><h2 id="注解放在哪里"><a href="#注解放在哪里" class="headerlink" title="注解放在哪里"></a>注解放在哪里</h2><pre><code>类的上面  属性的上面 方法的上面 构造方法的上面 参数的前面</code></pre><h2 id="注解的作用"><a href="#注解的作用" class="headerlink" title="注解的作用"></a>注解的作用</h2><pre><code>1.用来充当注释的作用（仅仅是一个文字说明）@deprecated
+2.用来做代码的检测（验证）    @Override
+3.可以携带一些信息（内容）    文件.properties.xml 注解</code></pre><h2 id="Java中有一些写好的注解给我们使用"><a href="#Java中有一些写好的注解给我们使用" class="headerlink" title="Java中有一些写好的注解给我们使用"></a>Java中有一些写好的注解给我们使用</h2><pre><code>@Deprecated   用来说明方法是废弃的
+@Override     用来做代码检测 检测此方法是否重写
+@SuppressWarnings(信息)  String[]  {&quot;&quot;}如果数组内的元素只有一个长度  可以省略()
+unused   变量定义后未被使用
+serial   类实现了序列化接口  不添加序列化ID号
+rawtypes  集合没有定义泛型
+deprecation 方法以废弃
+*unchecked  出现了泛型问题 可以不检测
+all       包含以上所有（不推荐）</code></pre><h2 id="注解中可以携带信息-可以不携带"><a href="#注解中可以携带信息-可以不携带" class="headerlink" title="注解中可以携带信息 可以不携带"></a>注解中可以携带信息 可以不携带</h2><pre><code>信息不能随便写 信息类型只能是如下的类型
+1.基本数据类型
+2.String数据类型
+3.枚举数据类型
+4.注解类型@
+5.数组类型[] 数组的内部需要加上的四种类型</code></pre><h2 id="如何自己描述一个注解类型"><a href="#如何自己描述一个注解类型" class="headerlink" title="如何自己描述一个注解类型"></a>如何自己描述一个注解类型</h2><pre><code>1.通过@interface 定义个新的注解类型
+2.发现写法与接口非常相似
+  可以描述public static final 的属性 比较少见
+  可以描述public abstract的方法 方法返回值必须有 返回值类型是如上那些
+3.我们自己定义的注解拿来使用
+     光定义还不够还需要做很多细致的说明（需要利用java提供好的注解来说明）
+     元注解（也是注解 不是拿来使用的 是用来说明注解）
+     @target 描述当前的注解可以放在哪里写
+     @retention 描述当前的这个注解存在什么作用域中的
+            源代码文件----&gt;编译----&gt;字节码文件----&gt;加载---&gt;内存执行
+            SOURCE                    CLASS                  RUNTIME
+     @Inherited  描述当前这个注解能否被子类对象继承
+     @Document   描述这个注解能否生成文档</code></pre><h2 id="我们使用自己描述的注解"><a href="#我们使用自己描述的注解" class="headerlink" title="我们使用自己描述的注解"></a>我们使用自己描述的注解</h2><pre><code>问题1.注解里面描述了一个方法 方法没有参数 方法有返回值String[]
+     使用注解的时候让我们传递参数
+     理解为 注解的方法做事 将我们传递的参数 搬运走了给了别人
+问题2.使用别人写好的注解不用写方法名 我们自己定义的方法必须写名字
+     如果我们自己定义的注解 只有一个方法名字叫value
+     在使用的时候可以省略方法名
+     如果传递的信息是一个数组 数组内只有一个元素 可以省略{}
+     如果是两个以上 每一个方法必须写名字</code></pre>
       
     </div>
     
@@ -399,8 +404,8 @@ int[][] arry = new int[3][2];
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/12/JavaSE基础-（六）/" rel="next" title="JavaSE基础 （六）">
-                <i class="fa fa-chevron-left"></i> JavaSE基础 （六）
+              <a href="/2020/03/30/JavaSE基础-（三十三）/" rel="next" title="JavaSE基础 （三十三）">
+                <i class="fa fa-chevron-left"></i> JavaSE基础 （三十三）
               </a>
             
           </div>
@@ -408,10 +413,6 @@ int[][] arry = new int[3][2];
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/14/JavaSE基础-（八）/" rel="prev" title="JavaSE基础 （八）">
-                JavaSE基础 （八） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -463,8 +464,17 @@ int[][] arry = new int[3][2];
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -549,6 +559,22 @@ int[][] arry = new int[3][2];
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Annocation（注释-注解）"><span class="nav-number">1.</span> <span class="nav-text">Annocation（注释 注解）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注释"><span class="nav-number">2.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注解"><span class="nav-number">3.</span> <span class="nav-text">注解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注解的写法"><span class="nav-number">3.1.</span> <span class="nav-text">注解的写法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注解放在哪里"><span class="nav-number">3.2.</span> <span class="nav-text">注解放在哪里</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注解的作用"><span class="nav-number">3.3.</span> <span class="nav-text">注解的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java中有一些写好的注解给我们使用"><span class="nav-number">3.4.</span> <span class="nav-text">Java中有一些写好的注解给我们使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注解中可以携带信息-可以不携带"><span class="nav-number">3.5.</span> <span class="nav-text">注解中可以携带信息 可以不携带</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何自己描述一个注解类型"><span class="nav-number">3.6.</span> <span class="nav-text">如何自己描述一个注解类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我们使用自己描述的注解"><span class="nav-number">3.7.</span> <span class="nav-text">我们使用自己描述的注解</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

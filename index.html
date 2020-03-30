@@ -252,6 +252,379 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/30/JavaSE基础-（三十四）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/30/JavaSE基础-（三十四）/" itemprop="url">JavaSE基础 （三十四）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-30T19:36:48+08:00">
+                2020-03-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Annocation（注释-注解）"><a href="#Annocation（注释-注解）" class="headerlink" title="Annocation（注释 注解）"></a>Annocation（注释 注解）</h1><h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><pre><code>单行注释 //
+多行注释 /*   */
+文档注释 /**  */</code></pre><h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><h2 id="注解的写法"><a href="#注解的写法" class="headerlink" title="注解的写法"></a>注解的写法</h2><pre><code>@xxxx[{一些信息}]</code></pre><h2 id="注解放在哪里"><a href="#注解放在哪里" class="headerlink" title="注解放在哪里"></a>注解放在哪里</h2><pre><code>类的上面  属性的上面 方法的上面 构造方法的上面 参数的前面</code></pre><h2 id="注解的作用"><a href="#注解的作用" class="headerlink" title="注解的作用"></a>注解的作用</h2><pre><code>1.用来充当注释的作用（仅仅是一个文字说明）@deprecated
+2.用来做代码的检测（验证）    @Override
+3.可以携带一些信息（内容）    文件.properties.xml 注解</code></pre><h2 id="Java中有一些写好的注解给我们使用"><a href="#Java中有一些写好的注解给我们使用" class="headerlink" title="Java中有一些写好的注解给我们使用"></a>Java中有一些写好的注解给我们使用</h2><pre><code>@Deprecated   用来说明方法是废弃的
+@Override     用来做代码检测 检测此方法是否重写
+@SuppressWarnings(信息)  String[]  {&quot;&quot;}如果数组内的元素只有一个长度  可以省略()
+unused   变量定义后未被使用
+serial   类实现了序列化接口  不添加序列化ID号
+rawtypes  集合没有定义泛型
+deprecation 方法以废弃
+*unchecked  出现了泛型问题 可以不检测
+all       包含以上所有（不推荐）</code></pre><h2 id="注解中可以携带信息-可以不携带"><a href="#注解中可以携带信息-可以不携带" class="headerlink" title="注解中可以携带信息 可以不携带"></a>注解中可以携带信息 可以不携带</h2><pre><code>信息不能随便写 信息类型只能是如下的类型
+1.基本数据类型
+2.String数据类型
+3.枚举数据类型
+4.注解类型@
+5.数组类型[] 数组的内部需要加上的四种类型</code></pre><h2 id="如何自己描述一个注解类型"><a href="#如何自己描述一个注解类型" class="headerlink" title="如何自己描述一个注解类型"></a>如何自己描述一个注解类型</h2><pre><code>1.通过@interface 定义个新的注解类型
+2.发现写法与接口非常相似
+  可以描述public static final 的属性 比较少见
+  可以描述public abstract的方法 方法返回值必须有 返回值类型是如上那些
+3.我们自己定义的注解拿来使用
+     光定义还不够还需要做很多细致的说明（需要利用java提供好的注解来说明）
+     元注解（也是注解 不是拿来使用的 是用来说明注解）
+     @target 描述当前的注解可以放在哪里写
+     @retention 描述当前的这个注解存在什么作用域中的
+            源代码文件----&gt;编译----&gt;字节码文件----&gt;加载---&gt;内存执行
+            SOURCE                    CLASS                  RUNTIME
+     @Inherited  描述当前这个注解能否被子类对象继承
+     @Document   描述这个注解能否生成文档</code></pre><h2 id="我们使用自己描述的注解"><a href="#我们使用自己描述的注解" class="headerlink" title="我们使用自己描述的注解"></a>我们使用自己描述的注解</h2><pre><code>问题1.注解里面描述了一个方法 方法没有参数 方法有返回值String[]
+     使用注解的时候让我们传递参数
+     理解为 注解的方法做事 将我们传递的参数 搬运走了给了别人
+问题2.使用别人写好的注解不用写方法名 我们自己定义的方法必须写名字
+     如果我们自己定义的注解 只有一个方法名字叫value
+     在使用的时候可以省略方法名
+     如果传递的信息是一个数组 数组内只有一个元素 可以省略{}
+     如果是两个以上 每一个方法必须写名字</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/30/JavaSE基础-（三十三）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/30/JavaSE基础-（三十三）/" itemprop="url">JavaSE基础 （三十三）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-30T08:05:21+08:00">
+                2020-03-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="反射-reflect"><a href="#反射-reflect" class="headerlink" title="反射 reflect"></a>反射 reflect</h1><h2 id="类是用来描述一组类"><a href="#类是用来描述一组类" class="headerlink" title="类是用来描述一组类"></a>类是用来描述一组类</h2><h2 id="反射机制认为是描述一组类"><a href="#反射机制认为是描述一组类" class="headerlink" title="反射机制认为是描述一组类"></a>反射机制认为是描述一组类</h2><pre><code>Class           用来描述类本身
+Package         用来描述所属类的包
+Field           用来描述类中的属性
+Method          用来描述类的方法
+Constructor     用来描述类中的构造方法
+Annotation      用来描述类中的注解</code></pre><h1 id="如何获取Class"><a href="#如何获取Class" class="headerlink" title="如何获取Class"></a>如何获取Class</h1><pre><code>如何下三种方式
+Class    clazz = Class.for.Name(&quot;包名.类名&quot;)
+Class    clazz = 类名.class;
+Class    clazz = 对象.getClass();//Object类中的方法</code></pre><h1 id="Class中的常用方法"><a href="#Class中的常用方法" class="headerlink" title="Class中的常用方法"></a>Class中的常用方法</h1><pre><code>int result = getModifiers();   获取类的修饰符（权限 特征）
+每一个修饰符 用一个整数来进行表示
+0开始----0-1-2-4-8-16-32--64-128-256-512-1024
+0---默认不写  1---public         2---private    4---protected 8---static
+16---final    32----sychronized  64---voliate   128---trasnsient
+256---native  512---interface    1024---abstract
+String name = getName(); 获取名字
+String simpleName = getSimpleName();简单名
+Package p = getPackage();
+p.getName();
+Class sclazz = getSuperClass();//获取父类
+Class[] classes = getModifiers();
+Object obj = newInstance();//默认调用无参构造方法创建对象
+Filed f = getField(&quot;属性名&quot;);
+Field[] fs = getField();
+如上两个方法只能获取公有属性 但是包含继承过来父类属性
+getDeclaredField(&quot;属性&quot;)
+Field[] fs =getDeclaredFields();
+如上的两个方法能获取公有和私有的属性 但是只能获取本类中的属性</code></pre><h1 id="Filed类中常用方法"><a href="#Filed类中常用方法" class="headerlink" title="Filed类中常用方法"></a>Filed类中常用方法</h1><pre><code>int = getModifers()
+Class = getType()
+String = getName()
+操作属性 向里面存值
+set(对象，值）
+操作属性 从里面取值
+值 = get(对象)
+对象 =new():// 创建对象空间 当前对象空间有自己的一套元素（属性 方法）    
+setAccessable（true）可以修改属性设备操作</code></pre><h1 id="如何操作类中的方法"><a href="#如何操作类中的方法" class="headerlink" title="如何操作类中的方法"></a>如何操作类中的方法</h1><pre><code>Class类中的方法
+Method m = class.getMethod(&quot;方法名&quot;，Class...参数类型);  获取公有方法（自己类+父类）
+Method[] = clazz.getMethod();获取所有的方法（公有 自己+父类）
+Method = getDeclaredMethod（&quot;方法名字&quot;，参数类型class...）获取所有的方法（自己类 公有 私有）
+Method = getDeclaredMethods()   获取全部的方法（自己类 公有加私有）
+获取构造方法
+Construct = clazz.getConstructor（class...参数类型）</code></pre><h1 id="Method类中常用的方法"><a href="#Method类中常用的方法" class="headerlink" title="Method类中常用的方法"></a>Method类中常用的方法</h1><pre><code>int mm = m.getModififers()//获取方法的修饰符（权限+特征）
+Class mrt = m.getReturnType();//获取返回值数据类型
+String mn= m.getName();//获取方法名字
+Class[] mpts = m.getParameterTypes();//获取方法参数列表的类型
+Class[] mets = m.getExceptionTypes();//获取方法抛出异常类型
+如何操作方法
+调用方法 让他执行一次
+Object result = invoke（对象.执行方法需要传递的所有参数）
+若方法是私有方法 不许与操作
+可以设置setAccessable（True）设置方法使用权准入</code></pre><h1 id="Constructor类中的常用方法"><a href="#Constructor类中的常用方法" class="headerlink" title="Constructor类中的常用方法"></a>Constructor类中的常用方法</h1><pre><code>con.getModifiers();
+con.getName();
+con.getParamenterTyper();
+con.getExceptionTypers()
+如何操作构造方法
+执行一次 创建对象
+Object = newInstance（执行构造方法时的所有参数）;</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/29/JavaSE基础-（三十二）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -293,6 +666,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1128,7 +1523,7 @@ return this.name.compareTo(o.name);//当前对象name和另一对象name的Compa
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/03/25/avaSE基础-（二十六）/" itemprop="url">JavaSE基础      (二十六）</a></h1>
+                <a class="post-title-link" href="/2020/03/25/avaSE基础-（二十六）/" itemprop="url">JavaSE基础         (二十六）</a></h1>
         
 
         <div class="post-meta">
@@ -1592,395 +1987,6 @@ Matcher matcher = pattern.matcher(str);
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/24/JavaSE基础-（二十三）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/24/JavaSE基础-（二十三）/" itemprop="url">JavaSE基础 （二十三）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-24T20:54:08+08:00">
-                2020-03-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="StringBuffer-StringBuilder"><a href="#StringBuffer-StringBuilder" class="headerlink" title="StringBuffer/StringBuilder"></a>StringBuffer/StringBuilder</h1><h2 id="所属的包"><a href="#所属的包" class="headerlink" title="所属的包"></a>所属的包</h2><pre><code>java.lang包</code></pre><h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><pre><code>Serializable,CharSequence,Comparable
-非常特殊的类 可以像常量一样创建对象
-String str = &quot;abc&quot;;
-内存存储 &quot;abc&quot;对象 char[] value
-String的不可变特性   private fianl char[] value
-频繁的修改内容的时候 性能不是很好</code></pre><h2 id="默认继承"><a href="#默认继承" class="headerlink" title="默认继承"></a>默认继承</h2><pre><code>obJect 实现接口Serialzable,CharSequence,Appendable
-StringBuffer/StringBuilder 没有compare To方法
-StringBuffer/StringBuilder 含有一个String没有的方法 append();拼接</code></pre><h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><pre><code>可变字符串 char[] value;动态扩容</code></pre><h2 id="对象的构建"><a href="#对象的构建" class="headerlink" title="对象的构建"></a>对象的构建</h2><pre><code>无参数构造方法
-有参数构造方法
-//无参数构造方法 构建一个默认长度16个对象空间 char[]
- StringBuilder builder = new StringBuilder();
-//利用给定的参数 构建有一个自定义长度空间的对象 char[]
- StringBuilder builder = new StringBuilder(20);
-//利用带String参数的构造方法,默认数组字符长度字符串+16个长度
- StringBuilder builder = new StringBuilder(&quot;abc&quot;);</code></pre><h2 id="StringBuilder中的常用方法"><a href="#StringBuilder中的常用方法" class="headerlink" title="StringBuilder中的常用方法"></a>StringBuilder中的常用方法</h2><pre><code>最主要的方法 append() 频繁的拼接字符串时候使用此方法 提高性能
-capcacity();字符串底层char[]的容量
-length();字符串有效元素个数（长度）
-char = charAt(int index);
-int = codePointAt(int index);
-String = substring(int start,[int end]);
-        注意需要接收返回值 看见取出来的字符串效果
-delete(int start,[int end]);
-        String Builder类中独有的方法String类没有
-        将Start到end之间的字符串删掉 不用接收返回值就看到效果啦
-int = indexOf(String str,[int fromindex]);
-int = lastindexof（String str,[int fromIndex]）
-        找寻给定的str字符串中第一次出现的索引位置 带重载 则从某一个位置开始找
-StringBuilder = deleteCharAt(int Index)
-        String类中没有的方法
-        将给定inde位置的某一字符串删除
-insert(int index,value);
-        将给定的value插入在index上
-replace(int start，int end，string str);
-        将start和end之间的部分替换成str
-        builder.replace(2.5,&quot;zzt&quot;)
-setCharAt(int index,char value);
-        将index位置的字符改成给定字符的value
-toString()
-        将StringBuilder对象 构建成一个string对象 返回
-trimToSize()
-        将数组无用的容量去掉 变成length长度的数组</code></pre><h2 id="知识总结"><a href="#知识总结" class="headerlink" title="知识总结"></a>知识总结</h2><h3 id="StringBuilder类不一定需要"><a href="#StringBuilder类不一定需要" class="headerlink" title="StringBuilder类不一定需要"></a>StringBuilder类不一定需要</h3><pre><code>是为了避免String频繁拼接修改字符串信息时才使用的 底层是数组是可变的 提高了性能</code></pre><h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><pre><code>与String类不同独有的方法
-append() lnsert() delete() deleteCharAt() reverse()
-与String类相同的方法
-charAt() codePointAt() indexOf() lastindexOf() replace() 名字相同 用法不一致
-不是很常用的方法
-ensureCapacity() capacity() SetLength() trimToSize() setCharAt();</code></pre><h3 id="String家族笔试中经常考察的知识点"><a href="#String家族笔试中经常考察的知识点" class="headerlink" title="String家族笔试中经常考察的知识点"></a>String家族笔试中经常考察的知识点</h3><h4 id="String所属的包-继承关系-实现接口"><a href="#String所属的包-继承关系-实现接口" class="headerlink" title="String所属的包 继承关系 实现接口"></a>String所属的包 继承关系 实现接口</h4><pre><code>java.lang包 继承Object 实现接口Serializable,CharSequence,Comparable</code></pre><h4 id="String构建方式"><a href="#String构建方式" class="headerlink" title="String构建方式"></a>String构建方式</h4><pre><code>常量 构造方法</code></pre><h4 id="String对象内存结构"><a href="#String对象内存结构" class="headerlink" title="String对象内存结构"></a>String对象内存结构</h4><pre><code>字符串常量区 new堆内存对象
-= = equals()区别
-&quot;a&quot; +&quot;b&quot;+&quot;c&quot;</code></pre><h4 id="String不可不变特性"><a href="#String不可不变特性" class="headerlink" title="String不可不变特性"></a>String不可不变特性</h4><pre><code>长度及内容</code></pre><h4 id="String类常用的方法—-与StringBuilder的区别"><a href="#String类常用的方法—-与StringBuilder的区别" class="headerlink" title="String类常用的方法—-与StringBuilder的区别"></a>String类常用的方法—-与StringBuilder的区别</h4><pre><code>concat(); toUpperCase();</code></pre><h4 id="String和StringBuilder区别-String和StringBuffer区别"><a href="#String和StringBuilder区别-String和StringBuffer区别" class="headerlink" title="String和StringBuilder区别|String和StringBuffer区别"></a>String和StringBuilder区别|String和StringBuffer区别</h4><pre><code>String不可变字符串
-        有一个接口Comparable
-        不可变体现在长度及内容
-        有一些方法StringBuilder没有 没有concat compareTo toUpperCase
-StringBuilder可变字符串
-        JDK1.5
-        有一个接口Appendable
-        可变字符串 没有final修饰 底层可以进行数组扩容
-        有一些方法string没有 append() insert() delete() reverse()</code></pre><h4 id="StringBuffer和StringBuild的不同"><a href="#StringBuffer和StringBuild的不同" class="headerlink" title="StringBuffer和StringBuild的不同"></a>StringBuffer和StringBuild的不同</h4><pre><code>stringBuffer早期版本1.0
-StringBuilder后来的版本1.5
-方法使用几乎一致
-早期版本 线程同步  安全性比较高 执行效率相对较低
-后期版本 线程非同步 安全性能比较低 执行效率相对较高</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/23/avaSE基础-（二十二）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/23/avaSE基础-（二十二）/" itemprop="url">JavaSE基础 （二十二）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-23T22:40:39+08:00">
-                2020-03-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="字符串相关"><a href="#字符串相关" class="headerlink" title="字符串相关"></a>字符串相关</h1><h2 id="String类—-gt-引用类型-java-lang包"><a href="#String类—-gt-引用类型-java-lang包" class="headerlink" title="String类—-&gt;引用类型 java.lang包"></a>String类—-&gt;引用类型 java.lang包</h2><h3 id="0-常见的String笔试题"><a href="#0-常见的String笔试题" class="headerlink" title="0.常见的String笔试题"></a>0.常见的String笔试题</h3><pre><code>==  equals方法和区别
-             ==可以比较基本类型 也可以比较引用类型
-             比较基本类型只比较值 比较引用类型比较地址
-             equals只能比较引用类型（方法）
-             默认比较地址this == obj
-             如果想要修改比较规则可以重写equals方法
-             通常重写equals方法会伴随重写hashcode方法
-String的不可变特性
-             长度及内容
-String与StringBuffer区别
-StringBuffer与StringBuilder区别
-String对象的存储
-             &quot;abc&quot;-----&gt;字符串常量池
-             new String（&quot;abc&quot;）---&gt;堆内存
-
-*string中的常用方法</code></pre><h3 id="1-存在哪-java-lang包"><a href="#1-存在哪-java-lang包" class="headerlink" title="1.存在哪  java.lang包"></a>1.存在哪  java.lang包</h3><pre><code>没有任何继承关系  实现三个接口Serializable,CharSequence,Comparable</code></pre><h3 id="2-如何构建对象"><a href="#2-如何构建对象" class="headerlink" title="2.如何构建对象"></a>2.如何构建对象</h3><pre><code>String str = &quot;abc&quot;; //直接将字符串常量赋值给str （字符串常量池）
-String str = new String();//无参函数构造方法创建空的对象
-String str = new String(&quot;abc&quot;);//带参String构造方法创建对象
-String str = new String(byte[]);//将数组中的每一个元素转化成对应的char 组合成str
-String str = new String(char[]);//将数组中的每一个char元素拼接成最终的String</code></pre><h3 id="3-String的不可变特性"><a href="#3-String的不可变特性" class="headerlink" title="3.String的不可变特性"></a>3.String的不可变特性</h3><pre><code>体现在两个地方 长度及内容
-长度-----&gt;final修饰的数组  数组长度不变 final修饰素组的地址不变
-内容-----&gt;private修饰的属性 不能再类外访问
-在String类中包含一个 数组
-private fianl char[] value;//存储String中的每一个字符
-fianl最终是不可改变的----&gt;地址不让改变 数组的长度本身不可变
-private私有的当前类中----&gt;数组中的内容也不能改变</code></pre><h3 id="4-常用方法"><a href="#4-常用方法" class="headerlink" title="*4.常用方法"></a>*4.常用方法</h3><pre><code>booean = equals(Obj obj);
-     //继承自Object类 重写啦 比较两个字符串的字面值是否相等
-int = hashCode();
-     //继承自object类 重写啦 将当前字符串的每一个char元素拆开 乘以31求和
-int = CompareTo(String str);
-    //实现Comparable接口 实现啦 按照字典（Unicode编码）索引的顺序比较
-String = toString();
-    //继承自Object 重写啦 不在输出@hashCode 字符串中的字面值</code></pre><h3 id="5-char-charAt-int-index"><a href="#5-char-charAt-int-index" class="headerlink" title="5.char = charAt(int index);"></a>5.char = charAt(int index);</h3><pre><code>返回给定index位置对应的字符
-int = codePointAt(int index);
-返回给定index位置对应字符的code码</code></pre><h3 id="6-int-length"><a href="#6-int-length" class="headerlink" title="6.int = length();"></a>6.int = length();</h3><pre><code>返回字符串的长度 （其实就是底层 char[] value属性的长度）
-注意：区别数组length是属性 String的length()方法  集合size()方法</code></pre><h3 id="7-String-concat-String-str"><a href="#7-String-concat-String-str" class="headerlink" title="7.String = concat(String str);"></a>7.String = concat(String str);</h3><pre><code>将给定的str拼接在当前String对象的后面
-注意：方法执行完毕需要接受返回值 String的不可变特性
-      concat方法与 + 拼接性能的问题
-      开发中若遇到频繁拼接字符串-----&gt;通常使用stringBuilder/stringBuffer</code></pre><h3 id="8-boolean-contains（”s”）"><a href="#8-boolean-contains（”s”）" class="headerlink" title="8.boolean = contains（”s”）;"></a>8.boolean = contains（”s”）;</h3><pre><code>判断给定的s在字符串中是否存在</code></pre><h3 id="9-statsWith-String-prefix）-nbsp-nbsp-endWith（String-suffix）"><a href="#9-statsWith-String-prefix）-nbsp-nbsp-endWith（String-suffix）" class="headerlink" title="9.statsWith(String prefix）;  &nbsp;&nbsp; endWith（String suffix）;"></a>9.statsWith(String prefix）; <br> &nbsp;&nbsp; endWith（String suffix）;</h3><pre><code>判断此字符串是否已XX开头/结尾</code></pre><h3 id="10-byte-getBytes-—-gt-getBytes-String-charsetName-char-toCharArray"><a href="#10-byte-getBytes-—-gt-getBytes-String-charsetName-char-toCharArray" class="headerlink" title="10.byte[] = getBytes();—-&gt;getBytes(String charsetName); char[] = toCharArray[];"></a>10.byte[] = getBytes();—-&gt;getBytes(String charsetName); char[] = toCharArray[];</h3><pre><code>将当前字符串转化为数组 “我爱你中国”“我”“爱”“你”“中”“国”</code></pre><h3 id="11-int-index-indexOf-int-String-str-int-fromindex"><a href="#11-int-index-indexOf-int-String-str-int-fromindex" class="headerlink" title="11.int index = indexOf(int/String str,[int fromindex]);"></a>11.int index = indexOf(int/String str,[int fromindex]);</h3><pre><code>四个方法重载，找寻给定元素在字符串第一次出现的索引位置 若不存在返回-1
-lastIndexOf(int/String str,[int fromindex]);
-找寻给定元素在字符串最后一次出现的索引位置 若不存在返回-1</code></pre><h3 id="12-boolean-isEmpty"><a href="#12-boolean-isEmpty" class="headerlink" title="12.boolean = isEmpty();"></a>12.boolean = isEmpty();</h3><pre><code>判断当前字符串是否为空字符串（length是否为0）
-注意与null之间的区别</code></pre><h3 id="13-replace-replaceAll-replaceFirst"><a href="#13-replace-replaceAll-replaceFirst" class="headerlink" title="13.replace(); replaceAll(); replaceFirst();"></a>13.replace(); replaceAll(); replaceFirst();</h3><pre><code>将给定字符串替换成另一个字符串</code></pre><h3 id="14-String-split（String-regex-int-limit限度界限-）"><a href="#14-String-split（String-regex-int-limit限度界限-）" class="headerlink" title="14.String[] = split（String regex, [int limit限度界限]）;"></a>14.String[] = split（String regex, [int limit限度界限]）;</h3><pre><code>按照正则表达式将原来的字符串拆开
-   String str=&quot;a-b-c-d&quot;;
-   String[] value = str.split(&quot;-&quot;,3);
-   for(String v:value){
-     System.out.println(v);
-   }  </code></pre><h3 id="15-String-substring-int-beginIndex-int-endIndex"><a href="#15-String-substring-int-beginIndex-int-endIndex" class="headerlink" title="15.String = substring(int beginIndex),[int endIndex]);"></a>15.String = substring(int beginIndex),[int endIndex]);</h3><pre><code>将当前字符串截取一部分
-从beginIndex开始至endIndex结束[beginIndex，endIndex)
-若endIndex不写 则默认到字符串最后</code></pre><h3 id="16-String-toUpperCase-String-toLowerCase"><a href="#16-String-toUpperCase-String-toLowerCase" class="headerlink" title="16.String = toUpperCase();String = toLowerCase();"></a>16.String = toUpperCase();<br>String = toLowerCase();</h3><pre><code>将全部字母转换成大写/小写</code></pre><h3 id="17-String-trim"><a href="#17-String-trim" class="headerlink" title="17.String = trim();"></a>17.String = trim();</h3><pre><code>去掉字符串前后多余的空格</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2033,7 +2039,7 @@ lastIndexOf(int/String str,[int fromindex]);
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2151,7 +2157,7 @@ lastIndexOf(int/String str,[int fromindex]);
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共20.3k字</span>
+  <span class="post-count">博客全站共21.7k字</span>
 </div>
         
 

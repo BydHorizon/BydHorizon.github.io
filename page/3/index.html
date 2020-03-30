@@ -252,6 +252,355 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/21/JavaSE基础-（十三）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/21/JavaSE基础-（十三）/" itemprop="url">JavaSE基础 （十三）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-21T22:43:20+08:00">
+                2020-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>设计模式<br><br>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  1.设计模式不是知识点<br><br>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  2.设计模式是一种设计经验的总结<br><br>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<br>  3.设计模式用来解决某些场景下的某一类问题的—-&gt;通用的解决方案<br><br>   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 4.有了设计模式之后  可以让代码更容易被理解 确保了复用性 可靠性 可扩展性<br>  <br><br> 设计模式分为三类</p>
+<pre><code>1.创新型模式（5种）--------&gt;用于解决创建对象的过程
+ 单例模式  工厂方法模式  抽象模式 工作模式 建造者模式 原型模式
+2.结构型模式（7种）--------&gt;把类或对象通过某种形式结合在一起 构成某种复杂或合理的结构
+ 适配器模式 装饰者模式 代理模式 外观模式 桥接模式 组合模式 享元模式
+3.行为行模式（11种）------&gt;用来解决类或对象之间的交互 更合理的优化类或对象之间的关系
+ 观察者模式 策略模式 模板模式 责任链模式 解析器模式 迭代器模式 命令模式 状态模式 备忘录模式 访问者模式 中介者模式</code></pre><p> 单例模式</p>
+<pre><code>设计------&gt;一个类只能创建一个对象 有效减小内存占用空间
+设计一个系统-----&gt;百度  搜索引擎
+ public class Baidu{
+           public void 搜索（String keyword）{
+           }
+ }
+创建一个baidu对象 new
+调用搜索的方法 做事情 方法只执行一遍
+同一时间有很多很多很多的人在使用这个系统
+对象------&gt;只能创建一个 堆内存就开辟了一个空间
+调用一次方法-----&gt;临时执行一次 方法执行空间就回收了</code></pre><p>单例模式的实现</p>
+<pre><code> 1.私有的构造方法
+ 2.私有的静态的当前类作为属性
+ 3.公有的静态的方法当返回值
+
+ 饿汉式（立即加载） 对象启动时就加载啦
+           不会产生对象就没有拿来使用的问题 空指针异常
+           启动项目时的对象加载过多 有些还没有使用 产生服务器承载压力问题
+ 懒汉式（延迟加载）对象什么时候用到了 才会加载
+           可能会由于没有操作好 导致异常（很严谨）
+           启动项目时候只有需要的加载 不需要的时候还没有创建 不会浪费空间
+*生命周期托管（单例对象别人帮我们处理）对象加载过程交给别人 
+
+   private static SingleTon;               //直接=new SingleTon()饿汉式
+   public static SingleTon getSingleTon(){
+     if(single=null){
+     Single = new SingleTon();            //延迟加载方式  懒汉式
+     }
+     return single;
+  }
+public static void main(String[] args){
+    SingleTon s1 = Singleton.getSingleTon();
+    }
+}  </code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/21/JavaSE基础-（十二）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/21/JavaSE基础-（十二）/" itemprop="url">JavaSE基础 （十二）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-21T22:07:10+08:00">
+                2020-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>权限修饰符</p>
+<pre><code>public       公共的        本类      同包    子类  当前类的任何位置只要有对象都可以使用
+protected    保护的        本类      同包    子类 （通过子类对象在子类内部访问）
+默认不写     默认的        本类     同包
+private      私有的
+
+1.能修饰什么  2.范围如何
+权限修饰符可以用来修饰   类本身   和类中的成员（除程序块）
+权限修饰符用来修饰类的时候只有两个可以用 （public 默认不写）
+权限修饰符可以用来修饰类中的其他成员</code></pre><p>Java类和类直接的关系</p>
+<pre><code>继承  关联 多态（抽象）</code></pre><p>封装：将一些数据或执行过程  进行一个包装<br><br>目的：保护这些数据或执行过程的安全隐藏细节，增加复用性<br><br>对属性本身的封装：<br><br>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     属性私有：（封装在类中）<br><br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 提供操作属性的公有方法<br>  <br><br>特征修饰符<br></p>
+<pre><code>1.可以修饰什么
+2.修饰后什么特点</code></pre><p>  final    </p>
+<pre><code>最终的   不可更改的
+  修饰变量  
+         如果在定义时没有赋初始值
+         给变量一次存值的机会（因为变量在栈内存空间内 没有默认值 如果不给机会 就都没法用了
+         一旦变量存储了一个值若用final修饰后则不让改变----相当于常量
+         注意变量类型是基本类型还是引用类型
+         如果修饰的是基本数据类型 则变量内的值不让更改 常量
+         如果修饰的是引用数据类型 则变量内的地址不让更改对象唯一
+  修饰属性
+         全局变量 存储在堆内存的对象空间有一个空间
+         属性如果没有赋值  有默认值存在
+         属性用final修饰后 必须给属性赋初值 否则编译报错
+         特点与修饰变量一致
+         注意变量类型是基本类型还是引用类型
+         如果修饰的变量是基本数据类型 则变量内的值不让更改 ---常量
+         如果修饰的变量是引用数据类型 则变量内地址引用不让更改---对象唯一
+ 修饰方法
+         方法是最终的方法 不可更改
+         子类继承父类的方法 可将父类的方法重写（覆盖）
+         final修饰的方法 要求不可以被子类重写（覆盖）
+ 修饰类本身
+         类是最终的  不可更改
+         此类不可被其他字类继承
+         通常都是一些定义好的工具类
+         Math Scanner Intneger String</code></pre><p> static静态的</p>
+<pre><code>1.可以修饰：修饰属性 修饰方法 *修饰块 修饰类（内部类）
+2.特点：
+     1.静态元素在类加载时就初始化了，创建的非常早，此时没有创建对象
+     2.静态元素存储在静态元素区中，每一个类都有一个自己的区域，与别的类不冲突
+     3.静态元素只加载一次（只有一份），全部类对象及类本身共享
+     4.由于静态元素区加载时候，可能没有创建对象，可以通过类的名字直接访问
+     5.静态元素区Garbage Collection 无法管理，可以粗暴认为常驻内存
+     6.可以理解静态元素不属于任何一个对象，是属于类的
+     7.非静态成员（堆内存对象里）中可以访问静态成员（静态区）
+     8.静态成员中可以访问静态成员（静态区）
+     9.静态成员不可以访问非静态成员
+     10.静态元素不可以出现this或super（静态元素属于类）</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/20/JavaSE基础-（十一）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1675,366 +2024,6 @@ for（自定义的变量（接收数组内每一个元素）：遍历的数组ar
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/11/avaSE基础-（五）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/11/avaSE基础-（五）/" itemprop="url">JavaSE基础 （五）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-11T22:47:00+08:00">
-                2020-03-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>java运算符</p>
-<p>   运算符：用来指明操作数的运算方式</p>
-<p>   按照操作数的数目来分类</p>
-<pre><code>单目运算符    a++
-双目运算符    a+b
-三目运算符    (a&gt;b)? x : y</code></pre><p>   按运算符的功能来分类</p>
-<pre><code>算数运算符   
-+ - * / %（取余 求模）
-++（自增） --（自减）
-int x=1；
-int y=x++；//++在后 先赋值 再自增（先进行计算 后赋值）
-     x++//x=x+1//将x变量空间的内容 先取出 从常量区取出1 进行计算 再次存到x中
-     想要做值交换的时候 会产生一个临时的副本空间（备份）
-     ++在变量的前面 先自增后备份 ++在变量的后面 先备份后自增 并将副本空间（备份）内的值赋给别人
-     x=2 y=1
-例：int a = 1;
-   for(int i=0;1&lt;100;i++){
-        a=a++;
-   }
-   a=1   //因为赋值的永远是备份空间的1
-   --------------------------------------------------------------
-   int m = 1；//210
-   int n = 2；//321
-   int sum = m++ + ++n - n-- - --m + n-- - --m；
-   m=0 n= 1 sum=2
-   ----------------------------------------------------------------
-   赋值运算符
-   = 赋值符号   将=右边的值()
-   关系运算符（比较）
-   &gt; &lt; &gt;= &lt;= != ==
-   逻辑运算符
-   &amp; | ^ ！ &amp;&amp;短路与 ||   // ^逻辑异或 只要两个表达式结果不同 最终结果就是true
-   位（bit）运算
-   &amp;按位与 |按位或 ^按位异或 ~ 按位取反&lt;&lt;按位左移位 &gt;&gt;按位右移位 &gt;&gt;&gt;按位右移（无符号）</code></pre><p> 笔试题</p>
-<p> 1.&amp;和&amp;&amp;的区别</p>
-<pre><code>&amp;可以视为逻辑运算 也可以视为位运算 &amp;&amp;只能当做逻辑运算来用
-如果两个都当做逻辑运算符来用 区别如下
-&amp;前后两个条件都是true 最终结果就是true
-&amp;&amp; 短路与正常情况下&amp;的执行结果一致
-   当前面条件为flase的时候发生短路最终结果flase</code></pre><p>2.最有效率的方式计算2*8的结果</p>
-<pre><code>   00000001                  2 &lt;&lt; 3相当于2乘以2的3次幂
-*  00001000                  00000010
--------------                00010000 == 16
-00000010000==16</code></pre><p>3.两个变量 int a = 1； b = 2如果将两个变量的值互换</p>
-<pre><code> int a = 1;
- int b = 2;
- 方式一 采用一个中间变量
- int c = a;
-     a = b;
-      b =c;
-好处容易理解 值不会出问题 不好在于会产生一个新的存储空间
-方式二
-a = a+b;
-b = a-b;
-a = a-b;
-好处省略了一个存储空间，不好在于+值可能产生越界
-方法三
-a = a^b;
-b = a^b;
-a = a^b;
-学的就是高难度~</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/10/GIT（一）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/10/GIT（一）/" itemprop="url">GIT (一)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-10T19:12:00+08:00">
-                2020-03-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/GIT/" itemprop="url" rel="index">
-                    <span itemprop="name">GIT</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>GIt Bash 常用命令</p>
-<p>#change director</p>
-<pre><code>cd</code></pre><p>#make director</p>
-<pre><code>mkdir</code></pre><p>#print working directory </p>
-<pre><code>pwd</code></pre><p>#move </p>
-<pre><code>mv</code></pre><p>#copy                     </p>
-<pre><code>cp</code></pre><p>#remove</p>
-<pre><code>rm</code></pre><p>其他  </p>
-<pre><code>echo 打印
-echo &apos;hello&apos; 在命令行中打印一个 hello
-echo &apos;hello&apos; &gt; a.txt 创建一个纯文本文件a把hello打印进去
-cat a.txt 查看a中的内容
-cp a.txt b.txt 复制a 到b
-ls 目录
-ls ..上一级目录
-mv b.txt ../b.txt 把b移动到上一级文件夹
-
-mv a.txt c.txt 重命名
-rm c.txt  删除c</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2087,7 +2076,7 @@ rm c.txt  删除c</code></pre>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2205,7 +2194,7 @@ rm c.txt  删除c</code></pre>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共20.3k字</span>
+  <span class="post-count">博客全站共21.7k字</span>
 </div>
         
 

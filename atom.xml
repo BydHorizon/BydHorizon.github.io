@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-29T14:09:28.828Z</updated>
+  <updated>2020-03-30T12:03:30.722Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,57 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JavaSE基础 （三十四）</title>
+    <link href="http://yoursite.com/2020/03/30/JavaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E4%B8%89%E5%8D%81%E5%9B%9B%EF%BC%89/"/>
+    <id>http://yoursite.com/2020/03/30/JavaSE基础-（三十四）/</id>
+    <published>2020-03-30T11:36:48.000Z</published>
+    <updated>2020-03-30T12:03:30.722Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Annocation（注释-注解）"><a href="#Annocation（注释-注解）" class="headerlink" title="Annocation（注释 注解）"></a>Annocation（注释 注解）</h1><h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><pre><code>单行注释 //多行注释 /*   */文档注释 /**  */</code></pre><h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><h2 id="注解的写法"><a href="#注解的写法" class="headerlink" title="注解的写法"></a>注解的写法</h2><pre><code>@xxxx[{一些信息}]</code></pre><h2 id="注解放在哪里"><a href="#注解放在哪里" class="headerlink" title="注解放在哪里"></a>注解放在哪里</h2><pre><code>类的上面  属性的上面 方法的上面 构造方法的上面 参数的前面</code></pre><h2 id="注解的作用"><a href="#注解的作用" class="headerlink" title="注解的作用"></a>注解的作用</h2><pre><code>1.用来充当注释的作用（仅仅是一个文字说明）@deprecated2.用来做代码的检测（验证）    @Override3.可以携带一些信息（内容）    文件.properties.xml 注解</code></pre><h2 id="Java中有一些写好的注解给我们使用"><a href="#Java中有一些写好的注解给我们使用" class="headerlink" title="Java中有一些写好的注解给我们使用"></a>Java中有一些写好的注解给我们使用</h2><pre><code>@Deprecated   用来说明方法是废弃的@Override     用来做代码检测 检测此方法是否重写@SuppressWarnings(信息)  String[]  {&quot;&quot;}如果数组内的元素只有一个长度  可以省略()unused   变量定义后未被使用serial   类实现了序列化接口  不添加序列化ID号rawtypes  集合没有定义泛型deprecation 方法以废弃*unchecked  出现了泛型问题 可以不检测all       包含以上所有（不推荐）</code></pre><h2 id="注解中可以携带信息-可以不携带"><a href="#注解中可以携带信息-可以不携带" class="headerlink" title="注解中可以携带信息 可以不携带"></a>注解中可以携带信息 可以不携带</h2><pre><code>信息不能随便写 信息类型只能是如下的类型1.基本数据类型2.String数据类型3.枚举数据类型4.注解类型@5.数组类型[] 数组的内部需要加上的四种类型</code></pre><h2 id="如何自己描述一个注解类型"><a href="#如何自己描述一个注解类型" class="headerlink" title="如何自己描述一个注解类型"></a>如何自己描述一个注解类型</h2><pre><code>1.通过@interface 定义个新的注解类型2.发现写法与接口非常相似  可以描述public static final 的属性 比较少见  可以描述public abstract的方法 方法返回值必须有 返回值类型是如上那些3.我们自己定义的注解拿来使用     光定义还不够还需要做很多细致的说明（需要利用java提供好的注解来说明）     元注解（也是注解 不是拿来使用的 是用来说明注解）     @target 描述当前的注解可以放在哪里写     @retention 描述当前的这个注解存在什么作用域中的            源代码文件----&gt;编译----&gt;字节码文件----&gt;加载---&gt;内存执行            SOURCE                    CLASS                  RUNTIME     @Inherited  描述当前这个注解能否被子类对象继承     @Document   描述这个注解能否生成文档</code></pre><h2 id="我们使用自己描述的注解"><a href="#我们使用自己描述的注解" class="headerlink" title="我们使用自己描述的注解"></a>我们使用自己描述的注解</h2><pre><code>问题1.注解里面描述了一个方法 方法没有参数 方法有返回值String[]     使用注解的时候让我们传递参数     理解为 注解的方法做事 将我们传递的参数 搬运走了给了别人问题2.使用别人写好的注解不用写方法名 我们自己定义的方法必须写名字     如果我们自己定义的注解 只有一个方法名字叫value     在使用的时候可以省略方法名     如果传递的信息是一个数组 数组内只有一个元素 可以省略{}     如果是两个以上 每一个方法必须写名字</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Annocation（注释-注解）&quot;&gt;&lt;a href=&quot;#Annocation（注释-注解）&quot; class=&quot;headerlink&quot; title=&quot;Annocation（注释 注解）&quot;&gt;&lt;/a&gt;Annocation（注释 注解）&lt;/h1&gt;&lt;h1 id=&quot;注释&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaSE基础 （三十三）</title>
+    <link href="http://yoursite.com/2020/03/30/JavaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E4%B8%89%E5%8D%81%E4%B8%89%EF%BC%89/"/>
+    <id>http://yoursite.com/2020/03/30/JavaSE基础-（三十三）/</id>
+    <published>2020-03-30T00:05:21.000Z</published>
+    <updated>2020-03-30T12:03:32.020Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="反射-reflect"><a href="#反射-reflect" class="headerlink" title="反射 reflect"></a>反射 reflect</h1><h2 id="类是用来描述一组类"><a href="#类是用来描述一组类" class="headerlink" title="类是用来描述一组类"></a>类是用来描述一组类</h2><h2 id="反射机制认为是描述一组类"><a href="#反射机制认为是描述一组类" class="headerlink" title="反射机制认为是描述一组类"></a>反射机制认为是描述一组类</h2><pre><code>Class           用来描述类本身Package         用来描述所属类的包Field           用来描述类中的属性Method          用来描述类的方法Constructor     用来描述类中的构造方法Annotation      用来描述类中的注解</code></pre><h1 id="如何获取Class"><a href="#如何获取Class" class="headerlink" title="如何获取Class"></a>如何获取Class</h1><pre><code>如何下三种方式Class    clazz = Class.for.Name(&quot;包名.类名&quot;)Class    clazz = 类名.class;Class    clazz = 对象.getClass();//Object类中的方法</code></pre><h1 id="Class中的常用方法"><a href="#Class中的常用方法" class="headerlink" title="Class中的常用方法"></a>Class中的常用方法</h1><pre><code>int result = getModifiers();   获取类的修饰符（权限 特征）每一个修饰符 用一个整数来进行表示0开始----0-1-2-4-8-16-32--64-128-256-512-10240---默认不写  1---public         2---private    4---protected 8---static16---final    32----sychronized  64---voliate   128---trasnsient256---native  512---interface    1024---abstractString name = getName(); 获取名字String simpleName = getSimpleName();简单名Package p = getPackage();p.getName();Class sclazz = getSuperClass();//获取父类Class[] classes = getModifiers();Object obj = newInstance();//默认调用无参构造方法创建对象Filed f = getField(&quot;属性名&quot;);Field[] fs = getField();如上两个方法只能获取公有属性 但是包含继承过来父类属性getDeclaredField(&quot;属性&quot;)Field[] fs =getDeclaredFields();如上的两个方法能获取公有和私有的属性 但是只能获取本类中的属性</code></pre><h1 id="Filed类中常用方法"><a href="#Filed类中常用方法" class="headerlink" title="Filed类中常用方法"></a>Filed类中常用方法</h1><pre><code>int = getModifers()Class = getType()String = getName()操作属性 向里面存值set(对象，值）操作属性 从里面取值值 = get(对象)对象 =new():// 创建对象空间 当前对象空间有自己的一套元素（属性 方法）    setAccessable（true）可以修改属性设备操作</code></pre><h1 id="如何操作类中的方法"><a href="#如何操作类中的方法" class="headerlink" title="如何操作类中的方法"></a>如何操作类中的方法</h1><pre><code>Class类中的方法Method m = class.getMethod(&quot;方法名&quot;，Class...参数类型);  获取公有方法（自己类+父类）Method[] = clazz.getMethod();获取所有的方法（公有 自己+父类）Method = getDeclaredMethod（&quot;方法名字&quot;，参数类型class...）获取所有的方法（自己类 公有 私有）Method = getDeclaredMethods()   获取全部的方法（自己类 公有加私有）获取构造方法Construct = clazz.getConstructor（class...参数类型）</code></pre><h1 id="Method类中常用的方法"><a href="#Method类中常用的方法" class="headerlink" title="Method类中常用的方法"></a>Method类中常用的方法</h1><pre><code>int mm = m.getModififers()//获取方法的修饰符（权限+特征）Class mrt = m.getReturnType();//获取返回值数据类型String mn= m.getName();//获取方法名字Class[] mpts = m.getParameterTypes();//获取方法参数列表的类型Class[] mets = m.getExceptionTypes();//获取方法抛出异常类型如何操作方法调用方法 让他执行一次Object result = invoke（对象.执行方法需要传递的所有参数）若方法是私有方法 不许与操作可以设置setAccessable（True）设置方法使用权准入</code></pre><h1 id="Constructor类中的常用方法"><a href="#Constructor类中的常用方法" class="headerlink" title="Constructor类中的常用方法"></a>Constructor类中的常用方法</h1><pre><code>con.getModifiers();con.getName();con.getParamenterTyper();con.getExceptionTypers()如何操作构造方法执行一次 创建对象Object = newInstance（执行构造方法时的所有参数）;</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;反射-reflect&quot;&gt;&lt;a href=&quot;#反射-reflect&quot; class=&quot;headerlink&quot; title=&quot;反射 reflect&quot;&gt;&lt;/a&gt;反射 reflect&lt;/h1&gt;&lt;h2 id=&quot;类是用来描述一组类&quot;&gt;&lt;a href=&quot;#类是用来描述一组类&quot; c
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>JavaSE基础 （三十二）</title>
     <link href="http://yoursite.com/2020/03/29/JavaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E4%B8%89%E5%8D%81%E4%BA%8C%EF%BC%89/"/>
     <id>http://yoursite.com/2020/03/29/JavaSE基础-（三十二）/</id>
     <published>2020-03-29T13:33:41.000Z</published>
-    <updated>2020-03-29T14:09:28.828Z</updated>
+    <updated>2020-03-30T12:03:33.274Z</updated>
     
     <content type="html"><![CDATA[<h1 id="主线程-系统线程"><a href="#主线程-系统线程" class="headerlink" title="主线程  系统线程"></a>主线程  系统线程</h1><h1 id="用户线程-main"><a href="#用户线程-main" class="headerlink" title="用户线程 main"></a>用户线程 main</h1><h1 id="守护线程-GC"><a href="#守护线程-GC" class="headerlink" title="守护线程 GC"></a>守护线程 GC</h1><h1 id="线程——操作系统级别-CPU"><a href="#线程——操作系统级别-CPU" class="headerlink" title="线程——操作系统级别 CPU"></a>线程——操作系统级别 CPU</h1><h1 id="如何在Java中创建线程-让线程执行-多线程"><a href="#如何在Java中创建线程-让线程执行-多线程" class="headerlink" title="如何在Java中创建线程 让线程执行 多线程"></a>如何在Java中创建线程 让线程执行 多线程</h1><h1 id="掌握线程的几种不同状态以及如何切换"><a href="#掌握线程的几种不同状态以及如何切换" class="headerlink" title="掌握线程的几种不同状态以及如何切换"></a>掌握线程的几种不同状态以及如何切换</h1><pre><code>new      start()     cpu分配run()      wait()       exception over 创建线程----就绪状态---执行状态------等待/挂起----------异常/消亡               |                          |               |__________________________|                      notify/notifyAll唤醒</code></pre><h1 id="实现线程的过程"><a href="#实现线程的过程" class="headerlink" title="实现线程的过程"></a>实现线程的过程</h1><h2 id="自己描述一个类"><a href="#自己描述一个类" class="headerlink" title="自己描述一个类"></a>自己描述一个类</h2><h2 id="基础父类Thead"><a href="#基础父类Thead" class="headerlink" title="基础父类Thead"></a>基础父类Thead</h2><h2 id="重写run方法"><a href="#重写run方法" class="headerlink" title="重写run方法"></a>重写run方法</h2><h2 id="new一个线程对象-调用start方法让线程进入就绪状态"><a href="#new一个线程对象-调用start方法让线程进入就绪状态" class="headerlink" title="new一个线程对象 调用start方法让线程进入就绪状态"></a>new一个线程对象 调用start方法让线程进入就绪状态</h2><h1 id="实现线程的过程-1"><a href="#实现线程的过程-1" class="headerlink" title="实现线程的过程"></a>实现线程的过程</h1><h2 id="自己描述一个类-1"><a href="#自己描述一个类-1" class="headerlink" title="自己描述一个类"></a>自己描述一个类</h2><h2 id="实现一个父类接口Runnerable"><a href="#实现一个父类接口Runnerable" class="headerlink" title="实现一个父类接口Runnerable"></a>实现一个父类接口Runnerable</h2><h2 id="重写run方法-1"><a href="#重写run方法-1" class="headerlink" title="重写run方法"></a>重写run方法</h2><h2 id="new一个线程对象-需要创建Thead将自己包起来-然后调用Start"><a href="#new一个线程对象-需要创建Thead将自己包起来-然后调用Start" class="headerlink" title="new一个线程对象 需要创建Thead将自己包起来 然后调用Start()"></a>new一个线程对象 需要创建Thead将自己包起来 然后调用Start()</h2><h1 id="生产者和消费者模型"><a href="#生产者和消费者模型" class="headerlink" title="生产者和消费者模型"></a>生产者和消费者模型</h1><h2 id="通过这个模型-成功演示出-线程的安全问题"><a href="#通过这个模型-成功演示出-线程的安全问题" class="headerlink" title="通过这个模型 成功演示出 线程的安全问题"></a>通过这个模型 成功演示出 线程的安全问题</h2><pre><code>两个消费者 同时访问一个仓库对象 仓库内只有一个元素的时候两个消费者 并发访问 会有可能产生抢夺资源的问题</code></pre><h2 id="自己解决一下线程安全的问题"><a href="#自己解决一下线程安全的问题" class="headerlink" title="自己解决一下线程安全的问题"></a>自己解决一下线程安全的问题</h2><pre><code>让仓库对象被线程访问的时候 仓库对象被锁定仓库对象只能被一个线程所访问 其他对象处于等待状态特征修饰符synchronized 同步 一个时间段只有一个线程能访问</code></pre><h2 id="线程安全锁两种写法"><a href="#线程安全锁两种写法" class="headerlink" title="线程安全锁两种写法"></a>线程安全锁两种写法</h2><h3 id="将synchronized关键字-放在方法结构上"><a href="#将synchronized关键字-放在方法结构上" class="headerlink" title="将synchronized关键字 放在方法结构上"></a>将synchronized关键字 放在方法结构上</h3><pre><code>public synchronized void get(){}锁定的是调用方法时的那个对象</code></pre><h3 id="将synchronized关键字-方法在（构造方法内部）的内部"><a href="#将synchronized关键字-方法在（构造方法内部）的内部" class="headerlink" title="将synchronized关键字 方法在（构造方法内部）的内部"></a>将synchronized关键字 方法在（构造方法内部）的内部</h3><pre><code>public void get(){     好多代码     synchronzied（对象）{     好多代码     }     好多代码}</code></pre><h2 id="我们觉得return-不是很好"><a href="#我们觉得return-不是很好" class="headerlink" title="我们觉得return 不是很好"></a>我们觉得return 不是很好</h2><pre><code>应该让线程的不同状态来回切换执行 等待 执行 等待wait() Object类中的方法对象.wait();对象.wait();不是当前对象wait              访问当前这个对象的线程wait notify notifyAll p.setPriority(10);   p.getPriorty(); 产生一个类似假死的状态 所有的线程进入等待状态 没有线程做事</code></pre><h1 id="笔试题"><a href="#笔试题" class="headerlink" title="笔试题"></a>笔试题</h1><h2 id="程序-进程-线程-概念的区别"><a href="#程序-进程-线程-概念的区别" class="headerlink" title="程序 进程 线程 概念的区别"></a>程序 进程 线程 概念的区别</h2><h2 id="线程的创建方式"><a href="#线程的创建方式" class="headerlink" title="线程的创建方式"></a>线程的创建方式</h2><h2 id="线程的几种状态-如何切换"><a href="#线程的几种状态-如何切换" class="headerlink" title="线程的几种状态 如何切换"></a>线程的几种状态 如何切换</h2><h2 id="sleep方法-和-wait方法区别"><a href="#sleep方法-和-wait方法区别" class="headerlink" title="sleep方法 和  wait方法区别"></a>sleep方法 和  wait方法区别</h2><pre><code>1.类    Thead类                       Object类2.调用  静态 类名                       对象3，理解  那个位置调用                    对象调用的方法      那个线程等待                    访问对象的其他线程等待4.唤醒   不需要别人                     需要其他对象调用notiy唤醒5.锁    不会释放锁                      等会会释放锁</code></pre><h1 id="比较重要的方法-join"><a href="#比较重要的方法-join" class="headerlink" title="比较重要的方法 join"></a>比较重要的方法 join</h1><pre><code>设计一个模型1.有两个线程 One   Two  Two加入到One里面2.设计模型的时候  two线程在one的run里面创建 保证两个先后顺序3.Two.join();  无参数==0; 有参数==2000         two.join(0){         while(two.isAlive()){                    Two.wait（0）；//访问Two的线程进入等待状态         }</code></pre><h1 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h1><h2 id="一旦对象锁定-不释放的情况下其他对象都需要等待-有可能会产生死锁的效果"><a href="#一旦对象锁定-不释放的情况下其他对象都需要等待-有可能会产生死锁的效果" class="headerlink" title="一旦对象锁定 不释放的情况下其他对象都需要等待 有可能会产生死锁的效果"></a>一旦对象锁定 不释放的情况下其他对象都需要等待 有可能会产生死锁的效果</h2><h2 id="哲学家就餐问题"><a href="#哲学家就餐问题" class="headerlink" title="哲学家就餐问题"></a>哲学家就餐问题</h2><h2 id="解决死锁的问题"><a href="#解决死锁的问题" class="headerlink" title="解决死锁的问题"></a>解决死锁的问题</h2><h3 id="礼让—–-gt-产生时间差"><a href="#礼让—–-gt-产生时间差" class="headerlink" title="礼让—–&gt;产生时间差"></a>礼让—–&gt;产生时间差</h3><h3 id="不要产生公用对象问题"><a href="#不要产生公用对象问题" class="headerlink" title="不要产生公用对象问题"></a>不要产生公用对象问题</h3>]]></content>
     
@@ -33,6 +79,8 @@
       
     
     </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
     
     
   </entry>
@@ -130,11 +178,11 @@
   </entry>
   
   <entry>
-    <title>JavaSE基础      (二十六）</title>
+    <title>JavaSE基础         (二十六）</title>
     <link href="http://yoursite.com/2020/03/25/avaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E4%BA%8C%E5%8D%81%E5%85%AD%EF%BC%89/"/>
     <id>http://yoursite.com/2020/03/25/avaSE基础-（二十六）/</id>
     <published>2020-03-25T13:30:11.000Z</published>
-    <updated>2020-03-25T16:01:58.924Z</updated>
+    <updated>2020-03-30T00:03:19.677Z</updated>
     
     <content type="html"><![CDATA[<h1 id="List"><a href="#List" class="headerlink" title="List"></a>List</h1><h1 id="Vector-类"><a href="#Vector-类" class="headerlink" title="Vector 类"></a>Vector 类</h1><h2 id="java-util包"><a href="#java-util包" class="headerlink" title="java.util包"></a>java.util包</h2><h2 id="是ArrayList集合-早期版本"><a href="#是ArrayList集合-早期版本" class="headerlink" title="是ArrayList集合 早期版本"></a>是ArrayList集合 早期版本</h2><pre><code>(StringBuffer类早期 Stringbuilder后来) vector底层也是用动态数组来存储 vector是线程同步的 安全性高 效率低</code></pre><h2 id="扩容方式与ArrayList不同"><a href="#扩容方式与ArrayList不同" class="headerlink" title="扩容方式与ArrayList不同"></a>扩容方式与ArrayList不同</h2><pre><code>默认是扩容两倍  可以通过构造方法创建对象时修改这一机制</code></pre><h1 id="Stack类-栈"><a href="#Stack类-栈" class="headerlink" title="Stack类 栈"></a>Stack类 栈</h1><h2 id="java-util包-1"><a href="#java-util包-1" class="headerlink" title="java.util包"></a>java.util包</h2><h2 id="构造方法只有一个无参数"><a href="#构造方法只有一个无参数" class="headerlink" title="构造方法只有一个无参数"></a>构造方法只有一个无参数</h2><h2 id="只有几个特殊的方法"><a href="#只有几个特殊的方法" class="headerlink" title="只有几个特殊的方法"></a>只有几个特殊的方法</h2><pre><code>push(E e)将某个元素压入栈顶（add()）E = pop()将某一个元素从栈顶取出并删掉(E = remove())E = peek()将某一个元素从栈顶取出并删除掉(E = remove())boolean = empty()判断栈顶元素是否为空(isEmpty)int = search()查找给定元素在栈中的位置(indexof())</code></pre><h2 id="中国象棋-悔棋"><a href="#中国象棋-悔棋" class="headerlink" title="中国象棋 悔棋"></a>中国象棋 悔棋</h2><pre><code>栈中存储每一次的操作步骤撤销功能</code></pre><h1 id="Queue接口"><a href="#Queue接口" class="headerlink" title="Queue接口"></a>Queue接口</h1><h2 id="java-util"><a href="#java-util" class="headerlink" title="java.util"></a>java.util</h2><h3 id="通常子类-Linklist-ArrayQueque"><a href="#通常子类-Linklist-ArrayQueque" class="headerlink" title="通常子类 Linklist ArrayQueque"></a>通常子类 Linklist ArrayQueque</h3><h2 id="通常用无参构造方法实现"><a href="#通常用无参构造方法实现" class="headerlink" title="通常用无参构造方法实现"></a>通常用无参构造方法实现</h2><h2 id="一般方法"><a href="#一般方法" class="headerlink" title="一般方法"></a>一般方法</h2><pre><code>add()element()-----&gt;get()remove()boolean = offer(E e);//相当于add  不会抛出异常E = peek();//相当于element方法E =poll; 剪短//相当于remove()</code></pre><h2 id="双十一秒杀"><a href="#双十一秒杀" class="headerlink" title="双十一秒杀"></a>双十一秒杀</h2><pre><code>所有进入秒杀系统的人存入队列</code></pre><h1 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h1><h1 id="Linklist类"><a href="#Linklist类" class="headerlink" title="Linklist类"></a>Linklist类</h1><h2 id="java-util包-2"><a href="#java-util包-2" class="headerlink" title="java.util包"></a>java.util包</h2><h3 id="自己封装过LinkBox-内部类Node-LT-T-GT-对象（节点-prev-item-next）"><a href="#自己封装过LinkBox-内部类Node-LT-T-GT-对象（节点-prev-item-next）" class="headerlink" title="自己封装过LinkBox 内部类Node&LT;T&GT;对象（节点 prev item next）"></a>自己封装过LinkBox 内部类Node&LT;T&GT;对象（节点 prev item next）</h3><h2 id="底层就是使用双向链表的数据结构形式来存储"><a href="#底层就是使用双向链表的数据结构形式来存储" class="headerlink" title="底层就是使用双向链表的数据结构形式来存储"></a>底层就是使用双向链表的数据结构形式来存储</h2><h3 id="适合插入或删除不适合遍历轮循"><a href="#适合插入或删除不适合遍历轮循" class="headerlink" title="适合插入或删除不适合遍历轮循"></a>适合插入或删除不适合遍历轮循</h3><h2 id="构建对象"><a href="#构建对象" class="headerlink" title="构建对象"></a>构建对象</h2><pre><code>无参构造方法 带参数的构造方法（collection）</code></pre><h2 id="常用的方法"><a href="#常用的方法" class="headerlink" title="常用的方法"></a>常用的方法</h2><pre><code>增删改查 add() remove() set() get() size()手册中提供其他常用方法addAll() addFirst() clear() contains()element() getFirst() getLast() indexOf() lastindex()....</code></pre>]]></content>
     
@@ -442,52 +490,6 @@ new Person();
     </summary>
     
       <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaSE基础 （十三）</title>
-    <link href="http://yoursite.com/2020/03/21/JavaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89/"/>
-    <id>http://yoursite.com/2020/03/21/JavaSE基础-（十三）/</id>
-    <published>2020-03-21T14:43:20.000Z</published>
-    <updated>2020-03-21T16:01:25.886Z</updated>
-    
-    <content type="html"><![CDATA[<p>设计模式<br><br>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  1.设计模式不是知识点<br><br>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  2.设计模式是一种设计经验的总结<br><br>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<br>  3.设计模式用来解决某些场景下的某一类问题的—-&gt;通用的解决方案<br><br>   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 4.有了设计模式之后  可以让代码更容易被理解 确保了复用性 可靠性 可扩展性<br>  <br><br> 设计模式分为三类</p><pre><code>1.创新型模式（5种）--------&gt;用于解决创建对象的过程 单例模式  工厂方法模式  抽象模式 工作模式 建造者模式 原型模式2.结构型模式（7种）--------&gt;把类或对象通过某种形式结合在一起 构成某种复杂或合理的结构 适配器模式 装饰者模式 代理模式 外观模式 桥接模式 组合模式 享元模式3.行为行模式（11种）------&gt;用来解决类或对象之间的交互 更合理的优化类或对象之间的关系 观察者模式 策略模式 模板模式 责任链模式 解析器模式 迭代器模式 命令模式 状态模式 备忘录模式 访问者模式 中介者模式</code></pre><p> 单例模式</p><pre><code>设计------&gt;一个类只能创建一个对象 有效减小内存占用空间设计一个系统-----&gt;百度  搜索引擎 public class Baidu{           public void 搜索（String keyword）{           } }创建一个baidu对象 new调用搜索的方法 做事情 方法只执行一遍同一时间有很多很多很多的人在使用这个系统对象------&gt;只能创建一个 堆内存就开辟了一个空间调用一次方法-----&gt;临时执行一次 方法执行空间就回收了</code></pre><p>单例模式的实现</p><pre><code> 1.私有的构造方法 2.私有的静态的当前类作为属性 3.公有的静态的方法当返回值 饿汉式（立即加载） 对象启动时就加载啦           不会产生对象就没有拿来使用的问题 空指针异常           启动项目时的对象加载过多 有些还没有使用 产生服务器承载压力问题 懒汉式（延迟加载）对象什么时候用到了 才会加载           可能会由于没有操作好 导致异常（很严谨）           启动项目时候只有需要的加载 不需要的时候还没有创建 不会浪费空间*生命周期托管（单例对象别人帮我们处理）对象加载过程交给别人    private static SingleTon;               //直接=new SingleTon()饿汉式   public static SingleTon getSingleTon(){     if(single=null){     Single = new SingleTon();            //延迟加载方式  懒汉式     }     return single;  }public static void main(String[] args){    SingleTon s1 = Singleton.getSingleTon();    }}  </code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;设计模式&lt;br&gt;&lt;br&gt;  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  1.设计模式不是知识点&lt;br&gt;&lt;br&gt;  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;n
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaSE基础 （十二）</title>
-    <link href="http://yoursite.com/2020/03/21/JavaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89/"/>
-    <id>http://yoursite.com/2020/03/21/JavaSE基础-（十二）/</id>
-    <published>2020-03-21T14:07:10.000Z</published>
-    <updated>2020-03-21T14:42:38.934Z</updated>
-    
-    <content type="html"><![CDATA[<p>权限修饰符</p><pre><code>public       公共的        本类      同包    子类  当前类的任何位置只要有对象都可以使用protected    保护的        本类      同包    子类 （通过子类对象在子类内部访问）默认不写     默认的        本类     同包private      私有的1.能修饰什么  2.范围如何权限修饰符可以用来修饰   类本身   和类中的成员（除程序块）权限修饰符用来修饰类的时候只有两个可以用 （public 默认不写）权限修饰符可以用来修饰类中的其他成员</code></pre><p>Java类和类直接的关系</p><pre><code>继承  关联 多态（抽象）</code></pre><p>封装：将一些数据或执行过程  进行一个包装<br><br>目的：保护这些数据或执行过程的安全隐藏细节，增加复用性<br><br>对属性本身的封装：<br><br>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     属性私有：（封装在类中）<br><br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 提供操作属性的公有方法<br>  <br><br>特征修饰符<br></p><pre><code>1.可以修饰什么2.修饰后什么特点</code></pre><p>  final    </p><pre><code>最终的   不可更改的  修饰变量           如果在定义时没有赋初始值         给变量一次存值的机会（因为变量在栈内存空间内 没有默认值 如果不给机会 就都没法用了         一旦变量存储了一个值若用final修饰后则不让改变----相当于常量         注意变量类型是基本类型还是引用类型         如果修饰的是基本数据类型 则变量内的值不让更改 常量         如果修饰的是引用数据类型 则变量内的地址不让更改对象唯一  修饰属性         全局变量 存储在堆内存的对象空间有一个空间         属性如果没有赋值  有默认值存在         属性用final修饰后 必须给属性赋初值 否则编译报错         特点与修饰变量一致         注意变量类型是基本类型还是引用类型         如果修饰的变量是基本数据类型 则变量内的值不让更改 ---常量         如果修饰的变量是引用数据类型 则变量内地址引用不让更改---对象唯一 修饰方法         方法是最终的方法 不可更改         子类继承父类的方法 可将父类的方法重写（覆盖）         final修饰的方法 要求不可以被子类重写（覆盖） 修饰类本身         类是最终的  不可更改         此类不可被其他字类继承         通常都是一些定义好的工具类         Math Scanner Intneger String</code></pre><p> static静态的</p><pre><code>1.可以修饰：修饰属性 修饰方法 *修饰块 修饰类（内部类）2.特点：     1.静态元素在类加载时就初始化了，创建的非常早，此时没有创建对象     2.静态元素存储在静态元素区中，每一个类都有一个自己的区域，与别的类不冲突     3.静态元素只加载一次（只有一份），全部类对象及类本身共享     4.由于静态元素区加载时候，可能没有创建对象，可以通过类的名字直接访问     5.静态元素区Garbage Collection 无法管理，可以粗暴认为常驻内存     6.可以理解静态元素不属于任何一个对象，是属于类的     7.非静态成员（堆内存对象里）中可以访问静态成员（静态区）     8.静态成员中可以访问静态成员（静态区）     9.静态成员不可以访问非静态成员     10.静态元素不可以出现this或super（静态元素属于类）</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;权限修饰符&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;public       公共的        本类      同包    子类  当前类的任何位置只要有对象都可以使用
-protected    保护的        本类      同包    子类 （通过子类对象在子类内部访问
-      
-    
-    </summary>
     
     
   </entry>

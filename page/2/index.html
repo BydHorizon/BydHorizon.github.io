@@ -252,6 +252,180 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/24/JavaSE基础-（二十五）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/24/JavaSE基础-（二十五）/" itemprop="url">JavaSE基础 （二十五）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-24T22:23:31+08:00">
+                2020-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="集合相关"><a href="#集合相关" class="headerlink" title="集合相关"></a>集合相关</h1><h2 id="变量–容器"><a href="#变量–容器" class="headerlink" title="变量–容器"></a>变量–容器</h2><pre><code>存取一个元素</code></pre><h2 id="数组–容器"><a href="#数组–容器" class="headerlink" title="数组–容器"></a>数组–容器</h2><pre><code>一组具有某种特性的数据存放在一起
+       存储一组元素（数据类型一致）  长度固定</code></pre><h2 id="集合–容器"><a href="#集合–容器" class="headerlink" title="集合–容器"></a>集合–容器</h2><pre><code>与数组类似 集合的长度存储之后还能改变
+集合用来存储一组元素</code></pre><h3 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h3><pre><code>存的都是value</code></pre><h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><pre><code>有序可重复</code></pre><h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h4><pre><code>无序无重复</code></pre><h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><pre><code>存储的是以key-value形式存在
+key无序无重复  value无序可重复</code></pre><h3 id="序：顺序"><a href="#序：顺序" class="headerlink" title="序：顺序"></a>序：顺序</h3><pre><code>添加进去的元素 取得元素的顺序一致 注意指的不是集合自己的顺序</code></pre><h3 id="重复：两个对象一致"><a href="#重复：两个对象一致" class="headerlink" title="重复：两个对象一致"></a>重复：两个对象一致</h3><h1 id="List集合"><a href="#List集合" class="headerlink" title="List集合"></a>List集合</h1><p>   1.ArrayList 2.LinkList 3.Vector</p>
+<h1 id="ArrayList——-底层就是一个数组"><a href="#ArrayList——-底层就是一个数组" class="headerlink" title="ArrayList——-底层就是一个数组"></a>ArrayList——-底层就是一个数组</h1><h2 id="所属的包-java-util"><a href="#所属的包-java-util" class="headerlink" title="所属的包 java.util"></a>所属的包 java.util</h2><h2 id="如何创建对象"><a href="#如何创建对象" class="headerlink" title="如何创建对象"></a>如何创建对象</h2><pre><code>无参数构造方法 带默认参数的都构造方法 带collection参数的构造方法</code></pre><h2 id="常用的方法-—小容器"><a href="#常用的方法-—小容器" class="headerlink" title="常用的方法 —小容器"></a>常用的方法 —小容器</h2><pre><code>   存 add
+   取 get
+   删 remove
+   改
+   个数 size
+
+add(E e) add(int index,E e)
+addAll(Collection c); add(int index,Collection c)
+clear();将集合内的元素全部清除
+boolean = contains(Object);找寻一个给定元素集合中是否拥有
+ensureCapacity(int minCapacity);
+E = get(int index);
+int = indexOf(Object obj); lastindexOf();
+isEmpty();
+iterator;//迭代器 1.5之后增强for
+removeAll 差集 retainAll()交集
+addAll()并集
+E = set(int index,E value)
+int size();
+List = subList(int index,E value)
+toArray();集合变成数组
+toArray(T[]);
+trimToSize();//变成有效元素个数那么长</code></pre><h2 id="arryList底层是一个Object"><a href="#arryList底层是一个Object" class="headerlink" title="arryList底层是一个Object[]"></a>arryList底层是一个Object[]</h2><pre><code>什么类型都可以存进去
+取出来的时候多态效果 需要自己造型 显得用起来非常麻烦</code></pre><h1 id="JDK1-5之后—-gt-泛型"><a href="#JDK1-5之后—-gt-泛型" class="headerlink" title="JDK1.5之后—-&gt;泛型"></a>JDK1.5之后—-&gt;泛型</h1><pre><code>用来规定数据类型的,定义的时候用一个符号代替某种类型
+在使用的时候具体的数据类型 将定义的那个符号替换掉
+ArrayBox&lt;T&gt;</code></pre><h2 id="泛型可以用在哪里？"><a href="#泛型可以用在哪里？" class="headerlink" title="泛型可以用在哪里？"></a>泛型可以用在哪里？</h2><h3 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h3><pre><code>类定义的时候描述某种数据类型 集合就是这样使用</code></pre><h3 id="泛型接口"><a href="#泛型接口" class="headerlink" title="泛型接口"></a>泛型接口</h3><pre><code>与泛型类的使用基本一致 子类实现接口时必须添加泛型
+public interface Text&lt;X&gt;{
+     public X value;
+}
+public class Son&lt;X&gt;implements Test&lt;X&gt;</code></pre><h3 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h3><pre><code>方法调用时传参数 方法的泛型与类无关 带有泛型的方法可以不放在带有泛型的类中</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/24/JavaSE基础-（二十四）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1921,177 +2095,6 @@ name属性 重eat 独有teach       name属性 重talk 独study
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/21/JavaSE基础-（十五）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/21/JavaSE基础-（十五）/" itemprop="url">JavaSE基础  （十五）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-21T23:25:31+08:00">
-                2020-03-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="abstract-抽象类"><a href="#abstract-抽象类" class="headerlink" title="abstract  抽象类"></a>abstract  抽象类</h1><h2 id="不具体-没有执行过程-只是一个概念"><a href="#不具体-没有执行过程-只是一个概念" class="headerlink" title="不具体 没有执行过程 只是一个概念"></a>不具体 没有执行过程 只是一个概念</h2><h2 id="可以修饰什么"><a href="#可以修饰什么" class="headerlink" title="可以修饰什么"></a>可以修饰什么</h2><pre><code>修饰方法
-用abstract修饰符修饰的方法 只有方法的构造  没有方法执行体叫抽象方法
-当然注意native修饰的方法虽然没有方法体 但是不是抽象方法 只是执行的过程是其他语言写的 不属于抽象类
-用abstract修饰符修饰的类 叫抽象类</code></pre><h2 id="修饰后有什么特点"><a href="#修饰后有什么特点" class="headerlink" title="修饰后有什么特点"></a>修饰后有什么特点</h2><pre><code>抽象类中必须要有抽象方法吗？ 不是必须含有抽象方法
-抽象方法必须放在抽象类中？ 目前来看必须要放在抽象类中（或接口中）普通类是不许有抽象方法</code></pre><h2 id="研究一下什么叫抽象类-抽象类有什么特点？"><a href="#研究一下什么叫抽象类-抽象类有什么特点？" class="headerlink" title="研究一下什么叫抽象类  抽象类有什么特点？"></a>研究一下什么叫抽象类  抽象类有什么特点？</h2><pre><code>1.类里面有什么 成员
-          属性    可以含有一般的属性  也可以含有 private static final 等
-          方法    可以含有一般方法    也可以含有 private static final 等 
-                  注意：抽象类中允许含有抽象方法（只有方法结构 没有方法执行体）
-          块      可以含有一般程序块  也可以含有static程序块
-          构造方法  可以含有一般方法，包括重载
-2.类如何使用  创建对象
-          抽象类含有构造方法 但我们不能通过调用构造方法创建对象
-          抽象类只能通过子类单继承来做事
-3.类和类的关系
-          抽象类-----直接单继承---抽象类   可以
-          抽象类-----直接单继承---具体类   可以
-          具体类-----直接单继承---抽象类   不可以（）
-4.小问题
-抽象类中能不能没有抽象方法 全都是具体成员  可以
-抽象类能不能没有具体成员 全都是抽象方法 可以 ----&gt;抽象到极致---&gt;接口
-接口可以理解为是抽象类抽象到极致-------&gt;还是一个类的结构 不能用class修饰 改用interface修饰</code></pre><h1 id="interface-接口"><a href="#interface-接口" class="headerlink" title="interface 接口"></a>interface 接口</h1><h2 id="什么是接口？"><a href="#什么是接口？" class="headerlink" title="什么是接口？"></a>什么是接口？</h2><pre><code>接口也是一个类的结构 只不过用interface修饰 替换原有的class</code></pre><h2 id="有什么-成员"><a href="#有什么-成员" class="headerlink" title="有什么      成员"></a>有什么      成员</h2><pre><code>属性            不能含有一般属性 只能含有公有的静态常量 public static final
-方法            不能含有一般的方法 只能含有公有的抽象方法（1.8以后default修饰具体方法）
-块              不能含有一般程序块 也不能含有static块（块本身就是具体的 接口中不让有具体的）
-构造方法        不能含有构造方法</code></pre><h2 id="如何使用-创建对象"><a href="#如何使用-创建对象" class="headerlink" title="如何使用   创建对象"></a>如何使用   创建对象</h2><pre><code>不能创建对象
-只能通过子类多实现（implements）来做事
-public class A implements B,C,D{
-
-}</code></pre><h2 id="与别的类结构关系"><a href="#与别的类结构关系" class="headerlink" title="与别的类结构关系"></a>与别的类结构关系</h2><pre><code>接口不能继承别的类   最抽象
-抽象类--------直接多实现-------接口  可以
-具体类--------直接多实现-------接口  不可以（不能直接将抽象方法具体化）
-接口----------多继承-----------接口  可以直接多实现</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2144,7 +2147,7 @@ public class A implements B,C,D{
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2262,7 +2265,7 @@ public class A implements B,C,D{
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共27.2k字</span>
+  <span class="post-count">博客全站共28.2k字</span>
 </div>
         
 

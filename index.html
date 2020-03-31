@@ -252,6 +252,189 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/31/JavaSE基础-（二十九）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/31/JavaSE基础-（二十九）/" itemprop="url">JavaSE基础  （二十九）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-31T09:22:11+08:00">
+                2020-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="异常-错误"><a href="#异常-错误" class="headerlink" title="异常/错误"></a>异常/错误</h1><h2 id="程序运行过程中，可能会发生一些不被期望的效果，肯定会阻止我们的程序按指令去执行"><a href="#程序运行过程中，可能会发生一些不被期望的效果，肯定会阻止我们的程序按指令去执行" class="headerlink" title="程序运行过程中，可能会发生一些不被期望的效果，肯定会阻止我们的程序按指令去执行"></a>程序运行过程中，可能会发生一些不被期望的效果，肯定会阻止我们的程序按指令去执行</h2><h2 id="这种不被预期出现的效果，肯定需要抛出来告诉我们"><a href="#这种不被预期出现的效果，肯定需要抛出来告诉我们" class="headerlink" title="这种不被预期出现的效果，肯定需要抛出来告诉我们"></a>这种不被预期出现的效果，肯定需要抛出来告诉我们</h2><h2 id="在JAVA中有一个定义好的Throwable（可以抛出的）"><a href="#在JAVA中有一个定义好的Throwable（可以抛出的）" class="headerlink" title="在JAVA中有一个定义好的Throwable（可以抛出的）"></a>在JAVA中有一个定义好的Throwable（可以抛出的）</h2><h1 id="Error错误"><a href="#Error错误" class="headerlink" title="Error错误"></a>Error错误</h1><h2 id="通常是一些物理性的，JVM虚拟机本身出现的问题，程序指令是处理不了的"><a href="#通常是一些物理性的，JVM虚拟机本身出现的问题，程序指令是处理不了的" class="headerlink" title="通常是一些物理性的，JVM虚拟机本身出现的问题，程序指令是处理不了的"></a>通常是一些物理性的，JVM虚拟机本身出现的问题，程序指令是处理不了的</h2><h1 id="Exception异常"><a href="#Exception异常" class="headerlink" title="Exception异常"></a>Exception异常</h1><h2 id="是一种不正常的现象-通常是给定的指令程序产生了一些不合规范的事情"><a href="#是一种不正常的现象-通常是给定的指令程序产生了一些不合规范的事情" class="headerlink" title="是一种不正常的现象,通常是给定的指令程序产生了一些不合规范的事情"></a>是一种不正常的现象,通常是给定的指令程序产生了一些不合规范的事情</h2><h1 id="Throwable"><a href="#Throwable" class="headerlink" title="Throwable"></a>Throwable</h1><h2 id="Error（错误）"><a href="#Error（错误）" class="headerlink" title="Error（错误）"></a>Error（错误）</h2><h3 id="StackOverflowError"><a href="#StackOverflowError" class="headerlink" title="StackOverflowError"></a>StackOverflowError</h3><h3 id="OutOfMemoryError"><a href="#OutOfMemoryError" class="headerlink" title="OutOfMemoryError"></a>OutOfMemoryError</h3><h2 id="Exception-异常"><a href="#Exception-异常" class="headerlink" title="Exception(异常)"></a>Exception(异常)</h2><h3 id="RuntimeException（运行时）"><a href="#RuntimeException（运行时）" class="headerlink" title="RuntimeException（运行时）"></a>RuntimeException（运行时）</h3><h3 id="IOExceotion"><a href="#IOExceotion" class="headerlink" title="IOExceotion"></a>IOExceotion</h3><h1 id="异常的分支体系"><a href="#异常的分支体系" class="headerlink" title="异常的分支体系"></a>异常的分支体系</h1><h2 id="运行时异常（非检查异常）"><a href="#运行时异常（非检查异常）" class="headerlink" title="运行时异常（非检查异常）"></a>运行时异常（非检查异常）</h2><pre><code>Error和RuntimeException都算作运行时异常
+javac编译的时候，不会提示发现的
+在程序编写的时候不要求必须做处理，如果我们愿意可以添加处理手段（try throws）
+要求大家出现这样的异常的时候，知道怎么产生及如何修改
+1.InputMisMatchExceotin  输入不匹配
+        int value = input.nextInt();// abc
+2.NumberFormatException  数字格式化
+        int value = Integer.parseInt(&quot;123.45&quot;)
+3.NegativeArraySizeException 数组长度负数
+        int Array = new int[-2]
+4.NullPointerException 空指针异常
+        int[][] array = new int[3][];
+        array[0][0] = 10;
+        Person p = null;
+        p.getName();
+5.AirthmeticExceotion 数字异常
+  10/0  整数不允许除0 infinity小数除0会产生无穷
+6.ClassCastException 造型异常
+       Person p = new Teacher();
+       Student s = (Student) p;
+7.ArrayIndexOutOfBoundsException 数组索引越界
+       int[] array ={1,2,3};
+       array[5];
+8.StringIndexOutOfBoundsException 字符串越界
+       String str = &quot;abc&quot;;
+       str.charAt(5);
+9.IndexOutOfBoundsException 集合越界
+       List家族
+       ArrayList list = new ArrayList();
+       list.add();list.add();ist.add();
+       list.get(5);
+10.IllegalArguementException 非法参数异常
+       ArrayList list = new ArrayList(-1);</code></pre><h2 id="编译时异常（检查异常）"><a href="#编译时异常（检查异常）" class="headerlink" title="编译时异常（检查异常）"></a>编译时异常（检查异常）</h2><pre><code>除了Error和RuntimeException以外的其他异常
+javac编译的时候 强制要求我们必须为这样的异常处理（try或throws）
+因为这样的异常在程序运行中可能会产生问题
+异常产生后后续的所有执行就被停止啦
+1.InterruptException
+            try{
+                 Thead.sleep(5000);
+            }catch(Exception e){
+
+            }</code></pre><h2 id="添加处理异常的手段"><a href="#添加处理异常的手段" class="headerlink" title="添加处理异常的手段"></a>添加处理异常的手段</h2><h3 id="处理异常不是异常消失了"><a href="#处理异常不是异常消失了" class="headerlink" title="处理异常不是异常消失了"></a>处理异常不是异常消失了</h3><h3 id="处理异常指的是-处理掉异常之后-后续的代码不会因为此异常停止执行"><a href="#处理异常指的是-处理掉异常之后-后续的代码不会因为此异常停止执行" class="headerlink" title="处理异常指的是 处理掉异常之后 后续的代码不会因为此异常停止执行"></a>处理异常指的是 处理掉异常之后 后续的代码不会因为此异常停止执行</h3><h1 id="两种手段"><a href="#两种手段" class="headerlink" title="两种手段"></a>两种手段</h1><h2 id="try-catch-finally"><a href="#try-catch-finally" class="headerlink" title="try{}catch(){}{finally{}}"></a>try{}catch(){}{finally{}}</h2><h3 id="try不能单独出现"><a href="#try不能单独出现" class="headerlink" title="try不能单独出现"></a>try不能单独出现</h3><h3 id="后面必须添加catch或finally"><a href="#后面必须添加catch或finally" class="headerlink" title="后面必须添加catch或finally"></a>后面必须添加catch或finally</h3><h3 id="catch有一组括号（NullPointerException）目的是为了捕获一组异常"><a href="#catch有一组括号（NullPointerException）目的是为了捕获一组异常" class="headerlink" title="catch有一组括号（NullPointerException）目的是为了捕获一组异常"></a>catch有一组括号（NullPointerException）目的是为了捕获一组异常</h3><h3 id="catch可以有多个存在"><a href="#catch可以有多个存在" class="headerlink" title="catch可以有多个存在"></a>catch可以有多个存在</h3><pre><code>捕获的异常直接没有任何的继承关系
+捕获的异常需要从小到大捕获</code></pre><h3 id="finally-不是必须存在的-若存在则必须执行"><a href="#finally-不是必须存在的-若存在则必须执行" class="headerlink" title="finally 不是必须存在的 若存在则必须执行"></a>finally 不是必须存在的 若存在则必须执行</h3><h2 id="fianl-fianlly-fianlizae-区别"><a href="#fianl-fianlly-fianlizae-区别" class="headerlink" title="fianl fianlly fianlizae 区别"></a>fianl fianlly fianlizae 区别</h2><h2 id="fianl-特征修饰符-修饰变量-属性-方法-类"><a href="#fianl-特征修饰符-修饰变量-属性-方法-类" class="headerlink" title="fianl 特征修饰符 修饰变量 属性 方法 类"></a>fianl 特征修饰符 修饰变量 属性 方法 类</h2><h3 id="修饰变量-基本类型-值不能改变-引用类型-地址不能改变（如果变量没有初值-给一次赋初值的机会）"><a href="#修饰变量-基本类型-值不能改变-引用类型-地址不能改变（如果变量没有初值-给一次赋初值的机会）" class="headerlink" title="修饰变量 基本类型 值不能改变 引用类型 地址不能改变（如果变量没有初值 给一次赋初值的机会）"></a>修饰变量 基本类型 值不能改变 引用类型 地址不能改变（如果变量没有初值 给一次赋初值的机会）</h3><h3 id="修饰属性-特点与修饰变量相似（要求必须给属性赋初值-否则编译报错）"><a href="#修饰属性-特点与修饰变量相似（要求必须给属性赋初值-否则编译报错）" class="headerlink" title="修饰属性 特点与修饰变量相似（要求必须给属性赋初值 否则编译报错）"></a>修饰属性 特点与修饰变量相似（要求必须给属性赋初值 否则编译报错）</h3><h3 id="修饰方法-不能被子类重写"><a href="#修饰方法-不能被子类重写" class="headerlink" title="修饰方法 不能被子类重写"></a>修饰方法 不能被子类重写</h3><h3 id="修饰类-不能被其他子类继承"><a href="#修饰类-不能被其他子类继承" class="headerlink" title="修饰类 不能被其他子类继承"></a>修饰类 不能被其他子类继承</h3><h2 id="fianlly-处理异常的手段的一部分"><a href="#fianlly-处理异常的手段的一部分" class="headerlink" title="fianlly 处理异常的手段的一部分"></a>fianlly 处理异常的手段的一部分</h2><h3 id="try-catch-后面的一个部分"><a href="#try-catch-后面的一个部分" class="headerlink" title="try()catch(){}后面的一个部分"></a>try()catch(){}后面的一个部分</h3><h3 id="这个部分可有可无-如果只能含有一部分-且必须执行"><a href="#这个部分可有可无-如果只能含有一部分-且必须执行" class="headerlink" title="这个部分可有可无 如果只能含有一部分 且必须执行"></a>这个部分可有可无 如果只能含有一部分 且必须执行</h3><h2 id="finalize-是Object类中的一个protected方法"><a href="#finalize-是Object类中的一个protected方法" class="headerlink" title="finalize 是Object类中的一个protected方法"></a>finalize 是Object类中的一个protected方法</h2><h3 id="对象没有任何引用指向的时候—-会被GC回收"><a href="#对象没有任何引用指向的时候—-会被GC回收" class="headerlink" title="对象没有任何引用指向的时候—-会被GC回收"></a>对象没有任何引用指向的时候—-会被GC回收</h3><h3 id="当对象回收的时候-默认调用finalize方法"><a href="#当对象回收的时候-默认调用finalize方法" class="headerlink" title="当对象回收的时候 默认调用finalize方法"></a>当对象回收的时候 默认调用finalize方法</h3><h3 id="若想看到回收的效果-可以重写-public-void-finalize"><a href="#若想看到回收的效果-可以重写-public-void-finalize" class="headerlink" title="若想看到回收的效果 可以重写 public void finalize(){}"></a>若想看到回收的效果 可以重写 public void finalize(){}</h3><h3 id="处理异常放在方法内部可能还会有小问题"><a href="#处理异常放在方法内部可能还会有小问题" class="headerlink" title="处理异常放在方法内部可能还会有小问题"></a>处理异常放在方法内部可能还会有小问题</h3><h3 id="如果在方法内部含有返回值"><a href="#如果在方法内部含有返回值" class="headerlink" title="如果在方法内部含有返回值"></a>如果在方法内部含有返回值</h3><h3 id="不管返回值return关键字在哪里-finally一定会执行完毕"><a href="#不管返回值return关键字在哪里-finally一定会执行完毕" class="headerlink" title="不管返回值return关键字在哪里 finally一定会执行完毕"></a>不管返回值return关键字在哪里 finally一定会执行完毕</h3><h3 id="返回值的具体结果-看情况"><a href="#返回值的具体结果-看情况" class="headerlink" title="返回值的具体结果 看情况"></a>返回值的具体结果 看情况</h3><h2 id="throws-抛出"><a href="#throws-抛出" class="headerlink" title="throws 抛出"></a>throws 抛出</h2><h3 id="异常只能在方法上抛出-属性是不能处理异常的"><a href="#异常只能在方法上抛出-属性是不能处理异常的" class="headerlink" title="异常只能在方法上抛出 属性是不能处理异常的"></a>异常只能在方法上抛出 属性是不能处理异常的</h3><h3 id="方法-构造"><a href="#方法-构造" class="headerlink" title="方法 构造"></a>方法 构造</h3><h3 id="方法-可以抛出不止一个异常，通过，隔开"><a href="#方法-可以抛出不止一个异常，通过，隔开" class="headerlink" title="方法 可以抛出不止一个异常，通过，隔开"></a>方法 可以抛出不止一个异常，通过，隔开</h3><h3 id="抛出的异常与多个catch类似-要么没关系-要么先抛出小异常"><a href="#抛出的异常与多个catch类似-要么没关系-要么先抛出小异常" class="headerlink" title="抛出的异常与多个catch类似 要么没关系 要么先抛出小异常"></a>抛出的异常与多个catch类似 要么没关系 要么先抛出小异常</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/30/avaSE基础-（三十五）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2049,180 +2232,6 @@ element() getFirst() getLast() indexOf() lastindex()
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/24/JavaSE基础-（二十五）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/24/JavaSE基础-（二十五）/" itemprop="url">JavaSE基础 （二十五）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-24T22:23:31+08:00">
-                2020-03-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="集合相关"><a href="#集合相关" class="headerlink" title="集合相关"></a>集合相关</h1><h2 id="变量–容器"><a href="#变量–容器" class="headerlink" title="变量–容器"></a>变量–容器</h2><pre><code>存取一个元素</code></pre><h2 id="数组–容器"><a href="#数组–容器" class="headerlink" title="数组–容器"></a>数组–容器</h2><pre><code>一组具有某种特性的数据存放在一起
-       存储一组元素（数据类型一致）  长度固定</code></pre><h2 id="集合–容器"><a href="#集合–容器" class="headerlink" title="集合–容器"></a>集合–容器</h2><pre><code>与数组类似 集合的长度存储之后还能改变
-集合用来存储一组元素</code></pre><h3 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h3><pre><code>存的都是value</code></pre><h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><pre><code>有序可重复</code></pre><h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h4><pre><code>无序无重复</code></pre><h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><pre><code>存储的是以key-value形式存在
-key无序无重复  value无序可重复</code></pre><h3 id="序：顺序"><a href="#序：顺序" class="headerlink" title="序：顺序"></a>序：顺序</h3><pre><code>添加进去的元素 取得元素的顺序一致 注意指的不是集合自己的顺序</code></pre><h3 id="重复：两个对象一致"><a href="#重复：两个对象一致" class="headerlink" title="重复：两个对象一致"></a>重复：两个对象一致</h3><h1 id="List集合"><a href="#List集合" class="headerlink" title="List集合"></a>List集合</h1><p>   1.ArrayList 2.LinkList 3.Vector</p>
-<h1 id="ArrayList——-底层就是一个数组"><a href="#ArrayList——-底层就是一个数组" class="headerlink" title="ArrayList——-底层就是一个数组"></a>ArrayList——-底层就是一个数组</h1><h2 id="所属的包-java-util"><a href="#所属的包-java-util" class="headerlink" title="所属的包 java.util"></a>所属的包 java.util</h2><h2 id="如何创建对象"><a href="#如何创建对象" class="headerlink" title="如何创建对象"></a>如何创建对象</h2><pre><code>无参数构造方法 带默认参数的都构造方法 带collection参数的构造方法</code></pre><h2 id="常用的方法-—小容器"><a href="#常用的方法-—小容器" class="headerlink" title="常用的方法 —小容器"></a>常用的方法 —小容器</h2><pre><code>   存 add
-   取 get
-   删 remove
-   改
-   个数 size
-
-add(E e) add(int index,E e)
-addAll(Collection c); add(int index,Collection c)
-clear();将集合内的元素全部清除
-boolean = contains(Object);找寻一个给定元素集合中是否拥有
-ensureCapacity(int minCapacity);
-E = get(int index);
-int = indexOf(Object obj); lastindexOf();
-isEmpty();
-iterator;//迭代器 1.5之后增强for
-removeAll 差集 retainAll()交集
-addAll()并集
-E = set(int index,E value)
-int size();
-List = subList(int index,E value)
-toArray();集合变成数组
-toArray(T[]);
-trimToSize();//变成有效元素个数那么长</code></pre><h2 id="arryList底层是一个Object"><a href="#arryList底层是一个Object" class="headerlink" title="arryList底层是一个Object[]"></a>arryList底层是一个Object[]</h2><pre><code>什么类型都可以存进去
-取出来的时候多态效果 需要自己造型 显得用起来非常麻烦</code></pre><h1 id="JDK1-5之后—-gt-泛型"><a href="#JDK1-5之后—-gt-泛型" class="headerlink" title="JDK1.5之后—-&gt;泛型"></a>JDK1.5之后—-&gt;泛型</h1><pre><code>用来规定数据类型的,定义的时候用一个符号代替某种类型
-在使用的时候具体的数据类型 将定义的那个符号替换掉
-ArrayBox&lt;T&gt;</code></pre><h2 id="泛型可以用在哪里？"><a href="#泛型可以用在哪里？" class="headerlink" title="泛型可以用在哪里？"></a>泛型可以用在哪里？</h2><h3 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h3><pre><code>类定义的时候描述某种数据类型 集合就是这样使用</code></pre><h3 id="泛型接口"><a href="#泛型接口" class="headerlink" title="泛型接口"></a>泛型接口</h3><pre><code>与泛型类的使用基本一致 子类实现接口时必须添加泛型
-public interface Text&lt;X&gt;{
-     public X value;
-}
-public class Son&lt;X&gt;implements Test&lt;X&gt;</code></pre><h3 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h3><pre><code>方法调用时传参数 方法的泛型与类无关 带有泛型的方法可以不放在带有泛型的类中</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2275,7 +2284,7 @@ public class Son&lt;X&gt;implements Test&lt;X&gt;</code></pre><h3 id="泛型方�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2393,7 +2402,7 @@ public class Son&lt;X&gt;implements Test&lt;X&gt;</code></pre><h3 id="泛型方�
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共27.2k字</span>
+  <span class="post-count">博客全站共28.2k字</span>
 </div>
         
 

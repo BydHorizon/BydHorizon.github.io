@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="一轮明月照九洲" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="异常/错误程序运行过程中，可能会发生一些不被期望的效果，肯定会阻止我们的程序按指令去执行这种不被预期出现的效果，肯定需要抛出来告诉我们在JAVA中有一个定义好的Throwable（可以抛出的）Error错误通常是一些物理性的，JVM虚拟机本身出现的问题，程序指令是处理不了的Exception异常是一种不正常的现象,通常是给定的指令程序产生了一些不合规范的事情ThrowableError（错误）St">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaSE基础  （二十九）">
+<meta property="og:url" content="http://yoursite.com/2020/03/31/JavaSE基础-（二十九）/index.html">
+<meta property="og:site_name" content="一轮明月照九洲">
+<meta property="og:description" content="异常/错误程序运行过程中，可能会发生一些不被期望的效果，肯定会阻止我们的程序按指令去执行这种不被预期出现的效果，肯定需要抛出来告诉我们在JAVA中有一个定义好的Throwable（可以抛出的）Error错误通常是一些物理性的，JVM虚拟机本身出现的问题，程序指令是处理不了的Exception异常是一种不正常的现象,通常是给定的指令程序产生了一些不合规范的事情ThrowableError（错误）St">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-03-31T01:24:08.461Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaSE基础  （二十九）">
+<meta name="twitter:description" content="异常/错误程序运行过程中，可能会发生一些不被期望的效果，肯定会阻止我们的程序按指令去执行这种不被预期出现的效果，肯定需要抛出来告诉我们在JAVA中有一个定义好的Throwable（可以抛出的）Error错误通常是一些物理性的，JVM虚拟机本身出现的问题，程序指令是处理不了的Exception异常是一种不正常的现象,通常是给定的指令程序产生了一些不合规范的事情ThrowableError（错误）St">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/03/31/JavaSE基础-（二十九）/">
+
+
+
+
+
+  <title>JavaSE基础  （二十九） | 一轮明月照九洲</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/BydHorizon" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一轮明月照九洲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">长将静趣观天地，自有幽怀契古今</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/31/JavaSE基础-（二十九）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JavaSE基础  （二十九）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-31T09:22:11+08:00">
+                2020-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="异常-错误"><a href="#异常-错误" class="headerlink" title="异常/错误"></a>异常/错误</h1><h2 id="程序运行过程中，可能会发生一些不被期望的效果，肯定会阻止我们的程序按指令去执行"><a href="#程序运行过程中，可能会发生一些不被期望的效果，肯定会阻止我们的程序按指令去执行" class="headerlink" title="程序运行过程中，可能会发生一些不被期望的效果，肯定会阻止我们的程序按指令去执行"></a>程序运行过程中，可能会发生一些不被期望的效果，肯定会阻止我们的程序按指令去执行</h2><h2 id="这种不被预期出现的效果，肯定需要抛出来告诉我们"><a href="#这种不被预期出现的效果，肯定需要抛出来告诉我们" class="headerlink" title="这种不被预期出现的效果，肯定需要抛出来告诉我们"></a>这种不被预期出现的效果，肯定需要抛出来告诉我们</h2><h2 id="在JAVA中有一个定义好的Throwable（可以抛出的）"><a href="#在JAVA中有一个定义好的Throwable（可以抛出的）" class="headerlink" title="在JAVA中有一个定义好的Throwable（可以抛出的）"></a>在JAVA中有一个定义好的Throwable（可以抛出的）</h2><h1 id="Error错误"><a href="#Error错误" class="headerlink" title="Error错误"></a>Error错误</h1><h2 id="通常是一些物理性的，JVM虚拟机本身出现的问题，程序指令是处理不了的"><a href="#通常是一些物理性的，JVM虚拟机本身出现的问题，程序指令是处理不了的" class="headerlink" title="通常是一些物理性的，JVM虚拟机本身出现的问题，程序指令是处理不了的"></a>通常是一些物理性的，JVM虚拟机本身出现的问题，程序指令是处理不了的</h2><h1 id="Exception异常"><a href="#Exception异常" class="headerlink" title="Exception异常"></a>Exception异常</h1><h2 id="是一种不正常的现象-通常是给定的指令程序产生了一些不合规范的事情"><a href="#是一种不正常的现象-通常是给定的指令程序产生了一些不合规范的事情" class="headerlink" title="是一种不正常的现象,通常是给定的指令程序产生了一些不合规范的事情"></a>是一种不正常的现象,通常是给定的指令程序产生了一些不合规范的事情</h2><h1 id="Throwable"><a href="#Throwable" class="headerlink" title="Throwable"></a>Throwable</h1><h2 id="Error（错误）"><a href="#Error（错误）" class="headerlink" title="Error（错误）"></a>Error（错误）</h2><h3 id="StackOverflowError"><a href="#StackOverflowError" class="headerlink" title="StackOverflowError"></a>StackOverflowError</h3><h3 id="OutOfMemoryError"><a href="#OutOfMemoryError" class="headerlink" title="OutOfMemoryError"></a>OutOfMemoryError</h3><h2 id="Exception-异常"><a href="#Exception-异常" class="headerlink" title="Exception(异常)"></a>Exception(异常)</h2><h3 id="RuntimeException（运行时）"><a href="#RuntimeException（运行时）" class="headerlink" title="RuntimeException（运行时）"></a>RuntimeException（运行时）</h3><h3 id="IOExceotion"><a href="#IOExceotion" class="headerlink" title="IOExceotion"></a>IOExceotion</h3><h1 id="异常的分支体系"><a href="#异常的分支体系" class="headerlink" title="异常的分支体系"></a>异常的分支体系</h1><h2 id="运行时异常（非检查异常）"><a href="#运行时异常（非检查异常）" class="headerlink" title="运行时异常（非检查异常）"></a>运行时异常（非检查异常）</h2><pre><code>Error和RuntimeException都算作运行时异常
+javac编译的时候，不会提示发现的
+在程序编写的时候不要求必须做处理，如果我们愿意可以添加处理手段（try throws）
+要求大家出现这样的异常的时候，知道怎么产生及如何修改
+1.InputMisMatchExceotin  输入不匹配
+        int value = input.nextInt();// abc
+2.NumberFormatException  数字格式化
+        int value = Integer.parseInt(&quot;123.45&quot;)
+3.NegativeArraySizeException 数组长度负数
+        int Array = new int[-2]
+4.NullPointerException 空指针异常
+        int[][] array = new int[3][];
+        array[0][0] = 10;
+        Person p = null;
+        p.getName();
+5.AirthmeticExceotion 数字异常
+  10/0  整数不允许除0 infinity小数除0会产生无穷
+6.ClassCastException 造型异常
+       Person p = new Teacher();
+       Student s = (Student) p;
+7.ArrayIndexOutOfBoundsException 数组索引越界
+       int[] array ={1,2,3};
+       array[5];
+8.StringIndexOutOfBoundsException 字符串越界
+       String str = &quot;abc&quot;;
+       str.charAt(5);
+9.IndexOutOfBoundsException 集合越界
+       List家族
+       ArrayList list = new ArrayList();
+       list.add();list.add();ist.add();
+       list.get(5);
+10.IllegalArguementException 非法参数异常
+       ArrayList list = new ArrayList(-1);</code></pre><h2 id="编译时异常（检查异常）"><a href="#编译时异常（检查异常）" class="headerlink" title="编译时异常（检查异常）"></a>编译时异常（检查异常）</h2><pre><code>除了Error和RuntimeException以外的其他异常
+javac编译的时候 强制要求我们必须为这样的异常处理（try或throws）
+因为这样的异常在程序运行中可能会产生问题
+异常产生后后续的所有执行就被停止啦
+1.InterruptException
+            try{
+                 Thead.sleep(5000);
+            }catch(Exception e){
+
+            }</code></pre><h2 id="添加处理异常的手段"><a href="#添加处理异常的手段" class="headerlink" title="添加处理异常的手段"></a>添加处理异常的手段</h2><h3 id="处理异常不是异常消失了"><a href="#处理异常不是异常消失了" class="headerlink" title="处理异常不是异常消失了"></a>处理异常不是异常消失了</h3><h3 id="处理异常指的是-处理掉异常之后-后续的代码不会因为此异常停止执行"><a href="#处理异常指的是-处理掉异常之后-后续的代码不会因为此异常停止执行" class="headerlink" title="处理异常指的是 处理掉异常之后 后续的代码不会因为此异常停止执行"></a>处理异常指的是 处理掉异常之后 后续的代码不会因为此异常停止执行</h3><h1 id="两种手段"><a href="#两种手段" class="headerlink" title="两种手段"></a>两种手段</h1><h2 id="try-catch-finally"><a href="#try-catch-finally" class="headerlink" title="try{}catch(){}{finally{}}"></a>try{}catch(){}{finally{}}</h2><h3 id="try不能单独出现"><a href="#try不能单独出现" class="headerlink" title="try不能单独出现"></a>try不能单独出现</h3><h3 id="后面必须添加catch或finally"><a href="#后面必须添加catch或finally" class="headerlink" title="后面必须添加catch或finally"></a>后面必须添加catch或finally</h3><h3 id="catch有一组括号（NullPointerException）目的是为了捕获一组异常"><a href="#catch有一组括号（NullPointerException）目的是为了捕获一组异常" class="headerlink" title="catch有一组括号（NullPointerException）目的是为了捕获一组异常"></a>catch有一组括号（NullPointerException）目的是为了捕获一组异常</h3><h3 id="catch可以有多个存在"><a href="#catch可以有多个存在" class="headerlink" title="catch可以有多个存在"></a>catch可以有多个存在</h3><pre><code>捕获的异常直接没有任何的继承关系
+捕获的异常需要从小到大捕获</code></pre><h3 id="finally-不是必须存在的-若存在则必须执行"><a href="#finally-不是必须存在的-若存在则必须执行" class="headerlink" title="finally 不是必须存在的 若存在则必须执行"></a>finally 不是必须存在的 若存在则必须执行</h3><h2 id="fianl-fianlly-fianlizae-区别"><a href="#fianl-fianlly-fianlizae-区别" class="headerlink" title="fianl fianlly fianlizae 区别"></a>fianl fianlly fianlizae 区别</h2><h2 id="fianl-特征修饰符-修饰变量-属性-方法-类"><a href="#fianl-特征修饰符-修饰变量-属性-方法-类" class="headerlink" title="fianl 特征修饰符 修饰变量 属性 方法 类"></a>fianl 特征修饰符 修饰变量 属性 方法 类</h2><h3 id="修饰变量-基本类型-值不能改变-引用类型-地址不能改变（如果变量没有初值-给一次赋初值的机会）"><a href="#修饰变量-基本类型-值不能改变-引用类型-地址不能改变（如果变量没有初值-给一次赋初值的机会）" class="headerlink" title="修饰变量 基本类型 值不能改变 引用类型 地址不能改变（如果变量没有初值 给一次赋初值的机会）"></a>修饰变量 基本类型 值不能改变 引用类型 地址不能改变（如果变量没有初值 给一次赋初值的机会）</h3><h3 id="修饰属性-特点与修饰变量相似（要求必须给属性赋初值-否则编译报错）"><a href="#修饰属性-特点与修饰变量相似（要求必须给属性赋初值-否则编译报错）" class="headerlink" title="修饰属性 特点与修饰变量相似（要求必须给属性赋初值 否则编译报错）"></a>修饰属性 特点与修饰变量相似（要求必须给属性赋初值 否则编译报错）</h3><h3 id="修饰方法-不能被子类重写"><a href="#修饰方法-不能被子类重写" class="headerlink" title="修饰方法 不能被子类重写"></a>修饰方法 不能被子类重写</h3><h3 id="修饰类-不能被其他子类继承"><a href="#修饰类-不能被其他子类继承" class="headerlink" title="修饰类 不能被其他子类继承"></a>修饰类 不能被其他子类继承</h3><h2 id="fianlly-处理异常的手段的一部分"><a href="#fianlly-处理异常的手段的一部分" class="headerlink" title="fianlly 处理异常的手段的一部分"></a>fianlly 处理异常的手段的一部分</h2><h3 id="try-catch-后面的一个部分"><a href="#try-catch-后面的一个部分" class="headerlink" title="try()catch(){}后面的一个部分"></a>try()catch(){}后面的一个部分</h3><h3 id="这个部分可有可无-如果只能含有一部分-且必须执行"><a href="#这个部分可有可无-如果只能含有一部分-且必须执行" class="headerlink" title="这个部分可有可无 如果只能含有一部分 且必须执行"></a>这个部分可有可无 如果只能含有一部分 且必须执行</h3><h2 id="finalize-是Object类中的一个protected方法"><a href="#finalize-是Object类中的一个protected方法" class="headerlink" title="finalize 是Object类中的一个protected方法"></a>finalize 是Object类中的一个protected方法</h2><h3 id="对象没有任何引用指向的时候—-会被GC回收"><a href="#对象没有任何引用指向的时候—-会被GC回收" class="headerlink" title="对象没有任何引用指向的时候—-会被GC回收"></a>对象没有任何引用指向的时候—-会被GC回收</h3><h3 id="当对象回收的时候-默认调用finalize方法"><a href="#当对象回收的时候-默认调用finalize方法" class="headerlink" title="当对象回收的时候 默认调用finalize方法"></a>当对象回收的时候 默认调用finalize方法</h3><h3 id="若想看到回收的效果-可以重写-public-void-finalize"><a href="#若想看到回收的效果-可以重写-public-void-finalize" class="headerlink" title="若想看到回收的效果 可以重写 public void finalize(){}"></a>若想看到回收的效果 可以重写 public void finalize(){}</h3><h3 id="处理异常放在方法内部可能还会有小问题"><a href="#处理异常放在方法内部可能还会有小问题" class="headerlink" title="处理异常放在方法内部可能还会有小问题"></a>处理异常放在方法内部可能还会有小问题</h3><h3 id="如果在方法内部含有返回值"><a href="#如果在方法内部含有返回值" class="headerlink" title="如果在方法内部含有返回值"></a>如果在方法内部含有返回值</h3><h3 id="不管返回值return关键字在哪里-finally一定会执行完毕"><a href="#不管返回值return关键字在哪里-finally一定会执行完毕" class="headerlink" title="不管返回值return关键字在哪里 finally一定会执行完毕"></a>不管返回值return关键字在哪里 finally一定会执行完毕</h3><h3 id="返回值的具体结果-看情况"><a href="#返回值的具体结果-看情况" class="headerlink" title="返回值的具体结果 看情况"></a>返回值的具体结果 看情况</h3><h2 id="throws-抛出"><a href="#throws-抛出" class="headerlink" title="throws 抛出"></a>throws 抛出</h2><h3 id="异常只能在方法上抛出-属性是不能处理异常的"><a href="#异常只能在方法上抛出-属性是不能处理异常的" class="headerlink" title="异常只能在方法上抛出 属性是不能处理异常的"></a>异常只能在方法上抛出 属性是不能处理异常的</h3><h3 id="方法-构造"><a href="#方法-构造" class="headerlink" title="方法 构造"></a>方法 构造</h3><h3 id="方法-可以抛出不止一个异常，通过，隔开"><a href="#方法-可以抛出不止一个异常，通过，隔开" class="headerlink" title="方法 可以抛出不止一个异常，通过，隔开"></a>方法 可以抛出不止一个异常，通过，隔开</h3><h3 id="抛出的异常与多个catch类似-要么没关系-要么先抛出小异常"><a href="#抛出的异常与多个catch类似-要么没关系-要么先抛出小异常" class="headerlink" title="抛出的异常与多个catch类似 要么没关系 要么先抛出小异常"></a>抛出的异常与多个catch类似 要么没关系 要么先抛出小异常</h3>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/30/avaSE基础-（三十五）/" rel="next" title="JavaSE基础  （三十五）">
+                <i class="fa fa-chevron-left"></i> JavaSE基础  （三十五）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="我与我周旋">
+            
+              <p class="site-author-name" itemprop="name">我与我周旋</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/BydHorizon" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="921742277@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-globe"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#异常-错误"><span class="nav-number">1.</span> <span class="nav-text">异常/错误</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#程序运行过程中，可能会发生一些不被期望的效果，肯定会阻止我们的程序按指令去执行"><span class="nav-number">1.1.</span> <span class="nav-text">程序运行过程中，可能会发生一些不被期望的效果，肯定会阻止我们的程序按指令去执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#这种不被预期出现的效果，肯定需要抛出来告诉我们"><span class="nav-number">1.2.</span> <span class="nav-text">这种不被预期出现的效果，肯定需要抛出来告诉我们</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在JAVA中有一个定义好的Throwable（可以抛出的）"><span class="nav-number">1.3.</span> <span class="nav-text">在JAVA中有一个定义好的Throwable（可以抛出的）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Error错误"><span class="nav-number">2.</span> <span class="nav-text">Error错误</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#通常是一些物理性的，JVM虚拟机本身出现的问题，程序指令是处理不了的"><span class="nav-number">2.1.</span> <span class="nav-text">通常是一些物理性的，JVM虚拟机本身出现的问题，程序指令是处理不了的</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Exception异常"><span class="nav-number">3.</span> <span class="nav-text">Exception异常</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#是一种不正常的现象-通常是给定的指令程序产生了一些不合规范的事情"><span class="nav-number">3.1.</span> <span class="nav-text">是一种不正常的现象,通常是给定的指令程序产生了一些不合规范的事情</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Throwable"><span class="nav-number">4.</span> <span class="nav-text">Throwable</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Error（错误）"><span class="nav-number">4.1.</span> <span class="nav-text">Error（错误）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#StackOverflowError"><span class="nav-number">4.1.1.</span> <span class="nav-text">StackOverflowError</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OutOfMemoryError"><span class="nav-number">4.1.2.</span> <span class="nav-text">OutOfMemoryError</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exception-异常"><span class="nav-number">4.2.</span> <span class="nav-text">Exception(异常)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RuntimeException（运行时）"><span class="nav-number">4.2.1.</span> <span class="nav-text">RuntimeException（运行时）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IOExceotion"><span class="nav-number">4.2.2.</span> <span class="nav-text">IOExceotion</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常的分支体系"><span class="nav-number">5.</span> <span class="nav-text">异常的分支体系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时异常（非检查异常）"><span class="nav-number">5.1.</span> <span class="nav-text">运行时异常（非检查异常）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译时异常（检查异常）"><span class="nav-number">5.2.</span> <span class="nav-text">编译时异常（检查异常）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加处理异常的手段"><span class="nav-number">5.3.</span> <span class="nav-text">添加处理异常的手段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#处理异常不是异常消失了"><span class="nav-number">5.3.1.</span> <span class="nav-text">处理异常不是异常消失了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理异常指的是-处理掉异常之后-后续的代码不会因为此异常停止执行"><span class="nav-number">5.3.2.</span> <span class="nav-text">处理异常指的是 处理掉异常之后 后续的代码不会因为此异常停止执行</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#两种手段"><span class="nav-number">6.</span> <span class="nav-text">两种手段</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#try-catch-finally"><span class="nav-number">6.1.</span> <span class="nav-text">try{}catch(){}{finally{}}</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#try不能单独出现"><span class="nav-number">6.1.1.</span> <span class="nav-text">try不能单独出现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后面必须添加catch或finally"><span class="nav-number">6.1.2.</span> <span class="nav-text">后面必须添加catch或finally</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#catch有一组括号（NullPointerException）目的是为了捕获一组异常"><span class="nav-number">6.1.3.</span> <span class="nav-text">catch有一组括号（NullPointerException）目的是为了捕获一组异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#catch可以有多个存在"><span class="nav-number">6.1.4.</span> <span class="nav-text">catch可以有多个存在</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#finally-不是必须存在的-若存在则必须执行"><span class="nav-number">6.1.5.</span> <span class="nav-text">finally 不是必须存在的 若存在则必须执行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fianl-fianlly-fianlizae-区别"><span class="nav-number">6.2.</span> <span class="nav-text">fianl fianlly fianlizae 区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fianl-特征修饰符-修饰变量-属性-方法-类"><span class="nav-number">6.3.</span> <span class="nav-text">fianl 特征修饰符 修饰变量 属性 方法 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修饰变量-基本类型-值不能改变-引用类型-地址不能改变（如果变量没有初值-给一次赋初值的机会）"><span class="nav-number">6.3.1.</span> <span class="nav-text">修饰变量 基本类型 值不能改变 引用类型 地址不能改变（如果变量没有初值 给一次赋初值的机会）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修饰属性-特点与修饰变量相似（要求必须给属性赋初值-否则编译报错）"><span class="nav-number">6.3.2.</span> <span class="nav-text">修饰属性 特点与修饰变量相似（要求必须给属性赋初值 否则编译报错）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修饰方法-不能被子类重写"><span class="nav-number">6.3.3.</span> <span class="nav-text">修饰方法 不能被子类重写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修饰类-不能被其他子类继承"><span class="nav-number">6.3.4.</span> <span class="nav-text">修饰类 不能被其他子类继承</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fianlly-处理异常的手段的一部分"><span class="nav-number">6.4.</span> <span class="nav-text">fianlly 处理异常的手段的一部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#try-catch-后面的一个部分"><span class="nav-number">6.4.1.</span> <span class="nav-text">try()catch(){}后面的一个部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#这个部分可有可无-如果只能含有一部分-且必须执行"><span class="nav-number">6.4.2.</span> <span class="nav-text">这个部分可有可无 如果只能含有一部分 且必须执行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#finalize-是Object类中的一个protected方法"><span class="nav-number">6.5.</span> <span class="nav-text">finalize 是Object类中的一个protected方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象没有任何引用指向的时候—-会被GC回收"><span class="nav-number">6.5.1.</span> <span class="nav-text">对象没有任何引用指向的时候—-会被GC回收</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#当对象回收的时候-默认调用finalize方法"><span class="nav-number">6.5.2.</span> <span class="nav-text">当对象回收的时候 默认调用finalize方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#若想看到回收的效果-可以重写-public-void-finalize"><span class="nav-number">6.5.3.</span> <span class="nav-text">若想看到回收的效果 可以重写 public void finalize(){}</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理异常放在方法内部可能还会有小问题"><span class="nav-number">6.5.4.</span> <span class="nav-text">处理异常放在方法内部可能还会有小问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如果在方法内部含有返回值"><span class="nav-number">6.5.5.</span> <span class="nav-text">如果在方法内部含有返回值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不管返回值return关键字在哪里-finally一定会执行完毕"><span class="nav-number">6.5.6.</span> <span class="nav-text">不管返回值return关键字在哪里 finally一定会执行完毕</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回值的具体结果-看情况"><span class="nav-number">6.5.7.</span> <span class="nav-text">返回值的具体结果 看情况</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#throws-抛出"><span class="nav-number">6.6.</span> <span class="nav-text">throws 抛出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#异常只能在方法上抛出-属性是不能处理异常的"><span class="nav-number">6.6.1.</span> <span class="nav-text">异常只能在方法上抛出 属性是不能处理异常的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-构造"><span class="nav-number">6.6.2.</span> <span class="nav-text">方法 构造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-可以抛出不止一个异常，通过，隔开"><span class="nav-number">6.6.3.</span> <span class="nav-text">方法 可以抛出不止一个异常，通过，隔开</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抛出的异常与多个catch类似-要么没关系-要么先抛出小异常"><span class="nav-number">6.6.4.</span> <span class="nav-text">抛出的异常与多个catch类似 要么没关系 要么先抛出小异常</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">我与我周旋</span>
+
+  
+</div>
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+-->
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+<!--
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共28.2k字</span>
+</div>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!-- 背景动画 -->
+<script type="text/javascript" src="/js/src/particle.js"></script>
+
+</body>
+</html>

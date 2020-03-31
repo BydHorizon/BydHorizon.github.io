@@ -345,15 +345,12 @@
       
         
           
-            <p>数组（容器）</p>
-<pre><code>数组是一组数据类型相同的数据的组合，将这些数据统一管理起来
-数组本身是一个引用数据类型，但数组内可以存储基本数据类型，也可以存储引用数据类型</code></pre><p>1.数组的定义（声明）  </p>
-<pre><code>数据类型[] 数组名字;
+            <h1 id="数组（容器）"><a href="#数组（容器）" class="headerlink" title="数组（容器）"></a>数组（容器）</h1><pre><code>数组是一组数据类型相同的数据的组合，将这些数据统一管理起来
+数组本身是一个引用数据类型，但数组内可以存储基本数据类型，也可以存储引用数据类型</code></pre><h1 id="数组的定义（声明）"><a href="#数组的定义（声明）" class="headerlink" title="数组的定义（声明）"></a>数组的定义（声明）</h1><pre><code>数据类型[] 数组名字;
     int[] a;
     char[] b;
     boolean[] c;
-    string[] m;</code></pre><p>2.数组的（赋值）初始化 </p>
-<pre><code>静态初始化    有长度 有元素
+    string[] m;</code></pre><h1 id="数组的（赋值）初始化"><a href="#数组的（赋值）初始化" class="headerlink" title="数组的（赋值）初始化"></a>数组的（赋值）初始化</h1><pre><code>静态初始化    有长度 有元素
     int[] arry = {10,20,30,40,50,60};
     int[] arry = new int[] {10,20,30,40,50,60};
 动态初始化    有长度   没有元素（默认值0）
@@ -362,15 +359,16 @@
     浮点数默认值---0.0
     字符型默认值----0--char  97-a 65-A 48-&apos;0&apos;
     布尔型默认值----false
-    引用数据类型默认值----null</code></pre><p>3.数组元素的访问 </p>
-<pre><code>通过元素在数组中的位置来访问
+    引用数据类型默认值----null</code></pre><h1 id="数组元素的访问"><a href="#数组元素的访问" class="headerlink" title="数组元素的访问"></a>数组元素的访问</h1><pre><code>通过元素在数组中的位置来访问
 存值/取值
 位置-------&gt;index索引
 索引是有取值范围    [从0开始------到数组长度减1]
 如果数组的索引超过了上诉范围
 会出现了一个运行时的异常
-ArrayIndexOutOfBoundsException</code></pre><p>4 数组元素的遍历<br>                  通过循环的方式访问数组每一个元素<br>                  for（;;）{</p>
-<pre><code>}
+ArrayIndexOutOfBoundsException</code></pre><h1 id="数组元素的遍历"><a href="#数组元素的遍历" class="headerlink" title="数组元素的遍历"></a>数组元素的遍历</h1><pre><code>通过循环的方式访问数组每一个元素
+for（;;）{
+
+}
 JDK1.5版本之后 增加新特性 增强for循环 加强for forEach
 for（自定义的变量（接收数组内每一个元素）：遍历的数组arry）{
 }
@@ -380,8 +378,10 @@ for（自定义的变量（接收数组内每一个元素）：遍历的数组ar
 2.增强for 有两个条件 用来取值的变量 用来遍历的数组 没有index索引 
 写法相对容易
 只能取值 不能存值
-没有index索引  找不到元素是哪一个</code></pre><p>5.基本数据类型和引用数据类型在内存结构上的区别<br>              所有的变量空间都存储在栈内存<br>              变量空间可以存储基本数据类型  也可以引用数据类型<br>              如果变量空间存储的是一个基本数据类型  存储的是值 一个变量改变 另一个不会改变<br>              如果变量空间存储的是引用数据类型 存储的是引用（地址）一个变量地址改变 另一个跟着改变</p>
-
+没有index索引  找不到元素是哪一个</code></pre><h1 id="基本数据类型和引用数据类型在内存结构上的区别"><a href="#基本数据类型和引用数据类型在内存结构上的区别" class="headerlink" title="基本数据类型和引用数据类型在内存结构上的区别"></a>基本数据类型和引用数据类型在内存结构上的区别</h1><pre><code>所有的变量空间都存储在栈内存
+变量空间可以存储基本数据类型  也可以引用数据类型
+如果变量空间存储的是一个基本数据类型  存储的是值 一个变量改变 另一个不会改变
+如果变量空间存储的是引用数据类型 存储的是引用（地址）一个变量地址改变 另一个跟着改变</code></pre>
           
         
       
@@ -522,13 +522,9 @@ for（自定义的变量（接收数组内每一个元素）：遍历的数组ar
       
         
           
-            <p>java运算符</p>
-<p>   运算符：用来指明操作数的运算方式</p>
-<p>   按照操作数的数目来分类</p>
-<pre><code>单目运算符    a++
+            <h1 id="java运算符"><a href="#java运算符" class="headerlink" title="java运算符"></a>java运算符</h1><h1 id="运算符：用来指明操作数的运算方式"><a href="#运算符：用来指明操作数的运算方式" class="headerlink" title="运算符：用来指明操作数的运算方式"></a>运算符：用来指明操作数的运算方式</h1><h2 id="按照操作数的数目来分类"><a href="#按照操作数的数目来分类" class="headerlink" title="按照操作数的数目来分类"></a>按照操作数的数目来分类</h2><pre><code>单目运算符    a++
 双目运算符    a+b
-三目运算符    (a&gt;b)? x : y</code></pre><p>   按运算符的功能来分类</p>
-<pre><code>算数运算符   
+三目运算符    (a&gt;b)? x : y</code></pre><h2 id="按运算符的功能来分类"><a href="#按运算符的功能来分类" class="headerlink" title="按运算符的功能来分类"></a>按运算符的功能来分类</h2><pre><code>算数运算符   
 + - * / %（取余 求模）
 ++（自增） --（自减）
 int x=1；
@@ -555,18 +551,14 @@ int y=x++；//++在后 先赋值 再自增（先进行计算 后赋值）
    逻辑运算符
    &amp; | ^ ！ &amp;&amp;短路与 ||   // ^逻辑异或 只要两个表达式结果不同 最终结果就是true
    位（bit）运算
-   &amp;按位与 |按位或 ^按位异或 ~ 按位取反&lt;&lt;按位左移位 &gt;&gt;按位右移位 &gt;&gt;&gt;按位右移（无符号）</code></pre><p> 笔试题</p>
-<p> 1.&amp;和&amp;&amp;的区别</p>
-<pre><code>&amp;可以视为逻辑运算 也可以视为位运算 &amp;&amp;只能当做逻辑运算来用
+   &amp;按位与 |按位或 ^按位异或 ~ 按位取反&lt;&lt;按位左移位 &gt;&gt;按位右移位 &gt;&gt;&gt;按位右移（无符号）</code></pre><h1 id="笔试题"><a href="#笔试题" class="headerlink" title="笔试题"></a>笔试题</h1><h2 id="amp-和-amp-amp-的区别"><a href="#amp-和-amp-amp-的区别" class="headerlink" title="&amp;和&amp;&amp;的区别"></a>&amp;和&amp;&amp;的区别</h2><pre><code>&amp;可以视为逻辑运算 也可以视为位运算 &amp;&amp;只能当做逻辑运算来用
 如果两个都当做逻辑运算符来用 区别如下
 &amp;前后两个条件都是true 最终结果就是true
 &amp;&amp; 短路与正常情况下&amp;的执行结果一致
-   当前面条件为flase的时候发生短路最终结果flase</code></pre><p>2.最有效率的方式计算2*8的结果</p>
-<pre><code>   00000001                  2 &lt;&lt; 3相当于2乘以2的3次幂
+   当前面条件为flase的时候发生短路最终结果flase</code></pre><h2 id="最有效率的方式计算2-8的结果"><a href="#最有效率的方式计算2-8的结果" class="headerlink" title="最有效率的方式计算2*8的结果"></a>最有效率的方式计算2*8的结果</h2><pre><code>   00000001                  2 &lt;&lt; 3相当于2乘以2的3次幂
 *  00001000                  00000010
 -------------                00010000 == 16
-00000010000==16</code></pre><p>3.两个变量 int a = 1； b = 2如果将两个变量的值互换</p>
-<pre><code> int a = 1;
+00000010000==16</code></pre><h2 id="两个变量-int-a-1；-b-2如果将两个变量的值互换"><a href="#两个变量-int-a-1；-b-2如果将两个变量的值互换" class="headerlink" title="两个变量 int a = 1； b = 2如果将两个变量的值互换"></a>两个变量 int a = 1； b = 2如果将两个变量的值互换</h2><pre><code> int a = 1;
  int b = 2;
  方式一 采用一个中间变量
  int c = a;
@@ -723,8 +715,7 @@ a = a^b;
       
         
           
-            <p>GIt Bash 常用命令</p>
-<p>#change director</p>
+            <h1 id="GIt-Bash-常用命令"><a href="#GIt-Bash-常用命令" class="headerlink" title="GIt Bash 常用命令"></a>GIt Bash 常用命令</h1><p>#change director</p>
 <pre><code>cd</code></pre><p>#make director</p>
 <pre><code>mkdir</code></pre><p>#print working directory </p>
 <pre><code>pwd</code></pre><p>#move </p>
@@ -882,8 +873,7 @@ rm c.txt  删除c</code></pre>
       
         
           
-            <p>内存结构与执行过程</p>
-<p>1.在硬盘上创建一个文件                            Test.java</p>
+            <h1 id="内存结构与执行过程"><a href="#内存结构与执行过程" class="headerlink" title="内存结构与执行过程"></a>内存结构与执行过程</h1><p>1.在硬盘上创建一个文件                            Test.java</p>
 <p>2.文件的内容是我们编写的源代码（跟计算机发送的指令）</p>
 <pre><code>public  class Test{
          static void main( String[] args ){
@@ -892,8 +882,8 @@ rm c.txt  删除c</code></pre>
         }
   }</code></pre><p>3.将Test.java源文件——&gt;编译——&gt;Test.classc</p>
 <p>4.执行——–&gt;内存中执行</p>
-<p><img src="/2020/03/09/JavaSE基础（四）/pasted-0.png" alt="upload successful"><br>常量值</p>
-<pre><code>常量值是在常量缓存区中的
+<p><img src="/2020/03/09/JavaSE基础（四）/pasted-0.png" alt="upload successful"></p>
+<h1 id="常量值"><a href="#常量值" class="headerlink" title="常量值"></a>常量值</h1><pre><code>常量值是在常量缓存区中的
 常量区只存一份   常量存储的形式不是十进制而是二进制
 在常量池中整数默认是按照 int型存储
 如果使用长整型时需要末尾加L告知
@@ -1039,28 +1029,22 @@ long d = 2147483648L;
       
         
           
-            <p>常量</p>
-<pre><code>常量是代表在程序运行过程中，不能再改变的值。</code></pre><p>常量的作用     </p>
-<pre><code>1.固定的值  代表在计算过程中经常用到的值便于程序计算。
+            <h1 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h1><pre><code>常量是代表在程序运行过程中，不能再改变的值。</code></pre><h2 id="常量的作用"><a href="#常量的作用" class="headerlink" title="常量的作用"></a>常量的作用</h2><pre><code>1.固定的值  代表在计算过程中经常用到的值便于程序计算。
     如：  圆周率  3.1415926
 2.表示一个含义
-    如：  up==&gt;1 down==&gt;2</code></pre><p>什么样的值算是常量</p>
-<pre><code>1. 可以认为所有基本类型的值固定不变是常量
+    如：  up==&gt;1 down==&gt;2</code></pre><h2 id="什么样的值算是常量"><a href="#什么样的值算是常量" class="headerlink" title="什么样的值算是常量"></a>什么样的值算是常量</h2><pre><code>1. 可以认为所有基本类型的值固定不变是常量
     如：    3.14   &apos;a&apos;  true
 2.特殊的常量 
     如：   “a b c”-----&gt;string
         string是一个引用数据类型，它的值很特殊，可以简单视为常量
 3.自己创建的空间存储一个值让他固定不变
-    如：   final int up = 1；</code></pre><p>变量</p>
-<pre><code>变量是指程序执行过程中可以改变的量；
+    如：   final int up = 1；</code></pre><h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><pre><code>变量是指程序执行过程中可以改变的量；
 变量是内存空间（小容器）；
 变量空间在创建（声明）的时候必须指定数据类型变量空间的名字；
 变量空间里面只能存储一个内容（值 引用）
-变量空间的内容可以改变；</code></pre><p>变量如何创建/声明</p>
-<pre><code>数据类型   类型名字；
+变量空间的内容可以改变；</code></pre><h2 id="变量如何创建-声明"><a href="#变量如何创建-声明" class="headerlink" title="变量如何创建/声明"></a>变量如何创建/声明</h2><pre><code>数据类型   类型名字；
 int a；
-string b；</code></pre><p>创建变量需要注意命名的问题</p>
-<pre><code>命名规则： 字母、数字（不允许作为开头）、符号（英文符号_和$）还有中文（不推荐）
+string b；</code></pre><h2 id="创建变量需要注意命名的问题"><a href="#创建变量需要注意命名的问题" class="headerlink" title="创建变量需要注意命名的问题"></a>创建变量需要注意命名的问题</h2><pre><code>命名规则： 字母、数字（不允许作为开头）、符号（英文符号_和$）还有中文（不推荐）
 命名的规约：  
             类名字：  首字母大写 如果两个以上单词  所有首字母都大写
                      如：SuperPerson
@@ -1070,8 +1054,7 @@ string b；</code></pre><p>创建变量需要注意命名的问题</p>
             所有名字需要见名知意，为了增强程序可读性！
 注意：变量是空间可以只创建东西不存放内容
       变量空间创建后是无内容的、空的
-      空的变量空间是不能拿来使用的</code></pre><p>注释</p>
-<pre><code>1.单行注释     //
+      空的变量空间是不能拿来使用的</code></pre><h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><pre><code>1.单行注释     //
 2.多行注释     /*         */
 3.文档注释     //*        */</code></pre>
           
@@ -1214,30 +1197,24 @@ string b；</code></pre><p>创建变量需要注意命名的问题</p>
       
         
           
-            <p>数据类型</p>
-<p> 基本数据类型 （8个）</p>
-<pre><code>整型 byte short int long
+            <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><h1 id="基本数据类型-（8个）"><a href="#基本数据类型-（8个）" class="headerlink" title="基本数据类型 （8个）"></a>基本数据类型 （8个）</h1><pre><code>整型 byte short int long
 浮点型 float double
 字符型 char
-布尔型 blooean</code></pre><p> 引用数据类型</p>
-<pre><code>数组  []array
+布尔型 blooean</code></pre><h1 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h1><pre><code>数组  []array
 类    class（抽象类 abstract class）
 接口  interface  
 枚举  enum
-注解  @interface</code></pre><p>   byte 字节型                                                            </p>
-<pre><code>1 byte = 8 bit   00000000   256种组合
+注解  @interface</code></pre><h1 id="byte-字节型"><a href="#byte-字节型" class="headerlink" title="byte 字节型"></a>byte 字节型</h1><pre><code>1 byte = 8 bit   00000000   256种组合
 用第一个bit的位置记录符号 0表示正数 1表示负数
 数值的范围2的-7次方到二的7次方减1
 -128~127</code></pre><p>   以上其他整数类型依次乘2</p>
 <pre><code>short  2字节  16bit
 int    4字节  32bit
-long   8字节  64bit</code></pre><p>  浮点型</p>
-<pre><code>float  4字节  32bit
+long   8字节  64bit</code></pre><h1 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h1><pre><code>float  4字节  32bit
 double 8字节  64bit</code></pre><p>  字符型</p>
 <pre><code>&apos;a&apos; &apos;+&apos; &apos;我&apos; ‘5’
 英文符号和数字是1字节   采用ASCII  美国信息交换标准代码 由字母 数字 符号组成
-中文是2字节    unicode编码</code></pre><p>   布尔型</p>
-<pre><code>boolean  1bit
+中文是2字节    unicode编码</code></pre><h1 id="布尔型"><a href="#布尔型" class="headerlink" title="布尔型"></a>布尔型</h1><pre><code>boolean  1bit
 true  false</code></pre>
           
         
@@ -1379,34 +1356,26 @@ true  false</code></pre>
       
         
           
-            <pre><code>JavaSE基础</code></pre><p> 1996年  正式发布了可以下载的JDK工具包 jdk1.0</p>
-<p> 1999年  发布了第二代平台 简称 java2 细化三个不同的版本；</p>
-<pre><code>标准版  Standard Edition      J2SE
+            <h1 id="JavaSE基础"><a href="#JavaSE基础" class="headerlink" title="JavaSE基础"></a>JavaSE基础</h1><h2 id="1996年-正式发布了可以下载的JDK工具包-jdk1-0"><a href="#1996年-正式发布了可以下载的JDK工具包-jdk1-0" class="headerlink" title="1996年  正式发布了可以下载的JDK工具包 jdk1.0"></a>1996年  正式发布了可以下载的JDK工具包 jdk1.0</h2><h2 id="1999年-发布了第二代平台-简称-java2-细化三个不同的版本；"><a href="#1999年-发布了第二代平台-简称-java2-细化三个不同的版本；" class="headerlink" title="1999年  发布了第二代平台 简称 java2 细化三个不同的版本；"></a>1999年  发布了第二代平台 简称 java2 细化三个不同的版本；</h2><pre><code>标准版  Standard Edition      J2SE
 企业版  Enterprise Edition    J2EE
-微型版  Mirco Edition         J2ME</code></pre><p> 2005年  Oracle 公司74亿收购了SUN</p>
-<p>java语言的特点</p>
-<pre><code>跨平台性  平台（操作系统）
+微型版  Mirco Edition         J2ME</code></pre><h2 id="2005年-Oracle-公司74亿收购了SUN"><a href="#2005年-Oracle-公司74亿收购了SUN" class="headerlink" title="2005年  Oracle 公司74亿收购了SUN"></a>2005年  Oracle 公司74亿收购了SUN</h2><h1 id="java语言的特点"><a href="#java语言的特点" class="headerlink" title="java语言的特点"></a>java语言的特点</h1><pre><code>跨平台性  平台（操作系统）
 面向对象
 简单性  多继承  
 健壮性（鲁棒性）  垃圾回收  异常机制
 多线程
-大数据相关开发</code></pre><p>JVM                               </p>
-<pre><code>Java virtual machine  虚拟机     源文件.java 编译字节码文件.class</code></pre><p>jRE             </p>
-<pre><code>Java Run Environment 运行环境
-运行别人写的java程序</code></pre><p>JDK</p>
-<pre><code>Java Development kit 开发工具包
-javac.exe 编译工具   
-java.exe  执行工具
-bin文件夹   全都是工具
-inlcude文件夹  包含了其他语言的程序
-jre文件夹    包含了运行环境
-lib文件夹    包含了人家写好的java类
-src.zip压缩文件夹  源代码</code></pre><p>常用命令</p>
-<pre><code>win(窗口键)+R  输入cmd命令  打开一个dos命令行窗口
-使用cd 文件夹名 进入 cd ..退出一层文件夹
-javac test.java  编译一个test文件
-java test  运行一个test文件
-其他 win+R 输出  mspaint 打开画图</code></pre>
+大数据相关开发</code></pre><h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><pre><code>Java virtual machine  虚拟机     源文件.java 编译字节码文件.class</code></pre><h1 id="jRE"><a href="#jRE" class="headerlink" title="jRE"></a>jRE</h1><pre><code>Java Run Environment 运行环境
+运行别人写的java程序</code></pre><h1 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h1><pre><code>Java Development kit          开发工具包
+javac.exe                     编译工具   
+java.exe                      执行工具
+bin文件夹                     全都是工具
+inlcude文件夹                 包含了其他语言的程序
+jre文件夹                     包含了运行环境
+lib文件夹                     包含了人家写好的java类
+src.zip                       压缩文件夹  源代码</code></pre><h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><pre><code>win(窗口键)+R   输入cmd命令       打开一个dos命令行窗口
+使用cd 文件夹名 进入 cd ..        退出一层文件夹
+javac test.java                   编译一个test文件
+java test                         运行一个test文件
+其他 win+R 输出  mspaint          打开画图</code></pre>
           
         
       

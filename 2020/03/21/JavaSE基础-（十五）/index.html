@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="abstract  抽象类          不具体 没有执行过程 只是一个概念 1.可以修饰什么         修饰方法         用abstract修饰符修饰的方法 只有方法的构造  没有方法执行体叫抽象方法         当然注意native修饰的方法虽然没有方法体 但是不是抽象方法 只是执行的过程是其他语言写的 不属于抽象类         用abstract修饰符修饰的类 叫抽">
+<meta name="description" content="abstract  抽象类不具体 没有执行过程 只是一个概念可以修饰什么修饰方法 用abstract修饰符修饰的方法 只有方法的构造  没有方法执行体叫抽象方法 当然注意native修饰的方法虽然没有方法体 但是不是抽象方法 只是执行的过程是其他语言写的 不属于抽象类 用abstract修饰符修饰的类 叫抽象类修饰后有什么特点抽象类中必须要有抽象方法吗？ 不是必须含有抽象方法 抽象方法必须放在抽象">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaSE基础  （十五）">
 <meta property="og:url" content="http://yoursite.com/2020/03/21/JavaSE基础-（十五）/index.html">
 <meta property="og:site_name" content="一轮明月照九洲">
-<meta property="og:description" content="abstract  抽象类          不具体 没有执行过程 只是一个概念 1.可以修饰什么         修饰方法         用abstract修饰符修饰的方法 只有方法的构造  没有方法执行体叫抽象方法         当然注意native修饰的方法虽然没有方法体 但是不是抽象方法 只是执行的过程是其他语言写的 不属于抽象类         用abstract修饰符修饰的类 叫抽">
+<meta property="og:description" content="abstract  抽象类不具体 没有执行过程 只是一个概念可以修饰什么修饰方法 用abstract修饰符修饰的方法 只有方法的构造  没有方法执行体叫抽象方法 当然注意native修饰的方法虽然没有方法体 但是不是抽象方法 只是执行的过程是其他语言写的 不属于抽象类 用abstract修饰符修饰的类 叫抽象类修饰后有什么特点抽象类中必须要有抽象方法吗？ 不是必须含有抽象方法 抽象方法必须放在抽象">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-21T16:01:12.177Z">
+<meta property="og:updated_time" content="2020-03-31T00:41:35.840Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaSE基础  （十五）">
-<meta name="twitter:description" content="abstract  抽象类          不具体 没有执行过程 只是一个概念 1.可以修饰什么         修饰方法         用abstract修饰符修饰的方法 只有方法的构造  没有方法执行体叫抽象方法         当然注意native修饰的方法虽然没有方法体 但是不是抽象方法 只是执行的过程是其他语言写的 不属于抽象类         用abstract修饰符修饰的类 叫抽">
+<meta name="twitter:description" content="abstract  抽象类不具体 没有执行过程 只是一个概念可以修饰什么修饰方法 用abstract修饰符修饰的方法 只有方法的构造  没有方法执行体叫抽象方法 当然注意native修饰的方法虽然没有方法体 但是不是抽象方法 只是执行的过程是其他语言写的 不属于抽象类 用abstract修饰符修饰的类 叫抽象类修饰后有什么特点抽象类中必须要有抽象方法吗？ 不是必须含有抽象方法 抽象方法必须放在抽象">
 
 
 
@@ -344,52 +344,37 @@
       
 
       
-        <p>abstract  抽象类</p>
-<pre><code>         不具体 没有执行过程 只是一个概念
-1.可以修饰什么
-        修饰方法
-        用abstract修饰符修饰的方法 只有方法的构造  没有方法执行体叫抽象方法
-        当然注意native修饰的方法虽然没有方法体 但是不是抽象方法 只是执行的过程是其他语言写的 不属于抽象类
-        用abstract修饰符修饰的类 叫抽象类
-2.修饰后有什么特点        
-        抽象类中必须要有抽象方法吗？ 不是必须含有抽象方法
-        抽象方法必须放在抽象类中？ 目前来看必须要放在抽象类中（或接口中）普通类是不许有抽象方法
-3.研究一下什么叫抽象类  抽象类有什么特点？
-        1.类里面有什么 成员
-                  属性    可以含有一般的属性  也可以含有 private static final 等
-                  方法    可以含有一般方法    也可以含有 private static final 等 
-                          注意：抽象类中允许含有抽象方法（只有方法结构 没有方法执行体）
-                  块      可以含有一般程序块  也可以含有static程序块
-                  构造方法  可以含有一般方法，包括重载
-        2.类如何使用  创建对象
-                  抽象类含有构造方法 但我们不能通过调用构造方法创建对象
-                  抽象类只能通过子类单继承来做事
-        3.类和类的关系
-                  抽象类-----直接单继承---抽象类   可以
-                  抽象类-----直接单继承---具体类   可以
-                  具体类-----直接单继承---抽象类   不可以（）
+        <h1 id="abstract-抽象类"><a href="#abstract-抽象类" class="headerlink" title="abstract  抽象类"></a>abstract  抽象类</h1><h2 id="不具体-没有执行过程-只是一个概念"><a href="#不具体-没有执行过程-只是一个概念" class="headerlink" title="不具体 没有执行过程 只是一个概念"></a>不具体 没有执行过程 只是一个概念</h2><h2 id="可以修饰什么"><a href="#可以修饰什么" class="headerlink" title="可以修饰什么"></a>可以修饰什么</h2><pre><code>修饰方法
+用abstract修饰符修饰的方法 只有方法的构造  没有方法执行体叫抽象方法
+当然注意native修饰的方法虽然没有方法体 但是不是抽象方法 只是执行的过程是其他语言写的 不属于抽象类
+用abstract修饰符修饰的类 叫抽象类</code></pre><h2 id="修饰后有什么特点"><a href="#修饰后有什么特点" class="headerlink" title="修饰后有什么特点"></a>修饰后有什么特点</h2><pre><code>抽象类中必须要有抽象方法吗？ 不是必须含有抽象方法
+抽象方法必须放在抽象类中？ 目前来看必须要放在抽象类中（或接口中）普通类是不许有抽象方法</code></pre><h2 id="研究一下什么叫抽象类-抽象类有什么特点？"><a href="#研究一下什么叫抽象类-抽象类有什么特点？" class="headerlink" title="研究一下什么叫抽象类  抽象类有什么特点？"></a>研究一下什么叫抽象类  抽象类有什么特点？</h2><pre><code>1.类里面有什么 成员
+          属性    可以含有一般的属性  也可以含有 private static final 等
+          方法    可以含有一般方法    也可以含有 private static final 等 
+                  注意：抽象类中允许含有抽象方法（只有方法结构 没有方法执行体）
+          块      可以含有一般程序块  也可以含有static程序块
+          构造方法  可以含有一般方法，包括重载
+2.类如何使用  创建对象
+          抽象类含有构造方法 但我们不能通过调用构造方法创建对象
+          抽象类只能通过子类单继承来做事
+3.类和类的关系
+          抽象类-----直接单继承---抽象类   可以
+          抽象类-----直接单继承---具体类   可以
+          具体类-----直接单继承---抽象类   不可以（）
 4.小问题
-        抽象类中能不能没有抽象方法 全都是具体成员  可以
-        抽象类能不能没有具体成员 全都是抽象方法 可以 ----&gt;抽象到极致---&gt;接口
-        接口可以理解为是抽象类抽象到极致-------&gt;还是一个类的结构 不能用class修饰 改用interface修饰</code></pre><p>interface 接口</p>
-<pre><code>什么是接口？
-接口也是一个类的结构 只不过用interface修饰 替换原有的class
-1.有什么      成员
-              属性            不能含有一般属性 只能含有公有的静态常量 public static final
-              方法            不能含有一般的方法 只能含有公有的抽象方法（1.8以后default修饰具体方法）
-              块             不能含有一般程序块 也不能含有static块（块本身就是具体的 接口中不让有具体的）
-              构造方法         不能含有构造方法
-2.如何使用   创建对象
-         不能创建对象
-         只能通过子类多实现（implements）来做事
-         public class A implements B,C,D{
+抽象类中能不能没有抽象方法 全都是具体成员  可以
+抽象类能不能没有具体成员 全都是抽象方法 可以 ----&gt;抽象到极致---&gt;接口
+接口可以理解为是抽象类抽象到极致-------&gt;还是一个类的结构 不能用class修饰 改用interface修饰</code></pre><h1 id="interface-接口"><a href="#interface-接口" class="headerlink" title="interface 接口"></a>interface 接口</h1><h2 id="什么是接口？"><a href="#什么是接口？" class="headerlink" title="什么是接口？"></a>什么是接口？</h2><pre><code>接口也是一个类的结构 只不过用interface修饰 替换原有的class</code></pre><h2 id="有什么-成员"><a href="#有什么-成员" class="headerlink" title="有什么      成员"></a>有什么      成员</h2><pre><code>属性            不能含有一般属性 只能含有公有的静态常量 public static final
+方法            不能含有一般的方法 只能含有公有的抽象方法（1.8以后default修饰具体方法）
+块              不能含有一般程序块 也不能含有static块（块本身就是具体的 接口中不让有具体的）
+构造方法        不能含有构造方法</code></pre><h2 id="如何使用-创建对象"><a href="#如何使用-创建对象" class="headerlink" title="如何使用   创建对象"></a>如何使用   创建对象</h2><pre><code>不能创建对象
+只能通过子类多实现（implements）来做事
+public class A implements B,C,D{
 
-         }
-3.与别的类结构关系
-         接口不能继承别的类   最抽象
-         抽象类--------直接多实现-------接口  可以
-         具体类--------直接多实现-------接口  不可以（不能直接将抽象方法具体化）
-         接口----------多继承-----------接口  可以直接多实现</code></pre>
+}</code></pre><h2 id="与别的类结构关系"><a href="#与别的类结构关系" class="headerlink" title="与别的类结构关系"></a>与别的类结构关系</h2><pre><code>接口不能继承别的类   最抽象
+抽象类--------直接多实现-------接口  可以
+具体类--------直接多实现-------接口  不可以（不能直接将抽象方法具体化）
+接口----------多继承-----------接口  可以直接多实现</code></pre>
       
     </div>
     
@@ -477,8 +462,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -563,6 +557,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#abstract-抽象类"><span class="nav-number">1.</span> <span class="nav-text">abstract  抽象类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不具体-没有执行过程-只是一个概念"><span class="nav-number">1.1.</span> <span class="nav-text">不具体 没有执行过程 只是一个概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可以修饰什么"><span class="nav-number">1.2.</span> <span class="nav-text">可以修饰什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修饰后有什么特点"><span class="nav-number">1.3.</span> <span class="nav-text">修饰后有什么特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#研究一下什么叫抽象类-抽象类有什么特点？"><span class="nav-number">1.4.</span> <span class="nav-text">研究一下什么叫抽象类  抽象类有什么特点？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#interface-接口"><span class="nav-number">2.</span> <span class="nav-text">interface 接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是接口？"><span class="nav-number">2.1.</span> <span class="nav-text">什么是接口？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有什么-成员"><span class="nav-number">2.2.</span> <span class="nav-text">有什么      成员</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用-创建对象"><span class="nav-number">2.3.</span> <span class="nav-text">如何使用   创建对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与别的类结构关系"><span class="nav-number">2.4.</span> <span class="nav-text">与别的类结构关系</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

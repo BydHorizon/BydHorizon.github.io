@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="多维数组 0.数组的特点 数组本身是一个引用类型 声明时必须指定长度  长度一旦确定就不能再次发生改变 1.定义/声明 里面存储的类型[] 数组名字; int[][]  arry; 2.初始化 静态---有长度 有元素   int[][] arry = {{1,2},{1}.{1.2.3}}; 动态---只有长度 没有元素（默认值）   int[][] arry = new int[3][2];">
+<meta name="description" content="多维数组数组的特点数组本身是一个引用类型 声明时必须指定长度  长度一旦确定就不能再次发生改变定义/声明里面存储的类型[] 数组名字; int[][]  arry;初始化静态---有长度 有元素   int[][] arry = {{1,2},{1}.{1.2.3}}; 动态---只有长度 没有元素（默认值）   int[][] arry = new int[3][2];   arry -----">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaSE基础  （七）">
 <meta property="og:url" content="http://yoursite.com/2020/03/13/avaSE基础-（七）/index.html">
 <meta property="og:site_name" content="一轮明月照九洲">
-<meta property="og:description" content="多维数组 0.数组的特点 数组本身是一个引用类型 声明时必须指定长度  长度一旦确定就不能再次发生改变 1.定义/声明 里面存储的类型[] 数组名字; int[][]  arry; 2.初始化 静态---有长度 有元素   int[][] arry = {{1,2},{1}.{1.2.3}}; 动态---只有长度 没有元素（默认值）   int[][] arry = new int[3][2];">
+<meta property="og:description" content="多维数组数组的特点数组本身是一个引用类型 声明时必须指定长度  长度一旦确定就不能再次发生改变定义/声明里面存储的类型[] 数组名字; int[][]  arry;初始化静态---有长度 有元素   int[][] arry = {{1,2},{1}.{1.2.3}}; 动态---只有长度 没有元素（默认值）   int[][] arry = new int[3][2];   arry -----">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-13T14:36:43.119Z">
+<meta property="og:updated_time" content="2020-03-31T00:27:15.329Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaSE基础  （七）">
-<meta name="twitter:description" content="多维数组 0.数组的特点 数组本身是一个引用类型 声明时必须指定长度  长度一旦确定就不能再次发生改变 1.定义/声明 里面存储的类型[] 数组名字; int[][]  arry; 2.初始化 静态---有长度 有元素   int[][] arry = {{1,2},{1}.{1.2.3}}; 动态---只有长度 没有元素（默认值）   int[][] arry = new int[3][2];">
+<meta name="twitter:description" content="多维数组数组的特点数组本身是一个引用类型 声明时必须指定长度  长度一旦确定就不能再次发生改变定义/声明里面存储的类型[] 数组名字; int[][]  arry;初始化静态---有长度 有元素   int[][] arry = {{1,2},{1}.{1.2.3}}; 动态---只有长度 没有元素（默认值）   int[][] arry = new int[3][2];   arry -----">
 
 
 
@@ -344,28 +344,20 @@
       
 
       
-        <p>多维数组</p>
-<p>0.数组的特点</p>
-<pre><code>数组本身是一个引用类型
-声明时必须指定长度  长度一旦确定就不能再次发生改变</code></pre><p> 1.定义/声明</p>
-<pre><code>里面存储的类型[] 数组名字;
-int[][]  arry;</code></pre><p> 2.初始化</p>
-<pre><code>静态---有长度 有元素
+        <h1 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h1><h1 id="数组的特点"><a href="#数组的特点" class="headerlink" title="数组的特点"></a>数组的特点</h1><pre><code>数组本身是一个引用类型
+声明时必须指定长度  长度一旦确定就不能再次发生改变</code></pre><h1 id="定义-声明"><a href="#定义-声明" class="headerlink" title="定义/声明"></a>定义/声明</h1><pre><code>里面存储的类型[] 数组名字;
+int[][]  arry;</code></pre><h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><pre><code>静态---有长度 有元素
   int[][] arry = {{1,2},{1}.{1.2.3}};
 动态---只有长度 没有元素（默认值）
   int[][] arry = new int[3][2];
-  arry -----&gt;{{x,x},{x,x},{x,x}}  x默认值是0</code></pre><p> 3.元素访问          </p>
-<pre><code>通过元素在数组中的位置----index
+  arry -----&gt;{{x,x},{x,x},{x,x}}  x默认值是0</code></pre><h1 id="元素访问"><a href="#元素访问" class="headerlink" title="元素访问"></a>元素访问</h1><pre><code>通过元素在数组中的位置----index
 array[i][j]
 i控制大数组中 小数组的位置
-j控制小数组中 元素的位置</code></pre><p> 4.遍历轮循          </p>
-<pre><code>正常for 增强for  嵌套完成</code></pre><p> 5.引用类型在内存中的结构</p>
-<pre><code>二维数组在内存中的存储，逻辑结构不是矩阵而是树
+j控制小数组中 元素的位置</code></pre><h1 id="遍历轮循"><a href="#遍历轮循" class="headerlink" title="遍历轮循"></a>遍历轮循</h1><pre><code>正常for 增强for  嵌套完成</code></pre><h1 id="引用类型在内存中的结构"><a href="#引用类型在内存中的结构" class="headerlink" title="引用类型在内存中的结构"></a>引用类型在内存中的结构</h1><pre><code>二维数组在内存中的存储，逻辑结构不是矩阵而是树
 int[][] arry = new int[3][2];
 //3表示有3个小数组int[]
 //2表示每一个小数组有两个元素
-//NullPointerException    空指针异常</code></pre><p>6.常见的运行时异常</p>
-<pre><code>1.InputMisMatchException   输入类型不匹配 
+//NullPointerException    空指针异常</code></pre><h1 id="常见的运行时异常"><a href="#常见的运行时异常" class="headerlink" title="常见的运行时异常"></a>常见的运行时异常</h1><pre><code>1.InputMisMatchException   输入类型不匹配 
      input.nextInt();      如：输入一个a
 2.ArrayIndexOutOfBoundsException  数组索引越界
   静态初始化 int array[]={10,20};
@@ -463,8 +455,17 @@ int[][] arry = new int[3][2];
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -549,6 +550,22 @@ int[][] arry = new int[3][2];
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#多维数组"><span class="nav-number">1.</span> <span class="nav-text">多维数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组的特点"><span class="nav-number">2.</span> <span class="nav-text">数组的特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义-声明"><span class="nav-number">3.</span> <span class="nav-text">定义/声明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#初始化"><span class="nav-number">4.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#元素访问"><span class="nav-number">5.</span> <span class="nav-text">元素访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遍历轮循"><span class="nav-number">6.</span> <span class="nav-text">遍历轮循</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引用类型在内存中的结构"><span class="nav-number">7.</span> <span class="nav-text">引用类型在内存中的结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见的运行时异常"><span class="nav-number">8.</span> <span class="nav-text">常见的运行时异常</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

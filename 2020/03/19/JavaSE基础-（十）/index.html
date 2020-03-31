@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="类和类之间的关系 A is a B 泛化 （继承 实现） A has a B 包含 （组合 聚合 关联） A use a B 依赖 （依赖）need a  继承 1.子类继承父类，通过一个关键字 extends 2.子类的对象可以调用父类中的（public protected）属性和方法 3.子类可以添加自己的属性和方法 4.子类从父类继承过来的方法不能满足子类的需要，可以在子类中重写父类的方法">
+<meta name="description" content="类和类之间的关系A is a B 泛化 （继承 实现）A has a B 包含 （组合 聚合 关联）A use a B 依赖 （依赖）need a继承1.子类继承父类，通过一个关键字 extends 2.子类的对象可以调用父类中的（public protected）属性和方法 3.子类可以添加自己的属性和方法 4.子类从父类继承过来的方法不能满足子类的需要，可以在子类中重写父类的方法 指内容重写">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaSE基础 （十）">
 <meta property="og:url" content="http://yoursite.com/2020/03/19/JavaSE基础-（十）/index.html">
 <meta property="og:site_name" content="一轮明月照九洲">
-<meta property="og:description" content="类和类之间的关系 A is a B 泛化 （继承 实现） A has a B 包含 （组合 聚合 关联） A use a B 依赖 （依赖）need a  继承 1.子类继承父类，通过一个关键字 extends 2.子类的对象可以调用父类中的（public protected）属性和方法 3.子类可以添加自己的属性和方法 4.子类从父类继承过来的方法不能满足子类的需要，可以在子类中重写父类的方法">
+<meta property="og:description" content="类和类之间的关系A is a B 泛化 （继承 实现）A has a B 包含 （组合 聚合 关联）A use a B 依赖 （依赖）need a继承1.子类继承父类，通过一个关键字 extends 2.子类的对象可以调用父类中的（public protected）属性和方法 3.子类可以添加自己的属性和方法 4.子类从父类继承过来的方法不能满足子类的需要，可以在子类中重写父类的方法 指内容重写">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2020/03/19/JavaSE基础-（十）/%E7%B1%BB%E7%9A%84%E5%85%B3%E7%B3%BB.png">
-<meta property="og:updated_time" content="2020-03-19T15:58:48.949Z">
+<meta property="og:updated_time" content="2020-03-31T00:33:44.950Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaSE基础 （十）">
-<meta name="twitter:description" content="类和类之间的关系 A is a B 泛化 （继承 实现） A has a B 包含 （组合 聚合 关联） A use a B 依赖 （依赖）need a  继承 1.子类继承父类，通过一个关键字 extends 2.子类的对象可以调用父类中的（public protected）属性和方法 3.子类可以添加自己的属性和方法 4.子类从父类继承过来的方法不能满足子类的需要，可以在子类中重写父类的方法">
+<meta name="twitter:description" content="类和类之间的关系A is a B 泛化 （继承 实现）A has a B 包含 （组合 聚合 关联）A use a B 依赖 （依赖）need a继承1.子类继承父类，通过一个关键字 extends 2.子类的对象可以调用父类中的（public protected）属性和方法 3.子类可以添加自己的属性和方法 4.子类从父类继承过来的方法不能满足子类的需要，可以在子类中重写父类的方法 指内容重写">
 <meta name="twitter:image" content="http://yoursite.com/2020/03/19/JavaSE基础-（十）/%E7%B1%BB%E7%9A%84%E5%85%B3%E7%B3%BB.png">
 
 
@@ -346,20 +346,14 @@
       
 
       
-        <p>类和类之间的关系</p>
-<p>A is a B 泛化 （继承 实现）</p>
-<p>A has a B 包含 （组合 聚合 关联）</p>
-<p>A use a B 依赖 （依赖）need a </p>
-<p>继承</p>
-<pre><code>1.子类继承父类，通过一个关键字 extends
+        <h1 id="类和类之间的关系"><a href="#类和类之间的关系" class="headerlink" title="类和类之间的关系"></a>类和类之间的关系</h1><h2 id="A-is-a-B-泛化-（继承-实现）"><a href="#A-is-a-B-泛化-（继承-实现）" class="headerlink" title="A is a B 泛化 （继承 实现）"></a>A is a B 泛化 （继承 实现）</h2><h2 id="A-has-a-B-包含-（组合-聚合-关联）"><a href="#A-has-a-B-包含-（组合-聚合-关联）" class="headerlink" title="A has a B 包含 （组合 聚合 关联）"></a>A has a B 包含 （组合 聚合 关联）</h2><h2 id="A-use-a-B-依赖-（依赖）need-a"><a href="#A-use-a-B-依赖-（依赖）need-a" class="headerlink" title="A use a B 依赖 （依赖）need a"></a>A use a B 依赖 （依赖）need a</h2><h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><pre><code>1.子类继承父类，通过一个关键字 extends
 2.子类的对象可以调用父类中的（public protected）属性和方法
 3.子类可以添加自己的属性和方法
 4.子类从父类继承过来的方法不能满足子类的需要，可以在子类中重写父类的方法 指内容重写
 5.每一个类都有一个继承类，如果extrends关键字不写，默认继承Object类
 6.java中继承是单个存在的（单继承）每一个类都只能有一个继承类（在extrends后面写一个类）目的是让类变得更安全，可以通过传递方式实现多继承的效果，后续还有多实现
 7.继承在内存中的存储形式
-8.关于this和super的使用</code></pre><p>   方法重写与重载</p>
-<pre><code>   方法重写override                                 方法重载overload
+8.关于this和super的使用</code></pre><h1 id="方法重写与重载"><a href="#方法重写与重载" class="headerlink" title="方法重写与重载"></a>方法重写与重载</h1><pre><code>   方法重写override                                 方法重载overload
 1.   产生两个继承关系的类                          一个类中的一组方法
      子类可以写父类的方法
 2.特征符  
@@ -381,8 +375,7 @@
     子类可不予理会
     如果父类方法抛出编译时异常：
     子类抛出异常的个数和类型都少于等于父类
-8.方法体   子类方法内容和父类不一致              每个重载方法执行过程不一致</code></pre><p> Object类       </p>
-<pre><code>        Object类是所有类的父类 Object类没有父类
+8.方法体   子类方法内容和父类不一致              每个重载方法执行过程不一致</code></pre><h1 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h1><pre><code>        Object类是所有类的父类 Object类没有父类
         Object方法 
         1.toString方法 打印输出一个对象变成字符串
         public String toString() {
@@ -402,8 +395,7 @@
         6.notify（）     唤醒线程
         7.notifyAll（）   唤醒所有
         8.finalize      权限修饰符 protected在对象被GC回收时默认执行方法 相当于C++析构函数
-        9.clone（）     权限修饰符 protected为了克隆对象</code></pre><p> this和super的使用  </p>
-<pre><code>1.this和super都是指代词 代替的是对象
+        9.clone（）     权限修饰符 protected为了克隆对象</code></pre><h1 id="this和super的使用"><a href="#this和super的使用" class="headerlink" title="this和super的使用"></a>this和super的使用</h1><pre><code>1.this和super都是指代词 代替的是对象
 2.this代替的是当前执行方法时的那个对象 不一定是当前类的
   super代替的是当前执行方法时父类的那个对象 空间内部那个
 3.都能调用一般属性和方法
@@ -500,8 +492,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -586,6 +587,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#类和类之间的关系"><span class="nav-number">1.</span> <span class="nav-text">类和类之间的关系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-is-a-B-泛化-（继承-实现）"><span class="nav-number">1.1.</span> <span class="nav-text">A is a B 泛化 （继承 实现）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-has-a-B-包含-（组合-聚合-关联）"><span class="nav-number">1.2.</span> <span class="nav-text">A has a B 包含 （组合 聚合 关联）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-use-a-B-依赖-（依赖）need-a"><span class="nav-number">1.3.</span> <span class="nav-text">A use a B 依赖 （依赖）need a</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#继承"><span class="nav-number">2.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法重写与重载"><span class="nav-number">3.</span> <span class="nav-text">方法重写与重载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Object类"><span class="nav-number">4.</span> <span class="nav-text">Object类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#this和super的使用"><span class="nav-number">5.</span> <span class="nav-text">this和super的使用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

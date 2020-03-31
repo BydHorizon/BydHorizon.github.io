@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="类的加载关系 存在继承关系的类 加载机制 及执行过程 加载类的过程-----静态元素已经加载 new Person(); 1.加载父类 2.父类会产生自己的静态空间 属性 方法 块             执行静态块 3.加载子类 4.子类会产生自己的静态空间 属性 方法 块             执行静态块 5.开辟对象空间   6.加载父类的非静态成员  属性 方法 块 构造方法  7.执行">
+<meta name="description" content="类的加载关系存在继承关系的类 加载机制 及执行过程 加载类的过程-----静态元素已经加载 new Person(); 1.加载父类 2.父类会产生自己的静态空间 属性 方法 块             执行静态块 3.加载子类 4.子类会产生自己的静态空间 属性 方法 块             执行静态块 5.开辟对象空间   6.加载父类的非静态成员  属性 方法 块 构造方法  7.执行块">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaSE基础 （十四）">
 <meta property="og:url" content="http://yoursite.com/2020/03/21/JavaSE基础-（十四）/index.html">
 <meta property="og:site_name" content="一轮明月照九洲">
-<meta property="og:description" content="类的加载关系 存在继承关系的类 加载机制 及执行过程 加载类的过程-----静态元素已经加载 new Person(); 1.加载父类 2.父类会产生自己的静态空间 属性 方法 块             执行静态块 3.加载子类 4.子类会产生自己的静态空间 属性 方法 块             执行静态块 5.开辟对象空间   6.加载父类的非静态成员  属性 方法 块 构造方法  7.执行">
+<meta property="og:description" content="类的加载关系存在继承关系的类 加载机制 及执行过程 加载类的过程-----静态元素已经加载 new Person(); 1.加载父类 2.父类会产生自己的静态空间 属性 方法 块             执行静态块 3.加载子类 4.子类会产生自己的静态空间 属性 方法 块             执行静态块 5.开辟对象空间   6.加载父类的非静态成员  属性 方法 块 构造方法  7.执行块">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-21T16:01:03.420Z">
+<meta property="og:updated_time" content="2020-03-31T00:38:00.660Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaSE基础 （十四）">
-<meta name="twitter:description" content="类的加载关系 存在继承关系的类 加载机制 及执行过程 加载类的过程-----静态元素已经加载 new Person(); 1.加载父类 2.父类会产生自己的静态空间 属性 方法 块             执行静态块 3.加载子类 4.子类会产生自己的静态空间 属性 方法 块             执行静态块 5.开辟对象空间   6.加载父类的非静态成员  属性 方法 块 构造方法  7.执行">
+<meta name="twitter:description" content="类的加载关系存在继承关系的类 加载机制 及执行过程 加载类的过程-----静态元素已经加载 new Person(); 1.加载父类 2.父类会产生自己的静态空间 属性 方法 块             执行静态块 3.加载子类 4.子类会产生自己的静态空间 属性 方法 块             执行静态块 5.开辟对象空间   6.加载父类的非静态成员  属性 方法 块 构造方法  7.执行块">
 
 
 
@@ -344,8 +344,7 @@
       
 
       
-        <p>类的加载关系</p>
-<pre><code>存在继承关系的类 加载机制 及执行过程
+        <h1 id="类的加载关系"><a href="#类的加载关系" class="headerlink" title="类的加载关系"></a>类的加载关系</h1><pre><code>存在继承关系的类 加载机制 及执行过程
 加载类的过程-----静态元素已经加载
 new Person();
 1.加载父类
@@ -359,8 +358,7 @@ new Person();
 7.执行块 执行父类的构造方法
 8.加载子类的非静态成员 属性 方法 块 构造方法
 9.执行块 执行子类的构造方法
-10.将对象空间的地址引用交给变量存储</code></pre><p>native 本地的</p>
-<pre><code>Java源代码看到native就已经再也看不到后续代码
+10.将对象空间的地址引用交给变量存储</code></pre><h1 id="native-本地的"><a href="#native-本地的" class="headerlink" title="native 本地的"></a>native 本地的</h1><pre><code>Java源代码看到native就已经再也看不到后续代码
 后续会调用其他编程语言C++或C执行内存操作 帮我们操作
 Object类中的一个方法 hashCode</code></pre>
       
@@ -450,8 +448,17 @@ Object类中的一个方法 hashCode</code></pre>
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -536,6 +543,22 @@ Object类中的一个方法 hashCode</code></pre>
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#类的加载关系"><span class="nav-number">1.</span> <span class="nav-text">类的加载关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#native-本地的"><span class="nav-number">2.</span> <span class="nav-text">native 本地的</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

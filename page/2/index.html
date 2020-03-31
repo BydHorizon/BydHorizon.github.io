@@ -510,7 +510,7 @@ Matcher matcher = pattern.matcher(str);
       
         
           
-            <h1 id="StringBuffer-StringBuilder"><a href="#StringBuffer-StringBuilder" class="headerlink" title="StringBuffer/StringBuilder"></a>StringBuffer/StringBuilder</h1><h2 id="所属的包"><a href="#所属的包" class="headerlink" title="所属的包"></a>所属的包</h2><pre><code>java.lang包</code></pre><h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><pre><code>Serializable,CharSequence,Comparable
+            <h1 id="StringBuffer-StringBuilder"><a href="#StringBuffer-StringBuilder" class="headerlink" title="StringBuffer/StringBuilder"></a>StringBuffer/StringBuilder</h1><h2 id="所属的包"><a href="#所属的包" class="headerlink" title="所属的包"></a>所属的包</h2><pre><code>java.lang包</code></pre><h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><pre><code>Serializable,CharSequence,Comparable
 非常特殊的类 可以像常量一样创建对象
 String str = &quot;abc&quot;;
 内存存储 &quot;abc&quot;对象 char[] value
@@ -550,14 +550,14 @@ setCharAt(int index,char value);
 toString()
         将StringBuilder对象 构建成一个string对象 返回
 trimToSize()
-        将数组无用的容量去掉 变成length长度的数组</code></pre><h2 id="知识总结"><a href="#知识总结" class="headerlink" title="知识总结"></a>知识总结</h2><h3 id="StringBuilder类不一定需要"><a href="#StringBuilder类不一定需要" class="headerlink" title="StringBuilder类不一定需要"></a>StringBuilder类不一定需要</h3><pre><code>是为了避免String频繁拼接修改字符串信息时才使用的 底层是数组是可变的 提高了性能</code></pre><h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><pre><code>与String类不同独有的方法
+        将数组无用的容量去掉 变成length长度的数组</code></pre><h1 id="知识总结"><a href="#知识总结" class="headerlink" title="知识总结"></a>知识总结</h1><h2 id="StringBuilder类不一定需要"><a href="#StringBuilder类不一定需要" class="headerlink" title="StringBuilder类不一定需要"></a>StringBuilder类不一定需要</h2><pre><code>是为了避免String频繁拼接修改字符串信息时才使用的 底层是数组是可变的 提高了性能</code></pre><h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><pre><code>与String类不同独有的方法
 append() lnsert() delete() deleteCharAt() reverse()
 与String类相同的方法
 charAt() codePointAt() indexOf() lastindexOf() replace() 名字相同 用法不一致
 不是很常用的方法
-ensureCapacity() capacity() SetLength() trimToSize() setCharAt();</code></pre><h3 id="String家族笔试中经常考察的知识点"><a href="#String家族笔试中经常考察的知识点" class="headerlink" title="String家族笔试中经常考察的知识点"></a>String家族笔试中经常考察的知识点</h3><h4 id="String所属的包-继承关系-实现接口"><a href="#String所属的包-继承关系-实现接口" class="headerlink" title="String所属的包 继承关系 实现接口"></a>String所属的包 继承关系 实现接口</h4><pre><code>java.lang包 继承Object 实现接口Serializable,CharSequence,Comparable</code></pre><h4 id="String构建方式"><a href="#String构建方式" class="headerlink" title="String构建方式"></a>String构建方式</h4><pre><code>常量 构造方法</code></pre><h4 id="String对象内存结构"><a href="#String对象内存结构" class="headerlink" title="String对象内存结构"></a>String对象内存结构</h4><pre><code>字符串常量区 new堆内存对象
+ensureCapacity() capacity() SetLength() trimToSize() setCharAt();</code></pre><h1 id="String家族笔试中经常考察的知识点"><a href="#String家族笔试中经常考察的知识点" class="headerlink" title="String家族笔试中经常考察的知识点"></a>String家族笔试中经常考察的知识点</h1><h2 id="String所属的包-继承关系-实现接口"><a href="#String所属的包-继承关系-实现接口" class="headerlink" title="String所属的包 继承关系 实现接口"></a>String所属的包 继承关系 实现接口</h2><pre><code>java.lang包 继承Object 实现接口Serializable,CharSequence,Comparable</code></pre><h2 id="String构建方式"><a href="#String构建方式" class="headerlink" title="String构建方式"></a>String构建方式</h2><pre><code>常量 构造方法</code></pre><h2 id="String对象内存结构"><a href="#String对象内存结构" class="headerlink" title="String对象内存结构"></a>String对象内存结构</h2><pre><code>字符串常量区 new堆内存对象
 = = equals()区别
-&quot;a&quot; +&quot;b&quot;+&quot;c&quot;</code></pre><h4 id="String不可不变特性"><a href="#String不可不变特性" class="headerlink" title="String不可不变特性"></a>String不可不变特性</h4><pre><code>长度及内容</code></pre><h4 id="String类常用的方法—-与StringBuilder的区别"><a href="#String类常用的方法—-与StringBuilder的区别" class="headerlink" title="String类常用的方法—-与StringBuilder的区别"></a>String类常用的方法—-与StringBuilder的区别</h4><pre><code>concat(); toUpperCase();</code></pre><h4 id="String和StringBuilder区别-String和StringBuffer区别"><a href="#String和StringBuilder区别-String和StringBuffer区别" class="headerlink" title="String和StringBuilder区别|String和StringBuffer区别"></a>String和StringBuilder区别|String和StringBuffer区别</h4><pre><code>String不可变字符串
+&quot;a&quot; +&quot;b&quot;+&quot;c&quot;</code></pre><h2 id="String不可不变特性"><a href="#String不可不变特性" class="headerlink" title="String不可不变特性"></a>String不可不变特性</h2><pre><code>长度及内容</code></pre><h2 id="String类常用的方法—-与StringBuilder的区别"><a href="#String类常用的方法—-与StringBuilder的区别" class="headerlink" title="String类常用的方法—-与StringBuilder的区别"></a>String类常用的方法—-与StringBuilder的区别</h2><pre><code>concat(); toUpperCase();</code></pre><h2 id="String和StringBuilder区别-String和StringBuffer区别"><a href="#String和StringBuilder区别-String和StringBuffer区别" class="headerlink" title="String和StringBuilder区别|String和StringBuffer区别"></a>String和StringBuilder区别|String和StringBuffer区别</h2><pre><code>String不可变字符串
         有一个接口Comparable
         不可变体现在长度及内容
         有一些方法StringBuilder没有 没有concat compareTo toUpperCase
@@ -565,7 +565,7 @@ StringBuilder可变字符串
         JDK1.5
         有一个接口Appendable
         可变字符串 没有final修饰 底层可以进行数组扩容
-        有一些方法string没有 append() insert() delete() reverse()</code></pre><h4 id="StringBuffer和StringBuild的不同"><a href="#StringBuffer和StringBuild的不同" class="headerlink" title="StringBuffer和StringBuild的不同"></a>StringBuffer和StringBuild的不同</h4><pre><code>stringBuffer早期版本1.0
+        有一些方法string没有 append() insert() delete() reverse()</code></pre><h2 id="StringBuffer和StringBuild的不同"><a href="#StringBuffer和StringBuild的不同" class="headerlink" title="StringBuffer和StringBuild的不同"></a>StringBuffer和StringBuild的不同</h2><pre><code>stringBuffer早期版本1.0
 StringBuilder后来的版本1.5
 方法使用几乎一致
 早期版本 线程同步  安全性比较高 执行效率相对较低
@@ -710,7 +710,7 @@ StringBuilder后来的版本1.5
       
         
           
-            <h1 id="字符串相关"><a href="#字符串相关" class="headerlink" title="字符串相关"></a>字符串相关</h1><h2 id="String类—-gt-引用类型-java-lang包"><a href="#String类—-gt-引用类型-java-lang包" class="headerlink" title="String类—-&gt;引用类型 java.lang包"></a>String类—-&gt;引用类型 java.lang包</h2><h3 id="0-常见的String笔试题"><a href="#0-常见的String笔试题" class="headerlink" title="0.常见的String笔试题"></a>0.常见的String笔试题</h3><pre><code>==  equals方法和区别
+            <h1 id="字符串相关"><a href="#字符串相关" class="headerlink" title="字符串相关"></a>字符串相关</h1><h1 id="String类—-gt-引用类型-java-lang包"><a href="#String类—-gt-引用类型-java-lang包" class="headerlink" title="String类—-&gt;引用类型 java.lang包"></a>String类—-&gt;引用类型 java.lang包</h1><h1 id="常见的String笔试题"><a href="#常见的String笔试题" class="headerlink" title="常见的String笔试题"></a>常见的String笔试题</h1><pre><code>==  equals方法和区别
              ==可以比较基本类型 也可以比较引用类型
              比较基本类型只比较值 比较引用类型比较地址
              equals只能比较引用类型（方法）
@@ -725,40 +725,40 @@ String对象的存储
              &quot;abc&quot;-----&gt;字符串常量池
              new String（&quot;abc&quot;）---&gt;堆内存
 
-*string中的常用方法</code></pre><h3 id="1-存在哪-java-lang包"><a href="#1-存在哪-java-lang包" class="headerlink" title="1.存在哪  java.lang包"></a>1.存在哪  java.lang包</h3><pre><code>没有任何继承关系  实现三个接口Serializable,CharSequence,Comparable</code></pre><h3 id="2-如何构建对象"><a href="#2-如何构建对象" class="headerlink" title="2.如何构建对象"></a>2.如何构建对象</h3><pre><code>String str = &quot;abc&quot;; //直接将字符串常量赋值给str （字符串常量池）
+*string中的常用方法</code></pre><h1 id="存在哪-java-lang包"><a href="#存在哪-java-lang包" class="headerlink" title="存在哪  java.lang包"></a>存在哪  java.lang包</h1><pre><code>没有任何继承关系  实现三个接口Serializable,CharSequence,Comparable</code></pre><h1 id="如何构建对象"><a href="#如何构建对象" class="headerlink" title="如何构建对象"></a>如何构建对象</h1><pre><code>String str = &quot;abc&quot;; //直接将字符串常量赋值给str （字符串常量池）
 String str = new String();//无参函数构造方法创建空的对象
 String str = new String(&quot;abc&quot;);//带参String构造方法创建对象
 String str = new String(byte[]);//将数组中的每一个元素转化成对应的char 组合成str
-String str = new String(char[]);//将数组中的每一个char元素拼接成最终的String</code></pre><h3 id="3-String的不可变特性"><a href="#3-String的不可变特性" class="headerlink" title="3.String的不可变特性"></a>3.String的不可变特性</h3><pre><code>体现在两个地方 长度及内容
+String str = new String(char[]);//将数组中的每一个char元素拼接成最终的String</code></pre><h1 id="String的不可变特性"><a href="#String的不可变特性" class="headerlink" title="String的不可变特性"></a>String的不可变特性</h1><pre><code>体现在两个地方 长度及内容
 长度-----&gt;final修饰的数组  数组长度不变 final修饰素组的地址不变
 内容-----&gt;private修饰的属性 不能再类外访问
 在String类中包含一个 数组
 private fianl char[] value;//存储String中的每一个字符
 fianl最终是不可改变的----&gt;地址不让改变 数组的长度本身不可变
-private私有的当前类中----&gt;数组中的内容也不能改变</code></pre><h3 id="4-常用方法"><a href="#4-常用方法" class="headerlink" title="*4.常用方法"></a>*4.常用方法</h3><pre><code>booean = equals(Obj obj);
+private私有的当前类中----&gt;数组中的内容也不能改变</code></pre><h1 id="4-常用方法"><a href="#4-常用方法" class="headerlink" title="*4.常用方法"></a>*4.常用方法</h1><pre><code>booean = equals(Obj obj);
      //继承自Object类 重写啦 比较两个字符串的字面值是否相等
 int = hashCode();
      //继承自object类 重写啦 将当前字符串的每一个char元素拆开 乘以31求和
 int = CompareTo(String str);
     //实现Comparable接口 实现啦 按照字典（Unicode编码）索引的顺序比较
 String = toString();
-    //继承自Object 重写啦 不在输出@hashCode 字符串中的字面值</code></pre><h3 id="5-char-charAt-int-index"><a href="#5-char-charAt-int-index" class="headerlink" title="5.char = charAt(int index);"></a>5.char = charAt(int index);</h3><pre><code>返回给定index位置对应的字符
+    //继承自Object 重写啦 不在输出@hashCode 字符串中的字面值</code></pre><h2 id="char-charAt-int-index"><a href="#char-charAt-int-index" class="headerlink" title="char = charAt(int index);"></a>char = charAt(int index);</h2><pre><code>返回给定index位置对应的字符
 int = codePointAt(int index);
-返回给定index位置对应字符的code码</code></pre><h3 id="6-int-length"><a href="#6-int-length" class="headerlink" title="6.int = length();"></a>6.int = length();</h3><pre><code>返回字符串的长度 （其实就是底层 char[] value属性的长度）
-注意：区别数组length是属性 String的length()方法  集合size()方法</code></pre><h3 id="7-String-concat-String-str"><a href="#7-String-concat-String-str" class="headerlink" title="7.String = concat(String str);"></a>7.String = concat(String str);</h3><pre><code>将给定的str拼接在当前String对象的后面
+返回给定index位置对应字符的code码</code></pre><h2 id="int-length"><a href="#int-length" class="headerlink" title="int = length();"></a>int = length();</h2><pre><code>返回字符串的长度 （其实就是底层 char[] value属性的长度）
+注意：区别数组length是属性 String的length()方法  集合size()方法</code></pre><h2 id="String-concat-String-str"><a href="#String-concat-String-str" class="headerlink" title=".String = concat(String str);"></a>.String = concat(String str);</h2><pre><code>将给定的str拼接在当前String对象的后面
 注意：方法执行完毕需要接受返回值 String的不可变特性
       concat方法与 + 拼接性能的问题
-      开发中若遇到频繁拼接字符串-----&gt;通常使用stringBuilder/stringBuffer</code></pre><h3 id="8-boolean-contains（”s”）"><a href="#8-boolean-contains（”s”）" class="headerlink" title="8.boolean = contains（”s”）;"></a>8.boolean = contains（”s”）;</h3><pre><code>判断给定的s在字符串中是否存在</code></pre><h3 id="9-statsWith-String-prefix）-nbsp-nbsp-endWith（String-suffix）"><a href="#9-statsWith-String-prefix）-nbsp-nbsp-endWith（String-suffix）" class="headerlink" title="9.statsWith(String prefix）;  &nbsp;&nbsp; endWith（String suffix）;"></a>9.statsWith(String prefix）; <br> &nbsp;&nbsp; endWith（String suffix）;</h3><pre><code>判断此字符串是否已XX开头/结尾</code></pre><h3 id="10-byte-getBytes-—-gt-getBytes-String-charsetName-char-toCharArray"><a href="#10-byte-getBytes-—-gt-getBytes-String-charsetName-char-toCharArray" class="headerlink" title="10.byte[] = getBytes();—-&gt;getBytes(String charsetName); char[] = toCharArray[];"></a>10.byte[] = getBytes();—-&gt;getBytes(String charsetName); char[] = toCharArray[];</h3><pre><code>将当前字符串转化为数组 “我爱你中国”“我”“爱”“你”“中”“国”</code></pre><h3 id="11-int-index-indexOf-int-String-str-int-fromindex"><a href="#11-int-index-indexOf-int-String-str-int-fromindex" class="headerlink" title="11.int index = indexOf(int/String str,[int fromindex]);"></a>11.int index = indexOf(int/String str,[int fromindex]);</h3><pre><code>四个方法重载，找寻给定元素在字符串第一次出现的索引位置 若不存在返回-1
+      开发中若遇到频繁拼接字符串-----&gt;通常使用stringBuilder/stringBuffer</code></pre><h2 id="boolean-contains（”s”）"><a href="#boolean-contains（”s”）" class="headerlink" title="boolean = contains（”s”）;"></a>boolean = contains（”s”）;</h2><pre><code>判断给定的s在字符串中是否存在</code></pre><h2 id="statsWith-String-prefix）-nbsp-nbsp-endWith（String-suffix）"><a href="#statsWith-String-prefix）-nbsp-nbsp-endWith（String-suffix）" class="headerlink" title="statsWith(String prefix）;  &nbsp;&nbsp; endWith（String suffix）;"></a>statsWith(String prefix）; <br> &nbsp;&nbsp; endWith（String suffix）;</h2><pre><code>判断此字符串是否已XX开头/结尾</code></pre><h2 id="byte-getBytes-—-gt-getBytes-String-charsetName-char-toCharArray"><a href="#byte-getBytes-—-gt-getBytes-String-charsetName-char-toCharArray" class="headerlink" title="byte[] = getBytes();—-&gt;getBytes(String charsetName); char[] = toCharArray[];"></a>byte[] = getBytes();—-&gt;getBytes(String charsetName); char[] = toCharArray[];</h2><pre><code>将当前字符串转化为数组 “我爱你中国”“我”“爱”“你”“中”“国”</code></pre><h2 id="int-index-indexOf-int-String-str-int-fromindex"><a href="#int-index-indexOf-int-String-str-int-fromindex" class="headerlink" title="int index = indexOf(int/String str,[int fromindex]);"></a>int index = indexOf(int/String str,[int fromindex]);</h2><pre><code>四个方法重载，找寻给定元素在字符串第一次出现的索引位置 若不存在返回-1
 lastIndexOf(int/String str,[int fromindex]);
-找寻给定元素在字符串最后一次出现的索引位置 若不存在返回-1</code></pre><h3 id="12-boolean-isEmpty"><a href="#12-boolean-isEmpty" class="headerlink" title="12.boolean = isEmpty();"></a>12.boolean = isEmpty();</h3><pre><code>判断当前字符串是否为空字符串（length是否为0）
-注意与null之间的区别</code></pre><h3 id="13-replace-replaceAll-replaceFirst"><a href="#13-replace-replaceAll-replaceFirst" class="headerlink" title="13.replace(); replaceAll(); replaceFirst();"></a>13.replace(); replaceAll(); replaceFirst();</h3><pre><code>将给定字符串替换成另一个字符串</code></pre><h3 id="14-String-split（String-regex-int-limit限度界限-）"><a href="#14-String-split（String-regex-int-limit限度界限-）" class="headerlink" title="14.String[] = split（String regex, [int limit限度界限]）;"></a>14.String[] = split（String regex, [int limit限度界限]）;</h3><pre><code>按照正则表达式将原来的字符串拆开
+找寻给定元素在字符串最后一次出现的索引位置 若不存在返回-1</code></pre><h2 id="boolean-isEmpty"><a href="#boolean-isEmpty" class="headerlink" title="boolean = isEmpty();"></a>boolean = isEmpty();</h2><pre><code>判断当前字符串是否为空字符串（length是否为0）
+注意与null之间的区别</code></pre><h2 id="replace-replaceAll-replaceFirst"><a href="#replace-replaceAll-replaceFirst" class="headerlink" title="replace(); replaceAll(); replaceFirst();"></a>replace(); replaceAll(); replaceFirst();</h2><pre><code>将给定字符串替换成另一个字符串</code></pre><h2 id="String-split（String-regex-int-limit限度界限-）"><a href="#String-split（String-regex-int-limit限度界限-）" class="headerlink" title="String[] = split（String regex, [int limit限度界限]）;"></a>String[] = split（String regex, [int limit限度界限]）;</h2><pre><code>按照正则表达式将原来的字符串拆开
    String str=&quot;a-b-c-d&quot;;
    String[] value = str.split(&quot;-&quot;,3);
    for(String v:value){
      System.out.println(v);
-   }  </code></pre><h3 id="15-String-substring-int-beginIndex-int-endIndex"><a href="#15-String-substring-int-beginIndex-int-endIndex" class="headerlink" title="15.String = substring(int beginIndex),[int endIndex]);"></a>15.String = substring(int beginIndex),[int endIndex]);</h3><pre><code>将当前字符串截取一部分
+   }  </code></pre><h2 id="String-substring-int-beginIndex-int-endIndex"><a href="#String-substring-int-beginIndex-int-endIndex" class="headerlink" title="String = substring(int beginIndex),[int endIndex]);"></a>String = substring(int beginIndex),[int endIndex]);</h2><pre><code>将当前字符串截取一部分
 从beginIndex开始至endIndex结束[beginIndex，endIndex)
-若endIndex不写 则默认到字符串最后</code></pre><h3 id="16-String-toUpperCase-String-toLowerCase"><a href="#16-String-toUpperCase-String-toLowerCase" class="headerlink" title="16.String = toUpperCase();String = toLowerCase();"></a>16.String = toUpperCase();<br>String = toLowerCase();</h3><pre><code>将全部字母转换成大写/小写</code></pre><h3 id="17-String-trim"><a href="#17-String-trim" class="headerlink" title="17.String = trim();"></a>17.String = trim();</h3><pre><code>去掉字符串前后多余的空格</code></pre>
+若endIndex不写 则默认到字符串最后</code></pre><h2 id="String-toUpperCase-String-toLowerCase"><a href="#String-toUpperCase-String-toLowerCase" class="headerlink" title="String = toUpperCase();String = toLowerCase();"></a>String = toUpperCase();<br>String = toLowerCase();</h2><pre><code>将全部字母转换成大写/小写</code></pre><h2 id="String-trim"><a href="#String-trim" class="headerlink" title="String = trim();"></a>String = trim();</h2><pre><code>去掉字符串前后多余的空格</code></pre>
           
         
       
@@ -1275,7 +1275,7 @@ lastIndexOf(int/String str,[int fromindex]);
       
         
           
-            <h3 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h3><pre><code>1.类所在的包
+            <h1 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h1><pre><code>1.类所在的包
 2.类的关系 自己默认继承 实现
 3，类中提供常用方法
 4.是否可以创建对象 调用 方法本身是静态的
@@ -1294,28 +1294,22 @@ Interger i1 = new Interger（10）//引用数据类型 包装类
  int value = i1.intValue();
 
  int value  = Inter.parseInt(&quot;123&quot;)  Float.parseFloat(&quot;123.45&quot;)
- int value  = new Integer(&quot;123&quot;);</code></pre><h3 id="经常在笔试中出现的问题"><a href="#经常在笔试中出现的问题" class="headerlink" title="经常在笔试中出现的问题"></a>经常在笔试中出现的问题</h3><pre><code>       integer i1 = 10;
-       integer i2 = 10;
-       integer i3 = new Integer(10);
-       integer i4 = new Integer(10);
-       System.out.println(i1==i2);//true
-       System.out.println(i1==i3);//false
-       System.out,println(i3==i4);//false
-       System.out.pritnln(i1.equals(i2));//true
-       System.out.pritnln(i1.equals(i3));//true
-       System.out.pritnln(i1.equals(i4));//true
-
- 1.==与equals()的区别
-  ==可以比较基本数据类型 也可以比较引用数据类型（变量中存储的内容）
-  如果比较基本类型比较的是变量中存储的值
-  如果比较的是引用类型比较的是变量中存储地址的引用
-  equals()是Object类中继承过来的方法==一致 如果想要改变比较规则 可以重写equals方法
-  由于integer类就重写了equals()所以Integer比较的是数值
-
-2.考察Integer类加载的时候有一个静态空间
-  空间内立即加载Integer类型的数组 内存储256个Integer对象 -128-127
-  如果我们用的对象范围在这之内 integer i1 = 10;直接取静态元素区中找对应的对象
-  如果我们用的对象范围超出了Integer i1 = 1000; 会帮我们创建一个新的Integer对象</code></pre>
+ int value  = new Integer(&quot;123&quot;);</code></pre><h1 id="经常在笔试中出现的问题"><a href="#经常在笔试中出现的问题" class="headerlink" title="经常在笔试中出现的问题"></a>经常在笔试中出现的问题</h1><pre><code>integer i1 = 10;
+integer i2 = 10;
+integer i3 = new Integer(10);
+integer i4 = new Integer(10);
+System.out.println(i1==i2);//true
+System.out.println(i1==i3);//false
+System.out,println(i3==i4);//false
+System.out.pritnln(i1.equals(i2));//true
+System.out.pritnln(i1.equals(i3));//true
+System.out.pritnln(i1.equals(i4));//true</code></pre><h2 id="与equals-的区别"><a href="#与equals-的区别" class="headerlink" title="==与equals()的区别"></a>==与equals()的区别</h2><pre><code>==可以比较基本数据类型 也可以比较引用数据类型（变量中存储的内容）
+如果比较基本类型比较的是变量中存储的值
+如果比较的是引用类型比较的是变量中存储地址的引用
+equals()是Object类中继承过来的方法==一致 如果想要改变比较规则 可以重写equals方法
+由于integer类就重写了equals()所以Integer比较的是数值</code></pre><h2 id="考察Integer类加载的时候有一个静态空间"><a href="#考察Integer类加载的时候有一个静态空间" class="headerlink" title="考察Integer类加载的时候有一个静态空间"></a>考察Integer类加载的时候有一个静态空间</h2><pre><code>空间内立即加载Integer类型的数组 内存储256个Integer对象 -128-127
+如果我们用的对象范围在这之内 integer i1 = 10;直接取静态元素区中找对应的对象
+如果我们用的对象范围超出了Integer i1 = 1000; 会帮我们创建一个新的Integer对象</code></pre>
           
         
       
@@ -1456,18 +1450,18 @@ Interger i1 = new Interger（10）//引用数据类型 包装类
       
         
           
-            <h3 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h3><p>1.成员内部类</p>
-<pre><code>将一个类直接定义在类的里面，作为成员，与属性或方法层次一次
+            <h1 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h1><h1 id="成员内部类"><a href="#成员内部类" class="headerlink" title="成员内部类"></a>成员内部类</h1><pre><code>将一个类直接定义在类的里面，作为成员，与属性或方法层次一次
 成员内部类可以与正常类一样 使用不同的修饰符去修饰
 好处1.省略了一个.java文件 
 好处2.成员内部类可以访问外部类的所有成员 包括私有的
 若想要在内部类中通过对象.调用外部类成员  外部类.this.外部类成员
-内部类存在后 源代码进行编译 产生一个字节码 Demo$InnerDemo.class</code></pre><p>2.局部内部类</p>
-<pre><code>将一个类定义在方法/块里面,作为成员的内部结构，与临时的局部变量一个层次
+内部类存在后 源代码进行编译 产生一个字节码 Demo$InnerDemo.class</code></pre><h1 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h1><pre><code>将一个类定义在方法/块里面,作为成员的内部结构，与临时的局部变量一个层次
 局部内部类像是一个局部变量一样，不能用public protected privtae及staic只能用abstract或final
 局部内部类命名规则Demo$InnerTestMethod
-局部内部类使用的变量只能用final修饰</code></pre><p>3.匿名内部类<br><br>        成员匿名内部类<br><br>        局部匿名内部类</p>
-<pre><code>public interface Test{
+局部内部类使用的变量只能用final修饰</code></pre><h1 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类<br></h1><pre><code>成员匿名内部类&lt;br&gt;
+局部匿名内部类
+
+public interface Test{
           public void test();
 
 }
@@ -1478,10 +1472,9 @@ Interger i1 = new Interger（10）//引用数据类型 包装类
 通常接口或抽象类的具体子类这样写
 开发中为了省略一个类文件 上诉写法比较常见
 匿名内部类很特殊 只有类体 没有类的所有结构（修饰符 名字 继承 实现）      
-不能用任何修饰符来修饰 匿名内部类也没有任何构造方法</code></pre><p>4.静态内部类</p>
-<pre><code>成员静态内部类
+不能用任何修饰符来修饰 匿名内部类也没有任何构造方法</code></pre><h1 id="静态内部类"><a href="#静态内部类" class="headerlink" title="静态内部类"></a>静态内部类</h1><pre><code>成员静态内部类
 不需要外部类对象，通过正常的方式直接创建内部类
-静态元素不能访问非静态成员（自己类和外部类）</code></pre><h2 id="枚举类enum"><a href="#枚举类enum" class="headerlink" title="枚举类enum"></a>枚举类enum</h2><h4 id="一个类中的对象-认为个数有限且固定的，可以将每一个对象一一列举出来"><a href="#一个类中的对象-认为个数有限且固定的，可以将每一个对象一一列举出来" class="headerlink" title="一个类中的对象 认为个数有限且固定的，可以将每一个对象一一列举出来"></a>一个类中的对象 认为个数有限且固定的，可以将每一个对象一一列举出来</h4><pre><code> 1.试一试若没有枚举类型的时候如何动手设计（静态常量 单例模式）Day（类 当做描述星期七个对象）
+静态元素不能访问非静态成员（自己类和外部类）</code></pre><h1 id="枚举类enum"><a href="#枚举类enum" class="headerlink" title="枚举类enum"></a>枚举类enum</h1><h2 id="一个类中的对象-认为个数有限且固定的，可以将每一个对象一一列举出来"><a href="#一个类中的对象-认为个数有限且固定的，可以将每一个对象一一列举出来" class="headerlink" title="一个类中的对象 认为个数有限且固定的，可以将每一个对象一一列举出来"></a>一个类中的对象 认为个数有限且固定的，可以将每一个对象一一列举出来</h2><pre><code> 1.试一试若没有枚举类型的时候如何动手设计（静态常量 单例模式）Day（类 当做描述星期七个对象）
       private 构造方法
       public static final 属性 = new
       //构造方法私有
@@ -1504,7 +1497,7 @@ Interger i1 = new Interger（10）//引用数据类型 包装类
       必须在enum类中第一行 描述一下枚举的样子 最后需要分号结束;
       可以定义自己的属性
       类创建过程中 帮我们创建枚举类型的对象
-      需要给枚举型提供对应样子的构造方法 方法只能private修饰 可以重载</code></pre><h3 id="内存机制问题"><a href="#内存机制问题" class="headerlink" title="内存机制问题"></a>内存机制问题</h3><pre><code>栈内存-----&gt;Person p = new Person();-----&gt;堆内存   方法区----类模板
+      需要给枚举型提供对应样子的构造方法 方法只能private修饰 可以重载</code></pre><h1 id="内存机制问题"><a href="#内存机制问题" class="headerlink" title="内存机制问题"></a>内存机制问题</h1><pre><code>栈内存-----&gt;Person p = new Person();-----&gt;堆内存   方法区----类模板
 栈内存-----&gt;创建开始  用完立即回收   StackoverflowError
 方法区-----&gt;类 常量 静态 只有一份回收不了
 堆内存-----&gt;new创建的对象 Garbage Collection 垃圾回收器
@@ -2034,52 +2027,37 @@ name属性 重eat 独有teach       name属性 重talk 独study
       
         
           
-            <p>abstract  抽象类</p>
-<pre><code>         不具体 没有执行过程 只是一个概念
-1.可以修饰什么
-        修饰方法
-        用abstract修饰符修饰的方法 只有方法的构造  没有方法执行体叫抽象方法
-        当然注意native修饰的方法虽然没有方法体 但是不是抽象方法 只是执行的过程是其他语言写的 不属于抽象类
-        用abstract修饰符修饰的类 叫抽象类
-2.修饰后有什么特点        
-        抽象类中必须要有抽象方法吗？ 不是必须含有抽象方法
-        抽象方法必须放在抽象类中？ 目前来看必须要放在抽象类中（或接口中）普通类是不许有抽象方法
-3.研究一下什么叫抽象类  抽象类有什么特点？
-        1.类里面有什么 成员
-                  属性    可以含有一般的属性  也可以含有 private static final 等
-                  方法    可以含有一般方法    也可以含有 private static final 等 
-                          注意：抽象类中允许含有抽象方法（只有方法结构 没有方法执行体）
-                  块      可以含有一般程序块  也可以含有static程序块
-                  构造方法  可以含有一般方法，包括重载
-        2.类如何使用  创建对象
-                  抽象类含有构造方法 但我们不能通过调用构造方法创建对象
-                  抽象类只能通过子类单继承来做事
-        3.类和类的关系
-                  抽象类-----直接单继承---抽象类   可以
-                  抽象类-----直接单继承---具体类   可以
-                  具体类-----直接单继承---抽象类   不可以（）
+            <h1 id="abstract-抽象类"><a href="#abstract-抽象类" class="headerlink" title="abstract  抽象类"></a>abstract  抽象类</h1><h2 id="不具体-没有执行过程-只是一个概念"><a href="#不具体-没有执行过程-只是一个概念" class="headerlink" title="不具体 没有执行过程 只是一个概念"></a>不具体 没有执行过程 只是一个概念</h2><h2 id="可以修饰什么"><a href="#可以修饰什么" class="headerlink" title="可以修饰什么"></a>可以修饰什么</h2><pre><code>修饰方法
+用abstract修饰符修饰的方法 只有方法的构造  没有方法执行体叫抽象方法
+当然注意native修饰的方法虽然没有方法体 但是不是抽象方法 只是执行的过程是其他语言写的 不属于抽象类
+用abstract修饰符修饰的类 叫抽象类</code></pre><h2 id="修饰后有什么特点"><a href="#修饰后有什么特点" class="headerlink" title="修饰后有什么特点"></a>修饰后有什么特点</h2><pre><code>抽象类中必须要有抽象方法吗？ 不是必须含有抽象方法
+抽象方法必须放在抽象类中？ 目前来看必须要放在抽象类中（或接口中）普通类是不许有抽象方法</code></pre><h2 id="研究一下什么叫抽象类-抽象类有什么特点？"><a href="#研究一下什么叫抽象类-抽象类有什么特点？" class="headerlink" title="研究一下什么叫抽象类  抽象类有什么特点？"></a>研究一下什么叫抽象类  抽象类有什么特点？</h2><pre><code>1.类里面有什么 成员
+          属性    可以含有一般的属性  也可以含有 private static final 等
+          方法    可以含有一般方法    也可以含有 private static final 等 
+                  注意：抽象类中允许含有抽象方法（只有方法结构 没有方法执行体）
+          块      可以含有一般程序块  也可以含有static程序块
+          构造方法  可以含有一般方法，包括重载
+2.类如何使用  创建对象
+          抽象类含有构造方法 但我们不能通过调用构造方法创建对象
+          抽象类只能通过子类单继承来做事
+3.类和类的关系
+          抽象类-----直接单继承---抽象类   可以
+          抽象类-----直接单继承---具体类   可以
+          具体类-----直接单继承---抽象类   不可以（）
 4.小问题
-        抽象类中能不能没有抽象方法 全都是具体成员  可以
-        抽象类能不能没有具体成员 全都是抽象方法 可以 ----&gt;抽象到极致---&gt;接口
-        接口可以理解为是抽象类抽象到极致-------&gt;还是一个类的结构 不能用class修饰 改用interface修饰</code></pre><p>interface 接口</p>
-<pre><code>什么是接口？
-接口也是一个类的结构 只不过用interface修饰 替换原有的class
-1.有什么      成员
-              属性            不能含有一般属性 只能含有公有的静态常量 public static final
-              方法            不能含有一般的方法 只能含有公有的抽象方法（1.8以后default修饰具体方法）
-              块             不能含有一般程序块 也不能含有static块（块本身就是具体的 接口中不让有具体的）
-              构造方法         不能含有构造方法
-2.如何使用   创建对象
-         不能创建对象
-         只能通过子类多实现（implements）来做事
-         public class A implements B,C,D{
+抽象类中能不能没有抽象方法 全都是具体成员  可以
+抽象类能不能没有具体成员 全都是抽象方法 可以 ----&gt;抽象到极致---&gt;接口
+接口可以理解为是抽象类抽象到极致-------&gt;还是一个类的结构 不能用class修饰 改用interface修饰</code></pre><h1 id="interface-接口"><a href="#interface-接口" class="headerlink" title="interface 接口"></a>interface 接口</h1><h2 id="什么是接口？"><a href="#什么是接口？" class="headerlink" title="什么是接口？"></a>什么是接口？</h2><pre><code>接口也是一个类的结构 只不过用interface修饰 替换原有的class</code></pre><h2 id="有什么-成员"><a href="#有什么-成员" class="headerlink" title="有什么      成员"></a>有什么      成员</h2><pre><code>属性            不能含有一般属性 只能含有公有的静态常量 public static final
+方法            不能含有一般的方法 只能含有公有的抽象方法（1.8以后default修饰具体方法）
+块              不能含有一般程序块 也不能含有static块（块本身就是具体的 接口中不让有具体的）
+构造方法        不能含有构造方法</code></pre><h2 id="如何使用-创建对象"><a href="#如何使用-创建对象" class="headerlink" title="如何使用   创建对象"></a>如何使用   创建对象</h2><pre><code>不能创建对象
+只能通过子类多实现（implements）来做事
+public class A implements B,C,D{
 
-         }
-3.与别的类结构关系
-         接口不能继承别的类   最抽象
-         抽象类--------直接多实现-------接口  可以
-         具体类--------直接多实现-------接口  不可以（不能直接将抽象方法具体化）
-         接口----------多继承-----------接口  可以直接多实现</code></pre>
+}</code></pre><h2 id="与别的类结构关系"><a href="#与别的类结构关系" class="headerlink" title="与别的类结构关系"></a>与别的类结构关系</h2><pre><code>接口不能继承别的类   最抽象
+抽象类--------直接多实现-------接口  可以
+具体类--------直接多实现-------接口  不可以（不能直接将抽象方法具体化）
+接口----------多继承-----------接口  可以直接多实现</code></pre>
           
         
       

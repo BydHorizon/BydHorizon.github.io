@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="一轮明月照九洲">
 <meta property="og:description" content="设计模式  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  1.设计模式不是知识点  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  2.设计模式是一种设计经验的总结  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nb">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-21T16:01:25.886Z">
+<meta property="og:updated_time" content="2020-03-31T00:37:09.618Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaSE基础 （十三）">
 <meta name="twitter:description" content="设计模式  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  1.设计模式不是知识点  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;  2.设计模式是一种设计经验的总结  &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nb">
@@ -344,14 +344,13 @@
       
 
       
-        <p>设计模式<br><br>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  1.设计模式不是知识点<br><br>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  2.设计模式是一种设计经验的总结<br><br>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<br>  3.设计模式用来解决某些场景下的某一类问题的—-&gt;通用的解决方案<br><br>   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 4.有了设计模式之后  可以让代码更容易被理解 确保了复用性 可靠性 可扩展性<br>  <br><br> 设计模式分为三类</p>
-<pre><code>1.创新型模式（5种）--------&gt;用于解决创建对象的过程
+        <h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式<br></h1><p>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  1.设计模式不是知识点<br><br>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  2.设计模式是一种设计经验的总结<br><br>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<br>  3.设计模式用来解决某些场景下的某一类问题的—-&gt;通用的解决方案<br><br>   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 4.有了设计模式之后  可以让代码更容易被理解 确保了复用性 可靠性 可扩展性<br>  <br></p>
+<h1 id="设计模式分为三类"><a href="#设计模式分为三类" class="headerlink" title="设计模式分为三类"></a>设计模式分为三类</h1><pre><code>1.创新型模式（5种）--------&gt;用于解决创建对象的过程
  单例模式  工厂方法模式  抽象模式 工作模式 建造者模式 原型模式
 2.结构型模式（7种）--------&gt;把类或对象通过某种形式结合在一起 构成某种复杂或合理的结构
  适配器模式 装饰者模式 代理模式 外观模式 桥接模式 组合模式 享元模式
 3.行为行模式（11种）------&gt;用来解决类或对象之间的交互 更合理的优化类或对象之间的关系
- 观察者模式 策略模式 模板模式 责任链模式 解析器模式 迭代器模式 命令模式 状态模式 备忘录模式 访问者模式 中介者模式</code></pre><p> 单例模式</p>
-<pre><code>设计------&gt;一个类只能创建一个对象 有效减小内存占用空间
+ 观察者模式 策略模式 模板模式 责任链模式 解析器模式 迭代器模式 命令模式 状态模式 备忘录模式 访问者模式 中介者模式</code></pre><h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><pre><code>设计------&gt;一个类只能创建一个对象 有效减小内存占用空间
 设计一个系统-----&gt;百度  搜索引擎
  public class Baidu{
            public void 搜索（String keyword）{
@@ -361,8 +360,7 @@
 调用搜索的方法 做事情 方法只执行一遍
 同一时间有很多很多很多的人在使用这个系统
 对象------&gt;只能创建一个 堆内存就开辟了一个空间
-调用一次方法-----&gt;临时执行一次 方法执行空间就回收了</code></pre><p>单例模式的实现</p>
-<pre><code> 1.私有的构造方法
+调用一次方法-----&gt;临时执行一次 方法执行空间就回收了</code></pre><h1 id="单例模式的实现"><a href="#单例模式的实现" class="headerlink" title="单例模式的实现"></a>单例模式的实现</h1><pre><code> 1.私有的构造方法
  2.私有的静态的当前类作为属性
  3.公有的静态的方法当返回值
 
@@ -384,7 +382,7 @@
 public static void main(String[] args){
     SingleTon s1 = Singleton.getSingleTon();
     }
-}  </code></pre>
+}</code></pre>
       
     </div>
     
@@ -472,8 +470,17 @@ public static void main(String[] args){
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -558,6 +565,22 @@ public static void main(String[] args){
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#设计模式"><span class="nav-number">1.</span> <span class="nav-text">设计模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设计模式分为三类"><span class="nav-number">2.</span> <span class="nav-text">设计模式分为三类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#单例模式"><span class="nav-number">3.</span> <span class="nav-text">单例模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#单例模式的实现"><span class="nav-number">4.</span> <span class="nav-text">单例模式的实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

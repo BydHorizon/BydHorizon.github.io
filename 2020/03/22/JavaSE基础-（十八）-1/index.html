@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="内部类1.成员内部类 将一个类直接定义在类的里面，作为成员，与属性或方法层次一次 成员内部类可以与正常类一样 使用不同的修饰符去修饰 好处1.省略了一个.java文件  好处2.成员内部类可以访问外部类的所有成员 包括私有的 若想要在内部类中通过对象.调用外部类成员  外部类.this.外部类成员 内部类存在后 源代码进行编译 产生一个字节码 Demo$InnerDemo.class2.局部内部类">
+<meta name="description" content="内部类成员内部类将一个类直接定义在类的里面，作为成员，与属性或方法层次一次 成员内部类可以与正常类一样 使用不同的修饰符去修饰 好处1.省略了一个.java文件  好处2.成员内部类可以访问外部类的所有成员 包括私有的 若想要在内部类中通过对象.调用外部类成员  外部类.this.外部类成员 内部类存在后 源代码进行编译 产生一个字节码 Demo$InnerDemo.class局部内部类将一个类定">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaSE基础 （十八）">
 <meta property="og:url" content="http://yoursite.com/2020/03/22/JavaSE基础-（十八）-1/index.html">
 <meta property="og:site_name" content="一轮明月照九洲">
-<meta property="og:description" content="内部类1.成员内部类 将一个类直接定义在类的里面，作为成员，与属性或方法层次一次 成员内部类可以与正常类一样 使用不同的修饰符去修饰 好处1.省略了一个.java文件  好处2.成员内部类可以访问外部类的所有成员 包括私有的 若想要在内部类中通过对象.调用外部类成员  外部类.this.外部类成员 内部类存在后 源代码进行编译 产生一个字节码 Demo$InnerDemo.class2.局部内部类">
+<meta property="og:description" content="内部类成员内部类将一个类直接定义在类的里面，作为成员，与属性或方法层次一次 成员内部类可以与正常类一样 使用不同的修饰符去修饰 好处1.省略了一个.java文件  好处2.成员内部类可以访问外部类的所有成员 包括私有的 若想要在内部类中通过对象.调用外部类成员  外部类.this.外部类成员 内部类存在后 源代码进行编译 产生一个字节码 Demo$InnerDemo.class局部内部类将一个类定">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-22T15:58:30.992Z">
+<meta property="og:updated_time" content="2020-03-31T00:42:41.930Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaSE基础 （十八）">
-<meta name="twitter:description" content="内部类1.成员内部类 将一个类直接定义在类的里面，作为成员，与属性或方法层次一次 成员内部类可以与正常类一样 使用不同的修饰符去修饰 好处1.省略了一个.java文件  好处2.成员内部类可以访问外部类的所有成员 包括私有的 若想要在内部类中通过对象.调用外部类成员  外部类.this.外部类成员 内部类存在后 源代码进行编译 产生一个字节码 Demo$InnerDemo.class2.局部内部类">
+<meta name="twitter:description" content="内部类成员内部类将一个类直接定义在类的里面，作为成员，与属性或方法层次一次 成员内部类可以与正常类一样 使用不同的修饰符去修饰 好处1.省略了一个.java文件  好处2.成员内部类可以访问外部类的所有成员 包括私有的 若想要在内部类中通过对象.调用外部类成员  外部类.this.外部类成员 内部类存在后 源代码进行编译 产生一个字节码 Demo$InnerDemo.class局部内部类将一个类定">
 
 
 
@@ -344,18 +344,18 @@
       
 
       
-        <h3 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h3><p>1.成员内部类</p>
-<pre><code>将一个类直接定义在类的里面，作为成员，与属性或方法层次一次
+        <h1 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h1><h1 id="成员内部类"><a href="#成员内部类" class="headerlink" title="成员内部类"></a>成员内部类</h1><pre><code>将一个类直接定义在类的里面，作为成员，与属性或方法层次一次
 成员内部类可以与正常类一样 使用不同的修饰符去修饰
 好处1.省略了一个.java文件 
 好处2.成员内部类可以访问外部类的所有成员 包括私有的
 若想要在内部类中通过对象.调用外部类成员  外部类.this.外部类成员
-内部类存在后 源代码进行编译 产生一个字节码 Demo$InnerDemo.class</code></pre><p>2.局部内部类</p>
-<pre><code>将一个类定义在方法/块里面,作为成员的内部结构，与临时的局部变量一个层次
+内部类存在后 源代码进行编译 产生一个字节码 Demo$InnerDemo.class</code></pre><h1 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h1><pre><code>将一个类定义在方法/块里面,作为成员的内部结构，与临时的局部变量一个层次
 局部内部类像是一个局部变量一样，不能用public protected privtae及staic只能用abstract或final
 局部内部类命名规则Demo$InnerTestMethod
-局部内部类使用的变量只能用final修饰</code></pre><p>3.匿名内部类<br><br>        成员匿名内部类<br><br>        局部匿名内部类</p>
-<pre><code>public interface Test{
+局部内部类使用的变量只能用final修饰</code></pre><h1 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类<br></h1><pre><code>成员匿名内部类&lt;br&gt;
+局部匿名内部类
+
+public interface Test{
           public void test();
 
 }
@@ -366,10 +366,9 @@
 通常接口或抽象类的具体子类这样写
 开发中为了省略一个类文件 上诉写法比较常见
 匿名内部类很特殊 只有类体 没有类的所有结构（修饰符 名字 继承 实现）      
-不能用任何修饰符来修饰 匿名内部类也没有任何构造方法</code></pre><p>4.静态内部类</p>
-<pre><code>成员静态内部类
+不能用任何修饰符来修饰 匿名内部类也没有任何构造方法</code></pre><h1 id="静态内部类"><a href="#静态内部类" class="headerlink" title="静态内部类"></a>静态内部类</h1><pre><code>成员静态内部类
 不需要外部类对象，通过正常的方式直接创建内部类
-静态元素不能访问非静态成员（自己类和外部类）</code></pre><h2 id="枚举类enum"><a href="#枚举类enum" class="headerlink" title="枚举类enum"></a>枚举类enum</h2><h4 id="一个类中的对象-认为个数有限且固定的，可以将每一个对象一一列举出来"><a href="#一个类中的对象-认为个数有限且固定的，可以将每一个对象一一列举出来" class="headerlink" title="一个类中的对象 认为个数有限且固定的，可以将每一个对象一一列举出来"></a>一个类中的对象 认为个数有限且固定的，可以将每一个对象一一列举出来</h4><pre><code> 1.试一试若没有枚举类型的时候如何动手设计（静态常量 单例模式）Day（类 当做描述星期七个对象）
+静态元素不能访问非静态成员（自己类和外部类）</code></pre><h1 id="枚举类enum"><a href="#枚举类enum" class="headerlink" title="枚举类enum"></a>枚举类enum</h1><h2 id="一个类中的对象-认为个数有限且固定的，可以将每一个对象一一列举出来"><a href="#一个类中的对象-认为个数有限且固定的，可以将每一个对象一一列举出来" class="headerlink" title="一个类中的对象 认为个数有限且固定的，可以将每一个对象一一列举出来"></a>一个类中的对象 认为个数有限且固定的，可以将每一个对象一一列举出来</h2><pre><code> 1.试一试若没有枚举类型的时候如何动手设计（静态常量 单例模式）Day（类 当做描述星期七个对象）
       private 构造方法
       public static final 属性 = new
       //构造方法私有
@@ -392,7 +391,7 @@
       必须在enum类中第一行 描述一下枚举的样子 最后需要分号结束;
       可以定义自己的属性
       类创建过程中 帮我们创建枚举类型的对象
-      需要给枚举型提供对应样子的构造方法 方法只能private修饰 可以重载</code></pre><h3 id="内存机制问题"><a href="#内存机制问题" class="headerlink" title="内存机制问题"></a>内存机制问题</h3><pre><code>栈内存-----&gt;Person p = new Person();-----&gt;堆内存   方法区----类模板
+      需要给枚举型提供对应样子的构造方法 方法只能private修饰 可以重载</code></pre><h1 id="内存机制问题"><a href="#内存机制问题" class="headerlink" title="内存机制问题"></a>内存机制问题</h1><pre><code>栈内存-----&gt;Person p = new Person();-----&gt;堆内存   方法区----类模板
 栈内存-----&gt;创建开始  用完立即回收   StackoverflowError
 方法区-----&gt;类 常量 静态 只有一份回收不了
 堆内存-----&gt;new创建的对象 Garbage Collection 垃圾回收器
@@ -596,7 +595,7 @@ GC系统提供的一个线程  回收算法</code></pre>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#内部类"><span class="nav-number">1.</span> <span class="nav-text">内部类</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#枚举类enum"><span class="nav-number"></span> <span class="nav-text">枚举类enum</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一个类中的对象-认为个数有限且固定的，可以将每一个对象一一列举出来"><span class="nav-number">0.1.</span> <span class="nav-text">一个类中的对象 认为个数有限且固定的，可以将每一个对象一一列举出来</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存机制问题"><span class="nav-number">1.</span> <span class="nav-text">内存机制问题</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#内部类"><span class="nav-number">1.</span> <span class="nav-text">内部类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#成员内部类"><span class="nav-number">2.</span> <span class="nav-text">成员内部类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#局部内部类"><span class="nav-number">3.</span> <span class="nav-text">局部内部类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#匿名内部类"><span class="nav-number">4.</span> <span class="nav-text">匿名内部类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#静态内部类"><span class="nav-number">5.</span> <span class="nav-text">静态内部类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#枚举类enum"><span class="nav-number">6.</span> <span class="nav-text">枚举类enum</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一个类中的对象-认为个数有限且固定的，可以将每一个对象一一列举出来"><span class="nav-number">6.1.</span> <span class="nav-text">一个类中的对象 认为个数有限且固定的，可以将每一个对象一一列举出来</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存机制问题"><span class="nav-number">7.</span> <span class="nav-text">内存机制问题</span></a></li></ol></div>
             
 
           </div>

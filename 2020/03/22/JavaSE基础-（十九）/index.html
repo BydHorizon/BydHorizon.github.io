@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="一轮明月照九洲">
 <meta property="og:description" content="包装类1.类所在的包 2.类的关系 自己默认继承 实现 3，类中提供常用方法 4.是否可以创建对象 调用 方法本身是静态的  包装类（封装类） 1.5版本之后自动拆包 byte----Byte   short----Short   int------Integer  long-----Long float-----Float  double-----Double char-----Characte">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-22T15:58:56.288Z">
+<meta property="og:updated_time" content="2020-03-31T00:43:28.400Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaSE基础 （十九）">
 <meta name="twitter:description" content="包装类1.类所在的包 2.类的关系 自己默认继承 实现 3，类中提供常用方法 4.是否可以创建对象 调用 方法本身是静态的  包装类（封装类） 1.5版本之后自动拆包 byte----Byte   short----Short   int------Integer  long-----Long float-----Float  double-----Double char-----Characte">
@@ -344,7 +344,7 @@
       
 
       
-        <h3 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h3><pre><code>1.类所在的包
+        <h1 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h1><pre><code>1.类所在的包
 2.类的关系 自己默认继承 实现
 3，类中提供常用方法
 4.是否可以创建对象 调用 方法本身是静态的
@@ -363,28 +363,22 @@ Interger i1 = new Interger（10）//引用数据类型 包装类
  int value = i1.intValue();
 
  int value  = Inter.parseInt(&quot;123&quot;)  Float.parseFloat(&quot;123.45&quot;)
- int value  = new Integer(&quot;123&quot;);</code></pre><h3 id="经常在笔试中出现的问题"><a href="#经常在笔试中出现的问题" class="headerlink" title="经常在笔试中出现的问题"></a>经常在笔试中出现的问题</h3><pre><code>       integer i1 = 10;
-       integer i2 = 10;
-       integer i3 = new Integer(10);
-       integer i4 = new Integer(10);
-       System.out.println(i1==i2);//true
-       System.out.println(i1==i3);//false
-       System.out,println(i3==i4);//false
-       System.out.pritnln(i1.equals(i2));//true
-       System.out.pritnln(i1.equals(i3));//true
-       System.out.pritnln(i1.equals(i4));//true
-
- 1.==与equals()的区别
-  ==可以比较基本数据类型 也可以比较引用数据类型（变量中存储的内容）
-  如果比较基本类型比较的是变量中存储的值
-  如果比较的是引用类型比较的是变量中存储地址的引用
-  equals()是Object类中继承过来的方法==一致 如果想要改变比较规则 可以重写equals方法
-  由于integer类就重写了equals()所以Integer比较的是数值
-
-2.考察Integer类加载的时候有一个静态空间
-  空间内立即加载Integer类型的数组 内存储256个Integer对象 -128-127
-  如果我们用的对象范围在这之内 integer i1 = 10;直接取静态元素区中找对应的对象
-  如果我们用的对象范围超出了Integer i1 = 1000; 会帮我们创建一个新的Integer对象</code></pre>
+ int value  = new Integer(&quot;123&quot;);</code></pre><h1 id="经常在笔试中出现的问题"><a href="#经常在笔试中出现的问题" class="headerlink" title="经常在笔试中出现的问题"></a>经常在笔试中出现的问题</h1><pre><code>integer i1 = 10;
+integer i2 = 10;
+integer i3 = new Integer(10);
+integer i4 = new Integer(10);
+System.out.println(i1==i2);//true
+System.out.println(i1==i3);//false
+System.out,println(i3==i4);//false
+System.out.pritnln(i1.equals(i2));//true
+System.out.pritnln(i1.equals(i3));//true
+System.out.pritnln(i1.equals(i4));//true</code></pre><h2 id="与equals-的区别"><a href="#与equals-的区别" class="headerlink" title="==与equals()的区别"></a>==与equals()的区别</h2><pre><code>==可以比较基本数据类型 也可以比较引用数据类型（变量中存储的内容）
+如果比较基本类型比较的是变量中存储的值
+如果比较的是引用类型比较的是变量中存储地址的引用
+equals()是Object类中继承过来的方法==一致 如果想要改变比较规则 可以重写equals方法
+由于integer类就重写了equals()所以Integer比较的是数值</code></pre><h2 id="考察Integer类加载的时候有一个静态空间"><a href="#考察Integer类加载的时候有一个静态空间" class="headerlink" title="考察Integer类加载的时候有一个静态空间"></a>考察Integer类加载的时候有一个静态空间</h2><pre><code>空间内立即加载Integer类型的数组 内存储256个Integer对象 -128-127
+如果我们用的对象范围在这之内 integer i1 = 10;直接取静态元素区中找对应的对象
+如果我们用的对象范围超出了Integer i1 = 1000; 会帮我们创建一个新的Integer对象</code></pre>
       
     </div>
     
@@ -577,7 +571,7 @@ Interger i1 = new Interger（10）//引用数据类型 包装类
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#包装类"><span class="nav-number">1.</span> <span class="nav-text">包装类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#经常在笔试中出现的问题"><span class="nav-number">2.</span> <span class="nav-text">经常在笔试中出现的问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#包装类"><span class="nav-number">1.</span> <span class="nav-text">包装类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#经常在笔试中出现的问题"><span class="nav-number">2.</span> <span class="nav-text">经常在笔试中出现的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#与equals-的区别"><span class="nav-number">2.1.</span> <span class="nav-text">==与equals()的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#考察Integer类加载的时候有一个静态空间"><span class="nav-number">2.2.</span> <span class="nav-text">考察Integer类加载的时候有一个静态空间</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="数组（容器） 数组是一组数据类型相同的数据的组合，将这些数据统一管理起来 数组本身是一个引用数据类型，但数组内可以存储基本数据类型，也可以存储引用数据类型1.数组的定义（声明）   数据类型[] 数组名字;     int[] a;     char[] b;     boolean[] c;     string[] m;2.数组的（赋值）初始化  静态初始化    有长度 有元素     in">
+<meta name="description" content="数组（容器）数组是一组数据类型相同的数据的组合，将这些数据统一管理起来 数组本身是一个引用数据类型，但数组内可以存储基本数据类型，也可以存储引用数据类型数组的定义（声明）数据类型[] 数组名字;     int[] a;     char[] b;     boolean[] c;     string[] m;数组的（赋值）初始化静态初始化    有长度 有元素     int[] arry =">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaSE基础 （六）">
 <meta property="og:url" content="http://yoursite.com/2020/03/12/JavaSE基础-（六）/index.html">
 <meta property="og:site_name" content="一轮明月照九洲">
-<meta property="og:description" content="数组（容器） 数组是一组数据类型相同的数据的组合，将这些数据统一管理起来 数组本身是一个引用数据类型，但数组内可以存储基本数据类型，也可以存储引用数据类型1.数组的定义（声明）   数据类型[] 数组名字;     int[] a;     char[] b;     boolean[] c;     string[] m;2.数组的（赋值）初始化  静态初始化    有长度 有元素     in">
+<meta property="og:description" content="数组（容器）数组是一组数据类型相同的数据的组合，将这些数据统一管理起来 数组本身是一个引用数据类型，但数组内可以存储基本数据类型，也可以存储引用数据类型数组的定义（声明）数据类型[] 数组名字;     int[] a;     char[] b;     boolean[] c;     string[] m;数组的（赋值）初始化静态初始化    有长度 有元素     int[] arry =">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-12T15:39:07.081Z">
+<meta property="og:updated_time" content="2020-03-31T00:24:37.943Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaSE基础 （六）">
-<meta name="twitter:description" content="数组（容器） 数组是一组数据类型相同的数据的组合，将这些数据统一管理起来 数组本身是一个引用数据类型，但数组内可以存储基本数据类型，也可以存储引用数据类型1.数组的定义（声明）   数据类型[] 数组名字;     int[] a;     char[] b;     boolean[] c;     string[] m;2.数组的（赋值）初始化  静态初始化    有长度 有元素     in">
+<meta name="twitter:description" content="数组（容器）数组是一组数据类型相同的数据的组合，将这些数据统一管理起来 数组本身是一个引用数据类型，但数组内可以存储基本数据类型，也可以存储引用数据类型数组的定义（声明）数据类型[] 数组名字;     int[] a;     char[] b;     boolean[] c;     string[] m;数组的（赋值）初始化静态初始化    有长度 有元素     int[] arry =">
 
 
 
@@ -344,15 +344,12 @@
       
 
       
-        <p>数组（容器）</p>
-<pre><code>数组是一组数据类型相同的数据的组合，将这些数据统一管理起来
-数组本身是一个引用数据类型，但数组内可以存储基本数据类型，也可以存储引用数据类型</code></pre><p>1.数组的定义（声明）  </p>
-<pre><code>数据类型[] 数组名字;
+        <h1 id="数组（容器）"><a href="#数组（容器）" class="headerlink" title="数组（容器）"></a>数组（容器）</h1><pre><code>数组是一组数据类型相同的数据的组合，将这些数据统一管理起来
+数组本身是一个引用数据类型，但数组内可以存储基本数据类型，也可以存储引用数据类型</code></pre><h1 id="数组的定义（声明）"><a href="#数组的定义（声明）" class="headerlink" title="数组的定义（声明）"></a>数组的定义（声明）</h1><pre><code>数据类型[] 数组名字;
     int[] a;
     char[] b;
     boolean[] c;
-    string[] m;</code></pre><p>2.数组的（赋值）初始化 </p>
-<pre><code>静态初始化    有长度 有元素
+    string[] m;</code></pre><h1 id="数组的（赋值）初始化"><a href="#数组的（赋值）初始化" class="headerlink" title="数组的（赋值）初始化"></a>数组的（赋值）初始化</h1><pre><code>静态初始化    有长度 有元素
     int[] arry = {10,20,30,40,50,60};
     int[] arry = new int[] {10,20,30,40,50,60};
 动态初始化    有长度   没有元素（默认值0）
@@ -361,15 +358,16 @@
     浮点数默认值---0.0
     字符型默认值----0--char  97-a 65-A 48-&apos;0&apos;
     布尔型默认值----false
-    引用数据类型默认值----null</code></pre><p>3.数组元素的访问 </p>
-<pre><code>通过元素在数组中的位置来访问
+    引用数据类型默认值----null</code></pre><h1 id="数组元素的访问"><a href="#数组元素的访问" class="headerlink" title="数组元素的访问"></a>数组元素的访问</h1><pre><code>通过元素在数组中的位置来访问
 存值/取值
 位置-------&gt;index索引
 索引是有取值范围    [从0开始------到数组长度减1]
 如果数组的索引超过了上诉范围
 会出现了一个运行时的异常
-ArrayIndexOutOfBoundsException</code></pre><p>4 数组元素的遍历<br>                  通过循环的方式访问数组每一个元素<br>                  for（;;）{</p>
-<pre><code>}
+ArrayIndexOutOfBoundsException</code></pre><h1 id="数组元素的遍历"><a href="#数组元素的遍历" class="headerlink" title="数组元素的遍历"></a>数组元素的遍历</h1><pre><code>通过循环的方式访问数组每一个元素
+for（;;）{
+
+}
 JDK1.5版本之后 增加新特性 增强for循环 加强for forEach
 for（自定义的变量（接收数组内每一个元素）：遍历的数组arry）{
 }
@@ -379,8 +377,10 @@ for（自定义的变量（接收数组内每一个元素）：遍历的数组ar
 2.增强for 有两个条件 用来取值的变量 用来遍历的数组 没有index索引 
 写法相对容易
 只能取值 不能存值
-没有index索引  找不到元素是哪一个</code></pre><p>5.基本数据类型和引用数据类型在内存结构上的区别<br>              所有的变量空间都存储在栈内存<br>              变量空间可以存储基本数据类型  也可以引用数据类型<br>              如果变量空间存储的是一个基本数据类型  存储的是值 一个变量改变 另一个不会改变<br>              如果变量空间存储的是引用数据类型 存储的是引用（地址）一个变量地址改变 另一个跟着改变</p>
-
+没有index索引  找不到元素是哪一个</code></pre><h1 id="基本数据类型和引用数据类型在内存结构上的区别"><a href="#基本数据类型和引用数据类型在内存结构上的区别" class="headerlink" title="基本数据类型和引用数据类型在内存结构上的区别"></a>基本数据类型和引用数据类型在内存结构上的区别</h1><pre><code>所有的变量空间都存储在栈内存
+变量空间可以存储基本数据类型  也可以引用数据类型
+如果变量空间存储的是一个基本数据类型  存储的是值 一个变量改变 另一个不会改变
+如果变量空间存储的是引用数据类型 存储的是引用（地址）一个变量地址改变 另一个跟着改变</code></pre>
       
     </div>
     
@@ -468,8 +468,17 @@ for（自定义的变量（接收数组内每一个元素）：遍历的数组ar
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -554,6 +563,22 @@ for（自定义的变量（接收数组内每一个元素）：遍历的数组ar
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数组（容器）"><span class="nav-number">1.</span> <span class="nav-text">数组（容器）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组的定义（声明）"><span class="nav-number">2.</span> <span class="nav-text">数组的定义（声明）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组的（赋值）初始化"><span class="nav-number">3.</span> <span class="nav-text">数组的（赋值）初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组元素的访问"><span class="nav-number">4.</span> <span class="nav-text">数组元素的访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组元素的遍历"><span class="nav-number">5.</span> <span class="nav-text">数组元素的遍历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本数据类型和引用数据类型在内存结构上的区别"><span class="nav-number">6.</span> <span class="nav-text">基本数据类型和引用数据类型在内存结构上的区别</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-31T01:03:53.239Z</updated>
+  <updated>2020-04-01T00:33:12.138Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL（一）</title>
+    <link href="http://yoursite.com/2020/04/01/MySQL%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>http://yoursite.com/2020/04/01/MySQL（一）/</id>
+    <published>2020-04-01T00:30:35.000Z</published>
+    <updated>2020-04-01T00:33:12.138Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>数据库的基本概念</li></ol><ol start="2"><li><p>MySQL数据库软件</p><ol><li>安装</li><li>卸载</li><li>配置</li></ol></li><li><p>SQL</p></li></ol><h2 id="数据库的基本概念"><a href="#数据库的基本概念" class="headerlink" title="数据库的基本概念"></a>数据库的基本概念</h2><pre><code>1. 数据库的英文单词： DataBase 简称 ： DB2. 什么数据库？    * 用于存储和管理数据的仓库。3. 数据库的特点：    1. 持久化存储数据的。其实数据库就是一个文件系统    2. 方便存储和管理数据    3. 使用了统一的方式操作数据库 -- SQL4. 常见的数据库软件    * 参见《MySQL基础.pdf》</code></pre><h1 id="MySQL数据库软件"><a href="#MySQL数据库软件" class="headerlink" title="MySQL数据库软件"></a>MySQL数据库软件</h1><pre><code>1. 安装    * 参见《MySQL基础.pdf》2. 卸载    1. 去mysql的安装目录找到my.ini文件        * 复制 datadir=&quot;C:/ProgramData/MySQL/MySQL Server 5.5/Data/&quot;    2. 卸载MySQL    3. 删除C:/ProgramData目录下的MySQL文件夹。3. 配置    * MySQL服务启动        1. 手动。        2. cmd--&gt; services.msc 打开服务的窗口        3. 使用管理员打开cmd            * net start mysql : 启动mysql的服务            * net stop mysql:关闭mysql服务    * MySQL登录        1. mysql -uroot -p密码        2. mysql -hip -uroot -p连接目标的密码        3. mysql --host=ip --user=root --password=连接目标的密码    * MySQL退出        1. exit        2. quit    * MySQL目录结构        1. MySQL安装目录：basedir=&quot;D:/develop/MySQL/&quot;            * 配置文件 my.ini        2. MySQL数据目录：datadir=&quot;C:/ProgramData/MySQL/MySQL Server 5.5/Data/&quot;            * 几个概念                * 数据库：文件夹                * 表：文件                * 数据：数据</code></pre><h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><pre><code>1.什么是SQL？    Structured Query Language：结构化查询语言    其实就是定义了操作所有关系型数据库的规则。每一种数据库操作的方式存在不一样的地方，称为“方言”。2.SQL通用语法    1. SQL 语句可以单行或多行书写，以分号结尾。    2. 可使用空格和缩进来增强语句的可读性。    3. MySQL 数据库的 SQL 语句不区分大小写，关键字建议使用大写。    4. 3 种注释        * 单行注释: -- 注释内容 或 # 注释内容(mysql 特有)         * 多行注释: /* 注释 */3. SQL分类    1) DDL(Data Definition Language)数据定义语言        用来定义数据库对象：数据库，表，列等。关键字：create, drop,alter 等    2) DML(Data Manipulation Language)数据操作语言        用来对数据库中表的数据进行增删改。关键字：insert, delete, update 等    3) DQL(Data Query Language)数据查询语言        用来查询数据库中表的记录(数据)。关键字：select, where 等    4) DCL(Data Control Language)数据控制语言(了解)        用来定义数据库的访问权限和安全级别，及创建用户。关键字：GRANT， REVOKE 等</code></pre><h2 id="DDL-操作数据库、表"><a href="#DDL-操作数据库、表" class="headerlink" title="DDL:操作数据库、表"></a>DDL:操作数据库、表</h2><pre><code>1. 操作数据库：CRUD    1. C(Create):创建        * 创建数据库：            * create database 数据库名称;        * 创建数据库，判断不存在，再创建：            * create database if not exists 数据库名称;        * 创建数据库，并指定字符集            * create database 数据库名称 character set 字符集名;        * 练习： 创建db4数据库，判断是否存在，并制定字符集为gbk            * create database if not exists db4 character set gbk;    2. R(Retrieve)：查询        * 查询所有数据库的名称:            * show databases;        * 查询某个数据库的字符集:查询某个数据库的创建语句            * show create database 数据库名称;    3. U(Update):修改        * 修改数据库的字符集            * alter database 数据库名称 character set 字符集名称;    4. D(Delete):删除        * 删除数据库            * drop database 数据库名称;        * 判断数据库存在，存在再删除            * drop database if exists 数据库名称;    5. 使用数据库        * 查询当前正在使用的数据库名称            * select database();        * 使用数据库            * use 数据库名称;2. 操作表    1. C(Create):创建        1. 语法：            create table 表名(                列名1 数据类型1,                列名2 数据类型2,                ....                列名n 数据类型n            );            * 注意：最后一列，不需要加逗号（,）            * 数据库类型：                1. int：整数类型                    * age int,                2. double:小数类型                    * score double(5,2)                3. date:日期，只包含年月日，yyyy-MM-dd                4. datetime:日期，包含年月日时分秒     yyyy-MM-dd HH:mm:ss                5. timestamp:时间错类型    包含年月日时分秒     yyyy-MM-dd HH:mm:ss                        * 如果将来不给这个字段赋值，或赋值为null，则默认使用当前的系统时间，来自动赋值                6. varchar：字符串                    * name varchar(20):姓名最大20个字符                    * zhangsan 8个字符  张三 2个字符        * 创建表            create table student(                id int,                name varchar(32),                age int ,                score double(4,1),                birthday date,                insert_time timestamp            );        * 复制表：            * create table 表名 like 被复制的表名;              2. R(Retrieve)：查询        * 查询某个数据库中所有的表名称            * show tables;        * 查询表结构            * desc 表名;    3. U(Update):修改        1. 修改表名            alter table 表名 rename to 新的表名;        2. 修改表的字符集            alter table 表名 character set 字符集名称;        3. 添加一列            alter table 表名 add 列名 数据类型;        4. 修改列名称 类型            alter table 表名 change 列名 新列别 新数据类型;            alter table 表名 modify 列名 新数据类型;        5. 删除列            alter table 表名 drop 列名;    4. D(Delete):删除        * drop table 表名;        * drop table  if exists 表名 ;</code></pre><ul><li>客户端图形化工具：SQLYog</li></ul><h2 id="DML：增删改表中数据"><a href="#DML：增删改表中数据" class="headerlink" title="DML：增删改表中数据"></a>DML：增删改表中数据</h2><pre><code>1. 添加数据：    * 语法：        * insert into 表名(列名1,列名2,...列名n) values(值1,值2,...值n);    * 注意：        1. 列名和值要一一对应。        2. 如果表名后，不定义列名，则默认给所有列添加值            insert into 表名 values(值1,值2,...值n);        3. 除了数字类型，其他类型需要使用引号(单双都可以)引起来2. 删除数据：    * 语法：        * delete from 表名 [where 条件]    * 注意：        1. 如果不加条件，则删除表中所有记录。        2. 如果要删除所有记录            1. delete from 表名; -- 不推荐使用。有多少条记录就会执行多少次删除操作            2. TRUNCATE TABLE 表名; -- 推荐使用，效率更高 先删除表，然后再创建一张一样的表。3. 修改数据：    * 语法：        * update 表名 set 列名1 = 值1, 列名2 = 值2,... [where 条件];    * 注意：        1. 如果不加任何条件，则会将表中所有记录全部修改。</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;数据库的基本概念&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;&lt;p&gt;MySQL数据库软件&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;安装&lt;/li&gt;
+&lt;li&gt;卸载&lt;/li&gt;
+&lt;li&gt;配置&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;SQL&lt;/p&gt;
+&lt;/li&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://yoursite.com/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaSE基础  （三十五）</title>
@@ -447,29 +483,6 @@
       
       
         &lt;h1 id=&quot;设计模式&quot;&gt;&lt;a href=&quot;#设计模式&quot; class=&quot;headerlink&quot; title=&quot;设计模式&quot;&gt;&lt;/a&gt;设计模式&lt;/h1&gt;&lt;h2 id=&quot;策略者模式-Strategy-nbsp-———-行为型模式&quot;&gt;&lt;a href=&quot;#策略者模式-Strategy-n
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaSE基础  （十六）</title>
-    <link href="http://yoursite.com/2020/03/22/JavaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E5%8D%81%E5%85%AD%EF%BC%89/"/>
-    <id>http://yoursite.com/2020/03/22/JavaSE基础-（十六）/</id>
-    <published>2020-03-22T13:14:51.000Z</published>
-    <updated>2020-03-22T16:07:05.330Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式<br></h1><h2 id="适配器模式-Adapter"><a href="#适配器模式-Adapter" class="headerlink" title="适配器模式 Adapter"></a>适配器模式 Adapter</h2><pre><code>定义一个规则-------&gt;和尚 吃斋 念经 打坐 撞钟 习武适配器鲁智深 鲁达 形态丑陋 面貌凶顽 方丈说 此人上应天星 心地刚直 虽时下凶顽 命中驳杂 久后却得清净 证果非凡 汝等不及他public abstract class AbstractBox implements Box{          public booolean add(element);          public void add(int index,int element){//具体化          }          public void addAll(){//具体化          }          public int get（index）;          public int remove（index）;          public int size();          }</code></pre><h2 id="Java面向对象的四大特性"><a href="#Java面向对象的四大特性" class="headerlink" title="Java面向对象的四大特性"></a>Java面向对象的四大特性</h2><pre><code>继承 封装 多态 （抽象）</code></pre><h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><pre><code>同一个对象 体现出来的多种不同形态（身份）将一种行为表现出不同效果要想实现多态的效果 需要先有继承关系</code></pre><h3 id="体现"><a href="#体现" class="headerlink" title="体现"></a>体现<br></h3><pre><code>              1.父类类型的引用  指向  子类的对象                   Person p = new Teachher();              2.该引用只能调用父类定义的属性和方法              3.如果子类中将父类的方法重写,那么调取方法后执行的结果是子类重写之后的那个结果              如果父类与子类有同名的属性           执行父类的属性              如果父类与子类有同名的方法（重载）      执行子类重写之后的方法              4.若想要调用子类中独有的成员              （强制类型转换）造型 铸型 （向上/向下转型）//把父类引用向下转型              5.造型时（强制向下转型时）可能会出现一个运行时异常              ClassCastException   造型 铸型 异常              如果想要避免造型异常可以用instanceof关键字来进行判断// O instanceof Student 对象是否属于后面类型                                      Object                          hashCode equals toString getClass......                          Animal                     name属性 eat sleep               Person                                      Pig           name属性 重eat 重sleep 独talk             name属性  重sleep          Teacher                     Student                  name属性 重eat 独有teach       name属性 重talk 独study            Object o = new Teacher();//向上转型            o.hashCode() o.toString();            Animal a = (Animal)o;//向下转型            a.hashCode() a.toString a.name a.eat() a.sleep()            Person p = (Person)o;            p.hashCode();p.name p.eat p.sleep p.talk</code></pre><h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><pre><code>1.InputMismatchException  输入不匹配2.NumberFormateException  数字格式化异常3.ArrayIndexOutBoundsException  数组索引越界4.NegativeArraySizeException  数组长度负数5.NullPointerException   空指针异常6.AirthmeticException    算数异常7.ClassCastException     造型异常</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;设计模式&quot;&gt;&lt;a href=&quot;#设计模式&quot; class=&quot;headerlink&quot; title=&quot;设计模式&quot;&gt;&lt;/a&gt;设计模式&lt;br&gt;&lt;/h1&gt;&lt;h2 id=&quot;适配器模式-Adapter&quot;&gt;&lt;a href=&quot;#适配器模式-Adapter&quot; class=&quot;header
       
     
     </summary>

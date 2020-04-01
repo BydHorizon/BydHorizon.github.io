@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="MySQL,">
 
 
 
@@ -81,17 +81,18 @@
 
 
 
-<meta name="description" content="集合相关变量–容器存取一个元素数组–容器一组具有某种特性的数据存放在一起        存储一组元素（数据类型一致）  长度固定集合–容器与数组类似 集合的长度存储之后还能改变 集合用来存储一组元素Collection存的都是valueList有序可重复Set无序无重复Map存储的是以key-value形式存在 key无序无重复  value无序可重复序：顺序添加进去的元素 取得元素的顺序一致 注">
+<meta name="description" content="数据库的基本概念   MySQL数据库软件  安装 卸载 配置   SQL   数据库的基本概念1. 数据库的英文单词： DataBase 简称 ： DB 2. 什么数据库？     * 用于存储和管理数据的仓库。  3. 数据库的特点：     1. 持久化存储数据的。其实数据库就是一个文件系统     2. 方便存储和管理数据     3. 使用了统一的方式操作数据库 -- SQL   4.">
+<meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaSE基础 （二十五）">
-<meta property="og:url" content="http://yoursite.com/2020/03/24/JavaSE基础-（二十五）/index.html">
+<meta property="og:title" content="MySQL（一）">
+<meta property="og:url" content="http://yoursite.com/2020/04/01/MySQL（一）/index.html">
 <meta property="og:site_name" content="一轮明月照九洲">
-<meta property="og:description" content="集合相关变量–容器存取一个元素数组–容器一组具有某种特性的数据存放在一起        存储一组元素（数据类型一致）  长度固定集合–容器与数组类似 集合的长度存储之后还能改变 集合用来存储一组元素Collection存的都是valueList有序可重复Set无序无重复Map存储的是以key-value形式存在 key无序无重复  value无序可重复序：顺序添加进去的元素 取得元素的顺序一致 注">
+<meta property="og:description" content="数据库的基本概念   MySQL数据库软件  安装 卸载 配置   SQL   数据库的基本概念1. 数据库的英文单词： DataBase 简称 ： DB 2. 什么数据库？     * 用于存储和管理数据的仓库。  3. 数据库的特点：     1. 持久化存储数据的。其实数据库就是一个文件系统     2. 方便存储和管理数据     3. 使用了统一的方式操作数据库 -- SQL   4.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-31T00:48:53.927Z">
+<meta property="og:updated_time" content="2020-04-01T00:33:12.138Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaSE基础 （二十五）">
-<meta name="twitter:description" content="集合相关变量–容器存取一个元素数组–容器一组具有某种特性的数据存放在一起        存储一组元素（数据类型一致）  长度固定集合–容器与数组类似 集合的长度存储之后还能改变 集合用来存储一组元素Collection存的都是valueList有序可重复Set无序无重复Map存储的是以key-value形式存在 key无序无重复  value无序可重复序：顺序添加进去的元素 取得元素的顺序一致 注">
+<meta name="twitter:title" content="MySQL（一）">
+<meta name="twitter:description" content="数据库的基本概念   MySQL数据库软件  安装 卸载 配置   SQL   数据库的基本概念1. 数据库的英文单词： DataBase 简称 ： DB 2. 什么数据库？     * 用于存储和管理数据的仓库。  3. 数据库的特点：     1. 持久化存储数据的。其实数据库就是一个文件系统     2. 方便存储和管理数据     3. 使用了统一的方式操作数据库 -- SQL   4.">
 
 
 
@@ -121,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/03/24/JavaSE基础-（二十五）/">
+  <link rel="canonical" href="http://yoursite.com/2020/04/01/MySQL（一）/">
 
 
 
 
 
-  <title>JavaSE基础 （二十五） | 一轮明月照九洲</title>
+  <title>MySQL（一） | 一轮明月照九洲</title>
   
 
 
@@ -255,7 +256,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/24/JavaSE基础-（二十五）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/01/MySQL（一）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="我与我周旋">
@@ -272,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaSE基础 （二十五）</h1>
+          <h1 class="post-title" itemprop="name headline">MySQL（一）</h1>
         
 
         <div class="post-meta">
@@ -284,8 +285,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-24T22:23:31+08:00">
-                2020-03-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-01T08:30:35+08:00">
+                2020-04-01
               </time>
             
 
@@ -294,28 +295,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -344,40 +323,192 @@
       
 
       
-        <h1 id="集合相关"><a href="#集合相关" class="headerlink" title="集合相关"></a>集合相关</h1><h2 id="变量–容器"><a href="#变量–容器" class="headerlink" title="变量–容器"></a>变量–容器</h2><pre><code>存取一个元素</code></pre><h2 id="数组–容器"><a href="#数组–容器" class="headerlink" title="数组–容器"></a>数组–容器</h2><pre><code>一组具有某种特性的数据存放在一起
-       存储一组元素（数据类型一致）  长度固定</code></pre><h2 id="集合–容器"><a href="#集合–容器" class="headerlink" title="集合–容器"></a>集合–容器</h2><pre><code>与数组类似 集合的长度存储之后还能改变
-集合用来存储一组元素</code></pre><h3 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h3><pre><code>存的都是value</code></pre><h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><pre><code>有序可重复</code></pre><h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h4><pre><code>无序无重复</code></pre><h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><pre><code>存储的是以key-value形式存在
-key无序无重复  value无序可重复</code></pre><h3 id="序：顺序"><a href="#序：顺序" class="headerlink" title="序：顺序"></a>序：顺序</h3><pre><code>添加进去的元素 取得元素的顺序一致 注意指的不是集合自己的顺序</code></pre><h3 id="重复：两个对象一致"><a href="#重复：两个对象一致" class="headerlink" title="重复：两个对象一致"></a>重复：两个对象一致</h3><h1 id="List集合"><a href="#List集合" class="headerlink" title="List集合"></a>List集合</h1><p>   1.ArrayList 2.LinkList 3.Vector</p>
-<h1 id="ArrayList——-底层就是一个数组"><a href="#ArrayList——-底层就是一个数组" class="headerlink" title="ArrayList——-底层就是一个数组"></a>ArrayList——-底层就是一个数组</h1><h2 id="所属的包-java-util"><a href="#所属的包-java-util" class="headerlink" title="所属的包 java.util"></a>所属的包 java.util</h2><h2 id="如何创建对象"><a href="#如何创建对象" class="headerlink" title="如何创建对象"></a>如何创建对象</h2><pre><code>无参数构造方法 带默认参数的都构造方法 带collection参数的构造方法</code></pre><h2 id="常用的方法-—小容器"><a href="#常用的方法-—小容器" class="headerlink" title="常用的方法 —小容器"></a>常用的方法 —小容器</h2><pre><code>   存 add
-   取 get
-   删 remove
-   改
-   个数 size
+        <ol>
+<li>数据库的基本概念</li>
+</ol>
+<ol start="2">
+<li><p>MySQL数据库软件</p>
+<ol>
+<li>安装</li>
+<li>卸载</li>
+<li>配置</li>
+</ol>
+</li>
+<li><p>SQL</p>
+</li>
+</ol>
+<h2 id="数据库的基本概念"><a href="#数据库的基本概念" class="headerlink" title="数据库的基本概念"></a>数据库的基本概念</h2><pre><code>1. 数据库的英文单词： DataBase 简称 ： DB
+2. 什么数据库？
+    * 用于存储和管理数据的仓库。
 
-add(E e) add(int index,E e)
-addAll(Collection c); add(int index,Collection c)
-clear();将集合内的元素全部清除
-boolean = contains(Object);找寻一个给定元素集合中是否拥有
-ensureCapacity(int minCapacity);
-E = get(int index);
-int = indexOf(Object obj); lastindexOf();
-isEmpty();
-iterator;//迭代器 1.5之后增强for
-removeAll 差集 retainAll()交集
-addAll()并集
-E = set(int index,E value)
-int size();
-List = subList(int index,E value)
-toArray();集合变成数组
-toArray(T[]);
-trimToSize();//变成有效元素个数那么长</code></pre><h2 id="arryList底层是一个Object"><a href="#arryList底层是一个Object" class="headerlink" title="arryList底层是一个Object[]"></a>arryList底层是一个Object[]</h2><pre><code>什么类型都可以存进去
-取出来的时候多态效果 需要自己造型 显得用起来非常麻烦</code></pre><h1 id="JDK1-5之后—-gt-泛型"><a href="#JDK1-5之后—-gt-泛型" class="headerlink" title="JDK1.5之后—-&gt;泛型"></a>JDK1.5之后—-&gt;泛型</h1><pre><code>用来规定数据类型的,定义的时候用一个符号代替某种类型
-在使用的时候具体的数据类型 将定义的那个符号替换掉
-ArrayBox&lt;T&gt;</code></pre><h2 id="泛型可以用在哪里？"><a href="#泛型可以用在哪里？" class="headerlink" title="泛型可以用在哪里？"></a>泛型可以用在哪里？</h2><h3 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h3><pre><code>类定义的时候描述某种数据类型 集合就是这样使用</code></pre><h3 id="泛型接口"><a href="#泛型接口" class="headerlink" title="泛型接口"></a>泛型接口</h3><pre><code>与泛型类的使用基本一致 子类实现接口时必须添加泛型
-public interface Text&lt;X&gt;{
-     public X value;
-}
-public class Son&lt;X&gt;implements Test&lt;X&gt;</code></pre><h3 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h3><pre><code>方法调用时传参数 方法的泛型与类无关 带有泛型的方法可以不放在带有泛型的类中</code></pre>
+3. 数据库的特点：
+    1. 持久化存储数据的。其实数据库就是一个文件系统
+    2. 方便存储和管理数据
+    3. 使用了统一的方式操作数据库 -- SQL
+
+
+4. 常见的数据库软件
+    * 参见《MySQL基础.pdf》</code></pre><h1 id="MySQL数据库软件"><a href="#MySQL数据库软件" class="headerlink" title="MySQL数据库软件"></a>MySQL数据库软件</h1><pre><code>1. 安装
+    * 参见《MySQL基础.pdf》
+2. 卸载
+    1. 去mysql的安装目录找到my.ini文件
+        * 复制 datadir=&quot;C:/ProgramData/MySQL/MySQL Server 5.5/Data/&quot;
+    2. 卸载MySQL
+    3. 删除C:/ProgramData目录下的MySQL文件夹。
+
+3. 配置
+    * MySQL服务启动
+        1. 手动。
+        2. cmd--&gt; services.msc 打开服务的窗口
+        3. 使用管理员打开cmd
+            * net start mysql : 启动mysql的服务
+            * net stop mysql:关闭mysql服务
+    * MySQL登录
+        1. mysql -uroot -p密码
+        2. mysql -hip -uroot -p连接目标的密码
+        3. mysql --host=ip --user=root --password=连接目标的密码
+    * MySQL退出
+        1. exit
+        2. quit
+
+    * MySQL目录结构
+        1. MySQL安装目录：basedir=&quot;D:/develop/MySQL/&quot;
+            * 配置文件 my.ini
+        2. MySQL数据目录：datadir=&quot;C:/ProgramData/MySQL/MySQL Server 5.5/Data/&quot;
+            * 几个概念
+                * 数据库：文件夹
+                * 表：文件
+                * 数据：数据</code></pre><h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><pre><code>1.什么是SQL？
+    Structured Query Language：结构化查询语言
+    其实就是定义了操作所有关系型数据库的规则。每一种数据库操作的方式存在不一样的地方，称为“方言”。
+
+2.SQL通用语法
+    1. SQL 语句可以单行或多行书写，以分号结尾。
+    2. 可使用空格和缩进来增强语句的可读性。
+    3. MySQL 数据库的 SQL 语句不区分大小写，关键字建议使用大写。
+    4. 3 种注释
+        * 单行注释: -- 注释内容 或 # 注释内容(mysql 特有) 
+        * 多行注释: /* 注释 */
+
+3. SQL分类
+    1) DDL(Data Definition Language)数据定义语言
+        用来定义数据库对象：数据库，表，列等。关键字：create, drop,alter 等
+    2) DML(Data Manipulation Language)数据操作语言
+        用来对数据库中表的数据进行增删改。关键字：insert, delete, update 等
+    3) DQL(Data Query Language)数据查询语言
+        用来查询数据库中表的记录(数据)。关键字：select, where 等
+    4) DCL(Data Control Language)数据控制语言(了解)
+        用来定义数据库的访问权限和安全级别，及创建用户。关键字：GRANT， REVOKE 等</code></pre><h2 id="DDL-操作数据库、表"><a href="#DDL-操作数据库、表" class="headerlink" title="DDL:操作数据库、表"></a>DDL:操作数据库、表</h2><pre><code>1. 操作数据库：CRUD
+    1. C(Create):创建
+        * 创建数据库：
+            * create database 数据库名称;
+        * 创建数据库，判断不存在，再创建：
+            * create database if not exists 数据库名称;
+        * 创建数据库，并指定字符集
+            * create database 数据库名称 character set 字符集名;
+
+        * 练习： 创建db4数据库，判断是否存在，并制定字符集为gbk
+            * create database if not exists db4 character set gbk;
+    2. R(Retrieve)：查询
+        * 查询所有数据库的名称:
+            * show databases;
+        * 查询某个数据库的字符集:查询某个数据库的创建语句
+            * show create database 数据库名称;
+    3. U(Update):修改
+        * 修改数据库的字符集
+            * alter database 数据库名称 character set 字符集名称;
+    4. D(Delete):删除
+        * 删除数据库
+            * drop database 数据库名称;
+        * 判断数据库存在，存在再删除
+            * drop database if exists 数据库名称;
+    5. 使用数据库
+        * 查询当前正在使用的数据库名称
+            * select database();
+        * 使用数据库
+            * use 数据库名称;
+
+
+2. 操作表
+    1. C(Create):创建
+        1. 语法：
+            create table 表名(
+                列名1 数据类型1,
+                列名2 数据类型2,
+                ....
+                列名n 数据类型n
+            );
+            * 注意：最后一列，不需要加逗号（,）
+            * 数据库类型：
+                1. int：整数类型
+                    * age int,
+                2. double:小数类型
+                    * score double(5,2)
+                3. date:日期，只包含年月日，yyyy-MM-dd
+                4. datetime:日期，包含年月日时分秒     yyyy-MM-dd HH:mm:ss
+                5. timestamp:时间错类型    包含年月日时分秒     yyyy-MM-dd HH:mm:ss    
+                    * 如果将来不给这个字段赋值，或赋值为null，则默认使用当前的系统时间，来自动赋值
+
+                6. varchar：字符串
+                    * name varchar(20):姓名最大20个字符
+                    * zhangsan 8个字符  张三 2个字符
+
+
+        * 创建表
+            create table student(
+                id int,
+                name varchar(32),
+                age int ,
+                score double(4,1),
+                birthday date,
+                insert_time timestamp
+            );
+        * 复制表：
+            * create table 表名 like 被复制的表名;          
+    2. R(Retrieve)：查询
+        * 查询某个数据库中所有的表名称
+            * show tables;
+        * 查询表结构
+            * desc 表名;
+    3. U(Update):修改
+        1. 修改表名
+            alter table 表名 rename to 新的表名;
+        2. 修改表的字符集
+            alter table 表名 character set 字符集名称;
+        3. 添加一列
+            alter table 表名 add 列名 数据类型;
+        4. 修改列名称 类型
+            alter table 表名 change 列名 新列别 新数据类型;
+            alter table 表名 modify 列名 新数据类型;
+        5. 删除列
+            alter table 表名 drop 列名;
+    4. D(Delete):删除
+        * drop table 表名;
+        * drop table  if exists 表名 ;</code></pre><ul>
+<li>客户端图形化工具：SQLYog</li>
+</ul>
+<h2 id="DML：增删改表中数据"><a href="#DML：增删改表中数据" class="headerlink" title="DML：增删改表中数据"></a>DML：增删改表中数据</h2><pre><code>1. 添加数据：
+    * 语法：
+        * insert into 表名(列名1,列名2,...列名n) values(值1,值2,...值n);
+    * 注意：
+        1. 列名和值要一一对应。
+        2. 如果表名后，不定义列名，则默认给所有列添加值
+            insert into 表名 values(值1,值2,...值n);
+        3. 除了数字类型，其他类型需要使用引号(单双都可以)引起来
+2. 删除数据：
+    * 语法：
+        * delete from 表名 [where 条件]
+    * 注意：
+        1. 如果不加条件，则删除表中所有记录。
+        2. 如果要删除所有记录
+            1. delete from 表名; -- 不推荐使用。有多少条记录就会执行多少次删除操作
+            2. TRUNCATE TABLE 表名; -- 推荐使用，效率更高 先删除表，然后再创建一张一样的表。
+3. 修改数据：
+    * 语法：
+        * update 表名 set 列名1 = 值1, 列名2 = 值2,... [where 条件];
+
+    * 注意：
+        1. 如果不加任何条件，则会将表中所有记录全部修改。</code></pre>
       
     </div>
     
@@ -392,6 +523,12 @@ public class Son&lt;X&gt;implements Test&lt;X&gt;</code></pre><h3 id="泛型方�
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+          
+        </div>
+      
 
       
       
@@ -401,8 +538,8 @@ public class Son&lt;X&gt;implements Test&lt;X&gt;</code></pre><h3 id="泛型方�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/24/JavaSE基础-（二十四）/" rel="next" title="JavaSE基础 （二十四）">
-                <i class="fa fa-chevron-left"></i> JavaSE基础 （二十四）
+              <a href="/2020/03/30/avaSE基础-（三十五）/" rel="next" title="JavaSE基础  （三十五）">
+                <i class="fa fa-chevron-left"></i> JavaSE基础  （三十五）
               </a>
             
           </div>
@@ -410,10 +547,6 @@ public class Son&lt;X&gt;implements Test&lt;X&gt;</code></pre><h3 id="泛型方�
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/25/avaSE基础-（二十六）/" rel="prev" title="JavaSE基础         (二十六）">
-                JavaSE基础         (二十六） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -570,7 +703,7 @@ public class Son&lt;X&gt;implements Test&lt;X&gt;</code></pre><h3 id="泛型方�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#集合相关"><span class="nav-number">1.</span> <span class="nav-text">集合相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量–容器"><span class="nav-number">1.1.</span> <span class="nav-text">变量–容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组–容器"><span class="nav-number">1.2.</span> <span class="nav-text">数组–容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合–容器"><span class="nav-number">1.3.</span> <span class="nav-text">集合–容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Collection"><span class="nav-number">1.3.1.</span> <span class="nav-text">Collection</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#List"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">List</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">Set</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Map"><span class="nav-number">1.3.2.</span> <span class="nav-text">Map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#序：顺序"><span class="nav-number">1.3.3.</span> <span class="nav-text">序：顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重复：两个对象一致"><span class="nav-number">1.3.4.</span> <span class="nav-text">重复：两个对象一致</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#List集合"><span class="nav-number">2.</span> <span class="nav-text">List集合</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ArrayList——-底层就是一个数组"><span class="nav-number">3.</span> <span class="nav-text">ArrayList——-底层就是一个数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#所属的包-java-util"><span class="nav-number">3.1.</span> <span class="nav-text">所属的包 java.util</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何创建对象"><span class="nav-number">3.2.</span> <span class="nav-text">如何创建对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的方法-—小容器"><span class="nav-number">3.3.</span> <span class="nav-text">常用的方法 —小容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arryList底层是一个Object"><span class="nav-number">3.4.</span> <span class="nav-text">arryList底层是一个Object[]</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JDK1-5之后—-gt-泛型"><span class="nav-number">4.</span> <span class="nav-text">JDK1.5之后—-&gt;泛型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#泛型可以用在哪里？"><span class="nav-number">4.1.</span> <span class="nav-text">泛型可以用在哪里？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型类"><span class="nav-number">4.1.1.</span> <span class="nav-text">泛型类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型接口"><span class="nav-number">4.1.2.</span> <span class="nav-text">泛型接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型方法"><span class="nav-number">4.1.3.</span> <span class="nav-text">泛型方法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库的基本概念"><span class="nav-number">1.</span> <span class="nav-text">数据库的基本概念</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL数据库软件"><span class="nav-number"></span> <span class="nav-text">MySQL数据库软件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL"><span class="nav-number"></span> <span class="nav-text">SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DDL-操作数据库、表"><span class="nav-number">1.</span> <span class="nav-text">DDL:操作数据库、表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DML：增删改表中数据"><span class="nav-number">2.</span> <span class="nav-text">DML：增删改表中数据</span></a></li></ol></li></div>
             
 
           </div>

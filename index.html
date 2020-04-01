@@ -252,6 +252,310 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/01/MySQL（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/01/MySQL（一）/" itemprop="url">MySQL（一）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-01T08:30:35+08:00">
+                2020-04-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>数据库的基本概念</li>
+</ol>
+<ol start="2">
+<li><p>MySQL数据库软件</p>
+<ol>
+<li>安装</li>
+<li>卸载</li>
+<li>配置</li>
+</ol>
+</li>
+<li><p>SQL</p>
+</li>
+</ol>
+<h2 id="数据库的基本概念"><a href="#数据库的基本概念" class="headerlink" title="数据库的基本概念"></a>数据库的基本概念</h2><pre><code>1. 数据库的英文单词： DataBase 简称 ： DB
+2. 什么数据库？
+    * 用于存储和管理数据的仓库。
+
+3. 数据库的特点：
+    1. 持久化存储数据的。其实数据库就是一个文件系统
+    2. 方便存储和管理数据
+    3. 使用了统一的方式操作数据库 -- SQL
+
+
+4. 常见的数据库软件
+    * 参见《MySQL基础.pdf》</code></pre><h1 id="MySQL数据库软件"><a href="#MySQL数据库软件" class="headerlink" title="MySQL数据库软件"></a>MySQL数据库软件</h1><pre><code>1. 安装
+    * 参见《MySQL基础.pdf》
+2. 卸载
+    1. 去mysql的安装目录找到my.ini文件
+        * 复制 datadir=&quot;C:/ProgramData/MySQL/MySQL Server 5.5/Data/&quot;
+    2. 卸载MySQL
+    3. 删除C:/ProgramData目录下的MySQL文件夹。
+
+3. 配置
+    * MySQL服务启动
+        1. 手动。
+        2. cmd--&gt; services.msc 打开服务的窗口
+        3. 使用管理员打开cmd
+            * net start mysql : 启动mysql的服务
+            * net stop mysql:关闭mysql服务
+    * MySQL登录
+        1. mysql -uroot -p密码
+        2. mysql -hip -uroot -p连接目标的密码
+        3. mysql --host=ip --user=root --password=连接目标的密码
+    * MySQL退出
+        1. exit
+        2. quit
+
+    * MySQL目录结构
+        1. MySQL安装目录：basedir=&quot;D:/develop/MySQL/&quot;
+            * 配置文件 my.ini
+        2. MySQL数据目录：datadir=&quot;C:/ProgramData/MySQL/MySQL Server 5.5/Data/&quot;
+            * 几个概念
+                * 数据库：文件夹
+                * 表：文件
+                * 数据：数据</code></pre><h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><pre><code>1.什么是SQL？
+    Structured Query Language：结构化查询语言
+    其实就是定义了操作所有关系型数据库的规则。每一种数据库操作的方式存在不一样的地方，称为“方言”。
+
+2.SQL通用语法
+    1. SQL 语句可以单行或多行书写，以分号结尾。
+    2. 可使用空格和缩进来增强语句的可读性。
+    3. MySQL 数据库的 SQL 语句不区分大小写，关键字建议使用大写。
+    4. 3 种注释
+        * 单行注释: -- 注释内容 或 # 注释内容(mysql 特有) 
+        * 多行注释: /* 注释 */
+
+3. SQL分类
+    1) DDL(Data Definition Language)数据定义语言
+        用来定义数据库对象：数据库，表，列等。关键字：create, drop,alter 等
+    2) DML(Data Manipulation Language)数据操作语言
+        用来对数据库中表的数据进行增删改。关键字：insert, delete, update 等
+    3) DQL(Data Query Language)数据查询语言
+        用来查询数据库中表的记录(数据)。关键字：select, where 等
+    4) DCL(Data Control Language)数据控制语言(了解)
+        用来定义数据库的访问权限和安全级别，及创建用户。关键字：GRANT， REVOKE 等</code></pre><h2 id="DDL-操作数据库、表"><a href="#DDL-操作数据库、表" class="headerlink" title="DDL:操作数据库、表"></a>DDL:操作数据库、表</h2><pre><code>1. 操作数据库：CRUD
+    1. C(Create):创建
+        * 创建数据库：
+            * create database 数据库名称;
+        * 创建数据库，判断不存在，再创建：
+            * create database if not exists 数据库名称;
+        * 创建数据库，并指定字符集
+            * create database 数据库名称 character set 字符集名;
+
+        * 练习： 创建db4数据库，判断是否存在，并制定字符集为gbk
+            * create database if not exists db4 character set gbk;
+    2. R(Retrieve)：查询
+        * 查询所有数据库的名称:
+            * show databases;
+        * 查询某个数据库的字符集:查询某个数据库的创建语句
+            * show create database 数据库名称;
+    3. U(Update):修改
+        * 修改数据库的字符集
+            * alter database 数据库名称 character set 字符集名称;
+    4. D(Delete):删除
+        * 删除数据库
+            * drop database 数据库名称;
+        * 判断数据库存在，存在再删除
+            * drop database if exists 数据库名称;
+    5. 使用数据库
+        * 查询当前正在使用的数据库名称
+            * select database();
+        * 使用数据库
+            * use 数据库名称;
+
+
+2. 操作表
+    1. C(Create):创建
+        1. 语法：
+            create table 表名(
+                列名1 数据类型1,
+                列名2 数据类型2,
+                ....
+                列名n 数据类型n
+            );
+            * 注意：最后一列，不需要加逗号（,）
+            * 数据库类型：
+                1. int：整数类型
+                    * age int,
+                2. double:小数类型
+                    * score double(5,2)
+                3. date:日期，只包含年月日，yyyy-MM-dd
+                4. datetime:日期，包含年月日时分秒     yyyy-MM-dd HH:mm:ss
+                5. timestamp:时间错类型    包含年月日时分秒     yyyy-MM-dd HH:mm:ss    
+                    * 如果将来不给这个字段赋值，或赋值为null，则默认使用当前的系统时间，来自动赋值
+
+                6. varchar：字符串
+                    * name varchar(20):姓名最大20个字符
+                    * zhangsan 8个字符  张三 2个字符
+
+
+        * 创建表
+            create table student(
+                id int,
+                name varchar(32),
+                age int ,
+                score double(4,1),
+                birthday date,
+                insert_time timestamp
+            );
+        * 复制表：
+            * create table 表名 like 被复制的表名;          
+    2. R(Retrieve)：查询
+        * 查询某个数据库中所有的表名称
+            * show tables;
+        * 查询表结构
+            * desc 表名;
+    3. U(Update):修改
+        1. 修改表名
+            alter table 表名 rename to 新的表名;
+        2. 修改表的字符集
+            alter table 表名 character set 字符集名称;
+        3. 添加一列
+            alter table 表名 add 列名 数据类型;
+        4. 修改列名称 类型
+            alter table 表名 change 列名 新列别 新数据类型;
+            alter table 表名 modify 列名 新数据类型;
+        5. 删除列
+            alter table 表名 drop 列名;
+    4. D(Delete):删除
+        * drop table 表名;
+        * drop table  if exists 表名 ;</code></pre><ul>
+<li>客户端图形化工具：SQLYog</li>
+</ul>
+<h2 id="DML：增删改表中数据"><a href="#DML：增删改表中数据" class="headerlink" title="DML：增删改表中数据"></a>DML：增删改表中数据</h2><pre><code>1. 添加数据：
+    * 语法：
+        * insert into 表名(列名1,列名2,...列名n) values(值1,值2,...值n);
+    * 注意：
+        1. 列名和值要一一对应。
+        2. 如果表名后，不定义列名，则默认给所有列添加值
+            insert into 表名 values(值1,值2,...值n);
+        3. 除了数字类型，其他类型需要使用引号(单双都可以)引起来
+2. 删除数据：
+    * 语法：
+        * delete from 表名 [where 条件]
+    * 注意：
+        1. 如果不加条件，则删除表中所有记录。
+        2. 如果要删除所有记录
+            1. delete from 表名; -- 不推荐使用。有多少条记录就会执行多少次删除操作
+            2. TRUNCATE TABLE 表名; -- 推荐使用，效率更高 先删除表，然后再创建一张一样的表。
+3. 修改数据：
+    * 语法：
+        * update 表名 set 列名1 = 值1, 列名2 = 值2,... [where 条件];
+
+    * 注意：
+        1. 如果不加任何条件，则会将表中所有记录全部修改。</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/30/avaSE基础-（三十五）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2075,163 +2379,6 @@ return this.name.compareTo(o.name);//当前对象name和另一对象name的Compa
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/25/avaSE基础-（二十六）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/25/avaSE基础-（二十六）/" itemprop="url">JavaSE基础         (二十六）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-25T21:30:11+08:00">
-                2020-03-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="List"><a href="#List" class="headerlink" title="List"></a>List</h1><h1 id="Vector-类"><a href="#Vector-类" class="headerlink" title="Vector 类"></a>Vector 类</h1><h2 id="java-util包"><a href="#java-util包" class="headerlink" title="java.util包"></a>java.util包</h2><h2 id="是ArrayList集合-早期版本"><a href="#是ArrayList集合-早期版本" class="headerlink" title="是ArrayList集合 早期版本"></a>是ArrayList集合 早期版本</h2><pre><code>(StringBuffer类早期 Stringbuilder后来)
- vector底层也是用动态数组来存储
- vector是线程同步的 安全性高 效率低</code></pre><h2 id="扩容方式与ArrayList不同"><a href="#扩容方式与ArrayList不同" class="headerlink" title="扩容方式与ArrayList不同"></a>扩容方式与ArrayList不同</h2><pre><code>默认是扩容两倍  可以通过构造方法创建对象时修改这一机制</code></pre><h1 id="Stack类-栈"><a href="#Stack类-栈" class="headerlink" title="Stack类 栈"></a>Stack类 栈</h1><h2 id="java-util包-1"><a href="#java-util包-1" class="headerlink" title="java.util包"></a>java.util包</h2><h2 id="构造方法只有一个无参数"><a href="#构造方法只有一个无参数" class="headerlink" title="构造方法只有一个无参数"></a>构造方法只有一个无参数</h2><h2 id="只有几个特殊的方法"><a href="#只有几个特殊的方法" class="headerlink" title="只有几个特殊的方法"></a>只有几个特殊的方法</h2><pre><code>push(E e)将某个元素压入栈顶（add()）
-E = pop()将某一个元素从栈顶取出并删掉(E = remove())
-E = peek()将某一个元素从栈顶取出并删除掉(E = remove())
-boolean = empty()判断栈顶元素是否为空(isEmpty)
-int = search()查找给定元素在栈中的位置(indexof())</code></pre><h2 id="中国象棋-悔棋"><a href="#中国象棋-悔棋" class="headerlink" title="中国象棋 悔棋"></a>中国象棋 悔棋</h2><pre><code>栈中存储每一次的操作步骤
-撤销功能</code></pre><h1 id="Queue接口"><a href="#Queue接口" class="headerlink" title="Queue接口"></a>Queue接口</h1><h2 id="java-util"><a href="#java-util" class="headerlink" title="java.util"></a>java.util</h2><h3 id="通常子类-Linklist-ArrayQueque"><a href="#通常子类-Linklist-ArrayQueque" class="headerlink" title="通常子类 Linklist ArrayQueque"></a>通常子类 Linklist ArrayQueque</h3><h2 id="通常用无参构造方法实现"><a href="#通常用无参构造方法实现" class="headerlink" title="通常用无参构造方法实现"></a>通常用无参构造方法实现</h2><h2 id="一般方法"><a href="#一般方法" class="headerlink" title="一般方法"></a>一般方法</h2><pre><code>add()
-element()-----&gt;get()
-remove()
-boolean = offer(E e);//相当于add  不会抛出异常
-E = peek();//相当于element方法
-E =poll; 剪短//相当于remove()</code></pre><h2 id="双十一秒杀"><a href="#双十一秒杀" class="headerlink" title="双十一秒杀"></a>双十一秒杀</h2><pre><code>所有进入秒杀系统的人存入队列</code></pre><h1 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h1><h1 id="Linklist类"><a href="#Linklist类" class="headerlink" title="Linklist类"></a>Linklist类</h1><h2 id="java-util包-2"><a href="#java-util包-2" class="headerlink" title="java.util包"></a>java.util包</h2><h3 id="自己封装过LinkBox-内部类Node-LT-T-GT-对象（节点-prev-item-next）"><a href="#自己封装过LinkBox-内部类Node-LT-T-GT-对象（节点-prev-item-next）" class="headerlink" title="自己封装过LinkBox 内部类Node&LT;T&GT;对象（节点 prev item next）"></a>自己封装过LinkBox 内部类Node&LT;T&GT;对象（节点 prev item next）</h3><h2 id="底层就是使用双向链表的数据结构形式来存储"><a href="#底层就是使用双向链表的数据结构形式来存储" class="headerlink" title="底层就是使用双向链表的数据结构形式来存储"></a>底层就是使用双向链表的数据结构形式来存储</h2><h3 id="适合插入或删除不适合遍历轮循"><a href="#适合插入或删除不适合遍历轮循" class="headerlink" title="适合插入或删除不适合遍历轮循"></a>适合插入或删除不适合遍历轮循</h3><h2 id="构建对象"><a href="#构建对象" class="headerlink" title="构建对象"></a>构建对象</h2><pre><code>无参构造方法 带参数的构造方法（collection）</code></pre><h2 id="常用的方法"><a href="#常用的方法" class="headerlink" title="常用的方法"></a>常用的方法</h2><pre><code>增删改查 add() remove() set() get() size()
-手册中提供其他常用方法
-addAll() addFirst() clear() contains()
-element() getFirst() getLast() indexOf() lastindex()
-....</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2284,7 +2431,7 @@ element() getFirst() getLast() indexOf() lastindex()
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2306,7 +2453,7 @@ element() getFirst() getLast() indexOf() lastindex()
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -2402,7 +2549,7 @@ element() getFirst() getLast() indexOf() lastindex()
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共28.2k字</span>
+  <span class="post-count">博客全站共29.7k字</span>
 </div>
         
 

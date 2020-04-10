@@ -252,6 +252,197 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/25/javaSE基础-（二十七）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/25/javaSE基础-（二十七）/" itemprop="url">javaSE基础   （二十七）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-25T21:58:13+08:00">
+                2020-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h1><h2 id="以value形式存在"><a href="#以value形式存在" class="headerlink" title="以value形式存在"></a>以value形式存在</h2><h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><h2 id="无序无重复"><a href="#无序无重复" class="headerlink" title="无序无重复"></a>无序无重复</h2><h2 id="具体实现的类"><a href="#具体实现的类" class="headerlink" title="具体实现的类"></a>具体实现的类</h2><h3 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h3><h3 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h3><h2 id="基本的使用"><a href="#基本的使用" class="headerlink" title="基本的使用"></a>基本的使用</h2><h2 id="无序-无重复"><a href="#无序-无重复" class="headerlink" title="无序 无重复"></a>无序 无重复</h2><h3 id="无序-：-我们使用的集合存放元素的顺序-集合内取出来的顺序不一致-（不是集合本身是否有序-Tree自然有序）"><a href="#无序-：-我们使用的集合存放元素的顺序-集合内取出来的顺序不一致-（不是集合本身是否有序-Tree自然有序）" class="headerlink" title="无序 ： 我们使用的集合存放元素的顺序 集合内取出来的顺序不一致 （不是集合本身是否有序 Tree自然有序）"></a>无序 ： 我们使用的集合存放元素的顺序 集合内取出来的顺序不一致 （不是集合本身是否有序 Tree自然有序）</h3><h3 id="无重复-：添加的元素不能一致（如果出现重复元素-只存第一个-不再存入）"><a href="#无重复-：添加的元素不能一致（如果出现重复元素-只存第一个-不再存入）" class="headerlink" title="无重复 ：添加的元素不能一致（如果出现重复元素 只存第一个 不再存入）"></a>无重复 ：添加的元素不能一致（如果出现重复元素 只存第一个 不再存入）</h3><h3 id="集合本身是有自己的算法排布顺序-hash算法"><a href="#集合本身是有自己的算法排布顺序-hash算法" class="headerlink" title="集合本身是有自己的算法排布顺序 hash算法"></a>集合本身是有自己的算法排布顺序 hash算法</h3><h1 id="HashSet——-gt-（HashMap（数组-链表）散列表-邻接表）"><a href="#HashSet——-gt-（HashMap（数组-链表）散列表-邻接表）" class="headerlink" title="HashSet——-&gt;（HashMap（数组+链表）散列表 邻接表）"></a>HashSet——-&gt;（HashMap（数组+链表）散列表 邻接表）</h1><h2 id="java-util包"><a href="#java-util包" class="headerlink" title="java.util包"></a>java.util包</h2><h2 id="如何创建对象"><a href="#如何创建对象" class="headerlink" title="如何创建对象"></a>如何创建对象</h2><h3 id="无参数"><a href="#无参数" class="headerlink" title="无参数"></a>无参数</h3><h3 id="有参数"><a href="#有参数" class="headerlink" title="有参数"></a>有参数</h3><h2 id="集合容器的基本使用"><a href="#集合容器的基本使用" class="headerlink" title="集合容器的基本使用"></a>集合容器的基本使用</h2><pre><code>增删改差
+boolean = add(value) addAll(collection c) retainAll removeAll
+boolean = remove(Object)
+没有修改方法
+size()</code></pre><h3 id="关于迭代器iterator"><a href="#关于迭代器iterator" class="headerlink" title="关于迭代器iterator"></a>关于迭代器iterator</h3><pre><code>//获取一个迭代器对象 通过set集合获取
+Iterator &lt;String&gt; it = set.iterator();// Iterator 接口 多态效果 父类引用子类对象
+//判断下一个位置是否有元素
+if（it.hashNext）{
+ String value = it.next();
+ System.out.println(Value);
+}</code></pre><h2 id="无重复原则"><a href="#无重复原则" class="headerlink" title="无重复原则"></a>无重复原则</h2><pre><code>首先通过String类和Person类型存储
+大概猜测 无重复原则 利用equals方法进行比较
+如果我们让Person对象的name一致 认为是同一个对象
+我们可以重写equals方法
+重写了equals方法 发现还没有产生无重复的效果
+证明可能原则不止equals方法这么简单
+还有另一个规则同时起着作用 hashcode方法</code></pre><h3 id="为什么要重写equals（）方法？"><a href="#为什么要重写equals（）方法？" class="headerlink" title="为什么要重写equals（）方法？"></a>为什么要重写equals（）方法？</h3><pre><code>  因为默认equals在比较两个对象时，是看他们是否指向同一个地址的。但有时，我们需要两个不同对象只要是某些属性相同就认为它们equals（）的结果为true。比如：
+
+ person p1 = new person(1,&quot;name&quot;);
+ person p2 = new person(1,&quot;name&quot;);
+ 如果不重写equals的话，他们是不相同的，所以我们要重些equals，判断只要他们的id和名字相同equals就为true，在一些集合里有时也这样用，集合里的contain也是用equals来比较
+
+   先来看Object关于equals()的源码：
+
+   public boolean equals(Object obj) {
+   return (this == obj);
+   }
+
+
+ //String 就重写了equals方法
+public boolean equals(Object obj){
+    if(this==obj){
+        return true;
+    }
+    if(obj instanceof Question) {
+        Question anotherQuestion = (Question)obj;
+       //this.title 按照？截取 与anotherQuestion.title截取之前的部分比较
+        if(this.title.equals(anotherQuestion.title)){
+            return true;
+        }
+    }
+    return false;
+}</code></pre><h3 id="当重写equals方法时，同时也要重写hashCode方法。"><a href="#当重写equals方法时，同时也要重写hashCode方法。" class="headerlink" title="当重写equals方法时，同时也要重写hashCode方法。"></a>当重写equals方法时，同时也要重写hashCode方法。</h3><pre><code>//修改equals 方法一定要修改hashcode方法 因为底层用hashCode比较
+public int hash(){
+   return this.title.hashCode();
+}</code></pre><h1 id="TreeSet—–-gt-（TreeMap-二叉树利用Node（Left-item-right））"><a href="#TreeSet—–-gt-（TreeMap-二叉树利用Node（Left-item-right））" class="headerlink" title="TreeSet—–&gt;（TreeMap 二叉树利用Node（Left item right））"></a>TreeSet—–&gt;（TreeMap 二叉树利用Node（Left item right））</h1><h2 id="无序无重复-java-util"><a href="#无序无重复-java-util" class="headerlink" title="无序无重复 java.util"></a>无序无重复 java.util</h2><h2 id="无参构造方法-带Collection构造方法"><a href="#无参构造方法-带Collection构造方法" class="headerlink" title="无参构造方法 带Collection构造方法"></a>无参构造方法 带Collection构造方法</h2><h2 id="基本常用方法"><a href="#基本常用方法" class="headerlink" title="基本常用方法"></a>基本常用方法</h2><pre><code>add(E e)  iterator() remove(E e) 没有修改 size()</code></pre><h2 id="无序无重复规则是如何实现的"><a href="#无序无重复规则是如何实现的" class="headerlink" title="无序无重复规则是如何实现的"></a>无序无重复规则是如何实现的</h2><pre><code>treeSet集合本身是有顺序的  我们指的无序是存入和取出不一致
+CompaerTo------&gt;String类 按照字母的自然顺序排列
+//如果想让Person对象存入TeeSet集合内  必须实现Comapareable接口 重写这个方法
+piublic int compareTo（o.name）{//当前对象name与另一个对象CompareTo结果
+return this.name.compareTo(o.name);//当前对象name和另一对象name的CompareTO结果
+}</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/25/avaSE基础-（二十六）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1874,196 +2065,6 @@ GC系统提供的一个线程  回收算法</code></pre>
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/22/JavaSE基础-（十七）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/22/JavaSE基础-（十七）/" itemprop="url">JavaSE基础 （十七）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-22T21:57:03+08:00">
-                2020-03-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h2 id="策略者模式-Strategy-nbsp-———-行为型模式"><a href="#策略者模式-Strategy-nbsp-———-行为型模式" class="headerlink" title="策略者模式 Strategy &nbsp; ——— 行为型模式"></a>策略者模式 Strategy &nbsp; ——— 行为型模式</h2><h4 id="用来解决-执行流程固定-执行结果由于提供不同策略而不同"><a href="#用来解决-执行流程固定-执行结果由于提供不同策略而不同" class="headerlink" title="用来解决  执行流程固定 执行结果由于提供不同策略而不同"></a>用来解决  执行流程固定 执行结果由于提供不同策略而不同</h4><pre><code>              银行类
-                  profession（人）{  人----抽象类 接口（不能产生对象） 传递一个子类对象
-                  欢迎用户进来
-                  叫号
-                  办理
-                  离开
-                  欢迎您下次再来
-                  }
-             长者   年轻人  vip
-            //按普通设计  可能有问题
-              1.三个不同的人类方法名不一致（可以）
-              2.银行办理业务的方法写了3个
-            //解决上诉所述问题可以在三个人之上创建一个父类
-              1.解决桑个人类中相同代码 比如name属性 比如get方法之类
-              2.父类定义的三个方法可以是抽象类 解决了子类命名不一致问题 子类执行也不一致
-              3.父类可以作为参数传入银行
-
-
-  //主函数
-     public static void main (String[] args){
-          Bank bank = new bank ();
-          Person p = new Oldman(长者); //父类作为参数
-          bank profession（p）;//银行欢迎长者来办理业务 调的是子类对象
-       }  
-
-
-
- //银行三个方法写成一个
-       public class Bank{
-       //开门  等待用户进来办理业务
-       public void profession（Person person）{
-       System.out，println（person.getName()+&quot;客户进入银行啦&quot;）
-       person.callNumber();
-       person.transact();
-       person.leave();
-       }
-
-//抽象类 
-       public abstract class Person{
-       protected String name;
-       public String getName(){
-        return this.name;
-        }
-        //1.进银行叫号
-        public abstract void callNumaber();
-        //2.去窗口办理
-        public abstract void transact();
-        //3.办理完毕离开啦
-        public abstract void leave();
-       }</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2116,7 +2117,7 @@ GC系统提供的一个线程  回收算法</code></pre>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2234,7 +2235,7 @@ GC系统提供的一个线程  回收算法</code></pre>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共29.7k字</span>
+  <span class="post-count">博客全站共30.8k字</span>
 </div>
         
 

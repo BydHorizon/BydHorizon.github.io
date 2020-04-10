@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="数组（容器）数组是一组数据类型相同的数据的组合，将这些数据统一管理起来 数组本身是一个引用数据类型，但数组内可以存储基本数据类型，也可以存储引用数据类型数组的定义（声明）数据类型[] 数组名字;     int[] a;     char[] b;     boolean[] c;     string[] m;数组的（赋值）初始化静态初始化    有长度 有元素     int[] arry =">
+<meta name="description" content="DQL：查询表中的记录* select * from 表名;语法：select     字段列表 from     表名列表 where     条件列表 group by     分组字段 having     分组之后的条件 order by     排序 limit     分页限定基础查询1. 多个字段的查询     select 字段名1，字段名2... from 表名；     * 注">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaSE基础 （六）">
-<meta property="og:url" content="http://yoursite.com/2020/03/12/JavaSE基础-（六）/index.html">
+<meta property="og:title" content="MySQL   (二)">
+<meta property="og:url" content="http://yoursite.com/2020/04/10/MySQL-二/index.html">
 <meta property="og:site_name" content="一轮明月照九洲">
-<meta property="og:description" content="数组（容器）数组是一组数据类型相同的数据的组合，将这些数据统一管理起来 数组本身是一个引用数据类型，但数组内可以存储基本数据类型，也可以存储引用数据类型数组的定义（声明）数据类型[] 数组名字;     int[] a;     char[] b;     boolean[] c;     string[] m;数组的（赋值）初始化静态初始化    有长度 有元素     int[] arry =">
+<meta property="og:description" content="DQL：查询表中的记录* select * from 表名;语法：select     字段列表 from     表名列表 where     条件列表 group by     分组字段 having     分组之后的条件 order by     排序 limit     分页限定基础查询1. 多个字段的查询     select 字段名1，字段名2... from 表名；     * 注">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-31T00:24:37.943Z">
+<meta property="og:updated_time" content="2020-04-10T06:20:11.430Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaSE基础 （六）">
-<meta name="twitter:description" content="数组（容器）数组是一组数据类型相同的数据的组合，将这些数据统一管理起来 数组本身是一个引用数据类型，但数组内可以存储基本数据类型，也可以存储引用数据类型数组的定义（声明）数据类型[] 数组名字;     int[] a;     char[] b;     boolean[] c;     string[] m;数组的（赋值）初始化静态初始化    有长度 有元素     int[] arry =">
+<meta name="twitter:title" content="MySQL   (二)">
+<meta name="twitter:description" content="DQL：查询表中的记录* select * from 表名;语法：select     字段列表 from     表名列表 where     条件列表 group by     分组字段 having     分组之后的条件 order by     排序 limit     分页限定基础查询1. 多个字段的查询     select 字段名1，字段名2... from 表名；     * 注">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/03/12/JavaSE基础-（六）/">
+  <link rel="canonical" href="http://yoursite.com/2020/04/10/MySQL-二/">
 
 
 
 
 
-  <title>JavaSE基础 （六） | 一轮明月照九洲</title>
+  <title>MySQL   (二) | 一轮明月照九洲</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/12/JavaSE基础-（六）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/10/MySQL-二/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="我与我周旋">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaSE基础 （六）</h1>
+          <h1 class="post-title" itemprop="name headline">MySQL   (二)</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-12T22:13:00+08:00">
-                2020-03-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-10T14:17:35+08:00">
+                2020-04-10
               </time>
             
 
@@ -307,8 +307,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
                   </a>
                 </span>
 
@@ -344,43 +344,141 @@
       
 
       
-        <h1 id="数组（容器）"><a href="#数组（容器）" class="headerlink" title="数组（容器）"></a>数组（容器）</h1><pre><code>数组是一组数据类型相同的数据的组合，将这些数据统一管理起来
-数组本身是一个引用数据类型，但数组内可以存储基本数据类型，也可以存储引用数据类型</code></pre><h1 id="数组的定义（声明）"><a href="#数组的定义（声明）" class="headerlink" title="数组的定义（声明）"></a>数组的定义（声明）</h1><pre><code>数据类型[] 数组名字;
-    int[] a;
-    char[] b;
-    boolean[] c;
-    string[] m;</code></pre><h1 id="数组的（赋值）初始化"><a href="#数组的（赋值）初始化" class="headerlink" title="数组的（赋值）初始化"></a>数组的（赋值）初始化</h1><pre><code>静态初始化    有长度 有元素
-    int[] arry = {10,20,30,40,50,60};
-    int[] arry = new int[] {10,20,30,40,50,60};
-动态初始化    有长度   没有元素（默认值0）
-    int[] arry = new int[5] ;
-    整数默认值-----0
-    浮点数默认值---0.0
-    字符型默认值----0--char  97-a 65-A 48-&apos;0&apos;
-    布尔型默认值----false
-    引用数据类型默认值----null</code></pre><h1 id="数组元素的访问"><a href="#数组元素的访问" class="headerlink" title="数组元素的访问"></a>数组元素的访问</h1><pre><code>通过元素在数组中的位置来访问
-存值/取值
-位置-------&gt;index索引
-索引是有取值范围    [从0开始------到数组长度减1]
-如果数组的索引超过了上诉范围
-会出现了一个运行时的异常
-ArrayIndexOutOfBoundsException</code></pre><h1 id="数组元素的遍历"><a href="#数组元素的遍历" class="headerlink" title="数组元素的遍历"></a>数组元素的遍历</h1><pre><code>通过循环的方式访问数组每一个元素
-for（;;）{
+        <h1 id="DQL：查询表中的记录"><a href="#DQL：查询表中的记录" class="headerlink" title="DQL：查询表中的记录"></a>DQL：查询表中的记录</h1><pre><code>* select * from 表名;</code></pre><h1 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h1><pre><code>select
+    字段列表
+from
+    表名列表
+where
+    条件列表
+group by
+    分组字段
+having
+    分组之后的条件
+order by
+    排序
+limit
+    分页限定</code></pre><h1 id="基础查询"><a href="#基础查询" class="headerlink" title="基础查询"></a>基础查询</h1><pre><code>1. 多个字段的查询
+    select 字段名1，字段名2... from 表名；
+    * 注意：
+        * 如果查询所有字段，则可以使用*来替代字段列表。
+2. 去除重复：
+    * distinct
+3. 计算列
+    * 一般可以使用四则运算计算一些列的值。（一般只会进行数值型的计算）
+    * ifnull(表达式1,表达式2)：null参与的运算，计算结果都为null
+        * 表达式1：哪个字段需要判断是否为null
+        * 如果该字段为null后的替换值。
+4. 起别名：
+    * as：as也可以省略</code></pre><h1 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h1><pre><code>1. where子句后跟条件
+2. 运算符
+    * &gt; 、&lt; 、&lt;= 、&gt;= 、= 、&lt;&gt;
+    * BETWEEN...AND  
+    * IN( 集合) 
+    * LIKE：模糊查询
+        * 占位符：
+            * _:单个任意字符
+            * %：多个任意字符
+    * IS NULL  
+    * and  或 &amp;&amp;
+    * or  或 || 
+    * not  或 !
 
-}
-JDK1.5版本之后 增加新特性 增强for循环 加强for forEach
-for（自定义的变量（接收数组内每一个元素）：遍历的数组arry）{
-}
-1.正常的for循环 有三个必要的条件 找到一个元素的位置
-可以通过index直接访问数组的某一个位置 存值 取值都可以
-不好在于写法相对比较麻烦
-2.增强for 有两个条件 用来取值的变量 用来遍历的数组 没有index索引 
-写法相对容易
-只能取值 不能存值
-没有index索引  找不到元素是哪一个</code></pre><h1 id="基本数据类型和引用数据类型在内存结构上的区别"><a href="#基本数据类型和引用数据类型在内存结构上的区别" class="headerlink" title="基本数据类型和引用数据类型在内存结构上的区别"></a>基本数据类型和引用数据类型在内存结构上的区别</h1><pre><code>所有的变量空间都存储在栈内存
-变量空间可以存储基本数据类型  也可以引用数据类型
-如果变量空间存储的是一个基本数据类型  存储的是值 一个变量改变 另一个不会改变
-如果变量空间存储的是引用数据类型 存储的是引用（地址）一个变量地址改变 另一个跟着改变</code></pre>
+        -- 查询年龄大于20岁
+
+        SELECT * FROM student WHERE age &gt; 20;
+
+        SELECT * FROM student WHERE age &gt;= 20;
+
+        -- 查询年龄等于20岁
+        SELECT * FROM student WHERE age = 20;
+
+        -- 查询年龄不等于20岁
+        SELECT * FROM student WHERE age != 20;
+        SELECT * FROM student WHERE age &lt;&gt; 20;
+
+        -- 查询年龄大于等于20 小于等于30
+
+        SELECT * FROM student WHERE age &gt;= 20 &amp;&amp;  age &lt;=30;
+        SELECT * FROM student WHERE age &gt;= 20 AND  age &lt;=30;
+        SELECT * FROM student WHERE age BETWEEN 20 AND 30;
+
+        -- 查询年龄22岁，18岁，25岁的信息
+        SELECT * FROM student WHERE age = 22 OR age = 18 OR age = 25
+        SELECT * FROM student WHERE age IN (22,18,25);
+
+        -- 查询英语成绩为null
+        SELECT * FROM student WHERE english = NULL; -- 不对的。null值不能使用 = （!=） 判断
+
+        SELECT * FROM student WHERE english IS NULL;
+
+        -- 查询英语成绩不为null
+        SELECT * FROM student WHERE english  IS NOT NULL;
+
+
+
+        -- 查询姓马的有哪些？ like
+        SELECT * FROM student WHERE NAME LIKE &apos;马%&apos;;
+        -- 查询姓名第二个字是化的人
+
+        SELECT * FROM student WHERE NAME LIKE &quot;_化%&quot;;
+
+        -- 查询姓名是3个字的人
+        SELECT * FROM student WHERE NAME LIKE &apos;___&apos;;
+
+
+        -- 查询姓名中包含德的人
+        SELECT * FROM student WHERE NAME LIKE &apos;%德%&apos;;</code></pre><h1 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h1><pre><code>* 语法：order by 子句
+    * order by 排序字段1 排序方式1 ，  排序字段2 排序方式2...
+
+* 排序方式：
+    * ASC：升序，默认的。
+    * DESC：降序。
+
+* 注意：
+    * 如果有多个排序条件，则当前边的条件值一样时，才会判断第二条件。</code></pre><h1 id="聚合函数：将一列数据作为一个整体，进行纵向的计算。"><a href="#聚合函数：将一列数据作为一个整体，进行纵向的计算。" class="headerlink" title="聚合函数：将一列数据作为一个整体，进行纵向的计算。"></a>聚合函数：将一列数据作为一个整体，进行纵向的计算。</h1><pre><code>1. count：计算个数
+    1. 一般选择非空的列：主键
+    2. count(*)
+2. max：计算最大值
+3. min：计算最小值
+4. sum：计算和
+5. avg：计算平均值
+
+
+* 注意：聚合函数的计算，排除null值。
+    解决方案：
+        1. 选择不包含非空的列进行计算
+        2. IFNULL函数</code></pre><h1 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询:"></a>分组查询:</h1><pre><code>1. 语法：group by 分组字段；
+2. 注意：
+    1. 分组之后查询的字段：分组字段、聚合函数
+    2. where 和 having 的区别？
+        1. where 在分组之前进行限定，如果不满足条件，则不参与分组。having在分组之后进行限定，如果不满足结果，则不会被查询出来
+        2. where 后不可以跟聚合函数，having可以进行聚合函数的判断。
+
+    -- 按照性别分组。分别查询男、女同学的平均分
+
+    SELECT sex , AVG(math) FROM student GROUP BY sex;
+
+    -- 按照性别分组。分别查询男、女同学的平均分,人数
+
+    SELECT sex , AVG(math),COUNT(id) FROM student GROUP BY sex;
+
+    --  按照性别分组。分别查询男、女同学的平均分,人数 要求：分数低于70分的人，不参与分组
+    SELECT sex , AVG(math),COUNT(id) FROM student WHERE math &gt; 70 GROUP BY sex;
+
+    --  按照性别分组。分别查询男、女同学的平均分,人数 要求：分数低于70分的人，不参与分组,分组之后。人数要大于2个人
+    SELECT sex , AVG(math),COUNT(id) FROM student WHERE math &gt; 70 GROUP BY sex HAVING COUNT(id) &gt; 2;
+
+    SELECT sex , AVG(math),COUNT(id) 人数 FROM student WHERE math &gt; 70 GROUP BY sex HAVING 人数 &gt; 2;</code></pre><h1 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h1><pre><code>1. 语法：limit 开始的索引,每页查询的条数;
+2. 公式：开始的索引 = （当前的页码 - 1） * 每页显示的条数
+    -- 每页显示3条记录 
+
+    SELECT * FROM student LIMIT 0,3; -- 第1页
+
+    SELECT * FROM student LIMIT 3,3; -- 第2页
+
+    SELECT * FROM student LIMIT 6,3; -- 第3页
+
+3. limit 是一个MySQL&quot;方言&quot;                </code></pre>
       
     </div>
     
@@ -404,8 +502,8 @@ for（自定义的变量（接收数组内每一个元素）：遍历的数组ar
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/11/avaSE基础-（五）/" rel="next" title="JavaSE基础 （五）">
-                <i class="fa fa-chevron-left"></i> JavaSE基础 （五）
+              <a href="/2020/04/01/MySQL（一）/" rel="next" title="MySQL（一）">
+                <i class="fa fa-chevron-left"></i> MySQL（一）
               </a>
             
           </div>
@@ -413,10 +511,6 @@ for（自定义的变量（接收数组内每一个元素）：遍历的数组ar
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/13/avaSE基础-（七）/" rel="prev" title="JavaSE基础  （七）">
-                JavaSE基础  （七） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -573,7 +667,7 @@ for（自定义的变量（接收数组内每一个元素）：遍历的数组ar
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数组（容器）"><span class="nav-number">1.</span> <span class="nav-text">数组（容器）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组的定义（声明）"><span class="nav-number">2.</span> <span class="nav-text">数组的定义（声明）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组的（赋值）初始化"><span class="nav-number">3.</span> <span class="nav-text">数组的（赋值）初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组元素的访问"><span class="nav-number">4.</span> <span class="nav-text">数组元素的访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组元素的遍历"><span class="nav-number">5.</span> <span class="nav-text">数组元素的遍历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本数据类型和引用数据类型在内存结构上的区别"><span class="nav-number">6.</span> <span class="nav-text">基本数据类型和引用数据类型在内存结构上的区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DQL：查询表中的记录"><span class="nav-number">1.</span> <span class="nav-text">DQL：查询表中的记录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语法："><span class="nav-number">2.</span> <span class="nav-text">语法：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础查询"><span class="nav-number">3.</span> <span class="nav-text">基础查询</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#条件查询"><span class="nav-number">4.</span> <span class="nav-text">条件查询</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#排序查询"><span class="nav-number">5.</span> <span class="nav-text">排序查询</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#聚合函数：将一列数据作为一个整体，进行纵向的计算。"><span class="nav-number">6.</span> <span class="nav-text">聚合函数：将一列数据作为一个整体，进行纵向的计算。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分组查询"><span class="nav-number">7.</span> <span class="nav-text">分组查询:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分页查询"><span class="nav-number">8.</span> <span class="nav-text">分页查询</span></a></li></ol></div>
             
 
           </div>

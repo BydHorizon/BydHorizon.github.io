@@ -252,6 +252,614 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/22/MySQL-四/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/22/MySQL-四/" itemprop="url">MySQL (四)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-22T21:12:25+08:00">
+                2020-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p> 多表查询</p>
+<p> 事务</p>
+<p> DCL</p>
+<h2 id="多表查询："><a href="#多表查询：" class="headerlink" title="多表查询："></a>多表查询：</h2><pre><code>* 查询语法：
+    select
+        列名列表
+    from
+        表名列表
+    where....
+* 准备sql
+    # 创建部门表
+    CREATE TABLE dept(
+        id INT PRIMARY KEY AUTO_INCREMENT,
+        NAME VARCHAR(20)
+    );
+    INSERT INTO dept (NAME) VALUES (&apos;开发部&apos;),(&apos;市场部&apos;),(&apos;财务部&apos;);
+    # 创建员工表
+    CREATE TABLE emp (
+        id INT PRIMARY KEY AUTO_INCREMENT,
+        NAME VARCHAR(10),
+        gender CHAR(1), -- 性别
+        salary DOUBLE, -- 工资
+        join_date DATE, -- 入职日期
+        dept_id INT,
+        FOREIGN KEY (dept_id) REFERENCES dept(id) -- 外键，关联部门表(部门表的主键)
+    );
+    INSERT INTO emp(NAME,gender,salary,join_date,dept_id) VALUES(&apos;孙悟空&apos;,&apos;男&apos;,7200,&apos;2013-02-24&apos;,1);
+    INSERT INTO emp(NAME,gender,salary,join_date,dept_id) VALUES(&apos;猪八戒&apos;,&apos;男&apos;,3600,&apos;2010-12-02&apos;,2);
+    INSERT INTO emp(NAME,gender,salary,join_date,dept_id) VALUES(&apos;唐僧&apos;,&apos;男&apos;,9000,&apos;2008-08-08&apos;,2);
+    INSERT INTO emp(NAME,gender,salary,join_date,dept_id) VALUES(&apos;白骨精&apos;,&apos;女&apos;,5000,&apos;2015-10-07&apos;,3);
+    INSERT INTO emp(NAME,gender,salary,join_date,dept_id) VALUES(&apos;蜘蛛精&apos;,&apos;女&apos;,4500,&apos;2011-03-14&apos;,1);
+* 笛卡尔积：
+    * 有两个集合A,B .取这两个集合的所有组成情况。
+    * 要完成多表查询，需要消除无用的数据
+* 多表查询的分类：
+    1. 内连接查询：
+        1. 隐式内连接：使用where条件消除无用数据
+            * 例子：
+            -- 查询所有员工信息和对应的部门信息
+
+            SELECT * FROM emp,dept WHERE emp.`dept_id` = dept.`id`;
+
+            -- 查询员工表的名称，性别。部门表的名称
+            SELECT emp.name,emp.gender,dept.name FROM emp,dept WHERE emp.`dept_id` = dept.`id`;
+
+            SELECT 
+                t1.name, -- 员工表的姓名
+                t1.gender,-- 员工表的性别
+                t2.name -- 部门表的名称
+            FROM
+                emp t1,
+                dept t2
+            WHERE 
+                t1.`dept_id` = t2.`id`;
+
+
+        2. 显式内连接：
+            * 语法： select 字段列表 from 表名1 [inner] join 表名2 on 条件
+            * 例如：
+                * SELECT * FROM emp INNER JOIN dept ON emp.`dept_id` = dept.`id`;    
+                * SELECT * FROM emp JOIN dept ON emp.`dept_id` = dept.`id`;    
+
+        3. 内连接查询：
+            1. 从哪些表中查询数据
+            2. 条件是什么
+            3. 查询哪些字段
+    2. 外链接查询：
+        1. 左外连接：
+            * 语法：select 字段列表 from 表1 left [outer] join 表2 on 条件；
+            * 查询的是左表所有数据以及其交集部分。
+            * 例子：
+                -- 查询所有员工信息，如果员工有部门，则查询部门名称，没有部门，则不显示部门名称
+                SELECT     t1.*,t2.`name` FROM emp t1 LEFT JOIN dept t2 ON t1.`dept_id` = t2.`id`;
+        2. 右外连接：
+            * 语法：select 字段列表 from 表1 right [outer] join 表2 on 条件；
+            * 查询的是右表所有数据以及其交集部分。
+            * 例子：
+                SELECT     * FROM dept t2 RIGHT JOIN emp t1 ON t1.`dept_id` = t2.`id`;
+    3. 子查询：
+        * 概念：查询中嵌套查询，称嵌套查询为子查询。
+            -- 查询工资最高的员工信息
+            -- 1 查询最高的工资是多少 9000
+            SELECT MAX(salary) FROM emp;
+
+            -- 2 查询员工信息，并且工资等于9000的
+            SELECT * FROM emp WHERE emp.`salary` = 9000;
+
+            -- 一条sql就完成这个操作。子查询
+            SELECT * FROM emp WHERE emp.`salary` = (SELECT MAX(salary) FROM emp);
+
+        * 子查询不同情况
+            1. 子查询的结果是单行单列的：
+                * 子查询可以作为条件，使用运算符去判断。 运算符： &gt; &gt;= &lt; &lt;= =
+                * 
+                -- 查询员工工资小于平均工资的人
+                SELECT * FROM emp WHERE emp.salary &lt; (SELECT AVG(salary) FROM emp);
+            2. 子查询的结果是多行单列的：
+                * 子查询可以作为条件，使用运算符in来判断
+                -- 查询&apos;财务部&apos;和&apos;市场部&apos;所有的员工信息
+                SELECT id FROM dept WHERE NAME = &apos;财务部&apos; OR NAME = &apos;市场部&apos;;
+                SELECT * FROM emp WHERE dept_id = 3 OR dept_id = 2;
+                -- 子查询
+                SELECT * FROM emp WHERE dept_id IN (SELECT id FROM dept WHERE NAME = &apos;财务部&apos; OR NAME = &apos;市场部&apos;);
+
+            3. 子查询的结果是多行多列的：
+                * 子查询可以作为一张虚拟表参与查询
+                -- 查询员工入职日期是2011-11-11日之后的员工信息和部门信息
+                -- 子查询
+                SELECT * FROM dept t1 ,(SELECT * FROM emp WHERE emp.`join_date` &gt; &apos;2011-11-11&apos;) t2
+                WHERE t1.id = t2.dept_id;
+
+                -- 普通内连接
+                SELECT * FROM emp t1,dept t2 WHERE t1.`dept_id` = t2.`id` AND t1.`join_date` &gt;  &apos;2011-11-11&apos;
+
+    * 多表查询练习
+
+            -- 部门表
+            CREATE TABLE dept (
+              id INT PRIMARY KEY PRIMARY KEY, -- 部门id
+              dname VARCHAR(50), -- 部门名称
+              loc VARCHAR(50) -- 部门所在地
+            );
+
+            -- 添加4个部门
+            INSERT INTO dept(id,dname,loc) VALUES 
+            (10,&apos;教研部&apos;,&apos;北京&apos;),
+            (20,&apos;学工部&apos;,&apos;上海&apos;),
+            (30,&apos;销售部&apos;,&apos;广州&apos;),
+            (40,&apos;财务部&apos;,&apos;深圳&apos;);
+
+
+
+            -- 职务表，职务名称，职务描述
+            CREATE TABLE job (
+              id INT PRIMARY KEY,
+              jname VARCHAR(20),
+              description VARCHAR(50)
+            );
+
+            -- 添加4个职务
+            INSERT INTO job (id, jname, description) VALUES
+            (1, &apos;董事长&apos;, &apos;管理整个公司，接单&apos;),
+            (2, &apos;经理&apos;, &apos;管理部门员工&apos;),
+            (3, &apos;销售员&apos;, &apos;向客人推销产品&apos;),
+            (4, &apos;文员&apos;, &apos;使用办公软件&apos;);
+
+
+
+            -- 员工表
+            CREATE TABLE emp (
+              id INT PRIMARY KEY, -- 员工id
+              ename VARCHAR(50), -- 员工姓名
+              job_id INT, -- 职务id
+              mgr INT , -- 上级领导
+              joindate DATE, -- 入职日期
+              salary DECIMAL(7,2), -- 工资
+              bonus DECIMAL(7,2), -- 奖金
+              dept_id INT, -- 所在部门编号
+              CONSTRAINT emp_jobid_ref_job_id_fk FOREIGN KEY (job_id) REFERENCES job (id),
+              CONSTRAINT emp_deptid_ref_dept_id_fk FOREIGN KEY (dept_id) REFERENCES dept (id)
+            );
+
+            -- 添加员工
+            INSERT INTO emp(id,ename,job_id,mgr,joindate,salary,bonus,dept_id) VALUES 
+            (1001,&apos;孙悟空&apos;,4,1004,&apos;2000-12-17&apos;,&apos;8000.00&apos;,NULL,20),
+            (1002,&apos;卢俊义&apos;,3,1006,&apos;2001-02-20&apos;,&apos;16000.00&apos;,&apos;3000.00&apos;,30),
+            (1003,&apos;林冲&apos;,3,1006,&apos;2001-02-22&apos;,&apos;12500.00&apos;,&apos;5000.00&apos;,30),
+            (1004,&apos;唐僧&apos;,2,1009,&apos;2001-04-02&apos;,&apos;29750.00&apos;,NULL,20),
+            (1005,&apos;李逵&apos;,4,1006,&apos;2001-09-28&apos;,&apos;12500.00&apos;,&apos;14000.00&apos;,30),
+            (1006,&apos;宋江&apos;,2,1009,&apos;2001-05-01&apos;,&apos;28500.00&apos;,NULL,30),
+            (1007,&apos;刘备&apos;,2,1009,&apos;2001-09-01&apos;,&apos;24500.00&apos;,NULL,10),
+            (1008,&apos;猪八戒&apos;,4,1004,&apos;2007-04-19&apos;,&apos;30000.00&apos;,NULL,20),
+            (1009,&apos;罗贯中&apos;,1,NULL,&apos;2001-11-17&apos;,&apos;50000.00&apos;,NULL,10),
+            (1010,&apos;吴用&apos;,3,1006,&apos;2001-09-08&apos;,&apos;15000.00&apos;,&apos;0.00&apos;,30),
+            (1011,&apos;沙僧&apos;,4,1004,&apos;2007-05-23&apos;,&apos;11000.00&apos;,NULL,20),
+            (1012,&apos;李逵&apos;,4,1006,&apos;2001-12-03&apos;,&apos;9500.00&apos;,NULL,30),
+            (1013,&apos;小白龙&apos;,4,1004,&apos;2001-12-03&apos;,&apos;30000.00&apos;,NULL,20),
+            (1014,&apos;关羽&apos;,4,1007,&apos;2002-01-23&apos;,&apos;13000.00&apos;,NULL,10);
+
+
+
+            -- 工资等级表
+            CREATE TABLE salarygrade (
+              grade INT PRIMARY KEY,   -- 级别
+              losalary INT,  -- 最低工资
+              hisalary INT -- 最高工资
+            );
+
+            -- 添加5个工资等级
+            INSERT INTO salarygrade(grade,losalary,hisalary) VALUES 
+            (1,7000,12000),
+            (2,12010,14000),
+            (3,14010,20000),
+            (4,20010,30000),
+            (5,30010,99990);
+
+            -- 需求：
+
+            -- 1.查询所有员工信息。查询员工编号，员工姓名，工资，职务名称，职务描述
+            /*
+                分析：
+                    1.员工编号，员工姓名，工资，需要查询emp表  职务名称，职务描述 需要查询job表
+                    2.查询条件 emp.job_id = job.id
+
+            */
+            SELECT 
+                t1.`id`, -- 员工编号
+                t1.`ename`, -- 员工姓名
+                t1.`salary`,-- 工资
+                t2.`jname`, -- 职务名称
+                t2.`description` -- 职务描述
+            FROM 
+                emp t1, job t2
+            WHERE 
+                t1.`job_id` = t2.`id`;
+
+
+
+            -- 2.查询员工编号，员工姓名，工资，职务名称，职务描述，部门名称，部门位置
+            /*
+                分析：
+                    1. 员工编号，员工姓名，工资 emp  职务名称，职务描述 job  部门名称，部门位置 dept
+                    2. 条件： emp.job_id = job.id and emp.dept_id = dept.id
+            */
+
+            SELECT 
+                t1.`id`, -- 员工编号
+                t1.`ename`, -- 员工姓名
+                t1.`salary`,-- 工资
+                t2.`jname`, -- 职务名称
+                t2.`description`, -- 职务描述
+                t3.`dname`, -- 部门名称
+                t3.`loc` -- 部门位置
+            FROM 
+                emp t1, job t2,dept t3
+            WHERE 
+                t1.`job_id` = t2.`id` AND t1.`dept_id` = t3.`id`;
+
+            -- 3.查询员工姓名，工资，工资等级
+            /*
+                分析：
+                    1.员工姓名，工资 emp  工资等级 salarygrade
+                    2.条件 emp.salary &gt;= salarygrade.losalary and emp.salary &lt;= salarygrade.hisalary
+                        emp.salary BETWEEN salarygrade.losalary and salarygrade.hisalary
+            */
+            SELECT 
+                t1.ename ,
+                t1.`salary`,
+                t2.*
+            FROM emp t1, salarygrade t2
+            WHERE t1.`salary` BETWEEN t2.`losalary` AND t2.`hisalary`;
+
+
+
+            -- 4.查询员工姓名，工资，职务名称，职务描述，部门名称，部门位置，工资等级
+            /*
+                分析：
+                    1. 员工姓名，工资 emp ， 职务名称，职务描述 job 部门名称，部门位置，dept  工资等级 salarygrade
+                    2. 条件： emp.job_id = job.id and emp.dept_id = dept.id and emp.salary BETWEEN salarygrade.losalary and salarygrade.hisalary
+
+            */
+            SELECT 
+                t1.`ename`,
+                t1.`salary`,
+                t2.`jname`,
+                t2.`description`,
+                t3.`dname`,
+                t3.`loc`,
+                t4.`grade`
+            FROM 
+                emp t1,job t2,dept t3,salarygrade t4
+            WHERE 
+                t1.`job_id` = t2.`id` 
+                AND t1.`dept_id` = t3.`id`
+                AND t1.`salary` BETWEEN t4.`losalary` AND t4.`hisalary`;
+
+
+
+            -- 5.查询出部门编号、部门名称、部门位置、部门人数
+
+            /*
+                分析：
+                    1.部门编号、部门名称、部门位置 dept 表。 部门人数 emp表
+                    2.使用分组查询。按照emp.dept_id完成分组，查询count(id)
+                    3.使用子查询将第2步的查询结果和dept表进行关联查询
+
+            */
+            SELECT 
+                t1.`id`,t1.`dname`,t1.`loc` , t2.total
+            FROM 
+                dept t1,
+                (SELECT
+                    dept_id,COUNT(id) total
+                FROM 
+                    emp
+                GROUP BY dept_id) t2
+            WHERE t1.`id` = t2.dept_id;
+
+
+            -- 6.查询所有员工的姓名及其直接上级的姓名,没有领导的员工也需要查询
+
+            /*
+                分析：
+                    1.姓名 emp， 直接上级的姓名 emp
+                        * emp表的id 和 mgr 是自关联
+                    2.条件 emp.id = emp.mgr
+                    3.查询左表的所有数据，和 交集数据
+                        * 使用左外连接查询
+
+            */
+            /*
+            select
+                t1.ename,
+                t1.mgr,
+                t2.`id`,
+                t2.ename
+            from emp t1, emp t2
+            where t1.mgr = t2.`id`;
+
+            */
+
+            SELECT 
+                t1.ename,
+                t1.mgr,
+                t2.`id`,
+                t2.`ename`
+            FROM emp t1
+            LEFT JOIN emp t2
+            ON t1.`mgr` = t2.`id`;</code></pre><h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><pre><code>1. 事务的基本介绍
+    1. 概念：
+        *  如果一个包含多个步骤的业务操作，被事务管理，那么这些操作要么同时成功，要么同时失败。
+
+    2. 操作：
+        1. 开启事务： start transaction;
+        2. 回滚：rollback;
+        3. 提交：commit;
+    3. 例子：
+        CREATE TABLE account (
+            id INT PRIMARY KEY AUTO_INCREMENT,
+            NAME VARCHAR(10),
+            balance DOUBLE
+        );
+        -- 添加数据
+        INSERT INTO account (NAME, balance) VALUES (&apos;zhangsan&apos;, 1000), (&apos;lisi&apos;, 1000);
+
+
+        SELECT * FROM account;
+        UPDATE account SET balance = 1000;
+        -- 张三给李四转账 500 元
+
+        -- 0. 开启事务
+        START TRANSACTION;
+        -- 1. 张三账户 -500
+
+        UPDATE account SET balance = balance - 500 WHERE NAME = &apos;zhangsan&apos;;
+        -- 2. 李四账户 +500
+        -- 出错了...
+        UPDATE account SET balance = balance + 500 WHERE NAME = &apos;lisi&apos;;
+
+        -- 发现执行没有问题，提交事务
+        COMMIT;
+
+        -- 发现出问题了，回滚事务
+        ROLLBACK;
+    4. MySQL数据库中事务默认自动提交
+
+        * 事务提交的两种方式：
+            * 自动提交：
+                * mysql就是自动提交的
+                * 一条DML(增删改)语句会自动提交一次事务。
+            * 手动提交：
+                * Oracle 数据库默认是手动提交事务
+                * 需要先开启事务，再提交
+        * 修改事务的默认提交方式：
+            * 查看事务的默认提交方式：SELECT @@autocommit; -- 1 代表自动提交  0 代表手动提交
+            * 修改默认提交方式： set @@autocommit = 0;
+
+
+2. 事务的四大特征：
+    1. 原子性：是不可分割的最小操作单位，要么同时成功，要么同时失败。
+    2. 持久性：当事务提交或回滚后，数据库会持久化的保存数据。
+    3. 隔离性：多个事务之间。相互独立。
+    4. 一致性：事务操作前后，数据总量不变
+3. 事务的隔离级别（了解）
+    * 概念：多个事务之间隔离的，相互独立的。但是如果多个事务操作同一批数据，则会引发一些问题，设置不同的隔离级别就可以解决这些问题。
+    * 存在问题：
+        1. 脏读：一个事务，读取到另一个事务中没有提交的数据
+        2. 不可重复读(虚读)：在同一个事务中，两次读取到的数据不一样。
+        3. 幻读：一个事务操作(DML)数据表中所有记录，另一个事务添加了一条数据，则第一个事务查询不到自己的修改。
+    * 隔离级别：
+        1. read uncommitted：读未提交
+            * 产生的问题：脏读、不可重复读、幻读
+        2. read committed：读已提交 （Oracle）
+            * 产生的问题：不可重复读、幻读
+        3. repeatable read：可重复读 （MySQL默认）
+            * 产生的问题：幻读
+        4. serializable：串行化
+            * 可以解决所有的问题
+
+        * 注意：隔离级别从小到大安全性越来越高，但是效率越来越低
+        * 数据库查询隔离级别：
+            * select @@tx_isolation;
+        * 数据库设置隔离级别：
+            * set global transaction isolation level  级别字符串;
+
+    * 演示：
+        set global transaction isolation level read uncommitted;
+        start transaction;
+        -- 转账操作
+        update account set balance = balance - 500 where id = 1;
+        update account set balance = balance + 500 where id = 2;</code></pre><h2 id="DCL："><a href="#DCL：" class="headerlink" title="DCL："></a>DCL：</h2><pre><code>* SQL分类：
+    1. DDL：操作数据库和表
+    2. DML：增删改表中数据
+    3. DQL：查询表中数据
+    4. DCL：管理用户，授权
+
+* DBA：数据库管理员
+
+* DCL：管理用户，授权
+    1. 管理用户
+        1. 添加用户：
+            * 语法：CREATE USER &apos;用户名&apos;@&apos;主机名&apos; IDENTIFIED BY &apos;密码&apos;;
+        2. 删除用户：
+            * 语法：DROP USER &apos;用户名&apos;@&apos;主机名&apos;;
+        3. 修改用户密码：
+
+            UPDATE USER SET PASSWORD = PASSWORD(&apos;新密码&apos;) WHERE USER = &apos;用户名&apos;;
+            UPDATE USER SET PASSWORD = PASSWORD(&apos;abc&apos;) WHERE USER = &apos;lisi&apos;;
+
+            SET PASSWORD FOR &apos;用户名&apos;@&apos;主机名&apos; = PASSWORD(&apos;新密码&apos;);
+            SET PASSWORD FOR &apos;root&apos;@&apos;localhost&apos; = PASSWORD(&apos;123&apos;);
+
+            * mysql中忘记了root用户的密码？
+                1. cmd -- &gt; net stop mysql 停止mysql服务
+                    * 需要管理员运行该cmd
+
+                2. 使用无验证方式启动mysql服务： mysqld --skip-grant-tables
+                3. 打开新的cmd窗口,直接输入mysql命令，敲回车。就可以登录成功
+                4. use mysql;
+                5. update user set password = password(&apos;你的新密码&apos;) where user = &apos;root&apos;;
+                6. 关闭两个窗口
+                7. 打开任务管理器，手动结束mysqld.exe 的进程
+                8. 启动mysql服务
+                9. 使用新密码登录。
+        4. 查询用户：
+            -- 1. 切换到mysql数据库
+            USE myql;
+            -- 2. 查询user表
+            SELECT * FROM USER;
+
+            * 通配符： % 表示可以在任意主机使用用户登录数据库
+
+    2. 权限管理：
+        1. 查询权限：
+            -- 查询权限
+            SHOW GRANTS FOR &apos;用户名&apos;@&apos;主机名&apos;;
+            SHOW GRANTS FOR &apos;lisi&apos;@&apos;%&apos;;
+
+        2. 授予权限：
+            -- 授予权限
+            grant 权限列表 on 数据库名.表名 to &apos;用户名&apos;@&apos;主机名&apos;;
+            -- 给张三用户授予所有权限，在任意数据库任意表上
+
+            GRANT ALL ON *.* TO &apos;zhangsan&apos;@&apos;localhost&apos;;
+        3. 撤销权限：
+            -- 撤销权限：
+            revoke 权限列表 on 数据库名.表名 from &apos;用户名&apos;@&apos;主机名&apos;;
+            REVOKE UPDATE ON db3.`account` FROM &apos;lisi&apos;@&apos;%&apos;;</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/16/MySQL-三/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2541,189 +3149,6 @@ String[] names = list() 获取当前file所有儿子的名字
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/25/JavaSE基础-（二十九）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/25/JavaSE基础-（二十九）/" itemprop="url">JavaSE基础  （二十九）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-25T23:20:45+08:00">
-                2020-03-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="异常-错误"><a href="#异常-错误" class="headerlink" title="异常/错误"></a>异常/错误</h1><h2 id="程序运行过程中，可能会发生一些不被期望的效果，肯定会阻止我们的程序按指令去执行"><a href="#程序运行过程中，可能会发生一些不被期望的效果，肯定会阻止我们的程序按指令去执行" class="headerlink" title="程序运行过程中，可能会发生一些不被期望的效果，肯定会阻止我们的程序按指令去执行"></a>程序运行过程中，可能会发生一些不被期望的效果，肯定会阻止我们的程序按指令去执行</h2><h2 id="这种不被预期出现的效果，肯定需要抛出来告诉我们"><a href="#这种不被预期出现的效果，肯定需要抛出来告诉我们" class="headerlink" title="这种不被预期出现的效果，肯定需要抛出来告诉我们"></a>这种不被预期出现的效果，肯定需要抛出来告诉我们</h2><h2 id="在JAVA中有一个定义好的Throwable（可以抛出的）"><a href="#在JAVA中有一个定义好的Throwable（可以抛出的）" class="headerlink" title="在JAVA中有一个定义好的Throwable（可以抛出的）"></a>在JAVA中有一个定义好的Throwable（可以抛出的）</h2><h1 id="Error错误"><a href="#Error错误" class="headerlink" title="Error错误"></a>Error错误</h1><h2 id="通常是一些物理性的，JVM虚拟机本身出现的问题，程序指令是处理不了的"><a href="#通常是一些物理性的，JVM虚拟机本身出现的问题，程序指令是处理不了的" class="headerlink" title="通常是一些物理性的，JVM虚拟机本身出现的问题，程序指令是处理不了的"></a>通常是一些物理性的，JVM虚拟机本身出现的问题，程序指令是处理不了的</h2><h1 id="Exception异常"><a href="#Exception异常" class="headerlink" title="Exception异常"></a>Exception异常</h1><h2 id="是一种不正常的现象-通常是给定的指令程序产生了一些不合规范的事情"><a href="#是一种不正常的现象-通常是给定的指令程序产生了一些不合规范的事情" class="headerlink" title="是一种不正常的现象,通常是给定的指令程序产生了一些不合规范的事情"></a>是一种不正常的现象,通常是给定的指令程序产生了一些不合规范的事情</h2><h1 id="Throwable"><a href="#Throwable" class="headerlink" title="Throwable"></a>Throwable</h1><h2 id="Error（错误）"><a href="#Error（错误）" class="headerlink" title="Error（错误）"></a>Error（错误）</h2><h3 id="StackOverflowError"><a href="#StackOverflowError" class="headerlink" title="StackOverflowError"></a>StackOverflowError</h3><h3 id="OutOfMemoryError"><a href="#OutOfMemoryError" class="headerlink" title="OutOfMemoryError"></a>OutOfMemoryError</h3><h2 id="Exception-异常"><a href="#Exception-异常" class="headerlink" title="Exception(异常)"></a>Exception(异常)</h2><h3 id="RuntimeException（运行时）"><a href="#RuntimeException（运行时）" class="headerlink" title="RuntimeException（运行时）"></a>RuntimeException（运行时）</h3><h3 id="IOExceotion"><a href="#IOExceotion" class="headerlink" title="IOExceotion"></a>IOExceotion</h3><h1 id="异常的分支体系"><a href="#异常的分支体系" class="headerlink" title="异常的分支体系"></a>异常的分支体系</h1><h2 id="运行时异常（非检查异常）"><a href="#运行时异常（非检查异常）" class="headerlink" title="运行时异常（非检查异常）"></a>运行时异常（非检查异常）</h2><pre><code>Error和RuntimeException都算作运行时异常
-javac编译的时候，不会提示发现的
-在程序编写的时候不要求必须做处理，如果我们愿意可以添加处理手段（try throws）
-要求大家出现这样的异常的时候，知道怎么产生及如何修改
-1.InputMisMatchExceotin  输入不匹配
-        int value = input.nextInt();// abc
-2.NumberFormatException  数字格式化
-        int value = Integer.parseInt(&quot;123.45&quot;)
-3.NegativeArraySizeException 数组长度负数
-        int Array = new int[-2]
-4.NullPointerException 空指针异常
-        int[][] array = new int[3][];
-        array[0][0] = 10;
-        Person p = null;
-        p.getName();
-5.AirthmeticExceotion 数字异常
-  10/0  整数不允许除0 infinity小数除0会产生无穷
-6.ClassCastException 造型异常
-       Person p = new Teacher();
-       Student s = (Student) p;
-7.ArrayIndexOutOfBoundsException 数组索引越界
-       int[] array ={1,2,3};
-       array[5];
-8.StringIndexOutOfBoundsException 字符串越界
-       String str = &quot;abc&quot;;
-       str.charAt(5);
-9.IndexOutOfBoundsException 集合越界
-       List家族
-       ArrayList list = new ArrayList();
-       list.add();list.add();ist.add();
-       list.get(5);
-10.IllegalArguementException 非法参数异常
-       ArrayList list = new ArrayList(-1);</code></pre><h2 id="编译时异常（检查异常）"><a href="#编译时异常（检查异常）" class="headerlink" title="编译时异常（检查异常）"></a>编译时异常（检查异常）</h2><pre><code>除了Error和RuntimeException以外的其他异常
-javac编译的时候 强制要求我们必须为这样的异常处理（try或throws）
-因为这样的异常在程序运行中可能会产生问题
-异常产生后后续的所有执行就被停止啦
-1.InterruptException
-            try{
-                 Thead.sleep(5000);
-            }catch(Exception e){
-
-            }</code></pre><h2 id="添加处理异常的手段"><a href="#添加处理异常的手段" class="headerlink" title="添加处理异常的手段"></a>添加处理异常的手段</h2><h3 id="处理异常不是异常消失了"><a href="#处理异常不是异常消失了" class="headerlink" title="处理异常不是异常消失了"></a>处理异常不是异常消失了</h3><h3 id="处理异常指的是-处理掉异常之后-后续的代码不会因为此异常停止执行"><a href="#处理异常指的是-处理掉异常之后-后续的代码不会因为此异常停止执行" class="headerlink" title="处理异常指的是 处理掉异常之后 后续的代码不会因为此异常停止执行"></a>处理异常指的是 处理掉异常之后 后续的代码不会因为此异常停止执行</h3><h1 id="两种手段"><a href="#两种手段" class="headerlink" title="两种手段"></a>两种手段</h1><h2 id="try-catch-finally"><a href="#try-catch-finally" class="headerlink" title="try{}catch(){}{finally{}}"></a>try{}catch(){}{finally{}}</h2><h3 id="try不能单独出现"><a href="#try不能单独出现" class="headerlink" title="try不能单独出现"></a>try不能单独出现</h3><h3 id="后面必须添加catch或finally"><a href="#后面必须添加catch或finally" class="headerlink" title="后面必须添加catch或finally"></a>后面必须添加catch或finally</h3><h3 id="catch有一组括号（NullPointerException）目的是为了捕获一组异常"><a href="#catch有一组括号（NullPointerException）目的是为了捕获一组异常" class="headerlink" title="catch有一组括号（NullPointerException）目的是为了捕获一组异常"></a>catch有一组括号（NullPointerException）目的是为了捕获一组异常</h3><h3 id="catch可以有多个存在"><a href="#catch可以有多个存在" class="headerlink" title="catch可以有多个存在"></a>catch可以有多个存在</h3><pre><code>捕获的异常直接没有任何的继承关系
-捕获的异常需要从小到大捕获</code></pre><h3 id="finally-不是必须存在的-若存在则必须执行"><a href="#finally-不是必须存在的-若存在则必须执行" class="headerlink" title="finally 不是必须存在的 若存在则必须执行"></a>finally 不是必须存在的 若存在则必须执行</h3><h2 id="fianl-fianlly-fianlizae-区别"><a href="#fianl-fianlly-fianlizae-区别" class="headerlink" title="fianl fianlly fianlizae 区别"></a>fianl fianlly fianlizae 区别</h2><h2 id="fianl-特征修饰符-修饰变量-属性-方法-类"><a href="#fianl-特征修饰符-修饰变量-属性-方法-类" class="headerlink" title="fianl 特征修饰符 修饰变量 属性 方法 类"></a>fianl 特征修饰符 修饰变量 属性 方法 类</h2><h3 id="修饰变量-基本类型-值不能改变-引用类型-地址不能改变（如果变量没有初值-给一次赋初值的机会）"><a href="#修饰变量-基本类型-值不能改变-引用类型-地址不能改变（如果变量没有初值-给一次赋初值的机会）" class="headerlink" title="修饰变量 基本类型 值不能改变 引用类型 地址不能改变（如果变量没有初值 给一次赋初值的机会）"></a>修饰变量 基本类型 值不能改变 引用类型 地址不能改变（如果变量没有初值 给一次赋初值的机会）</h3><h3 id="修饰属性-特点与修饰变量相似（要求必须给属性赋初值-否则编译报错）"><a href="#修饰属性-特点与修饰变量相似（要求必须给属性赋初值-否则编译报错）" class="headerlink" title="修饰属性 特点与修饰变量相似（要求必须给属性赋初值 否则编译报错）"></a>修饰属性 特点与修饰变量相似（要求必须给属性赋初值 否则编译报错）</h3><h3 id="修饰方法-不能被子类重写"><a href="#修饰方法-不能被子类重写" class="headerlink" title="修饰方法 不能被子类重写"></a>修饰方法 不能被子类重写</h3><h3 id="修饰类-不能被其他子类继承"><a href="#修饰类-不能被其他子类继承" class="headerlink" title="修饰类 不能被其他子类继承"></a>修饰类 不能被其他子类继承</h3><h2 id="fianlly-处理异常的手段的一部分"><a href="#fianlly-处理异常的手段的一部分" class="headerlink" title="fianlly 处理异常的手段的一部分"></a>fianlly 处理异常的手段的一部分</h2><h3 id="try-catch-后面的一个部分"><a href="#try-catch-后面的一个部分" class="headerlink" title="try()catch(){}后面的一个部分"></a>try()catch(){}后面的一个部分</h3><h3 id="这个部分可有可无-如果只能含有一部分-且必须执行"><a href="#这个部分可有可无-如果只能含有一部分-且必须执行" class="headerlink" title="这个部分可有可无 如果只能含有一部分 且必须执行"></a>这个部分可有可无 如果只能含有一部分 且必须执行</h3><h2 id="finalize-是Object类中的一个protected方法"><a href="#finalize-是Object类中的一个protected方法" class="headerlink" title="finalize 是Object类中的一个protected方法"></a>finalize 是Object类中的一个protected方法</h2><h3 id="对象没有任何引用指向的时候—-会被GC回收"><a href="#对象没有任何引用指向的时候—-会被GC回收" class="headerlink" title="对象没有任何引用指向的时候—-会被GC回收"></a>对象没有任何引用指向的时候—-会被GC回收</h3><h3 id="当对象回收的时候-默认调用finalize方法"><a href="#当对象回收的时候-默认调用finalize方法" class="headerlink" title="当对象回收的时候 默认调用finalize方法"></a>当对象回收的时候 默认调用finalize方法</h3><h3 id="若想看到回收的效果-可以重写-public-void-finalize"><a href="#若想看到回收的效果-可以重写-public-void-finalize" class="headerlink" title="若想看到回收的效果 可以重写 public void finalize(){}"></a>若想看到回收的效果 可以重写 public void finalize(){}</h3><h3 id="处理异常放在方法内部可能还会有小问题"><a href="#处理异常放在方法内部可能还会有小问题" class="headerlink" title="处理异常放在方法内部可能还会有小问题"></a>处理异常放在方法内部可能还会有小问题</h3><h3 id="如果在方法内部含有返回值"><a href="#如果在方法内部含有返回值" class="headerlink" title="如果在方法内部含有返回值"></a>如果在方法内部含有返回值</h3><h3 id="不管返回值return关键字在哪里-finally一定会执行完毕"><a href="#不管返回值return关键字在哪里-finally一定会执行完毕" class="headerlink" title="不管返回值return关键字在哪里 finally一定会执行完毕"></a>不管返回值return关键字在哪里 finally一定会执行完毕</h3><h3 id="返回值的具体结果-看情况"><a href="#返回值的具体结果-看情况" class="headerlink" title="返回值的具体结果 看情况"></a>返回值的具体结果 看情况</h3><h2 id="throws-抛出"><a href="#throws-抛出" class="headerlink" title="throws 抛出"></a>throws 抛出</h2><h3 id="异常只能在方法上抛出-属性是不能处理异常的"><a href="#异常只能在方法上抛出-属性是不能处理异常的" class="headerlink" title="异常只能在方法上抛出 属性是不能处理异常的"></a>异常只能在方法上抛出 属性是不能处理异常的</h3><h3 id="方法-构造"><a href="#方法-构造" class="headerlink" title="方法 构造"></a>方法 构造</h3><h3 id="方法-可以抛出不止一个异常，通过，隔开"><a href="#方法-可以抛出不止一个异常，通过，隔开" class="headerlink" title="方法 可以抛出不止一个异常，通过，隔开"></a>方法 可以抛出不止一个异常，通过，隔开</h3><h3 id="抛出的异常与多个catch类似-要么没关系-要么先抛出小异常"><a href="#抛出的异常与多个catch类似-要么没关系-要么先抛出小异常" class="headerlink" title="抛出的异常与多个catch类似 要么没关系 要么先抛出小异常"></a>抛出的异常与多个catch类似 要么没关系 要么先抛出小异常</h3>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2776,7 +3201,7 @@ javac编译的时候 强制要求我们必须为这样的异常处理（try或th
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2894,7 +3319,7 @@ javac编译的时候 强制要求我们必须为这样的异常处理（try或th
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共33.3k字</span>
+  <span class="post-count">博客全站共36.8k字</span>
 </div>
         
 

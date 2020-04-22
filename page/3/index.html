@@ -252,6 +252,181 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/22/JavaSE基础-（十九）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/22/JavaSE基础-（十九）/" itemprop="url">JavaSE基础 （十九）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-22T23:29:06+08:00">
+                2020-03-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h1><pre><code>1.类所在的包
+2.类的关系 自己默认继承 实现
+3，类中提供常用方法
+4.是否可以创建对象 调用 方法本身是静态的
+
+包装类（封装类） 1.5版本之后自动拆包
+byte----Byte   short----Short   int------Integer  long-----Long
+float-----Float  double-----Double char-----Character boolean----Boolean
+1.八个包装类都在同一个包下  java.lang包  不需要import导包自己使用
+2.八个包装类有六个都是与数字有关  都默认继承父类Number
+3.八个包装类都实现了Serializable，Comparable
+4.八个包装类都带有自己对应类型参数的构造方法
+ 八个包装类中有7个（除了Character）有构造方法重载 带String类型
+5.创建对象  对象调用方法
+     有六个与数字相关的类都继承Number   xxValue();将一个包装类类型转化为对应的基本类型（拆包）
+Interger i1 = new Interger（10）//引用数据类型 包装类
+ int value = i1.intValue();
+
+ int value  = Inter.parseInt(&quot;123&quot;)  Float.parseFloat(&quot;123.45&quot;)
+ int value  = new Integer(&quot;123&quot;);</code></pre><h1 id="经常在笔试中出现的问题"><a href="#经常在笔试中出现的问题" class="headerlink" title="经常在笔试中出现的问题"></a>经常在笔试中出现的问题</h1><pre><code>integer i1 = 10;
+integer i2 = 10;
+integer i3 = new Integer(10);
+integer i4 = new Integer(10);
+System.out.println(i1==i2);//true
+System.out.println(i1==i3);//false
+System.out,println(i3==i4);//false
+System.out.pritnln(i1.equals(i2));//true
+System.out.pritnln(i1.equals(i3));//true
+System.out.pritnln(i1.equals(i4));//true</code></pre><h2 id="与equals-的区别"><a href="#与equals-的区别" class="headerlink" title="==与equals()的区别"></a>==与equals()的区别</h2><pre><code>==可以比较基本数据类型 也可以比较引用数据类型（变量中存储的内容）
+如果比较基本类型比较的是变量中存储的值
+如果比较的是引用类型比较的是变量中存储地址的引用
+equals()是Object类中继承过来的方法==一致 如果想要改变比较规则 可以重写equals方法
+由于integer类就重写了equals()所以Integer比较的是数值</code></pre><h2 id="考察Integer类加载的时候有一个静态空间"><a href="#考察Integer类加载的时候有一个静态空间" class="headerlink" title="考察Integer类加载的时候有一个静态空间"></a>考察Integer类加载的时候有一个静态空间</h2><pre><code>空间内立即加载Integer类型的数组 内存储256个Integer对象 -128-127
+如果我们用的对象范围在这之内 integer i1 = 10;直接取静态元素区中找对应的对象
+如果我们用的对象范围超出了Integer i1 = 1000; 会帮我们创建一个新的Integer对象</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/22/JavaSE基础-（十八）-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1844,205 +2019,6 @@ title属性图片提示符（光标移动到图片显示） </code></pre><h1 id=
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/19/JavaSE基础-（十）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/19/JavaSE基础-（十）/" itemprop="url">JavaSE基础 （十）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-19T23:03:29+08:00">
-                2020-03-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="类和类之间的关系"><a href="#类和类之间的关系" class="headerlink" title="类和类之间的关系"></a>类和类之间的关系</h1><h2 id="A-is-a-B-泛化-（继承-实现）"><a href="#A-is-a-B-泛化-（继承-实现）" class="headerlink" title="A is a B 泛化 （继承 实现）"></a>A is a B 泛化 （继承 实现）</h2><h2 id="A-has-a-B-包含-（组合-聚合-关联）"><a href="#A-has-a-B-包含-（组合-聚合-关联）" class="headerlink" title="A has a B 包含 （组合 聚合 关联）"></a>A has a B 包含 （组合 聚合 关联）</h2><h2 id="A-use-a-B-依赖-（依赖）need-a"><a href="#A-use-a-B-依赖-（依赖）need-a" class="headerlink" title="A use a B 依赖 （依赖）need a"></a>A use a B 依赖 （依赖）need a</h2><h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><pre><code>1.子类继承父类，通过一个关键字 extends
-2.子类的对象可以调用父类中的（public protected）属性和方法
-3.子类可以添加自己的属性和方法
-4.子类从父类继承过来的方法不能满足子类的需要，可以在子类中重写父类的方法 指内容重写
-5.每一个类都有一个继承类，如果extrends关键字不写，默认继承Object类
-6.java中继承是单个存在的（单继承）每一个类都只能有一个继承类（在extrends后面写一个类）目的是让类变得更安全，可以通过传递方式实现多继承的效果，后续还有多实现
-7.继承在内存中的存储形式
-8.关于this和super的使用</code></pre><h1 id="方法重写与重载"><a href="#方法重写与重载" class="headerlink" title="方法重写与重载"></a>方法重写与重载</h1><pre><code>   方法重写override                                 方法重载overload
-1.   产生两个继承关系的类                          一个类中的一组方法
-     子类可以写父类的方法
-2.特征符  
-          final static abstract                          没有要求    
-      父类方法是 final  子类不能重写
-      父类方法是 static 子类不存在
-      父类方法是 abstract 子类必须重写
-3.权限修饰符 
-        子类可以大于等于父类                             没有要求
-4.返回值  
-        子类可以小于等于父类                             没有要求
-5.参数     
-        子类父类必须一致                          每一个方法参数必须不一致
-6.名字    
-        子类父类必须一致                          一个类中的方法名必须一致
-7.异常      
-           运行时 编译时
-    如果父类方法抛出运行时异常：                         没有要求
-    子类可不予理会
-    如果父类方法抛出编译时异常：
-    子类抛出异常的个数和类型都少于等于父类
-8.方法体   子类方法内容和父类不一致              每个重载方法执行过程不一致</code></pre><h1 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h1><pre><code>        Object类是所有类的父类 Object类没有父类
-        Object方法 
-        1.toString方法 打印输出一个对象变成字符串
-        public String toString() {
-    return getClass().getName() + &quot;@&quot; + Integer.toHexString(hashCode());
-}
-        2.hashcode（）将对象的地址在内存中计算得到一个整数
-        3.equals（）用来比较两个对象的内容
-         == 和equals的区别
-         equals方法是Object类中继承的方法 默认比较地址
-         ==可以比较基本类型比较（值）也可以用来比较引用类型比较（地址）
-         如果想要改变规则可以方法重写
-          public boolean equals(Object obj) {
-    return (this == obj);
-}
-        4.getclass（）   获取对应类的映射
-        5.wait（）      线程进入挂起等待状态
-        6.notify（）     唤醒线程
-        7.notifyAll（）   唤醒所有
-        8.finalize      权限修饰符 protected在对象被GC回收时默认执行方法 相当于C++析构函数
-        9.clone（）     权限修饰符 protected为了克隆对象</code></pre><h1 id="this和super的使用"><a href="#this和super的使用" class="headerlink" title="this和super的使用"></a>this和super的使用</h1><pre><code>1.this和super都是指代词 代替的是对象
-2.this代替的是当前执行方法时的那个对象 不一定是当前类的
-  super代替的是当前执行方法时父类的那个对象 空间内部那个
-3.都能调用一般属性和方法
-4.可以放在类成员的任一位置（属性，方法，构造，块）
-5.注意调用一般方法的时候来回调用（写法编译好用）执行可能产生问题 （stack overflow error）
-6.可调用构造方法（放在构造方法的第一行）
-7.this和super在构造方法中调用另一个类的构造方法不能出现在第一行
-8.构造方法之间不能用来互相调用（编译不好用）</code></pre><p>  <img src="/2020/03/19/JavaSE基础-（十）/%E7%B1%BB%E7%9A%84%E5%85%B3%E7%B3%BB.png" alt="upload successful"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2095,7 +2071,7 @@ title属性图片提示符（光标移动到图片显示） </code></pre><h1 id=
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2213,7 +2189,7 @@ title属性图片提示符（光标移动到图片显示） </code></pre><h1 id=
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共33.3k字</span>
+  <span class="post-count">博客全站共36.8k字</span>
 </div>
         
 

@@ -252,6 +252,214 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/23/JavaSE基础-（二十）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="我与我周旋">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一轮明月照九洲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/23/JavaSE基础-（二十）/" itemprop="url">JavaSE基础 （二十）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-23T20:50:35+08:00">
+                2020-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="java中提供的工具类——-官方API帮助文档"><a href="#java中提供的工具类——-官方API帮助文档" class="headerlink" title="java中提供的工具类——-官方API帮助文档"></a>java中提供的工具类——-官方API帮助文档</h1><pre><code>Application  Programming interface
+应用程序编程接口,一些预先创建好的类及方法，目的是为了让我们更好的进行程序开发</code></pre><h2 id="与数学相关的类—-Math类"><a href="#与数学相关的类—-Math类" class="headerlink" title="与数学相关的类—-Math类"></a>与数学相关的类—-Math类</h2><pre><code>1.所属的包java.lang
+2.Math构造方法是私有的 我们不能直接调用创建对象
+3.由于Math中提供的属性方法都是static 不需要创建对象
+4.常用的方法
+           abs()返回给定数字的绝对值 （参数 int long float double）
+           double = ceil() 向上取整
+           double = floor()向下取整
+           double = rint() 临近的整数 如果两边距离一样则返回偶数
+           int = round 四舍五入的整数
+           max（a，b） min（a，b）参数int long float double 
+           pow（a，b） a的b次方（参数double 返回值double）
+           sqrt（double a） 获取给定参数的平方根
+           double = random(); 随机产生一个  [0.0-1.0]
+
+ 5.Math.randon()计算小数的时候精确度可能会有些损失
+               0-9之间的随机整数
+               int Value = （int）(Math.random()*10);
+               5.0----10.9之间的小数
+               （Math.random()*6)+5
+               0.0----0.99999 * 6
+               (0.0---5.49999)+5</code></pre><h2 id="Random类"><a href="#Random类" class="headerlink" title="Random类"></a>Random类</h2><pre><code>1.在java.util包中的类 需要import导入
+2.没有任何继承关系 默认继承Object类
+3.查找构造方法----》如何创建对象
+        Random r = new Random();
+4.类中常用的方法
+        r.nextInt(); 随机产生int范围内的整数  有正有负
+        r.nextInt(int bound);随机产生一个[0-bound]整数
+                 注意bound必须为正数 否则会出现如下的运行时异常
+                 IllegalArgumentException
+        r.nextFloat() 随机产生一个[0.0--1.0]
+        r.nextBoolean()随机产生一个boolean值 true false
+        //调用的方法都需要用相对应类型的变量接收值</code></pre><h2 id="UUID类"><a href="#UUID类" class="headerlink" title="UUID类"></a>UUID类</h2><pre><code>1.所属的包 java.util  需要import导入
+2.没有任何继承关系 默认继承Object类
+3.构造方法有 没有无参的 我们通常不会创建对象
+          UUID  uuid = UUID.randomUUID();
+          System.out.println(uuid.toString());//数据库表格主键primary key
+          产生一个32位的随机元素 每一个位置都是16进制的数字</code></pre><h2 id="BigInteger"><a href="#BigInteger" class="headerlink" title="BigInteger"></a>BigInteger</h2><pre><code>1.所属的包java.math  需要impor导入
+2.继承自Number
+3.如何创建对象 提供的构造方法都是带参的
+        通常利用String参数的构造方法创建这个类的对象
+        BigInteger bi = new BigInteger{&quot;123&quot;};
+4.类中常用的方法
+        做四则运算
+        add()  substract() multiply() divide()
+5.小例子 设计一个方法 用来设计给定数字的阶乘 
+       //设计一个方法 用来设计数字的阶乘
+       //参数 返回值
+       Public BigInteger factorial(int num){
+            BigInteger result = new BigInteger(&quot;1&quot;);
+            for(int i = 1;i &lt;= num;i++){
+                result=result.multiply(new BigInteger(i+&quot; &quot;))
+        }
+        retrun result;
+      } </code></pre><h2 id="BigDecimal类-超过了double取值范围"><a href="#BigDecimal类-超过了double取值范围" class="headerlink" title="BigDecimal类  超过了double取值范围"></a>BigDecimal类  超过了double取值范围</h2><pre><code>1.所属的包  java.math包
+2.继承Number类
+3.通常可以通过 带String参数构造对象
+4.类中常用的方法
+         做四则运算
+         add()  substract() multiply() divide()
+         两个参数前面保留小数点之后的位数，后面的参数是设置的格式如何保留
+         对象.setScale(2,BigDecimal.ROUND_DOWN);</code></pre><h2 id="DecimalFormat——-格式化"><a href="#DecimalFormat——-格式化" class="headerlink" title="DecimalFormat——-格式化"></a>DecimalFormat——-格式化</h2><pre><code>1.所属的包 java.text
+2.import导入才能使用
+3.通过带String参数的构造方法格式化创建成一个字符串
+            DecimalFormat df = new DecimalFormat（&quot;000.###&quot;）;
+            String value = df.format(12.45);
+            System.out.println(value);
+1.</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/22/JavaSE基础-（十九）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1843,182 +2051,6 @@ package只能有一个import可以有多个</code></pre><h1 id="类的关系"><a
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/20/html-css-js-（二）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我与我周旋">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一轮明月照九洲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/20/html-css-js-（二）/" itemprop="url">html-css-js  （二）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-20T22:19:19+08:00">
-                2020-03-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端基础/" itemprop="url" rel="index">
-                    <span itemprop="name">前端基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="高级标签"><a href="#高级标签" class="headerlink" title="高级标签"></a>高级标签</h1><pre><code>空格标签     &amp;nbsp;
-左尖括号     &amp;lt;   less than
-右尖括号     &amp;gt;   great than
-换行        &lt;br&gt;
-划线        &lt;hr&gt;</code></pre><h1 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h1><pre><code>  &lt;ol&gt;  
-     &lt;li&gt;苹果&lt;/li&gt;
-     &lt;li&gt;香蕉&lt;/li&gt;
-     &lt;li&gt;菠萝&lt;/li&gt;
-   &lt;/ol&gt;  
-有序表属性
-  &lt;ol type =&quot;a&quot;(a,A,1,i,I)  reversed = &quot;reversed&quot;  start = &quot;3&quot;&gt;
-  //排序可以按a，A，1,罗马小写i，罗马大写 i reversed属性表示倒序 start表示起始顺序                </code></pre><h1 id="无序表"><a href="#无序表" class="headerlink" title="*无序表"></a>*无序表</h1><pre><code>&lt;ul&gt;
-   &lt;li&gt;Marvel&lt;/li&gt;
-   &lt;li&gt;返老还童&lt;/li&gt;
-   &lt;li&gt;了不起的盖茨比&lt;/li&gt;
- &lt;/ul&gt;
-&lt;ul type = &quot;disc&quot; (square circle)&gt;
-//标签是实心圆 实心方块 空心圆</code></pre><h1 id="超文本链接"><a href="#超文本链接" class="headerlink" title="超文本链接"></a>超文本链接</h1><pre><code>&lt;a herf &quot; &quot; &gt;www.baidu.com&lt;/a&gt;
- //hyperText reference 
-  数字 文字 图片均可以跳转 target在当前页面打开 blank打开新页面
-  &lt;打电话&gt;  &lt;a herf=&quot;tel:&quot;&gt;
-  &lt;发邮件&gt;  &lt;a herf=&quot;mailto&quot;&gt;
-  &lt;协议限定符&gt;
-  //&lt;a herf=&quot;javascript=while(1）{alert（&quot;让你手欠&quot;）} 你点我试试呀！come on 来呀！&lt;/a&gt;</code></pre><h1 id="图片标签"><a href="#图片标签" class="headerlink" title="图片标签"></a>图片标签</h1><pre><code>    &lt;img src=&quot;url&quot;&gt;
-//可以打开网络url；本地绝对路径；本地相对路径
- alt属性图片占位符（图片出错时显示信息）     
-title属性图片提示符（光标移动到图片显示） </code></pre><h1 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h1><pre><code>anhor（实现置顶）记录位置 </code></pre><h1 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h1><pre><code>&lt;form method=&quot;get/post&quot; action=&quot;&quot;&gt;
-&lt;input type=&quot;text&quot;  name=&quot;username&quot;&gt;
-&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;
-&lt;input type=&quot;submit&quot; value=&quot;login&quot;&gt;
-&lt;/form&gt;
-// 发送数据 需要数据名和数据内容两项
-  提交检验 pro/Desktop/lesson2.html?username=sunny&amp;password=123123.
-  md5协议进行加密         123123
-                     加密后&amp;@#￥&amp;￥
-&lt;input type =&quot;radio&quot;&gt;单选</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2071,7 +2103,7 @@ title属性图片提示符（光标移动到图片显示） </code></pre><h1 id=
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2189,7 +2221,7 @@ title属性图片提示符（光标移动到图片显示） </code></pre><h1 id=
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共36.8k字</span>
+  <span class="post-count">博客全站共36.9k字</span>
 </div>
         
 

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-30T12:20:11.362Z</updated>
+  <updated>2020-07-09T10:00:08.702Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用户指南</title>
+    <link href="http://yoursite.com/2020/07/09/%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97/"/>
+    <id>http://yoursite.com/2020/07/09/用户指南/</id>
+    <published>2020-07-09T09:59:54.000Z</published>
+    <updated>2020-07-09T10:00:08.702Z</updated>
+    
+    <content type="html"><![CDATA[<p>用户指南</p><p>一．系统说明：</p><p> “船舶靠港选择系统”旨在为船舶提供最优靠港方案。航运行业的迅速发展让航运公司与船舶之间的竞争日夜激烈，用户需求的多样化也直接影响着船舶靠港选择，在一定区域范围内的港口可以根据需求不同选择最合适的停靠港口。该系统可以根据用户输入的不同权重信息为船舶规划出三条航线，船长根据需求从中选择最佳的靠港方案。该系统主要功能就在于根据不同权重因子为船舶提供有选择性的最佳靠港方案，为船舶提供信息服务，也为部分港口增加收益。包括三个模块用户信息管理功能、港口收费计费功能和显示页面功能。</p><p>二．使用说明</p><p>（1）  登录界面</p><p>用户进入登录界面以后，首先需要注册用户名与输入密码，每个用户拥有唯一的登录账号，便于开发人员信息的管理与维护。拥有账号以后可选择登录进入系统也可选择取消退出系统。</p><p>（2）  收费计费系统</p><p>用户通过账号进入系统后，进入收费计费系统。收费计费系统具有三个子模块，三个子模块的功能分别是工具箱、数据编辑与货物信息。</p><ol><li><p>工具箱具有基本操作模块、专业功能模块、主题模块、用户管理模块和开发者选项模块。基本操作模块具体包括：放大（点击放大按钮系统会按比例相应的放大地图）、缩小（点击缩小按钮系统按比例缩小地图）、漫游（点击漫游按钮移动鼠标时地图会与鼠标联动）、全图显示（点击全图显示按钮系统恢复初始页面）、地图刷新（点击地图刷新按钮系统会将地图更新）、前一视图（点击按钮系统会返回上一视图）、后一视图（点击后一视图按钮系统会回到相对的下一视图）、打开地图（点击按钮可以打开新的地图）、识别查询（点击按钮系统会跳出相应港口的具体信息）、比例尺（显示当前地图的比例尺信息）。专业功能模块具体包括：信息查询（根据输入的信息查询港口）、鹰眼图（在显示系统的右上角显示鹰眼图，鹰眼图包括整个地图可以与鼠标联动）。用户根据喜好手动选择主题形式，有经典模式、商务模式、时尚模式三种类型。用户管理中，用户可以修改密码和注销当前账户。开发者选项具体包括帮助指南（用户使用系统的指南）、可以给开发者打赏、可以检测当前系统版本、可以升级系统更新版本。</p></li><li><p>数据编辑页面</p></li><li><p>货物信息页面具有两个子功能，分别为创建新的订单与货物信息。点击创建新的订单，系统会跳出建立货运订单窗口，用户根据要求输入相应的新订单信息点击完成即可创建成功，成功以后的订单信息会自动导入数据库与货物信息中。</p></li></ol><p>（3）  显示系统</p><p>系统根据用户输入的权重因子为船舶提供三种靠港方案。用户根据需求选择一种最佳方案与航线并显示在当前屏幕上。</p><p>三．系统维护</p><p>开发者按时按需对系统进行维护与更新，保证数据库的维护更新系统的运行。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;用户指南&lt;/p&gt;
+&lt;p&gt;一．系统说明：&lt;/p&gt;
+&lt;p&gt; “船舶靠港选择系统”旨在为船舶提供最优靠港方案。航运行业的迅速发展让航运公司与船舶之间的竞争日夜激烈，用户需求的多样化也直接影响着船舶靠港选择，在一定区域范围内的港口可以根据需求不同选择最合适的停靠港口。该系统可以根据
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>MySQL连接VS 2010</title>
@@ -468,29 +491,6 @@
       
       
         &lt;h1 id=&quot;字符串相关&quot;&gt;&lt;a href=&quot;#字符串相关&quot; class=&quot;headerlink&quot; title=&quot;字符串相关&quot;&gt;&lt;/a&gt;字符串相关&lt;/h1&gt;&lt;h1 id=&quot;String类—-gt-引用类型-java-lang包&quot;&gt;&lt;a href=&quot;#String类—-gt-引用
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaSE基础 （二十一）</title>
-    <link href="http://yoursite.com/2020/03/23/JavaSE%E5%9F%BA%E7%A1%80-%EF%BC%88%E4%BA%8C%E5%8D%81%E4%B8%80%EF%BC%89/"/>
-    <id>http://yoursite.com/2020/03/23/JavaSE基础-（二十一）/</id>
-    <published>2020-03-23T14:02:16.000Z</published>
-    <updated>2020-03-23T15:47:41.957Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="日期相关"><a href="#日期相关" class="headerlink" title="日期相关"></a>日期相关</h1><h2 id="Date类"><a href="#Date类" class="headerlink" title="Date类"></a>Date类</h2><pre><code>1.通常使用的是java.util包2.导包 拿来使用 构建对象3.通常使用的是无参构造方法 或者带long构造方法4.Date类中常用的方法     before();after();     setTime();getTime();     compareTo();5.可以处理一个Date日期的格式</code></pre><h2 id="DateFormat类"><a href="#DateFormat类" class="headerlink" title="DateFormat类"></a>DateFormat类</h2><pre><code>1.java.text包 需要导包2.此类是一个抽象类 不能创建对象 子类来使用3.SimpleDarteFormat类 是DateFormat的子类4.调用String参数的构造方法创建format对象       SimpleDateFormat sdf =  new Simple DateFormat(&quot;yyyyy--MM--dd HH:mm:ss&quot;)        string v = sdf.format(date.1)//通过sdf将对象格式化成你描述的样子</code></pre><h2 id="Calendar-1-1版本"><a href="#Calendar-1-1版本" class="headerlink" title="Calendar 1.1版本"></a>Calendar 1.1版本</h2><pre><code>1.所属的包 java.util 需要导包2.有构造方法 用protected修饰的 通常访问不到 通常还会调用默认的getInstance()3.常用方法        after() before()        setTime() getTime()---&gt;Date        getTimeInMills()----time        getTimeZone()----TimeZone        Calendar calendar = Calendar.getInstance();//系统当前时间的Calendar对象        Calendar里面包含一个date属性 可以操作某一个局部信息        set get        calendar.set（Calendar.YEAR,2015）;        int year = calendar.get（Calendar.YEAR）;</code></pre><h2 id="TimeZone"><a href="#TimeZone" class="headerlink" title="TimeZone"></a>TimeZone</h2><pre><code>1.java.util包2.可以通过calendar对象.getTimeZone（）获取 或 TimeZone.getDefault();3.常用方法        tz.getID();       System.out.println(tz.getDisplayName());</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;日期相关&quot;&gt;&lt;a href=&quot;#日期相关&quot; class=&quot;headerlink&quot; title=&quot;日期相关&quot;&gt;&lt;/a&gt;日期相关&lt;/h1&gt;&lt;h2 id=&quot;Date类&quot;&gt;&lt;a href=&quot;#Date类&quot; class=&quot;headerlink&quot; title=&quot;Date类&quot;&gt;
       
     
     </summary>
